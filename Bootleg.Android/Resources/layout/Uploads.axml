@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:keepScreenOn="true"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp" />
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingTop="?attr/actionBarSize"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nofootage"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="@string/allclear"
+                android:gravity="center_horizontal"
+                android:alpha="0.7"
+                android:layout_margin="20dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_black_24dp"
+                android:tint="@color/blue"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sendingall"
+            android:textSize="22sp"
+            android:id="@+id/msg1"
+            android:gravity="center_horizontal"
+            android:alpha="0.7"
+            android:layout_margin="20dp" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <radialprogress.CleanRadialProgressView
+                android:id="@+id/uploadprogress"
+                min_value="0"
+                max_value="100"
+                progress_type="tiny"
+                hide_label="true"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:layout_width="250dp"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4 of 50"
+                android:textSize="30dp"
+                android:id="@+id/count"
+                android:gravity="center"
+                android:alpha="0.7"
+                android:layout_margin="20dp"
+                android:layout_gravity="center" />
+        </FrameLayout>
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/cancelbtn"
+            android:background="?attr/selectableItemBackground"
+            android:tint="@color/blue"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_action_cancel"
+            android:scaleType="fitCenter" />
+    <!--<TextView-->
+    <!--android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reviewoption"
+            android:textSize="22sp"
+            android:id="@+id/msg2"
+            android:gravity="center_horizontal"
+            android:alpha="0.7"
+            android:layout_margin="20dp" />-->
+    </LinearLayout>
+</FrameLayout>

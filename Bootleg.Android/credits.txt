@@ -1,0 +1,24 @@
+﻿Under the MIT License (MIT)
+
+- ConnectivityPlugin Copyright 2014 James Montemagno / Refractored LLC
+- Newtonsoft JSON Copyright 2007 James Newton-King
+- HockeyApp Copyright Microsoft Corporation. All rights reserved.
+- Google Play Services Client Library Copyright .NET Foundation Contributors
+
+Under the Apache v2.0 License 
+
+- RestSharp
+- Picasso Copyright 2015 Square, Inc.
+- WebSocket4Net
+- AndHUD
+- Xamarin Mobile
+- SuperSLiM Copyright 2014, 2015 Tonic Artos
+
+Under the New BSD License (BSD)
+
+- MarkdownSharp Copyright 2011, Pawel Idzikowski All rights reserved.
+
+Under the Xamarin™ Software License Agreement
+
+- Xamarin Radial Progress
+- Xamarin RangeSlider

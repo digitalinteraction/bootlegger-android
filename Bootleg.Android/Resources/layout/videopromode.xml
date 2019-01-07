@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_frame"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+    <SurfaceView
+        android:id="@+id/VideoPreview"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:layout_gravity="left|bottom" />
+    <FrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible">
+        <ImageView
+            android:id="@+id/overlayimg"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:gravity="bottom"
+            android:background="#55000000"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+            <TextView
+                android:id="@+id/overlaytext"
+                android:layout_width="fill_parent"
+                android:gravity="center"
+                android:layout_gravity="top"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp" />
+        </LinearLayout>
+    </FrameLayout>
+    <TextView
+        android:id="@+id/timestamp"
+        android:layout_width="wrap_content"
+        android:textColor="#33ffffff"
+        android:text="00:00"
+        android:textSize="15dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="47dp" />
+    <radialprogress.RadialProgressView
+        android:id="@+id/progress"
+        min_value="0"
+        max_value="100"
+        progress_type="small"
+        hide_label="true"
+        android:layout_gravity="right|top"
+        android:layout_height="40dp"
+        android:layout_width="40dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="5dp" />
+    <View
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:id="@+id/recordlight"
+        android:background="@drawable/record"
+        android:layout_gravity="right|top"
+        android:layout_marginTop="31dp"
+        android:visibility="invisible"
+        android:layout_marginRight="11dp" />
+    <LinearLayout
+        android:id="@+id/countdown"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="You are live in"
+            android:layout_gravity="center"
+            android:textColor="#ff0000" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:text="5"
+            android:id="@+id/livecount"
+            android:layout_gravity="center"
+            android:textColor="#ff0000" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/allbuttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:id="@+id/linearLayout1"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:id="@+id/linearLayout4">
+                <ImageButton
+                    android:id="@+id/Shots"
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:src="@drawable/overlays"
+                    android:padding="5dp"
+                    android:scaleType="fitCenter"
+                    android:background="#00000000" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="bottom|center"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/linearLayout5"
+                android:layout_marginLeft="15dp">
+                <ImageView
+                    android:id="@+id/connection"
+                    android:src="@drawable/conn"
+                    android:layout_height="30dp"
+                    android:layout_width="30dp"
+                    android:visibility="invisible"
+                    android:layout_marginTop="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="bottom|right"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout3">
+                <ToggleButton
+                    android:id="@+id/Play"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/record_btn"
+                    android:textOff=""
+                    android:textOn=""
+                    android:padding="0dp" />
+                <ImageButton
+                    android:id="@+id/startevent"
+                    android:layout_height="50dp"
+                    android:layout_width="55dp"
+                    android:layout_gravity="bottom"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/started"
+                    android:layout_margin="5dp" />
+                <ImageButton
+                    android:id="@+id/Hold"
+                    android:layout_height="50dp"
+                    android:layout_width="60dp"
+                    android:layout_gravity="bottom"
+                    android:scaleType="fitCenter"
+                    android:background="@drawable/hold"
+                    android:layout_margin="5dp" />
+                <ImageButton
+                    android:id="@+id/Skip"
+                    android:visibility="gone"
+                    android:layout_height="50dp"
+                    android:layout_width="50dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/hold"
+                    android:scaleType="fitCenter"
+                    android:padding="0dp" />
+            </LinearLayout>
+        </FrameLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:id="@+id/shotselector"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="#111">
+        <TextView
+            android:text="Choose the kind of shot you would like to take"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:padding="2dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#ff33b5e5"
+            android:id="@+id/view1" />
+        <GridView
+            android:id="@+id/shotselectorlist"
+            android:verticalSpacing="1dp"
+            android:layout_weight="1"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="2dp"
+            android:horizontalSpacing="1dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="top"
+        android:background="#FFBF00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageholder"
+        android:layout_gravity="top">
+        <TextSwitcher
+            android:id="@+id/message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px" />
+    </LinearLayout>
+    <include
+        layout="@layout/Main_Tabs" />
+    <include
+        layout="@layout/Main_RolesDemo" />
+    <LinearLayout
+        android:id="@+id/Closed"
+        android:visibility="invisible"
+        android:orientation="vertical"
+        android:background="#000000"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:text="Production is not possible on this event at the moment."
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_marginTop="100dp" />
+        <Button
+            android:text="Go Back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/goback"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/initprogress"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#cc000000"
+        android:visibility="invisible">
+        <TextView
+            android:text="Downloading images. This could take about 30 seconds..."
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:textSize="16dp" />
+        <ProgressBar
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:progress="0"
+            android:id="@+id/initprogressbar"
+            android:layout_width="fill_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:indeterminate="false" />
+    </FrameLayout>
+</FrameLayout>

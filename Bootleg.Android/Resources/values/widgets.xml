@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <!-- Overwrite the ToggleButton style -->
+  <style name="Widget.Button.Toggle" parent="android:Widget">
+    <item name="android:background">@drawable/btn_toggle_background</item>
+    <item name="android:textOn">Add</item>
+    <item name="android:textOff">Del</item>
+    <item name="android:disabledAlpha">?android:attr/disabledAlpha</item>
+  </style>
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+    <item name="android:fontFamily">sans-serif-light</item>
+  </style>
+
+  <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
+    <item name="android:fontFamily">sans-serif-light</item>
+  </style>
+
+  <style name="LinkButtonStyle" parent="android:Widget.Button">
+    <item name="android:fontFamily">sans-serif-light</item>
+    <item name="android:background">#00000000</item>
+  </style>
+
+  <style name="CustomToggle"  parent="@android:Theme.Black">
+    <item name="android:buttonStyleToggle">@style/Widget.Button.Toggle</item>
+    <item name="android:textOn"></item>
+    <item name="android:textOff"></item>
+  </style>
+
+  <style name="CustomToggleFlash"  parent="@android:Theme.Black">
+    <item name="android:buttonStyleToggle">@style/Widget.Button.Toggle</item>
+    <item name="android:textOn"></item>
+    <item name="android:textOff"></item>
+  </style>
+  
+    <style name="Animations" />
+
+    <!-- PopDownMenu -->
+    <style name="Animations.PopDownMenu" />
+
+    <style name="Animations.PopDownMenu.Center">
+      <item name="@android:windowEnterAnimation">@anim/grow_from_top</item>
+      <item name="@android:windowExitAnimation">@anim/shrink_from_bottom</item>
+    </style>
+
+    <style name="Animations.PopDownMenu.Left">
+      <item name="@android:windowEnterAnimation">@anim/grow_from_topleft_to_bottomright</item>
+      <item name="@android:windowExitAnimation">@anim/shrink_from_bottomright_to_topleft</item>
+    </style>
+
+    <style name="Animations.PopDownMenu.Right">
+      <item name="@android:windowEnterAnimation">@anim/grow_from_topright_to_bottomleft</item>
+      <item name="@android:windowExitAnimation">@anim/shrink_from_bottomleft_to_topright</item>
+    </style>
+
+    <style name="Animations.PopDownMenu.Reflect">
+      <item name="@android:windowEnterAnimation">@anim/pump_top</item>
+      <item name="@android:windowExitAnimation">@anim/disappear</item>
+    </style>
+
+    <!-- PopUpMenu -->
+    <style name="Animations.PopUpMenu" />
+
+    <style name="Animations.PopUpMenu.Center">
+      <item name="@android:windowEnterAnimation">@anim/grow_from_bottom</item>
+      <item name="@android:windowExitAnimation">@anim/shrink_from_top</item>
+    </style>
+
+    <style name="Animations.PopUpMenu.Left">
+      <item name="@android:windowEnterAnimation">@anim/grow_from_bottomleft_to_topright</item>
+      <item name="@android:windowExitAnimation">@anim/shrink_from_topright_to_bottomleft</item>
+    </style>
+
+    <style name="Animations.PopUpMenu.Right">
+      <item name="@android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>
+      <item name="@android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>
+    </style>
+
+    <style name="Animations.PopUpMenu.Reflect">
+      <item name="@android:windowEnterAnimation">@anim/pump_bottom</item>
+      <item name="@android:windowExitAnimation">@anim/disappear</item>
+    </style>
+  
+
+</resources>

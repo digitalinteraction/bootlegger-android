@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/helpoverlay">
+    <TextView
+        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:text="@string/normalcamera"
+        android:background="#000"
+        android:padding="10dp"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical" />
+    <Button
+        android:id="@+id/openhelp"
+        android:layout_height="40dp"
+        android:text="@string/getmorehelp"
+        android:layout_gravity="right"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/blue" />
+    <TextView
+        android:text="@string/zoom"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/help_bubble"
+        android:layout_marginBottom="50dp" />
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/help_bubble">
+        <ImageView
+            android:src="@drawable/ic_touch_app_white_48dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/imageView1"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal" />
+        <TextView
+            android:text="@string/touchfocus"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/textView5" />
+    </LinearLayout>
+    <TextView
+        android:text="@string/usefulhints"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/help_bubble" />
+    <TextView
+        android:text="@string/swipe"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/help_bubble" />
+    <TextView
+        android:text="@string/shottiming"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="119.5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/textView3"
+        android:background="@drawable/help_bubble" />
+</FrameLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:id="@+id/theroot"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/blue">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+        <FrameLayout
+            android:id="@+id/page_one"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:text="@string/whatisbootlegger"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_margin="10dp"
+                android:textSize="30sp" />
+            <ImageView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:src="@drawable/slide1"
+                android:layout_margin="20dp" />
+            <TextView
+                android:text="@string/findashoot"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_gravity="bottom"
+                android:textSize="20sp"
+                android:layout_margin="20dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/page_two"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+                android:text="@string/andaction"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_margin="10dp"
+                android:textSize="30sp" />
+            <ImageView
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/slide2"
+                android:layout_margin="20dp" />
+            <TextView
+                android:text="@string/suggestsshots"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_gravity="bottom"
+                android:textSize="20sp"
+                android:layout_margin="20dp" />
+        </FrameLayout>
+        <FrameLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:id="@+id/page_three"
+            android:layout_height="fill_parent">
+            <TextView
+                android:text="@string/thatsawrap"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_margin="10dp"
+                android:textSize="30sp" />
+            <ImageView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:src="@drawable/slide3"
+                android:layout_margin="20dp" />
+            <TextView
+                android:text="@string/everyonesvideo"
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_gravity="bottom"
+                android:textSize="20sp"
+                android:layout_margin="20dp" />
+        </FrameLayout>
+    </android.support.v4.view.ViewPager>
+    <View
+        android:layout_height="1dp"
+        android:layout_width="fill_parent"
+        android:background="#ffffff"
+        android:alpha="0.4" />
+    <RelativeLayout
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <Button
+            android:id="@+id/skip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/skip"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:textColor="#ffffff"
+            android:background="@android:color/transparent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true" />
+        <viewpagerindicator.CirclePageIndicator xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/indicator"
+            android:padding="10dip"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:radius="8dp"
+            android:layout_centerInParent="true" />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@android:string/ok"
+            android:id="@+id/ok"
+            android:layout_alignParentRight="true"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:textColor="#ffffff"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/next"
+            android:id="@+id/next"
+            android:layout_alignParentRight="true"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:textColor="#ffffff"
+            android:background="@android:color/transparent"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>

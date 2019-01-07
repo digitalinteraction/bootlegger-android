@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:slm_headerDisplay="inline"
+    android:orientation="vertical"
+    app:slm_isHeader="true"
+    android:paddingTop="28dp"
+    android:paddingBottom="36dp"
+    android:paddingLeft="36dp"
+    android:paddingRight="36dp">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:tint="@color/blue"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:id="@+id/header"
+            android:layout_gravity="start|top"
+            android:text="@string/uploadswaiting"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:layout_width="wrap_content"
+            android:drawableTint="?attr/colorPrimary"
+            android:drawableEnd="@drawable/abc_ic_arrow_drop_right_black_24dp"
+            android:padding="0dp"
+            android:layout_gravity="end|center"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:id="@+id/uploadbtn"
+            android:text="@string/uploadnow"
+            android:textColor="?attr/colorPrimary"
+            android:gravity="end|center_vertical" />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/subheader"
+        android:text="1 waiting to upload"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

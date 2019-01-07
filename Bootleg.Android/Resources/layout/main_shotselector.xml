@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TabHost
+        android:layout_width="fill_parent"
+        android:id="@android:id/tabhost"
+        android:background="#cc000000"
+        android:visibility="invisible"
+        android:layout_height="fill_parent">
+        <TabWidget
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:id="@android:id/tabs" />
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:id="@android:id/tabcontent"
+            android:layout_height="fill_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:id="@+id/myrole"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="left"
+                        android:padding="10dp"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:orientation="vertical"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="120dp">
+                            <TextView
+                                android:text="@string/currentrole"
+                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:textColor="#0088aa" />
+                            <TextView
+                                android:id="@+id/rolename"
+                                android:textSize="20dp"
+                                android:text="Cheese"
+                                android:layout_height="wrap_content"
+                                android:layout_width="fill_parent" />
+                            <TextView
+                                android:id="@+id/roledescription"
+                                android:textSize="16dp"
+                                android:text="toast"
+                                android:layout_height="match_parent"
+                                android:layout_width="fill_parent"
+                                android:layout_weight="4" />
+                            <TextView
+                                android:text="@string/settings"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#0088aa"
+                                android:id="@+id/textView2" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_gravity="bottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/linearLayout6"
+                            android:layout_marginBottom="60dp">
+                            <ToggleButton
+                                android:id="@+id/ttsbtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Speak Directions"
+                                android:textOn="Speak Directions On"
+                                android:textOff="Speak Directions Off"
+                                android:layout_gravity="center"
+                                android:layout_weight="1" />
+                            <Button
+                                android:id="@+id/finished"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/uploadbtn"
+                                android:layout_gravity="center"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_gravity="bottom"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+                            <Button
+                                android:id="@+id/changerole"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="fill_parent"
+                                android:text="@string/changerole" />
+                            <Button
+                                android:id="@+id/logout"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="fill_parent"
+                                android:text="@string/logoutbtn" />
+                        </LinearLayout>
+                    </FrameLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_gravity="right"
+                        android:layout_weight="1"
+                        android:layout_height="fill_parent"
+                        android:layout_width="0dp">
+                        <LinearLayout
+                            android:layout_width="1dp"
+                            android:background="@android:color/holo_blue_bright"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:layout_height="fill_parent" />
+                        <ListView
+                            android:id="@+id/uploads"
+                            android:layout_marginLeft="15dp"
+                            android:layout_height="fill_parent"
+                            android:layout_width="fill_parent" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:id="@+id/meta"
+                android:layout_height="fill_parent">
+                <ListView
+                    android:id="@+id/metalist"
+                    android:choiceMode="multipleChoice"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:id="@+id/shots"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <GridView
+                    android:id="@+id/shotslist"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:horizontalSpacing="1dp"
+                    android:verticalSpacing="1dp"
+                    android:layout_weight="1"
+                    android:numColumns="5"
+                    android:stretchMode="columnWidth" />
+            </LinearLayout>
+        </FrameLayout>
+    </TabHost>
+</FrameLayout>

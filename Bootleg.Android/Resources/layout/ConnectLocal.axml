@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Enter your Local Connection Code"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:gravity="center" />
+        <EditText
+            android:inputType="number"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/number"
+            android:textSize="40dp"
+            android:gravity="center"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+        <Button
+            android:text="Connect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/connectbtn"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
+        <TextView
+            android:text="There is a local bootlegger server on your WiFi network. To connect to it, you will need 'offline access code' generated when logged in, or contact the person who controls the server in this venue."
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:id="@+id/loading"
+        android:layout_height="fill_parent"
+        android:background="#333">
+        <ProgressBar
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:layout_marginTop="200dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:gravity="center"
+            android:text="contacting local server"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

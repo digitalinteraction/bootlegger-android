@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_margin="2dp"
+    android:layoutDirection="locale"
+    android:background="#ffffff"
+    android:layout_height="wrap_content">
+    <android.support.percent.PercentFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            app:layout_widthPercent="100%"
+            app:layout_aspectRatio="178%"
+            android:background="#E0E0E0"
+            android:id="@+id/image" />
+    </android.support.percent.PercentFrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/cliplength"
+        android:layout_gravity="top|end"
+        android:layout_margin="2dp"
+        android:shadowColor="#ff000000"
+        android:shadowDx="0"
+        android:text="00:00"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:padding="2dp" />
+</FrameLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/infopanel"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tom Bartindale"
+        android:id="@+id/username"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical"
+        android:textSize="12sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tuesday, 3pm"
+        android:textColor="#ffffff"
+        android:id="@+id/time"
+        android:textSize="12sp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp" />
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tuesday, 3pm"
+        android:textColor="#ffffff"
+        android:id="@+id/role"
+        android:textSize="12sp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tuesday, 3pm"
+        android:textColor="#ffffff"
+        android:id="@+id/shot"
+        android:textSize="12sp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="2dp"        
+        android:layout_marginStart="2dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tuesday, 3pm"
+        android:textColor="#ffffff"
+        android:id="@+id/phase"
+        android:textSize="12sp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp" />
+</LinearLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:slm_headerDisplay="inline"
+    android:orientation="vertical"
+    app:slm_isHeader="true">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:paddingTop="36dp"
+        android:paddingStart="36dp"
+        android:paddingEnd="36dp">
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_height="wrap_content"
+            android:tint="@color/blue"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:id="@+id/header"
+            android:text="@string/allvideos"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_gravity="start|center" />
+        <Button
+            android:id="@+id/syncnow"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical|end"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:textColor="?attr/colorPrimary"
+            android:drawableTint="?attr/colorPrimary"
+            android:drawableEnd="@drawable/abc_ic_arrow_drop_right_black_24dp"
+            android:layout_gravity="end|center"
+            android:text="@string/syncnow"
+            android:padding="0dp" />
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingEnd="36dp"
+        android:paddingStart="36dp"
+        android:layout_marginBottom="36dp">
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:id="@+id/progressBar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:indeterminate="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="4dp" />
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="@string/lookingfornew"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/emptytext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-34dp"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/packing"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:id="@+id/imageView1"
+            android:maxHeight="200dp"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="4dp" />
+        <TextView
+            android:text="@string/nofootage"
+            android:gravity="center"
+            android:id="@+id/nofootage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+</LinearLayout>

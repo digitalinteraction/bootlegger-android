@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eventstitle"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:paddingTop="36dp"
+    android:paddingStart="36dp"
+    android:paddingEnd="36dp"   
+    android:layout_height="wrap_content">
+    <TextView
+        android:text="My Shoots"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_weight="1"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+    <Button
+        android:text="View Online"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAllCaps="false"
+        android:drawableEnd="@drawable/abc_ic_arrow_drop_right_black_24dp"
+        android:id="@+id/viewadminpanel"
+        android:background="?selectableItemBackgroundBorderless"
+        android:textColor="#888888"
+        android:drawableTint="#ff888888"
+        android:minHeight="0dp"
+        android:visibility="gone" />
+</LinearLayout>

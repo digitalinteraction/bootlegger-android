@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/Theme.Normal"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:id="@+id/emptytext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/packing"
+            android:scaleType="fitCenter"
+            android:maxWidth="512px" />
+        <TextView
+            android:text="@string/nofootage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center_horizontal"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/swiperefresh">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/allclips"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="true"
+            android:overScrollMode="always"
+            app:slm_grid_numColumns="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:indeterminate="true"
+        android:indeterminateOnly="true"
+        android:visibility="visible"
+        android:layout_marginTop="50dp" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/continuebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:borderWidth="0dp"
+        android:layout_gravity="bottom|right|end"
+        android:src="@drawable/baseline_check_white_48" />
+<!--<android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_width="match_parent"
+        android:elevation="8dp"
+        android:layout_height="?attr/actionBarSize">
+        <Spinner
+            android:id="@+id/filter_spinner"
+            android:padding="0sp"
+            android:layout_height="56dp"
+            android:background="@null"
+            android:dropDownHorizontalOffset="56dp"
+            android:layout_width="fill_parent"
+            android:backgroundTint="#ffffffff" />
+        <Spinner
+            android:id="@+id/direction_spinner"
+            android:padding="0dp"
+            android:dropDownHorizontalOffset="56dp"
+            android:background="@null"
+            android:layout_height="56dp"
+            android:layout_width="fill_parent"
+            android:backgroundTint="#ffffffff" />
+    </android.support.v7.widget.Toolbar>-->
+</FrameLayout>

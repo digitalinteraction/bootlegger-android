@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentFrameLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nearbybody"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        card_view:layout_widthPercent="100%"
+        card_view:layout_aspectRatio="180%"
+        android:layout_width="match_parent"
+        android:id="@+id/featuredlayout" />
+</android.support.percent.PercentFrameLayout>

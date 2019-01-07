@@ -1,0 +1,315 @@
+<#@ template hostspecific="true" language="C#" #><#@ output extension=".xml" encoding="utf-8" #><#@ include file="../../BuildVariants/Loader.t4" #><#@ include file="../../BuildVariants/Translator.t4" #><# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #>
+  <resources>
+    <!-- NON TRANSLATABLE -->
+    <string name="ApplicationName">
+      <#= GetString(Config.APP_NAME) #>
+    </string>
+    <string name="AppLink" translatable="false">
+      <#= Config.APP_URL_LINK #>
+    </string>
+    <string name="AppLinkText" translatable="false">
+      <#= Config.APP_LINK_TEXT #>
+    </string>
+    <string name="HelpLink" translatable="false">
+      <#= Config.APP_HELP_LINK #>
+    </string>
+    <string name="Email" translatable="false">
+      <#= Config.APP_HELP_EMAIL #>
+    </string>
+    <string name="BRANCHKEY" translatable="false">
+      <#= Config.BRANCHKEY #>
+    </string>
+    
+    <!-- CONNECTION INFO STRINGS -->
+    <string name="chkTitle">Checking Connection...</string>
+    <string name="chkFooter">Our Story will open when a connection is available.</string>
+    
+    <string name="chkNetwork">WiFi Connected</string>
+    <string name="chkIP">IP Address Range Correct</string>
+    <string name="chkApplication">Remote Application Found</string>
+    <string name="chkConnection">Connection Established</string>
+    
+    <string name="ochkNetwork">Network Connected</string>
+    <string name="ochkIP">Internet Available</string>
+    
+    <!-- INFO STRINGS -->
+    <string name="sharebtn">Share</string>
+    <string name="nomusic">No Music</string>
+    <string name="nownearby">Now &amp; Nearby</string>
+    <string name="seeall">See all</string>
+    <string name="joinashoot">Join a Shoot</string>
+
+    <string name="bywho">By Who</string>
+    <string name="bywhen">By When</string>
+    <string name="bylength">By Length</string>
+    <string name="byphase">By Phase</string>
+    <string name="bycamera">By Camera</string>
+    <string name="bywhat">By What</string>
+    <string name="orderup">Order Up</string>
+    <string name="orderdown">Order Down</string>
+
+
+    <string name="deletebtn">Delete</string>
+    <string name="copybtn">Copy</string>
+    <string name="restartbtn">Retry Publish</string>
+    <string name="tagging">Tagging</string>
+    <string name="howitworks">How it Works</string>
+    <string name="includevideo">Include a video in your story</string>
+    <string name="enableble">Enable Bluetooth</string>
+    <string name="blemessage">Can we turn on Bluetooth to let people know you are filming?</string>
+    <string name="startshooting">Start Shooting</string>
+    <string name="logintocontribute">Login to Contribute</string>
+    <string name="closed">Closed</string>
+    <string name="noconnectionshort">Unable to connect</string>
+    <string name="TagLine">
+      <#= GetString(Config.APP_NAME) #> helps you shoot films. Find out more at
+    </string>
+    <string name="About">
+      <#= GetString(Config.APP_ABOUT_TEXT) #>
+    </string>
+    <string name="ingesttitle">Tagging Videos for %s</string>
+    <string name="whatisbootlegger">
+      <#= GetString(Config.APP_NAME) #> coordinates people making videos
+    </string>
+    <string name="findashoot">Find a shoot, join the team and contribute your videos…</string>
+    <string name="andaction">And…Action!</string>
+    <string name="suggestsshots">
+      <#= GetString(Config.APP_NAME) #> suggests great shots and helps you get the best angles…
+    </string>
+    <string name="thatsawrap">That\'s a Wrap</string>
+    <string name="everyonesvideo">Everyone\'s video is collected and you can play and edit your creations.</string>
+
+    <!-- DIALOGS -->
+    <string name="alluploadsdone">Uploads complete</string>
+    <string name="uploadingclips">Uploading Videos</string>
+    <string name="entertitledialog">Enter Title</string>
+    <string name="uploadprogress">%1$s of %2$s complete</string>
+    <string name="logintitle">
+      Login to <#= GetString(Config.APP_NAME) #>
+    </string>
+    <string name="feedback">Send Feedback</string>
+    <string name="single_shoot_msg">
+      Start filming for <#= GetString(Config.APP_NAME) #> right away?
+    </string>
+    <string name="removewarn">
+      This will remove the video from <#= GetString(Config.APP_NAME) #>, preventing both you and the community viewing it.
+    </string>
+    <string name="chooseatrack">Choose a Track</string>
+    <string name="unfinishededits">Draft Stories</string>
+    <string name="inprogressedits">Publishing Stories</string>
+    <string name="completededits">Published Stories</string>
+    <string name="loading">Loading…</string>
+    <string name="notnow">Not right now</string>
+    <string name="continueanyway">Continue Anyway</string>
+    <string name="continuetitle">Continue?</string>
+    <string name="sendeverything">You are sending us your videos. They will be deleted from your device to save space.</string>
+    <string name="illreview">I\'ll Review First</string>
+    <string name="goahead">Go Ahead</string>
+    <string name="acceptperms">Please accept the permissions</string>
+    <string name="permschanged">Permissions Changed</string>
+    <string name="notacceptperms">You have chosen not to accept the permission changed so you will have to stop contributing.</string>
+    <string name="iunderstand">I Understand</string>
+    <string name="EventPosition">
+      Select a <#= GetString(Config.CAMERA_NAME) #> for your next video.
+    </string>
+    <string name="Finished">I am finished at this shoot</string>
+    <string name="Choose">Pick a template to use</string>
+    <string name="datausagetitle">Data Usage Warning</string>
+    <string name="locationwarn">Location is helpful to work out where you were filming.</string>
+    <string name="finishshooting">Finish shooting</string>
+    <string name="stopreturn">Really stop recording?</string>
+    <string name="stopshooting">Stop Shooting</string>
+    <string name="areyousure">Are you Sure?</string>
+    <string name="deleteedit">Delete this story?</string>
+    <string name="settingsbtn">Settings</string>
+    <string name="removeedit">Remove Story</string>
+    <string name="finishedbtn">I\'m Finished</string>
+    <string name="loggingout">Logging Out…</string>
+    <string name="logintocontrib">Login to contribute</string>
+    <string name="continuebtn">Continue</string>
+    <string name="help">Help</string>
+    <string name="skip">SKIP</string>
+    <string name="next">NEXT</string>
+    <string name="mytags">Tagged Videos</string>
+    <string name="uploadbtn">Upload My Videos</string>
+    <string name="logoutbtn">Logout</string>
+    <string name="uploadnow">Upload Now</string>
+    <string name="hideident">Hide My Identity</string>
+    <string name="statename">PLEASE STATE YOUR NAME TO THE CAMERA WHEN RECORDING STARTS</string>
+    <string name="shownotice">SHOW THIS TO THE PERSON YOU ARE FILMING</string>
+    <string name="noedits">No stories yet…</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+    <string name="cancelbtn">Discard Changes</string>
+    <string name="savebtn">Save &amp; Change Later</string>
+    <string name="processbtn">Publish &amp; Share Story</string>
+    <string name="savebtnshort">Save</string>
+
+    <string name="videos">VIDEOS</string>
+    <string name="edits">EDITS</string>
+    <string name="saveedit">Save or Publish</string>
+    <string name="findevent">Find a Shoot</string>
+    <string name="aboutbtn">About</string>
+    <string name="sharevia">Share via</string>
+    <string name="uploads">Uploads</string>
+    <string name="uploadswaiting">Waiting to Upload</string>
+    <string name="datacharge">You are not on WiFi, uploading or playback could cause significant data charges.</string>
+    <string name="datachargewithwarning">You are not on WiFi, uploading or playback could cause significant data charges. Videos will be deleted from your device.</string>
+    <string name="deleteclipwarning">Videos will uploaded then deleted from your device to save space.</string>
+    <string name="shootcodetitle">Let People Know</string>
+    <string name="shootcodemessage">Tell people to enter %s to contribute to this shoot.</string>
+    <string name="opensource">Open Source</string>
+
+    <!-- ERRORS -->
+    <string name="mustupdate">
+      Sorry, you must update <#= GetString(Config.APP_NAME) #> to continue as we have added new features
+    </string>
+    <string name="notconnected">You are not connected to any network</string>
+    <string name="updatedsecurity">
+      Sorry, you must update <#= GetString(Config.APP_NAME) #> to continue as we have updated our security protocols
+    </string>
+    <string name="failedconnection">Sorry, we could not log you in</string>
+    <string name="loginagain">Please try logging in again</string>
+    <string name="invalidcode">That code is invalid</string>
+    <string name="longershoottitle">Enter a longer shoot name</string>
+    <string name="problemcreateshoot">Cannot start new shoot</string>
+    <!--<string name="cantlistedits">Cannot list edits, you may be offline</string>-->
+    <string name="cantgiverole">
+      We can\'t seem to give you a <#= GetString(Config.CAMERA_NAME) #> at this shoot right now, try selecting the shoot again
+    </string>
+    <string name="googleplayerror">Google Play Services is not installed or needs updating</string>
+    <string name="tryagain">%1$s. Please try again.</string>
+    <string name="role_repeat">We think you are signed in elsewhere, continue?</string>
+    <string name="loggedinelsewhere">You have logged in elsewhere, so we are disconnecting you on this device.</string>
+    <!--<string name="cannotload">Cannot list shoots</string>-->
+    <string name="tryupdate">
+      Try updating the app, for security reasons, <#= GetString(Config.APP_NAME) #> needs to update.
+    </string>
+    <string name="tryupdatefeatures">Try updating the app, new features have been added which prevent this version from working.</string>
+    <string name="Closed">Production is not possible on this event at the moment.</string>
+    <string name="noperms">You have not granted permissions for the app to work, so it will now close.</string>
+    <string name="norolechosen">
+      You did not choose a <#= GetString(Config.CAMERA_NAME) #> before going offline, go online to continue
+    </string>
+    <string name="cannotloadvideo">Cannot load video, it may be processing so try again soon</string>
+    <string name="entertitle">enter a longer title</string>
+    <string name="enterdescription">enter a longer description</string>
+    <string name="nostorage">Cannot access storage</string>
+    <string name="nostorageavail">No storage available, please disconnect device from computer.</string>
+    <string name="conncancel">Connection cancelled…</string>
+    <string name="nospace">You have insufficient space to continue recording. Please upload some of your videos before recording more.</string>
+
+    <!-- PERMISSIONS -->
+    <string name="publicview">Anyone from the public can contribute</string>
+    <string name="notpublicview">Only invited participants can contribute</string>
+    <string name="sharename">Share your real name?</string>
+    <string name="publicshare">Any contributor can view any video produced during this shoot</string>
+    <string name="nopublicshare">Contributors can only view their own video</string>
+    <string name="editerror">Cannot save your story, please try again</string>
+    <string name="nolocalserverfound">No local server connection located…</string>
+    <string name="problemconnecting">There was a problem, please try again</string>
+    <string name="permissions_title">Permissions</string>
+    <string name="permissions_message">For you to contribute, we need some simple permissions</string>
+    <string name="yes_share">SHARE MY NAME</string>
+    <string name="no_share">HIDE MY NAME</string>
+    <string name="policies">You are acknowleging that:</string>
+    <string name="ispublic">Anyone from the public can contribute</string>
+    <string name="canshare">Any contributor can view video from anyone at this shoot</string>
+    <string name="wanttoshare">Given this information, do you want to share your real name?</string>
+
+    <!-- NOTIFICATIONS -->
+    <string name="crewreminder_title">Filming Reminder</string>
+    <string name="crewreminder_content">You have not recorded for a while, why dont you try something now</string>
+    <string name="uploadcomplete">Uploading Complete</string>
+    <string name="phasechange_title">Shoot Updated</string>
+    <string name="phasechange">The shoot is now about %s, you may have been assigned new things to film</string>
+    <string name="shootupdatedlong">The shoot has been updated, there may be new options</string>
+    <string name="phasechangerole">
+      The shoot is now about %s so you should change your <#= GetString(Config.CAMERA_NAME) #>
+    </string>
+
+    <!-- INTERFACE ELEMENTS -->
+
+    <string name="lookingfornew">Looking for new community videos...</string>
+    <string name="syncnow">Sync Now</string>
+    <string name="updatingvideos">Updating videos...</string>
+    <string name="newvideos">%d new community videos available</string>
+    <string name="failedtoupload">Failed to Upload</string>
+    <string name="uploadfailmsg">We cant seem to upload your videos right now. Try again?</string>
+    <string name="uploadfailshort">Could not upload videos</string>
+
+    <string name="finishedvideos">My Published Stories</string>
+    <string name="me">Me</string>
+    <string name="Settings">Settings</string>
+    <string name="PUBLIC">PUBLIC</string>
+    <string name="OWNER">OWNER</string>
+    <string name="INVITED">INVITED</string>
+    <string name="entersharecode">Enter your code</string>
+    <string name="clipswaiting">Videos waiting to upload…</string>
+    <string name="dontmissout">Touch to upload your videos</string>
+    <string name="guest">Guest</string>
+    <string name="loginbtn">Login</string>
+    <string name="helpoverlay">Show Hints</string>
+    <string name="waitingtoupload">%d waiting to upload</string>
+    <string name="pause">PAUSE</string>
+    <string name="upload">UPLOAD</string>
+    <string name="editready">Your story will be ready to view shortly…</string>
+    <string name="allclear">Uploading complete!</string>
+    <string name="sendingall">You are sending us everything you have recorded.</string>
+    <string name="noshoots">
+      <#= GetString(Config.NO_SHOOTS) #>
+    </string>
+    <string name="imagedownload">Downloading images. This could take about 30 seconds…</string>
+    <plurals name="shootcount">
+      <item quantity="one">%d shoot</item>
+      <item quantity="other">%d shoots</item>
+    </plurals>
+    <string name="nofootage">There are no videos here…</string>
+    <string name="agree">I Agree</string>
+    <string name="newedit">New Story</string>
+    <string name="allvideos">All Videos</string>
+    <string name="connecting">Connecting…</string>
+    <string name="ofcount">%1$s of %2$s</string>
+
+    <!-- HELP -->
+    <string name="getmorehelp">Get More Help</string>
+    <string name="zoom">zoom</string>
+    <string name="touchfocus">touch to focus</string>
+    <string name="abouttitle">About</string>
+    <string name="single_shoot_title">Get Started</string>
+    <string name="normalcamera">This works just like your normal camera application.</string>
+    <string name="usefulhints">useful hints and messages appear above</string>
+    <string name="swipe">swipe from the left for more options</string>
+    <string name="shottiming">video timing info</string>
+    <string  name="edit_page1_title">Preview and Select Videos</string>
+    <string  name="edit_page1_description">Touch any video to preview, add more or switch existing</string>
+    <string  name="edit_page2_title">Choose The Best Bits</string>
+    <string  name="edit_page2_description">Trim the start and end of each video</string>
+    <string  name="edit_page3_title">Order and Arrange</string>
+    <string  name="edit_page3_description">Delete videos, or press and hold to drag around</string>
+
+    <string  name="ingest_page1_title">Choose Videos</string>
+    <string  name="ingest_page1_description">Preview and label the videos you want to use in your story</string>
+    
+    <string name="newshoothint">Shoot Name</string>
+    <string name="newshoottitle">Start New Shoot</string>
+    <string name="contributedfootage">There are %d contributions from other people to make a video with…</string>
+    <string name="roledescision">
+      <#= GetString(Config.CAMERA_NAME) #> Descision
+    </string>
+    <string  name="logouttitle">Really Logout?</string>
+    <string  name="logoutmsg">You will lose forever all videos not already uploaded</string>
+    <string name="search">Search</string>
+    <string name="cache">Download Cache</string>
+    <string name="them">them</string>
+    <string name="selectavideotoinsert">Select a video</string>
+    <string name="savecancelmsg">Save your story?</string>
+    <string name="topic">By Tag</string>
+    <string name="copyof">Copy of %s</string>
+    <string name="connectionissuetitle">Connection Issue</string>
+    <string name="connectionissuebody">We are having trouble retrieving your information. Login again to continue.</string>
+    
+    <string name="linecounter">%s / 8 lines</string>
+    <string name="titlelengthwarning">Title is too long!</string>
+    
+  </resources>

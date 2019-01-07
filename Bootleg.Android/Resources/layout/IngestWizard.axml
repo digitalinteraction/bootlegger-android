@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/theroot"
+    android:layout_height="wrap_content"
+    android:background="@color/blue">
+    <TextView
+        android:text="@string/ingest_page1_title"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_margin="10dp"
+        android:textSize="30sp" />
+    <ImageView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/ingest_page1" />
+    <TextView
+        android:text="@string/ingest_page1_description"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_margin="10dp" />
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:alpha="0.4" />
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@android:string/ok"
+            android:id="@+id/ok"
+            android:layout_alignParentRight="true"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:textColor="#ffffff"
+            android:background="@android:color/transparent" />
+    </RelativeLayout>
+</LinearLayout>

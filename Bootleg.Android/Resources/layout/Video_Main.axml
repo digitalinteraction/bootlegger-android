@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/VideoPreview"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/shottype"
+        android:paddingRight="2dp"
+        android:paddingEnd="2dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="top|right"
+        android:visibility="gone"
+        android:layout_marginRight="78dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginTop="30dp" />
+   <!-- <ImageView
+        android:src="@drawable/ic_menu_white_48dp"
+        android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-24dp"
+        android:id="@+id/opendrawer" />-->
+    <FrameLayout
+        android:id="@+id/overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="invisible">
+        <ImageView
+            android:id="@+id/overlayimg"
+            android:scaleType="fitCenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:gravity="bottom"
+            android:background="#55000000"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom">
+            <TextView
+                android:id="@+id/overlaytext"
+                android:layout_width="fill_parent"
+                android:gravity="center"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginLeft="60dp"
+                android:textSize="16dp"
+                android:layout_marginTop="5dp"
+                android:paddingTop="6dp"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+    </FrameLayout>
+    <include
+        layout="@layout/record_btn" />
+    <ImageView
+        android:layout_height="200dp"
+        android:id="@+id/rotatewarning"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:src="@drawable/rotate"
+        android:visibility="invisible"
+        android:scaleType="centerInside" />
+    <!--<LinearLayout
+        android:id="@+id/countdown"
+        android:visibility="invisible"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:text="@string/youarelivein"
+            android:layout_gravity="center"
+            android:textColor="#ff0000" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:text="5"
+            android:id="@+id/livecount"
+            android:layout_gravity="center"
+            android:textColor="#ff0000" />
+    </LinearLayout>-->
+    <include
+        layout="@layout/zoom" />
+    <LinearLayout
+        android:layout_width="94dp"
+        android:id="@+id/allbuttons"
+        android:orientation="vertical"
+        android:layout_gravity="right|top"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:visibility="visible"
+        android:fitsSystemWindows="true">
+        <ImageButton
+            android:id="@+id/Help"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:src="@drawable/ic_info_outline_white_48dp"
+            android:scaleType="fitCenter"
+            android:padding="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+        <ToggleButton
+            android:id="@+id/flash"
+            android:background="@drawable/btn_toggle_background_flash"
+            style="@style/CustomToggleFlash"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <ImageButton
+            android:id="@+id/switchcam"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:src="@drawable/baseline_camera_front_24"
+            android:tint="#ffffff"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="5dp"
+            android:visibility="visible" />
+        <ImageButton
+            android:id="@+id/switchrole"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:src="@drawable/ic_map_white_48dp"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="5dp"
+            android:visibility="visible" />
+        <ToggleButton
+            android:id="@+id/showoverlay"
+            android:background="@drawable/btn_toggle_background"
+            android:layout_height="40dp"
+            style="@style/CustomToggle"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_width="45dp" />
+    </LinearLayout>
+    <!--<LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">-->
+       <!-- <ImageView
+            android:layout_gravity="bottom|center"
+            android:id="@+id/connection"
+            android:src="@drawable/conn"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:visibility="invisible" />-->
+      <!--  <ImageButton
+            android:id="@+id/startevent"
+            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_gravity="bottom"
+            android:scaleType="fitCenter"
+            android:src="@drawable/started"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_margin="5dp" />-->
+       <!-- <ImageButton
+            android:id="@+id/Hold"
+            android:layout_height="50dp"
+            android:layout_width="60dp"
+            android:layout_gravity="bottom"
+            android:scaleType="fitCenter"
+            android:src="@drawable/hold"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_margin="5dp" />-->
+       <!-- <ImageButton
+            android:id="@+id/Skip"
+            android:visibility="gone"
+            android:layout_height="50dp"
+            android:layout_width="50dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/hold"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"
+            android:padding="0dp" />-->
+<!--    </LinearLayout>-->
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <FrameLayout
+            android:id="@+id/roleselector"
+            android:background="#cc000000"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:id="@+id/shotselector"
+            android:layout_height="match_parent"
+            android:background="#cc000000"
+            android:visibility="invisible">
+            <RelativeLayout
+                android:id="@+id/allshots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/closeshots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|end|center_vertical"
+                    android:src="@drawable/ic_action_cancel"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:visibility="gone"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+                <TextView
+                    android:text="@string/Choose"
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/blue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:padding="2dp" />
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"
+                android:id="@+id/view1" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/shotselectorlist"
+                android:layout_weight="1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="2dp" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="top"
+        android:background="#FFBF00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/messageholder"
+        android:layout_gravity="top">
+        <TextSwitcher
+            android:id="@+id/message"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px" />
+    </LinearLayout>
+    <include
+        android:visibility="gone"
+        layout="@layout/help_overlay" />
+   <!-- <include
+        android:visibility="gone"
+        layout="@layout/Main_RolesDemo" />-->
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/Closed"
+        android:visibility="invisible"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#000000"
+        tools:visibility="gone">
+        <TextView
+            android:text="@string/Closed"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textColor="#ffffff"
+            android:layout_marginTop="100dp" />
+        <ImageButton
+            android:src="@drawable/ic_exit_to_app_white_48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:id="@+id/goback"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/initprogress"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#cc000000"
+        android:visibility="gone">
+        <TextView
+            android:text="@string/imagedownload"
+            android:textColor="#ffffff"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:textSize="16dp" />
+        <ProgressBar
+            style="@android:style/Widget.Holo.ProgressBar.Horizontal"
+            android:progress="0"
+            android:id="@+id/initprogressbar"
+            android:layout_width="fill_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:indeterminate="false" />
+    </FrameLayout>
+</FrameLayout>

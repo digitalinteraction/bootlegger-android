@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_margin="2dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:layoutDirection="locale"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.percent.PercentFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    card_view:layout_widthPercent="100%"
+                    card_view:layout_aspectRatio="178%"
+                    android:scaleType="centerCrop"
+                    android:background="#E0E0E0"
+                    android:id="@+id/image" />
+            </android.support.percent.PercentFrameLayout>
+            <ImageView
+                android:layout_gravity="left|start|bottom"
+                android:layout_height="24dp"
+                android:layout_width="24dp"
+                android:id="@+id/mediatype" />
+        </FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:padding="16dp">
+            <radialprogress.CleanRadialProgressView
+                android:id="@+id/uploadprogress"
+                min_value="0"
+                max_value="100"
+                progress_type="tiny"
+                hide_label="true"
+                android:layout_gravity="center_vertical|right|end"
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|end|center_vertical"
+                android:padding="3dp"
+                android:layout_margin="0dp"
+                android:id="@+id/deletebtn"
+                android:src="@drawable/ic_delete_black_24dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:alpha="0.6"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true" />
+            <TextView
+                android:id="@+id/filesize"
+                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="12sp"
+                android:text="0/45MB"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content"
+                android:lines="1" />
+            <TextView
+                android:id="@+id/uploadsubtitle"
+                android:layout_width="fill_parent"
+                android:textSize="14sp"
+                android:text="Tuesday, 3:49pm"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="30dp" />
+            <ImageView
+                android:layout_gravity="center_vertical|right|end"
+                android:layout_height="30dp"
+                android:layout_width="30dp"
+                android:id="@+id/pendingimg"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:tint="@color/blue"
+                android:src="@drawable/ic_check_black_24dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

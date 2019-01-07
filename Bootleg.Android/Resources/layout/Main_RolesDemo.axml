@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rolesdemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:alpha="0.7"
+        android:background="@android:color/black"
+        android:layout_gravity="bottom" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+    <viewpagerindicator.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_gravity="bottom"
+        android:padding="10dip"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/roledemomessage"
+        android:background="#FFBF00"
+        android:text="You are about to join a live film shoot. We will give you hints of things to shoot. Firstly, try out some of the shots you might be asked for."
+        android:gravity="center"
+        android:padding="3dp"
+        android:layout_gravity="top"
+        android:textColor="#000000"
+        android:textSize="16dp" />
+    <Button
+        android:id="@+id/rolesdemobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="right|bottom"
+        android:text="@string/readybtn"
+        android:minHeight="40dp"
+        style="@android:style/Widget.Material.Button" />
+</FrameLayout>

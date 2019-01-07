@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.percent.PercentFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            card_view:layout_widthPercent="100%"
+            card_view:layout_aspectRatio="178%"
+            android:id="@+id/im"
+            android:scaleType="centerCrop" />
+    </android.support.percent.PercentFrameLayout>
+<!--<ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/im"
+        android:paddingRight="2dp"
+        android:scaleType="centerCrop" />-->
+    <TextView
+        android:text="shot title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt"
+        android:textSize="14sp"
+        android:layout_centerInParent="true"
+        android:background="#77000000"
+        android:padding="1dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:textColor="#dddddd" />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/shottype"
+        android:paddingRight="2dp"
+        android:paddingEnd="2dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="bottom|right|end"
+        android:layout_marginBottom="20dp" />
+    <radialprogress.CleanRadialProgressView
+        android:id="@+id/progress"
+        min_value="0"
+        max_value="100"
+        progress_type="small"
+        hide_label="true"
+        android:layout_gravity="right|end|top"
+        android:layout_height="20dp"
+        android:layout_width="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp" />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/completed"
+        android:paddingRight="2dp"
+        android:paddingEnd="2dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="top|right|end"
+        android:src="@drawable/appbar_check"
+        android:visibility="gone" />
+    <LinearLayout
+        android:layout_width="5dp"
+        android:layout_gravity="right"
+        android:visibility="visible"
+        android:weightSum="100"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+</FrameLayout>

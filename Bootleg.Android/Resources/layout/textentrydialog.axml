@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+    <!--<EditText
+        android:layout_width="match_parent"
+        android:id="@+id/text"
+        android:textColor="#030303"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:maxLines="8"
+        android:focusedByDefault="true" />-->
+    
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textlayout"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+
+     <android.support.design.widget.TextInputEditText
+             android:layout_width="match_parent"
+             android:id="@+id/text"
+             android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:textColor="#030303"
+        android:maxLines="4"
+        android:focusedByDefault="true"
+             />
+
+ </android.support.design.widget.TextInputLayout>
+    
+    <TextView 
+        android:id="@+id/counter"
+        android:text="0 / 8 lines"
+        android:layout_width="match_parent"
+        android:textAlignment="viewEnd"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+    <ImageButton
+        android:layout_width="match_parent"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:id="@+id/loginbtn"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/Red_signin_Long_base_44dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerInside"
+        android:padding="0dp"
+        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true" />
+    <ImageButton
+        android:layout_width="match_parent"
+        android:id="@+id/loginbtn2"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/facebook_oauth"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerInside"
+        android:padding="0dp"
+        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/loginbtn3"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:scaleType="centerInside"
+        android:padding="0dp"
+        android:layout_height="wrap_content"
+        android:text="Account Login" />
+</LinearLayout>

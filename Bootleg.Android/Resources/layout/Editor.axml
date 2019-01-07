@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:id="@+id/sliding_layout"
+    android:background="#E0E0E0"
+    android:theme="@style/Theme.Base"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:background="#474747"
+        android:layout_width="match_parent">
+        <FrameLayout
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+            <Bootleg.Droid.EditVideoView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="#EEEEEE"
+                android:id="@+id/edit_preview" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:id="@+id/edittimeline"
+                android:layout_gravity="bottom"
+                android:layout_height="30dp">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/timeline"
+                    android:scrollbars="none"
+                    android:layout_gravity="center"
+                    android:background="#77000000"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layoutDirection="ltr"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+                <TextView
+                    android:includeFontPadding="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textColor="#000000"
+                    android:id="@+id/righttimetotal"
+                    android:textSize="10sp"
+                    android:gravity="center_vertical|right"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="3dp"
+                    android:alpha="0.6" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:includeFontPadding="false"
+                    android:textColor="#000000"
+                    android:id="@+id/lefttimetotal"
+                    android:textSize="10sp"
+                    android:gravity="center_vertical|left"
+                    android:layout_gravity="center_vertical|left"
+                    android:alpha="0.6"
+                    android:layout_marginStart="3dp" />
+                <View
+                    android:id="@+id/pos"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="9dp"
+                    android:background="@drawable/round"
+                    android:layout_height="9dp"
+                    android:layout_gravity="center_vertical"
+                    android:transformPivotX="4.5dp"
+                    android:transformPivotY="4.5dp" />
+            </FrameLayout>
+        </FrameLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/editlist"
+            android:paddingEnd="80dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="true"
+            android:overScrollMode="always"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent">
+        <ImageButton
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            android:id="@+id/helpbtn"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_info_outline_white_48dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+        <ImageButton
+            android:layout_height="48dp"
+            android:layout_width="48dp"
+            android:layout_margin="2dp"
+            android:padding="4dp"
+            android:id="@+id/audiobtn"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_add_song"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:tint="#ffffffff" />
+    </LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/savebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:borderWidth="0dp"
+        android:layout_gravity="bottom|right|end"
+        android:src="@drawable/ic_save_white_48dp" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:elevation="8dp"
+        android:layout_height="match_parent"
+        android:tag="bottompanel"
+        android:layout_gravity="bottom"
+        android:background="#EEEEEE"
+        android:id="@+id/selector"
+        android:visibility="gone" />
+</FrameLayout>

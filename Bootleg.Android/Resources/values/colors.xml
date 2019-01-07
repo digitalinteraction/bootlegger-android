@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+  <color name="orange">#fb8c00 </color>
+  <color name="dark_orange">#c25e00</color>
+  <color name="blue">#e53935</color>
+  <color name="dark_blue">#ab000d</color>
+  
+<string-array name="topic_colors">
+    <item>#EF5350</item>
+    <item>#AB47BC</item>
+    <item>#26A69A</item>
+    <item>#FFCA28</item>
+    <item>#D4E157</item>
+    <item>#66BB6A</item>
+    <item>#7E57C2</item>
+    <item>#EC407A</item>
+</string-array>
+</resources>

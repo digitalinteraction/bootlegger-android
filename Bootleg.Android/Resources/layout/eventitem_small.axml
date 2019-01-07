@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:layout_marginTop="36dp"
+    card_view:cardElevation="4dp"
+    card_view:cardCornerRadius="3dp"
+    card_view:cardPreventCornerOverlap="true"
+    card_view:cardUseCompatPadding="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <android.support.percent.PercentFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                card_view:layout_widthPercent="100%"
+                card_view:layout_aspectRatio="178%"
+                android:id="@+id/event_background"
+                android:cropToPadding="true"
+                android:background="#E0E0E0"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+            <FrameLayout
+                android:layout_gravity="bottom"
+                android:background="@drawable/bottom_shade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingEnd="4dp"
+                android:paddingStart="4dp"
+                android:paddingBottom="4dp">
+                <ImageView
+                    android:id="@+id/myclipsimg"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="bottom|left|start"
+                    android:src="@drawable/ic_video_library_white_24dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:id="@+id/clipcount"
+                    android:text="0"
+                    android:textColor="#ffffff"
+                    android:layout_marginStart="28dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:id="@+id/uploadcount"
+                    android:gravity="end"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd ="28dp"
+                    android:textColor="@color/dark_orange" />
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center|right|end"
+                    android:id="@+id/uploadimg"
+                    android:tint="@color/orange"
+                    android:src="@drawable/ic_file_upload_white_24dp" />
+            </FrameLayout>
+        </android.support.percent.PercentFrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/firstLine"
+            android:text="Title"
+            android:textSize="24sp"
+            android:textStyle="normal"
+            android:ellipsize="marquee"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="72dp">
+            <ImageView
+                android:id="@+id/organisericon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="6dp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/organiser"
+                android:textSize="14sp"
+                android:text="Tom Bartindale"
+                android:gravity="center_vertical"
+                android:paddingStart="6dp"
+                android:layout_weight="1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:id="@+id/joincode"
+                android:alpha="0.6"
+                android:drawableStart="@drawable/ic_vpn_key_black_36dp"
+                android:text="3456"
+                android:textColor="#000000"
+                android:drawablePadding="4dp"
+                android:paddingLeft="6dp"
+                android:textSize="28sp"
+                android:visibility="gone" />
+            <ImageButton
+                android:id="@+id/sharebtn"
+                android:layout_width="40dp"
+                android:alpha="0.6"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_share_black_24dp"
+                android:scaleType="center" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

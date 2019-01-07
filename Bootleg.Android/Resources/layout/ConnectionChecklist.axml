@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    
+    android:background="@color/blue"
+    android:orientation="vertical"
+    android:paddingTop="32dp"
+    android:paddingStart="28dp"
+    android:paddingEnd="28dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r:30,l|S:#83ee00ff:16,0,l:16,56,l:16,0,r">
+    <TextView
+        android:layout_width="match_parent"
+        android:textSize="30sp"
+        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:text="@string/chkTitle" />
+    <LinearLayout
+        android:layout_margin="30dp"
+        android:visibility="gone"
+        android:id="@+id/offlineChecks"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chkNetwork"
+            android:id="@+id/chkNetwork"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/chkIP"
+            android:text="@string/chkIP"
+            android:checkMark="@drawable/appbar_check"
+            android:checked="false"
+            android:gravity="center"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/chkApplication"
+            android:text="@string/chkApplication"
+            android:checkMark="@drawable/appbar_check"
+            android:checked="false"
+            android:gravity="center"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/chkConnection"
+            android:text="@string/chkConnection"
+            android:checkMark="@drawable/appbar_check"
+            android:checked="false"
+            android:gravity="center"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/onlineChecks"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ochkNetwork"
+            android:text="@string/ochkNetwork"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/baseline_check_white_24"
+            android:allowUndo="false" 
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/baseline_check_white_24" 
+            android:id="@+id/ochkIP"
+            android:text="@string/ochkIP"
+            android:gravity="center_vertical"
+             android:drawableTint="@android:color/transparent"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/baseline_check_white_24"
+            android:id="@+id/ochkApplication"
+            android:text="@string/chkApplication"
+            android:gravity="center_vertical"
+             android:drawableTint="@android:color/transparent"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/baseline_check_white_24"
+            android:id="@+id/ochkConnection"
+            android:text="@string/chkConnection"
+            android:gravity="center_vertical"
+            android:drawableTint="@android:color/transparent"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="28dp"
+        
+        
+        android:layout_width="match_parent"
+        android:textSize="20sp"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:text="@string/chkFooter" />
+    
+</LinearLayout>
+    </RelativeLayout>

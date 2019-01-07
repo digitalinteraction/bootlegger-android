@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:foreground="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:layout_margin="2dp"
+    android:layoutDirection="locale"
+    android:background="#ffffff"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/colorbar"
+            android:layout_height="3dp"
+            android:background="#446677"
+            android:layout_width="match_parent" />
+    <!--<FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">-->
+        <android.support.percent.PercentFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                card_view:layout_widthPercent="100%"
+                card_view:layout_aspectRatio="178%"
+                android:background="#E0E0E0"
+                android:id="@+id/image" />
+            <ImageView
+                android:src="@drawable/baseline_check_white_48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="2dp"
+                android:id="@+id/usedtick"
+                android:visibility="gone" />
+        </android.support.percent.PercentFrameLayout>
+    <!--</FrameLayout>-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:padding="16dp">
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right|end"
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:id="@+id/starbtn"
+                android:alpha="0.6"
+                android:src="@drawable/ic_action_star"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="right|end|center"
+                android:padding="0dp"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:id="@+id/choosebtn"
+                android:src="@drawable/baseline_add_24"
+                android:scaleType="fitCenter" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:textSize="12sp"
+                android:text="0/45MB"
+                android:layout_gravity="bottom|left|start"
+                android:layout_height="wrap_content"
+                android:lines="1" />
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:textSize="14sp"
+                android:text="Tuesday, 3:49pm"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|start"
+                android:layout_marginRight="30dp"
+                android:layout_marginEnd="40dp"
+                android:singleLine="true" />
+        </FrameLayout>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/cliplength"
+        android:layout_gravity="top|end"
+        android:layout_margin="2dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textColor="#ffffff"
+        android:textSize="12sp" />
+</FrameLayout>

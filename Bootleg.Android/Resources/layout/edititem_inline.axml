@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="200dp"
+    android:padding="0dp"
+    android:clipChildren="false">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="-6dp"
+        android:clipChildren="false">
+        <LinearLayout
+            android:id="@+id/touchstart"
+            android:layout_gravity="start|left"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_height="24dp"
+                android:layout_width="24dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_music_accepted_2"
+                android:autoMirrored="true"
+                android:alpha="0.4" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/outpoint"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:layout_gravity="right|end|center_vertical"
+            android:textSize="12sp" />
+    </FrameLayout>
+    <android.support.v7.widget.CardView
+        card_view:cardElevation="4dp"
+        android:id="@+id/cardview"
+        card_view:cardCornerRadius="3dp"
+        card_view:cardPreventCornerOverlap="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_width="220dp"
+        card_view:cardUseCompatPadding="true"
+        android:layoutDirection="locale"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#99000000"
+            android:layout_gravity="center_vertical|left|start">
+            <android.support.percent.PercentFrameLayout
+                android:elevation="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    card_view:layout_widthPercent="100%"
+                    card_view:layout_aspectRatio="178%"
+                    android:id="@+id/image"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside" />
+                <TextView
+                    card_view:layout_widthPercent="100%"
+                    card_view:layout_aspectRatio="178%"
+                    card_view:autoSizeTextType="uniform"
+                    android:text="Title 1"
+                    card_view:autoSizeMaxTextSize="24sp"
+                    android:maxLines="8"
+                    android:id="@+id/title"
+                    android:textColor="#eeeeee"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:background="#000000" />
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="32dp"
+                    android:layout_gravity="right|top"
+                    android:padding="0dp"
+                    android:layout_margin="0dp"
+                    android:id="@+id/deletebtn"
+                    android:src="@drawable/baseline_delete_white_24"
+                    android:scaleType="centerInside"
+                    android:clickable="true" />
+            </android.support.percent.PercentFrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/placeholderbuttons"
+                android:visibility="gone">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <android.support.percent.PercentFrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <View
+                            card_view:layout_widthPercent="100%"
+                            card_view:layout_aspectRatio="178%" />
+                    </android.support.percent.PercentFrameLayout>
+                    <View
+                        android:layout_height="48dp"
+                        android:layout_width="match_parent" />
+                </LinearLayout>
+                <ImageButton
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imageadd"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:scaleType="center"
+                    android:layout_gravity="left|start"
+                    android:src="@drawable/ic_video_library_white_24dp" />
+                <View
+                    android:layout_width="1px"
+                    android:background="#333333"
+                    android:layout_gravity="center"
+                    android:layout_height="match_parent" />
+                <ImageButton
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right|end"
+                    android:id="@+id/titleadd"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_text_fields_white_36dp" />
+            </FrameLayout>
+            <FrameLayout
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:layout_width="match_parent">
+                <ImageButton
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="left|center"
+                    android:padding="0dp"
+                    android:layout_margin="0dp"
+                    android:id="@+id/trimbtn"
+                    android:src="@drawable/ic_scissors_1"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="centerInside"
+                    android:clickable="true"
+                    android:tint="#ff000000" />
+                <ImageButton
+                    android:layout_width="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_height="48dp"
+                    android:layout_gravity="right|center"
+                    android:padding="0dp"
+                    android:layout_margin="0dp"
+                    android:id="@+id/editbtn"
+                    android:src="@drawable/ic_video_library_black_24dp"
+                    android:scaleType="centerInside"
+                    android:clickable="true" />
+            </FrameLayout>
+        </LinearLayout>
+        <View
+            android:id="@+id/colorbar"
+            android:layout_height="4dp"
+            android:layout_gravity="top"
+            android:layout_width="match_parent"
+            android:background="#330044" />
+        <View
+            android:id="@+id/playindicator"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/playindicator" />
+    </android.support.v7.widget.CardView>
+</LinearLayout>

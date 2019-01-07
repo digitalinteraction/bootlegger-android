@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <android.support.percent.PercentFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            card_view:layout_widthPercent="100%"
+            card_view:layout_aspectRatio="178%"
+            android:id="@+id/im"
+            android:scaleType="centerCrop" />
+    </android.support.percent.PercentFrameLayout>
+    <LinearLayout
+        android:layout_gravity="right|end|bottom"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true">
+        <ImageView
+            android:src="@drawable/ic_action_star"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/star"
+            android:paddingRight="2dp"
+            android:paddingEnd="2dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="bottom|right|end" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/shottype"
+            android:paddingRight="2dp"
+            android:paddingEnd="2dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="bottom|right|end"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

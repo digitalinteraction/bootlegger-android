@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swiperefresh">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_marginBottom="36dp"
+        card_view:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/nearbyheader"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:padding="36dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/nownearby"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+                <Button
+                    android:text="@string/seeall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textAllCaps="false"
+                    android:drawableEnd="@drawable/abc_ic_arrow_drop_right_black_24dp"
+                    android:id="@+id/seenearbybtn"
+                    android:gravity="center_vertical|end"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:textColor="@color/blue"
+                    android:drawableTint="@color/blue"
+                    android:minHeight="0dp"
+                    android:layout_marginEnd="-8dp" />
+            </LinearLayout>
+            <include
+                layout="@layout/nearbybox" />
+            <LinearLayout
+                android:id="@+id/joincodeheader"
+                android:orientation="horizontal"
+                android:padding="36dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/joinashoot"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <FrameLayout
+                android:id="@+id/joincodebody"
+                android:layout_marginBottom="36dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/code"
+                    android:singleLine="true"
+                    android:maxLength="4"
+                    android:inputType="phone"
+                    android:textColor="@color/blue"
+                    android:layout_width="fill_parent"
+                    android:layout_height="56dp"
+                    android:hint="@string/entersharecode"
+                    android:background="@drawable/btn_outline"
+                    android:drawableStart="@drawable/ic_vpn_key_white_36dp"
+                    android:drawablePadding="4dp"
+                    android:drawableTint="@color/blue"
+                    android:layout_gravity="center"
+                    android:padding="14dp"
+                    android:layout_marginTop="0.0dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:textSize="24sp" />
+                <ProgressBar
+                    android:id="@+id/edit_progress"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    style="@style/Base.Widget.AppCompat.ProgressBar"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="42dp" />
+                <ImageView
+                    android:id="@+id/edit_status"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:tint="#333333"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="48dp"
+                    android:scaleType="fitCenter" />
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.v4.widget.SwipeRefreshLayout>

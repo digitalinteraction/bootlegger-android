@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:orientation="vertical"
+    android:background="#EEEEEE"
+    android:keepScreenOn="true"
+    android:layout_height="fill_parent">
+    <RelativeLayout
+        android:id="@+id/video"
+        android:layout_weight="10"
+        android:background="#111111"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp">
+        <FrameLayout
+            android:id="@+id/videoWrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.exoplayer2.ui.PlayerView
+                android:id="@+id/videoview"
+                local:controller_layout_id="@layout/exo_player_limited"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/title"
+                android:text="Title 1"
+                android:gravity="center"
+                android:background="#000000"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                local:layout_aspectRatio="56%"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:visibility="invisible"
+                android:padding="8dp"
+                android:layout_alignEnd="@id/video"
+                android:layout_alignStart="@id/video"
+                android:layout_width="match_parent" />
+        </FrameLayout>
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="?attr/selectableItemBackground"
+            android:src="@drawable/ic_fullscreen_white_36dp"
+            android:id="@+id/fullscreenbtn" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/infopanel"
+            android:layout_width="0dp"
+            android:padding="6dp"
+            android:visibility="gone"
+            android:layout_height="fill_parent"
+            android:layout_toEndOf="@id/videoview"
+            android:layout_alignParentTop="true">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/username"
+                android:textColor="#ffffff"
+                android:gravity="center_vertical"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/time"
+                android:textSize="12sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="2dp" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/role"
+                android:textSize="12sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="2dp" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/shot"
+                android:textSize="12sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="2dp" />
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#ffffff"
+                android:id="@+id/phase"
+                android:textSize="12sp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="2dp" />
+        </LinearLayout>
+<!--        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true">
+            <ImageButton
+                android:id="@+id/rewind"
+                
+                app:src="@drawable/baseline_fast_rewind_24"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+            />
+            <ImageButton
+                android:src="@drawable/baseline_pause_24"
+                android:id="@+id/pausebtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp" />
+            <ImageButton
+                android:id="@+id/fastforward"
+               
+                android:layout_width="48dp"
+                app:src="@drawable/baseline_fast_forward_24"
+                android:layout_height="48dp"
+            />-->
+            
+<!--        </LinearLayout>-->
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/progress"
+            android:indeterminate="true"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/trackcontrols"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/track"
+            android:layout_width="fill_parent"
+            android:background="#33000000"
+            android:layout_height="3dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:fontFamily="sans-serif"
+            android:layout_height="wrap_content"
+            android:text="00:00"
+            android:textColor="#000000"
+            android:id="@+id/righttime"
+            android:textSize="10sp"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical|right"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginEnd="3dp"
+            android:alpha="0.6" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:fontFamily="sans-serif"
+            android:text="00:00"
+            android:id="@+id/lefttime"
+            android:textSize="10sp"
+            android:gravity="center_vertical|left"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginStart="3dp"
+            android:alpha="0.6"
+            android:textColor="#000000" />
+    <!--<View
+            android:id="@+id/inoutrect"
+            android:layout_width="0dp"
+            android:background="#eeeeee"
+            android:layout_height="3dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_vertical" />-->
+        <xamarin.rangeslider.RangeSliderControl
+            android:id="@+id/seeker"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            local:absoluteMinValue="0"
+            local:defaultColor="@android:color/transparent"
+            local:valuesAboveThumbs="false"
+            local:absoluteMaxValue="100"
+            local:showRangeLabels="false"
+            local:barHeight="3dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="-1dp"
+            local:internalPadding="0dp"
+            android:layout_gravity="center_vertical"
+            android:padding="0dp" />
+        <View
+            android:id="@+id/trackposition"
+            android:layout_width="9dp"
+            android:background="@drawable/round"
+            android:layout_height="9dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_vertical"
+            android:transformPivotX="4.5dp"
+            android:transformPivotY="4.5dp"
+            android:layout_marginTop="0dp" />
+    </FrameLayout>
+</LinearLayout>

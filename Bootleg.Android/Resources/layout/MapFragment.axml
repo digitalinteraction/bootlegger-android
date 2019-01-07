@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapprogress"
+        android:indeterminate="true"
+        android:indeterminateOnly="true"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_centerInParent="true" />
+    <HorizontalScrollView
+        android:id="@+id/eventimg"
+        android:fillViewport="true" 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:scrollbars="horizontal">
+        <FrameLayout
+            android:id="@+id/linearLayout2"
+            android:foreground="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/image"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="1dp"
+                android:layout_width="1dp" />
+            
+            <FrameLayout
+                android:clickable="true"
+                android:id="@+id/selectionmask"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="1dp"
+                android:layout_height="1dp">
+              <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/help_bubble"
+                android:id="@+id/tick"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                android:src="@drawable/appbar_check" />
+              </FrameLayout>
+        </FrameLayout>
+    </HorizontalScrollView>
+<!--<TextView
+        android:text="@string/EventPosition"
+        android:layout_width="wrap_content"
+        android:padding="5dp"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:id="@+id/imgtext"
+        android:background="@drawable/rounded_corner_dark"
+        android:textColor="#dddddd"
+        android:layout_margin="6dp"
+        android:layout_centerHorizontal="true" />-->
+</RelativeLayout>

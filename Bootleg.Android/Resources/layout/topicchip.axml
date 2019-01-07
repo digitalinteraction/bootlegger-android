@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ToggleButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:disabledAlpha="5.6"
+    android:id="@+id/chip"
+    android:textOff="Introduction"
+    android:textOn="Introduction"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAllCaps="false"
+    android:textStyle="normal"
+    android:textSize="14sp"
+    android:minWidth="0dp"
+    android:layout_margin="2dp"
+    android:drawableTint="#ffffffff"
+    android:background="@drawable/chip_background"
+    android:maxHeight="22dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp" />
