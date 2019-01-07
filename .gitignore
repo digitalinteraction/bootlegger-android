@@ -188,3 +188,4 @@ google-services.json
 WhiteLabelConfig.cs
 *.apk
 Strings.xml
+BuildVariants

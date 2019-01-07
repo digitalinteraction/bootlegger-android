@@ -780,7 +780,6 @@
     <AndroidResource Include="Resources\layout\Login.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <None Include="BuildVariants\ReadMe.md" />
     <None Include="packages.config" />
     <AndroidResource Include="Resources\layout\Events.axml">
       <SubType>AndroidResource</SubType>
