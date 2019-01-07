@@ -269,9 +269,6 @@ namespace Bootleg.Droid
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f100001
-			public const int default_edit_topics = 2131755009;
-			
 			// aapt resource value: 0x7f100000
 			public const int topic_colors = 2131755008;
 			

@@ -8,11 +8,11 @@
 try
 {
 	Host.ResolvePath(Path.Combine("..","Resources","drawable"));
-	DirectoryCopy(Host.ResolvePath(Path.Combine(".","Versions",Config.FOLDER,"android")), Host.ResolvePath(Path.Combine("..","Resources")), true);
+	DirectoryCopy(Host.ResolvePath(Path.Combine("..","BuildVariants","Versions",Config.FOLDER,"android")), Host.ResolvePath(Path.Combine("..","Resources")), true);
 }
 catch
 {
-	DirectoryCopy(Host.ResolvePath(Path.Combine(".","Versions",Config.FOLDER,"ios")), Host.ResolvePath(Path.Combine("..","Resources")), true);
+	DirectoryCopy(Host.ResolvePath(Path.Combine("..","BuildVariants","Versions",Config.FOLDER,"ios")), Host.ResolvePath(Path.Combine("..","Resources")), true);
 }
 #>
 using System;

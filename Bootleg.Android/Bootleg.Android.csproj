@@ -753,7 +753,7 @@
     <AndroidResource Include="Resources\drawable\baseline_camera_front_24.xml" />
     <None Include="Resources\values-ar\Strings.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Strings.cs</LastGenOutput>
+      <LastGenOutput>Strings.xml</LastGenOutput>
     </None>
     <None Include="BuildVariants\Versions\OurStory.t4" />
     <Compile Include="Bootleg.API\Bootlegger.API\Model\Topic.cs" />
