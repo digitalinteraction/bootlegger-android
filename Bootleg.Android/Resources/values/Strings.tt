@@ -311,5 +311,6 @@
     
     <string name="linecounter">%s / 8 lines</string>
     <string name="titlelengthwarning">Title is too long!</string>
+    <string name="default_story_title">My Story</string>
     
   </resources>

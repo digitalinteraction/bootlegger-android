@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Android.Runtime;
 using Bootleg.API.Model;
+using System.ComponentModel;
 
 namespace Bootleg.Droid
 {
@@ -148,7 +149,19 @@ namespace Bootleg.Droid
 
                 }
             }
+
+            OriginalVersion = new Edit()
+            {
+                media = CurrentEdit.media.ToList(),
+                title = CurrentEdit.title,
+                user_id = CurrentEdit.user_id,
+                id = CurrentEdit.id
+            };
+
+            ShouldAutoSave = true;
         }
+
+        private Edit OriginalVersion;
 
         void Preview_OnUpdateClipDuration(int arg1, long arg2)
         {
@@ -279,7 +292,66 @@ namespace Bootleg.Droid
             touchHelper.AttachToRecyclerView(listView);
 
             EditorWizard.ShowWizard(this, false);
+
+            //autosave function:
+            autosaver = new BackgroundWorker();
+            autosaver.DoWork += Autosaver_DoWork;
+            autosaver.RunWorkerAsync();
         }
+
+        bool ShouldAutoSave = false;
+
+        async void Autosaver_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //save it:
+            //try TO SAVE:
+            while (true)
+            {
+
+                Thread.Sleep(TimeSpan.FromSeconds(3));
+                if (CurrentEdit != null && ShouldAutoSave)
+                {
+                    //set title of video if there is one:
+                    if (string.IsNullOrWhiteSpace(CurrentEdit.title))
+                    {
+                        if (CurrentEdit.media.First().MediaType == Shot.ShotTypes.TITLE)
+                            CurrentEdit.title = CurrentEdit.media.First().titletext;
+                        else
+                            CurrentEdit.title = GetString(Resource.String.default_story_title);
+                    }
+
+                    if (CurrentMusic != null)
+                    {
+                        foreach (var m in CurrentEdit.media)
+                        {
+                            m.audio = null;
+                            m.credits = null;
+                        }
+
+                        CurrentEdit.media.First().audio = CurrentMusic.path;
+                        CurrentEdit.media.First().credits = CurrentMusic.caption;
+                    }
+
+                    if (CurrentEdit.media.Where(n => n.MediaType != Shot.ShotTypes.TITLE && n.Status != MediaItem.MediaStatus.PLACEHOLDER).Count() > 0)
+                    {
+                        try
+                        {
+                            await Bootlegger.BootleggerClient.SaveEdit(CurrentEdit);
+                            if (CurrentEdit.media.Last().Status !=  MediaItem.MediaStatus.PLACEHOLDER)
+                                CurrentEdit.media.Add(new MediaItem() { Status = MediaItem.MediaStatus.PLACEHOLDER });
+                            Console.WriteLine($"Autosaved at {DateTime.Now.ToShortTimeString()}");
+                        }
+                        catch
+                        {
+                            Console.WriteLine($"Failed to autosave at {DateTime.Now.ToShortTimeString()}");
+                        }
+                    }
+                }
+            }
+
+        }
+
+        BackgroundWorker autosaver;
 
         private void Editor_Click2(object sender, EventArgs e)
         {
@@ -688,7 +760,14 @@ namespace Bootleg.Droid
         {
             var index = CurrentEdit.media.IndexOf(currentpick);
 
-            CurrentEdit.media.RemoveAt(index);
+            try
+            {
+                CurrentEdit.media.RemoveAt(index);
+            }
+            catch
+            {
+                index = CurrentEdit.media.Count() - 1;
+            }
             var newobj = obj.Copy();
 
             newobj.inpoint = TimeSpan.Zero;
@@ -783,8 +862,12 @@ namespace Bootleg.Droid
                 {
                     ExitSave();
                 })
-                .SetNegativeButton(Resource.String.cancelbtn, (e, o) =>
+                .SetNegativeButton(Resource.String.cancelbtn, async (e, o) =>
                  {
+                     //Reset back to old version:
+                     //CurrentEdit = OriginalVersion;
+                     ShouldAutoSave = false;
+                     await Bootlegger.BootleggerClient.SaveEdit(OriginalVersion);
                      Finish();
                  });
                 builder.Create().Show();
@@ -843,7 +926,13 @@ namespace Bootleg.Droid
                             if (!string.IsNullOrEmpty(currentpick.titletext))
                             {
                                 var index = CurrentEdit.media.IndexOf(currentpick);
-                                CurrentEdit.media.RemoveAt(index);
+                                try
+                                {
+                                    CurrentEdit.media.RemoveAt(index);
+                                }
+                                catch {
+                                    index = CurrentEdit.media.Count() - 1;
+                                }
 
                                 var newobj = obj.Copy();
                                 newobj.MediaType = Shot.ShotTypes.TITLE;
@@ -903,12 +992,14 @@ EditVideoView preview;
 
 public void ExitSave()
 {
+    ShouldAutoSave = false;
     preview.StopPlayback();
     _adapter.UpdatePlaying(null);
 
     if (CurrentEdit.media.Where(n => n.MediaType != Shot.ShotTypes.TITLE && n.Status != MediaItem.MediaStatus.PLACEHOLDER).Count() == 0)
     {
         Toast.MakeText(this, Resource.String.includevideo, ToastLength.Long).Show();
+        ShouldAutoSave = true;
         return;
     }
 
@@ -998,6 +1089,7 @@ public void ExitSave()
             }
             AndHUD.Shared.Dismiss();
             diag.Cancel();
+            ShouldAutoSave = true;
         }
     };
     dialoglayout.FindViewById<Button>(Resource.Id.sharebtn).Click += async (o, e) =>
@@ -1051,6 +1143,7 @@ public void ExitSave()
             }
             AndHUD.Shared.Dismiss();
             diag.Cancel();
+            ShouldAutoSave = true;
         }
     };
     diag.SetCancelable(true);
