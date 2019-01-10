@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
     <FrameLayout
         card_view:layout_widthPercent="100%"
-        card_view:layout_aspectRatio="300%"
+        card_view:layout_aspectRatio="320%"
         android:layout_width="match_parent"
         android:id="@+id/featuredlayout" />
 </android.support.percent.PercentFrameLayout>

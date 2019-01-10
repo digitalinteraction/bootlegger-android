@@ -56,8 +56,8 @@
     <item name="android:textColorPrimaryInverse">@color/blue</item>
     <item name="android:textColorPrimary">@android:color/white</item>
 
-    <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-    <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+<!--    <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>-->
+<!--    <item name="android:buttonStyle">@style/RobotoButtonStyle</item>-->
     <item name="colorButtonNormal">@color/blue</item>
     
     <!-- The rest of your attributes -->
@@ -71,6 +71,8 @@
 <style name="ExpandedAppBar" parent="@android:style/TextAppearance.Medium">
     <item name="android:textSize">20sp</item>
     <item name="android:textColor">@android:color/white</item>
+    <item name="fontFamily">@font/montserratregular</item>
+    <item name="android:fontFamily">@font/montserratregular</item>
 </style>
 
 
@@ -113,9 +115,6 @@
     
 <style name="TopicButton" parent="android:Widget.Button.Toggle">
     <item name="android:disabledAlpha">1.0</item>
-   <!-- <item name="android:colorControlNormal">#ffffff</item>
-        <item name="android:colorControlHighlight">#ffffff</item>
-    <item name="android:colorButtonNormal">#ffffff</item>-->
 </style>
   
 </resources>

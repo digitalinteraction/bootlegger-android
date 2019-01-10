@@ -242,6 +242,7 @@ namespace Bootleg.Droid
         public override void OnCreate ()
         {
             base.OnCreate();
+            //Firebase.FirebaseApp.InitializeApp(this);
             CrossCurrentActivity.Current.Init(this);
 
             if (!string.IsNullOrWhiteSpace(WhiteLabelConfig.BRANCHKEY))
@@ -315,7 +316,7 @@ namespace Bootleg.Droid
         }
 
         Notification uploadnotification;
-        const string CHANNEL_ID = "bootlegger_channel_1";
+        public const string CHANNEL_ID = "bootlegger_channel_1";
         NotificationCompat.Builder uploadbuilder;
         private void Comms_OnGlobalUploadProgress(double arg1, int arg2, int arg3)
         {

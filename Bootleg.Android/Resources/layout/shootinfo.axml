@@ -103,6 +103,7 @@
                         android:paddingBottom="8dp"
                         android:paddingEnd="16dp"
                         android:paddingStart="16dp"
+                        android:visibility="gone"
                         android:id="@+id/locationinfo">
                         <ImageView
                             android:layout_width="24dp"
@@ -150,25 +151,23 @@
                             android:orientation="vertical"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:gravity="center">
-                        <!--<ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_people_white_24dp" />-->
                             <TextView
                                 android:text="12"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:textSize="32dp"
-                                android:gravity="left|center_vertical"
+                                android:gravity="center"
+                                android:maxLines="1"
                                 android:id="@+id/contributors"
                                 android:textColor="@color/blue" />
                             <TextView
-                                android:text="Contributors"
+                                android:text="@string/contributors"
                                 android:textAllCaps="true"
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:textSize="12dp"
                                 android:gravity="center"
                                 android:textColor="#bbbbbb" />
@@ -179,23 +178,20 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:gravity="center">
-                        <!--<ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_video_library_white_24dp" />-->
                             <TextView
                                 android:text="456"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:textSize="32dp"
                                 android:textColor="@color/blue"
-                                android:gravity="left|center_vertical"
+                                android:gravity="center"
                                 android:id="@+id/contributions" />
                             <TextView
-                                android:text="Videos"
+                                android:text="@string/videos"
                                 android:textAllCaps="true"
                                 android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:textSize="12dp"
                                 android:gravity="center"
                                 android:textColor="#bbbbbb" />
@@ -212,19 +208,10 @@
                                 android:tint="@color/blue"
                                 android:src="@drawable/ic_lock_open_black_48dp"
                                 android:id="@+id/accessimg"
-                                android:layout_weight="1" />
-                        <!--<TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:id="@+id/eventtype"
-                    android:text="PUBLIC"
-                    android:textColor="@color/blue"
-                    android:capitalize="characters"
-                    android:textSize="14dp"
-                    android:layout_weight="1"
-                    android:gravity="center" />-->
+                                android:layout_weight="1"
+                                android:adjustViewBounds="false" />
                             <TextView
-                                android:text="Access"
+                                android:text="@string/access"
                                 android:textAllCaps="true"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -255,7 +242,7 @@
             android:id="@+id/startshooting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login to Contribute"
+            android:text="@string/logintocontribute"
             android:layout_gravity="end"
             android:background="?selectableItemBackground"
             android:textColor="@color/blue"

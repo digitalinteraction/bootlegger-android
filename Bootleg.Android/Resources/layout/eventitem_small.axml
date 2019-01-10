@@ -91,10 +91,13 @@
                 android:layout_marginTop="6dp" />
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="fill_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/organiser"
                 android:textSize="14sp"
+                android:ellipsize="marquee"
+                android:maxLines="2"
                 android:text="Tom Bartindale"
+                android:inputType="textMultiLine"
                 android:gravity="center_vertical"
                 android:paddingStart="6dp"
                 android:layout_weight="1" />

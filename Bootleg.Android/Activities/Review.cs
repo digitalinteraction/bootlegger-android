@@ -36,6 +36,7 @@ using System.Threading.Tasks;
 using Android.Content.Res;
 using Bootleg.API.Model;
 using Bootleg.API.Exceptions;
+using Android.Support.V4.Content.Res;
 
 namespace Bootleg.Droid
 {
@@ -119,9 +120,7 @@ namespace Bootleg.Droid
         private async void Review_Click(object sender, EventArgs ee)
         {
             cancel = new CancellationTokenSource();
-            AndHUD.Shared.Show(this, Resources.GetString(Resource.String.connecting), -1, MaskType.Black, null, null, true, () => {
-                cancel.Cancel();
-            });
+            AndHUD.Shared.Show(this, Resources.GetString(Resource.String.connecting), -1, MaskType.Black, null, null, true, cancel.Cancel);
 
             if ((Application as BootleggerApp).IsReallyConnected && !CrossConnectivity.Current.ConnectionTypes.Contains(Plugin.Connectivity.Abstractions.ConnectionType.WiFi))
             {
@@ -132,7 +131,7 @@ namespace Bootleg.Droid
                         try
                         {
                             await LoginFuncs.TryLogin(this, cancel.Token);
-                            await Bootlegger.BootleggerClient.Connect(Bootlegger.BootleggerClient.SessionCookie, new System.Threading.CancellationTokenSource().Token);
+                            await Bootlegger.BootleggerClient.Connect(Bootlegger.BootleggerClient.SessionCookie, new CancellationTokenSource().Token);
                             await Bootlegger.BootleggerClient.ConnectForReview(WhiteLabelConfig.REDUCE_BANDWIDTH, CurrentEvent, cancel.Token);
                             Intent i = new Intent(this, typeof(Editor));
                             i.PutExtra(Review.EDIT, "");
@@ -222,9 +221,7 @@ namespace Bootleg.Droid
         {
             var Event = Bootlegger.BootleggerClient.CurrentEvent;
             cancel = new CancellationTokenSource();
-            AndHUD.Shared.Show(this, Resources.GetString(Resource.String.connecting), -1, MaskType.Black, null, null, true, () => {
-                cancel.Cancel();
-            });
+            AndHUD.Shared.Show(this, Resources.GetString(Resource.String.connecting), -1, MaskType.Black, null, null, true, cancel.Cancel);
 
             try
             {
@@ -375,9 +372,9 @@ namespace Bootleg.Droid
             Bootlegger.BootleggerClient.CanUpload = false;
         }
 
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
             
             if (Bootlegger.BootleggerClient.CurrentEvent == null)
             {
@@ -413,6 +410,9 @@ namespace Bootleg.Droid
             FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetTitle(CurrentEvent.name);
 
             FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetExpandedTitleTextAppearance(Resource.Style.ExpandedAppBar);
+            Typeface font = ResourcesCompat.GetFont(this,Resource.Font.montserratregular);
+            FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).CollapsedTitleTypeface = font;
+            FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).ExpandedTitleTypeface = font;
 
             FindViewById<AppBarLayout>(Resource.Id.appbar).SetExpanded(false, false);
 
@@ -427,8 +427,8 @@ namespace Bootleg.Droid
                     int dark = palette.GetVibrantColor(0);
                     if (dark == 0)
                         dark = palette.GetLightMutedColor(0);
-                    FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(vibrant);
-                    FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
+                    //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(vibrant);
+                    //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
                 }), null);
             else
             {
@@ -466,7 +466,7 @@ namespace Bootleg.Droid
             _adapter = new ReviewPageAdapter(SupportFragmentManager, this);
             _pager.Adapter = _adapter;
 
-            if (bundle == null)
+            if (savedInstanceState == null)
             {
                 myclips = new MyClipsFragment(this);
                 myclips.OnPreview += Myclips_OnPreview;

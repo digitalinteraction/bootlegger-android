@@ -27,10 +27,7 @@ using System.Text.RegularExpressions;
 using Android.Content.PM;
 using RadialProgress;
 using System.Diagnostics;
-using Android.Support.V4.Widget;
-using Android.Provider;
 using Bootleg.Droid.UI;
-using Bootleg.Droid.Adapters;
 using static Bootleg.Droid.UI.PermissionsDialog;
 using Square.Picasso;
 using Bootleg.Droid.Fragments;
@@ -38,11 +35,8 @@ using Newtonsoft.Json;
 using Android.Support.V4.Content;
 using Android.Hardware.Camera2;
 using Bootleg.Droid.Util;
-using Android;
 using Plugin.Permissions;
 using Android.Support.V7.Widget;
-using Plugin.Connectivity;
-using Microsoft.AppCenter.Analytics;
 using Bootleg.API.Model;
 
 namespace Bootleg.Droid
@@ -129,7 +123,7 @@ namespace Bootleg.Droid
         }
 
 
-        void startrecording()
+        void StartRecording()
         {
             
             var testfile = new Java.IO.File(GetExternalPath());
@@ -293,7 +287,7 @@ namespace Bootleg.Droid
             //Plugin.Geolocator.CrossGeolocator.Current.StartListeningAsync(5000, 10);
         }
 
-        async Task stoprecording()
+        async Task StopRecording()
         {
             Bitmap bitmap = null;
             Shot.ShotTypes shotype;
@@ -368,12 +362,9 @@ namespace Bootleg.Droid
                 {
                     //return to role selection:
                     FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Gone;
-                    //OPEN CHANGE ROLE PANEL:
-                    //FindViewById<Android.Support.V4.Widget.DrawerLayout>(Resource.Id.drawer_layout).OpenDrawer((int)(GravityFlags.Start));
                     
                     FindViewById(Resource.Id.roleselector).Visibility = ViewStates.Visible;
                     //set role selection tab:
-                    //_pager.SetCurrentItem(0, false);
                 }
                 else
                 {
@@ -397,9 +388,6 @@ namespace Bootleg.Droid
                 }));
             }
 
-
-            //if (camera!=null)
-            //    camera.Lock();
 
             progress_view.Value = 0;
             FindViewById<TextView>(Resource.Id.timestamp).Text = "00:00";
@@ -504,7 +492,7 @@ namespace Bootleg.Droid
                 else
                 {
                     lastrecordtime = DateTime.Now;
-                    startrecording();
+                    StartRecording();
 
                     //DISABLE ROLE SELECTION
                     //_adapter.myrolefrag.View.Enabled = false;
@@ -516,7 +504,7 @@ namespace Bootleg.Droid
                 FindViewById<ToggleButton>(Resource.Id.Play).Enabled = false;
                 //stop recording
 
-                await stoprecording();
+                await StopRecording();
                 
                 FindViewById<ToggleButton>(Resource.Id.Play).Enabled = true;
             }
@@ -642,22 +630,13 @@ namespace Bootleg.Droid
         {
             base.OnStart();
 
-            //started = true;
-            //Bootlegger.BootleggerClient.OnCountdown += Comms_OnCountdown;
-            //Bootlegger.BootleggerClient.OnLive += Comms_OnLive;
             Bootlegger.BootleggerClient.OnRoleChanged += Comms_OnRoleChanged;
-            //Bootlegger.BootleggerClient.OnShotRequest += Comms_OnShotRequest;
-            //Bootlegger.BootleggerClient.OnEventStarted += Comms_OnEventStarted;
-            //Bootlegger.BootleggerClient.OnServerDied += Comms_OnServerDied;
-            //Bootlegger.BootleggerClient.OnGainedConnection += Comms_OnGainedConnection;
-            //Bootlegger.BootleggerClient.OnLostConnection += Comms_OnLostConnection;
             Bootlegger.BootleggerClient.OnMessage += Comms_OnMessage;
             Bootlegger.BootleggerClient.OnPhaseChange += Comms_OnPhaseChange;
             Bootlegger.BootleggerClient.OnEventUpdated += Comms_OnEventUpdated;
             Bootlegger.BootleggerClient.OnImagesUpdated += Comms_OnImagesUpdated;
             Bootlegger.BootleggerClient.OnPermissionsChanged += Comms_OnPermissionsChanged;
             Bootlegger.BootleggerClient.OnLoginElsewhere += Comms_OnLoginElsewhere;
-            //Bootlegger.BootleggerClient.OnCantReconnect += Comms_OnCantReconnect;
 
             //download image files for the event:
             if (!firstrun)
@@ -683,7 +662,7 @@ namespace Bootleg.Droid
                             builder.SetMessage(Resources.GetString(Resource.String.tryagain, e.Message));
                             builder.SetNeutralButton(Android.Resource.String.Ok, new EventHandler<DialogClickEventArgs>((o, q) =>
                             {
-                            //(Application as BootleggerApp).TOTALFAIL = true;
+                                //(Application as BootleggerApp).TOTALFAIL = true;
                                 Finish();
                                 return;
                             }));
@@ -694,8 +673,8 @@ namespace Bootleg.Droid
                             }
                             catch
                             {
-                            //cannot do anything about this...
-                        }
+                                //cannot do anything about this...
+                            }
 
                         }));
                     }
@@ -707,15 +686,6 @@ namespace Bootleg.Droid
             }
 
             _pager = null;
-            //_pager = FindViewById<ViewPager>(Resource.Id.tabpager);
-            //_adapter = null;
-            //_adapter = new VideoPagerAdapter(this, SupportFragmentManager);
-            //_pager.Adapter = _adapter;
-            //_adapter.OnRoleChanged += _adapter_OnRoleChanged;
-
-            
-
-
 
             try
             {
@@ -735,7 +705,7 @@ namespace Bootleg.Droid
                     //add role fragment to shot panel:
                     if (!WhiteLabelConfig.SHOW_ALL_SHOTS)
                     {
-                     
+
                         FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Gone;
                     }
                     else
@@ -771,48 +741,19 @@ namespace Bootleg.Droid
 
             if (!ViewConfiguration.Get(this).HasPermanentMenuKey && !KeyCharacterMap.DeviceHasKey(Keycode.Back))
             {
-                //44dp
-                var parm1 = FindViewById(Resource.Id.allbuttons).LayoutParameters as FrameLayout.LayoutParams;
-                parm1.MarginEnd = Utils.dp2px(this, 44);
-                FindViewById(Resource.Id.allbuttons).LayoutParameters = parm1;
+                var padding_right = 0;
+                var navbardim = Resources.GetIdentifier("navigation_bar_height", "dimen", "android");
+                if (navbardim > 0)
+                {
+                    padding_right = Resources.GetDimensionPixelSize(navbardim);
+                    //var param = FindViewById(Resource.Id.allbuttons).LayoutParameters.DeepCopy();
 
-                var parm2 = FindViewById(Resource.Id.recordbtnwrapper).LayoutParameters as FrameLayout.LayoutParams;
-                parm2.MarginEnd = Utils.dp2px(this, 48);
-                FindViewById(Resource.Id.recordbtnwrapper).LayoutParameters = parm2;
+                    (FindViewById<LinearLayout>(Resource.Id.allbuttons).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
+                    (FindViewById<FrameLayout>(Resource.Id.recordbtnwrapper).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
+                }
 
                 FindViewById<TextView>(Resource.Id.overlaytext).SetPadding(0, Utils.dp2px(this, 6), Utils.dp2px(this, 80), 0);
-                //FindViewById(Resource.Id.recordbtnwrapper).LayoutParameters = new FrameLayout.LayoutParams(FindViewById(Resource.Id.allbuttons).LayoutParameters as FrameLayout.LayoutParams) {MarginEnd = Utils.dp2px(this, 48)};
-
-                //android: layout_marginEnd = "44dp"
             }
-
-            //LIVE MODE
-            //if (LIVEMODE)
-            //{
-            //    FindViewById<Button>(Resource.Id.rolesdemobutton).Click += (o, e) =>
-            //    {
-            //        Bootlegger.BootleggerClient.ReadyToShoot();
-
-            //        FindViewById<FrameLayout>(Resource.Id.rolesdemo).Visibility = ViewStates.Gone;
-            //        if (Bootlegger.BootleggerClient.CurrentEvent.HasStarted)
-            //        {
-            //            FindViewById<ImageButton>(Resource.Id.startevent).Visibility = ViewStates.Gone;
-            //        }
-            //        else
-            //        {
-            //            FindViewById<ImageButton>(Resource.Id.startevent).Click += Start_Click;
-            //            FindViewById<ImageButton>(Resource.Id.startevent).Post(new Action(() =>
-            //            {
-            //                ShowTooltip(Resources.GetString(Resource.String.eventstarted), FindViewById<ImageButton>(Resource.Id.startevent));
-            //            }));
-            //        }
-            //    };
-            //}
-
-            //if (LIVEMODE)
-            //{
-            //    FindViewById<FrameLayout>(Resource.Id.rolesdemo).Visibility = ViewStates.Visible;
-            //}
 
             Bootlegger.BootleggerClient.OnModeChange += Comms_OnModeChange;
 
@@ -830,7 +771,7 @@ namespace Bootleg.Droid
             }
 
             //if its in role select mode and coming from the roles selection screen, show the shots rather than the roles:
-            
+
             if (from_roles ?? false && !WhiteLabelConfig.SHOW_ALL_SHOTS)
             {
                 FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Visible;
@@ -839,52 +780,12 @@ namespace Bootleg.Droid
 
         }
 
-        //LIVE MODE
-        //private void Comms_OnCantReconnect()
-        //{
-        //    RunOnUiThread(new Action(() =>
-        //    {
-        //        if (recording)
-        //            record();
-        //        Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-        //        builder.SetMessage(Resource.String.gonetoolong);
-        //        builder.SetNeutralButton("OK", new EventHandler<DialogClickEventArgs>((o, q) =>
-        //        {
-        //            Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH,true);
-                    
-        //            Finish();
-        //            //Intent i = new Intent(this.ApplicationContext, typeof(Login));
-        //            //StartActivity(i);
-        //        }));
-        //        builder.SetCancelable(false);
-        //        try
-        //        {
-        //            builder.Show();
-        //        }
-        //        catch
-        //        {
-        //            //cannot do anything about this...
-        //        }
-        //    }));
-        //}
-
         private void _adapter_OnRoleChanged()
         {
             //can only do this if not recording:
             if (!recording)
             {
-                //tabHost.CloseDrawers();
-                //FindViewById<TextView>(Resource.Id.currentrole).Text = Bootlegger.BootleggerClient.CurrentClientRole.name;
-
-                //shotselector = new ShotSelectAdapter(this, Bootlegger.BootleggerClient.CurrentClientRole.Shots);
-                //FindViewById<GridView>(Resource.Id.shotselectorlist).Adapter = shotselector;
-
-                //tabHost.Post(() =>
-                //{
                 shotselector.UpdateData(Bootlegger.BootleggerClient.CurrentClientRole.Shots);
-                //_adapter.RefreshShots();
-                //});
-
                 if (!LIVEMODE)
                     FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Visible;
             }
@@ -902,25 +803,6 @@ namespace Bootleg.Droid
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-            //refresh permissions
-            //var permstatus = new List<Plugin.Permissions.Abstractions.PermissionStatus >();
-            //permstatus.Add(await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Camera));
-            //permstatus.Add(await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Microphone));
-            //permstatus.Add(await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Storage));
-
-            //if (permstatus.All((p) => p == Plugin.Permissions.Abstractions.PermissionStatus.Granted))
-            //{
-            //    //reload camera
-            //    PermissionsGranted = true;
-            //    ReStartCamera(null);
-            //}
-            //else
-            //{
-            //    var intent = new Intent();
-            //    intent.PutExtra("needsperms", true);
-            //    SetResult(Result.Ok, intent);
-            //    Finish();
-            //}
         }
 
         protected override void OnCreate(Bundle bundle)
@@ -938,32 +820,13 @@ namespace Bootleg.Droid
             Window.AddFlags(WindowManagerFlags.Fullscreen);
             Window.AddFlags(WindowManagerFlags.KeepScreenOn);
             Window.AddFlags(WindowManagerFlags.LayoutNoLimits);
-            //Window.AddFlags(WindowManagerFlags.LayoutInScreen);
 
             SetContentView(Resource.Layout.Video_Main);
 
-
-            //push in buttons from navbar:
-            var padding_right = 0;
-            var navbardim = Resources.GetIdentifier("navigation_bar_height", "dimen", "android");
-            if (navbardim > 0)
-            {
-                padding_right = Resources.GetDimensionPixelSize(navbardim);
-                //var param = FindViewById(Resource.Id.allbuttons).LayoutParameters.DeepCopy();
-
-                (FindViewById<LinearLayout>(Resource.Id.allbuttons).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
-                (FindViewById<FrameLayout>(Resource.Id.recordbtnwrapper).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
-            }
-
-            //var from_roles = Intent.GetBooleanExtra(Roles.FROM_ROLE, false);
-
             progress_view = FindViewById<CleanRadialProgressView>(Resource.Id.progress);
-            //setup video surface preview
-            //ReStartCamera(bundle);
 
             progress_view.ProgressColor = Color.Tomato;
 
-            //FindViewById<FrameLayout>(Resource.Id.rolesdemo).Visibility = ViewStates.Gone;
 
             start();
 
@@ -983,18 +846,9 @@ namespace Bootleg.Droid
 
             FindViewById<ImageView>(Resource.Id.overlayimg).SetAlpha(120);
 
-            //FindViewById<ImageView>(Resource.Id.opendrawer).Click += Open_Drawer;
-
-            //add event for the drawer control:
-
-            //tabHost = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 
             Bootlegger.BootleggerClient.OnNotification += Comms_OnNotification;
 
-            //FindViewById<GridView>(Resource.Id.shotselectorlist).ItemClick += SelectorClick;
-
-            //FindViewById<ImageButton>(Resource.Id.Skip).Click += Skip_Click;
-            //FindViewById<ImageButton>(Resource.Id.Skip).Visibility = ViewStates.Gone;
 
             if (ApplicationContext.PackageManager.HasSystemFeature(PackageManager.FeatureCameraFlash) && WhiteLabelConfig.USE_FLASH)
             {
@@ -1004,8 +858,6 @@ namespace Bootleg.Droid
             {
                 FindViewById<ToggleButton>(Resource.Id.flash).Visibility = ViewStates.Gone;
             }
-
-            //FindViewById<ImageButton>(Resource.Id.Hold).Click += Hold_Click;
 
             FindViewById<Button>(Resource.Id.openhelp).Click += HelpOpen_Click;
 
@@ -1051,36 +903,6 @@ namespace Bootleg.Droid
 
             FindViewById<ImageButton>(Resource.Id.closeshots).Click += CloseShots_Click;
 
-            //FindViewById(Resource.Id.left_drawer).Touch += Video_Touch;
-
-            //if (!WhiteLabelConfig.SHOW_ALL_SHOTS)
-            //{
-            //    FindViewById(Resource.Id.opendrawer).Visibility = ViewStates.Gone;
-            //    //FindViewById<DrawerLayout>(Resource.Id.drawer_layout).SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
-            //}
-
-
-            //FindViewById<Button>(Resource.Id.changerolebtn).Click += ChangeRole_Click;
-
-            //if (WhiteLabelConfig.SHOW_ALL_SHOTS)
-            //    FindViewById<Button>(Resource.Id.allshotsbtn).Click += AllShots_Click;
-            //else
-                //FindViewById<Button>(Resource.Id.allshotsbtn).Visibility = ViewStates.Gone;
-
-            //if (WhiteLabelConfig.SHOW_SETTINGS)
-            //    FindViewById<Button>(Resource.Id.settingsbtn).Click += Settings_Click;
-            //else
-                //FindViewById<Button>(Resource.Id.settingsbtn).Visibility = ViewStates.Gone;
-
-
-            //FindViewById<Button>(Resource.Id.leavebtn).Click += Leave_Click;
-
-            //FindViewById<TextView>(Resource.Id.currenttitle).Text = Bootlegger.BootleggerClient.CurrentEvent?.name;
-            //if (Bootlegger.BootleggerClient.CurrentClientRole != null)
-                //FindViewById<TextView>(Resource.Id.currentrole).Text = Bootlegger.BootleggerClient.CurrentClientRole?.name;
-            //FindViewById<TextView>(Resource.Id.currentphase).Text = Bootlegger.BootleggerClient.CurrentEvent?.CurrentPhase.name;
-
-
             //White Label Text Size
             if (WhiteLabelConfig.LARGE_SHOT_FONT)
                 FindViewById<TextView>(Resource.Id.overlaytext).SetTextSize(ComplexUnitType.Sp, 40);
@@ -1106,8 +928,6 @@ namespace Bootleg.Droid
         private void Video_Click(object sender, EventArgs e)
         {
             //OPEN CHANGE ROLE PANEL:
-            //FindViewById<Android.Support.V4.Widget.DrawerLayout>(Resource.Id.drawer_layout).OpenDrawer((int)(GravityFlags.Start));
-            //set role selection tab:
             _pager.SetCurrentItem(0, false);
         }
 
@@ -1127,8 +947,6 @@ namespace Bootleg.Droid
                 {
                     Finish();
                     Bootlegger.BootleggerClient.CurrentClientRole = null;
-                    //Intent i = new Intent(this.ApplicationContext, typeof(Login));
-                    //StartActivity(i);
                 }));
                 builder.SetCancelable(false);
                 try
@@ -1172,13 +990,7 @@ namespace Bootleg.Droid
             //do a notify
             RunOnUiThread(() =>
             {
-                //if (_adapter != null)
-                //{
-                    //_adapter.RefreshShots();
-                    shotselector?.UpdateData(Bootlegger.BootleggerClient.CurrentClientRole.Shots);
-                    //shotselector = new ShotSelectAdapter(this, Bootlegger.BootleggerClient.CurrentClientRole.Shots);
-                    //FindViewById<GridView>(Resource.Id.shotselectorlist).Adapter = shotselector;
-                //}
+                shotselector?.UpdateData(Bootlegger.BootleggerClient.CurrentClientRole.Shots);
             });
         }
 
@@ -1254,10 +1066,6 @@ namespace Bootleg.Droid
                 Comms_OnMessage(Bootlegger.BootleggerNotificationType.RoleUpdated,obj.name,true,false,true);
             }
 
-            //RunOnUiThread(() =>
-            //{
-                //FindViewById<TextView>(Resource.Id.currentphase).Text = Bootlegger.BootleggerClient.CurrentEvent.CurrentPhase.name;
-            //});
         }
 
         void Comms_OnNotification(Bootlegger.BootleggerNotificationType ntype,string arg1)
@@ -1381,11 +1189,6 @@ namespace Bootleg.Droid
         void Fin_Click(object sender, EventArgs e)
         {
             //show uploads screen after the event has finished
-            //if (tts != null)
-            //{
-            //    tts.Stop();
-            //    tts.Shutdown();
-            //}
             Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH, true);
             Finish();
             return;
@@ -1421,27 +1224,6 @@ namespace Bootleg.Droid
                 Bootlegger.BootleggerClient.AddTimedMeta(stopwatch.Elapsed, "zoom", (cameraDriver.ZoomLevels[FindViewById<SeekBar>(Resource.Id.zoom).Progress].IntValue()/100.0).ToString());
             }
         }
-
-        //public void tts_CheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
-        //{
-        //    TTS_ENABLED = e.IsChecked;
-        //}
-
-        //void Comms_OnLostConnection()
-        //{
-        //    RunOnUiThread(new Action(() =>
-        //    {
-        //        FindViewById<ImageView>(Resource.Id.connection).Visibility = ViewStates.Visible;
-        //    }));
-        //}
-
-        //void Comms_OnGainedConnection()
-        //{
-        //    RunOnUiThread(new Action(() =>
-        //    {
-        //        FindViewById<ImageView>(Resource.Id.connection).Visibility = ViewStates.Invisible;
-        //    }));
-        //}
 
         void Comms_OnServerDied()
         {
@@ -1489,18 +1271,6 @@ namespace Bootleg.Droid
             Bootlegger.BootleggerClient.EventStarted();
         }
 
-        //void Comms_OnEventStarted()
-        //{
-        //   RunOnUiThread(() =>
-        //   {
-        //       //hide event started button
-        //       FindViewById<ImageButton>(Resource.Id.startevent).Visibility = ViewStates.Gone;
-        //       //hide tooltip
-        //       //if (_quickAction!=null)
-        //        //_quickAction.Dismiss();
-        //   });
-        //}
-
         void Hold_Click(object sender, EventArgs e)
         {
             Bootlegger.BootleggerClient.HoldShot();
@@ -1536,38 +1306,6 @@ namespace Bootleg.Droid
         }
 
         Android.Support.V7.App.AlertDialog currentshotchoicedialog;
-        //void Comms_OnShotRequest(Shot obj,string meta)
-        //{
-
-        //    RunOnUiThread(new Action(() =>
-        //    {
-        //        Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-
-        //        builder.SetPositiveButton(Android.Resource.String.Yes, new EventHandler<DialogClickEventArgs>((o, e) =>
-        //        {
-        //            Bootlegger.BootleggerClient.AcceptShot(obj);
-        //            Picasso.With(this).Load("file://" + obj.image).Into(FindViewById<ImageView>(Resource.Id.overlayimg));
-        //            FindViewById<TextView>(Resource.Id.overlaytext).Text = Regex.Replace(obj.description, "%%(.*?)%%", meta);
-        //            FindViewById(Resource.Id.overlay).Visibility = ViewStates.Visible;
-        //            FindViewById<ToggleButton>(Resource.Id.showoverlay).Checked = true;
-        //        })).SetNegativeButton(Android.Resource.String.No, new EventHandler<DialogClickEventArgs>((o, e) =>
-        //        {
-        //            Bootlegger.BootleggerClient.RejectShot(obj);
-        //        })).SetCancelable(false).SetTitle(Resource.String.shotrequest);
-               
-        //        FrameLayout frameView = new FrameLayout(this);
-        //        builder.SetView(frameView);
-        //        Android.Support.V7.App.AlertDialog diag = builder.Create();
-        //        LayoutInflater inflater = diag.LayoutInflater;
-        //        View dialoglayout = inflater.Inflate(Resource.Layout.imgalert, frameView);
-        //        dialoglayout.FindViewById<TextView>(Resource.Id.alerttext).Text = Resources.GetString(Resource.String.areyouable, Regex.Replace(obj.description, "%%(.*?)%%", meta)) ;
-
-        //        Picasso.With(this).Load("file://" + obj.image).Into(dialoglayout.FindViewById<ImageView>(Resource.Id.alertimage));
-                
-        //        diag.Show();
-        //        currentshotchoicedialog = diag;
-        //    }));
-        //}
 
         void Comms_OnRoleChanged(Role obj)
         {
@@ -1586,22 +1324,6 @@ namespace Bootleg.Droid
         }
 
         int expectedrecordlength = 0;
-
-        //void Comms_OnLive(bool obj,int length)
-        //{
-        //    expectedrecordlength = length;
-        //    RunOnUiThread(new Action(() =>
-        //    {
-        //        //throw new NotImplementedException();
-        //        //start recording
-        //        FindViewById<LinearLayout>(Resource.Id.countdown).Visibility = ViewStates.Invisible;
-        //        if (!recording && obj)
-        //            record();
-
-        //        if (!obj && recording)
-        //            record();
-        //    }));
-        //}
 
         Timer timer;
         int timercount = 0;
@@ -1655,19 +1377,16 @@ namespace Bootleg.Droid
                     if (timercount <= 0)
                     {
                         (o as Timer).Stop();
-                        //RunOnUiThread(new Action(() => FindViewById<LinearLayout>(Resource.Id.countdown).Visibility = ViewStates.Invisible));
                     }
                     else
                     {
                         RunOnUiThread(new Action(() => {
-                            //FindViewById<TextView>(Resource.Id.livecount).Text = Java.Lang.String.Format("%d", timercount);
                             //bounce animation:
                             ScaleAnimation animation = new ScaleAnimation(1,1.5f,1,1.5f,Dimension.RelativeToSelf, 0.5f, Dimension.RelativeToSelf, 0.5f);
                             animation.RepeatCount = 0;
                             animation.RepeatMode = RepeatMode.Reverse;
                             animation.Interpolator = new DecelerateInterpolator();
                             animation.Duration = 100;
-                            //FindViewById<TextView>(Resource.Id.livecount).StartAnimation(animation);
 
                         }));
                     }
@@ -1690,12 +1409,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                //if (tabHost.IsDrawerOpen((int)GravityFlags.Left))
-                //{
-                //    tabHost.CloseDrawers();
-                //}
-                //else
-                //{
+             
                     if (!WhiteLabelConfig.SHOW_ALL_SHOTS)
                     {
                         if (FindViewById(Resource.Id.shotselector).Visibility == ViewStates.Visible)
@@ -1746,9 +1460,8 @@ namespace Bootleg.Droid
                 .SetPositiveButton(Android.Resource.String.Yes, new EventHandler<DialogClickEventArgs>(async (oe, eo) =>
                 {
                     if (recording)
-                        await stoprecording();
+                        await StopRecording();
                     Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH, true);
-                //await Bootlegger.BootleggerClient.ConnectForReview(WhiteLabelConfig.REDUCE_BANDWIDTH, Bootlegger.BootleggerClient.CurrentEvent, new System.Threading.CancellationTokenSource().Token);
 
                     Intent intent = new Intent();
                     intent.PutExtra("videocap", true);
@@ -1763,7 +1476,7 @@ namespace Bootleg.Droid
             else
             {
                 if (recording)
-                    await stoprecording();
+                    await StopRecording();
                 Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH, true);
                 Intent intent = new Intent();
                 intent.PutExtra("videocap", true);
@@ -1807,13 +1520,10 @@ namespace Bootleg.Droid
         {
             //Shot item;
 
-            //item = Bootlegger.BootleggerClient.CurrentEvent._shottypes[e.Position];
-
             ShowShotRelease(item);
 
             //sets the overlay:
 
-            //var imageBitmap = await GetImageBitmapFromUrl(item.image);
             Picasso.With(this).Load("file://" + item.image).Into(FindViewById<ImageView>(Resource.Id.overlayimg));
 
             if (item.coverage_class != null)
@@ -1856,12 +1566,8 @@ namespace Bootleg.Droid
                     break;
             }
 
-            //.SetImageBitmap(imageBitmap);
-            //tabHost.Visibility = ViewStates.Invisible;
-
 
             FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Gone;
-            //tabHost.CloseDrawers();
         }
 
 
@@ -1872,9 +1578,6 @@ namespace Bootleg.Droid
             string content = "";
             switch (ntype)
             {
-                //case Bootlegger.BootleggerNotificationType.GoingLive:
-                    //content = Resources.GetString(Resource.String.goinglive, obj);
-                    //break;
                 case Bootlegger.BootleggerNotificationType.CrewReminder:
                     if (string.IsNullOrEmpty(obj))
                         content = Resources.GetString(Resource.String.crewreminder_content);
@@ -1899,12 +1602,6 @@ namespace Bootleg.Droid
                     var msg = FindViewById<TextSwitcher>(Resource.Id.message);
                     if (msg != null)
                     {
-                    //if (TTS_ENABLED)
-                    //{
-                    //    tts.Speak(content, QueueMode.Add,null);
-                    //}
-
-
                         FindViewById(Resource.Id.messageholder).PostDelayed(() =>
                         {
                             msg.SetText("");
@@ -1917,20 +1614,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                //if (shots)
-                //{
-                //    RunOnUiThread(new Action(() =>
-                //    {
-                //        //show initial fragment with role view...
-                //        if (LIVEMODE)
-                //        {
-                //            FindViewById<FrameLayout>(Resource.Id.rolesdemo).Visibility = ViewStates.Visible;
-                //        }
-                //        FindViewById<TextView>(Resource.Id.roledemomessage).Text = obj;
-                //    }));
-                //}
-                //else
-                //{
+               
                     //generic message with dialog
                     RunOnUiThread(new Action(() =>
                     {
@@ -1958,10 +1642,10 @@ namespace Bootleg.Droid
             }
         }
 
-        bool LIVEMODE = false;
+        bool LIVEMODE;
 
 
-        bool shownonce = false;
+        bool shownonce;
 
         //doing this on load...
         void Comms_OnModeChange(string obj)
@@ -1973,11 +1657,6 @@ namespace Bootleg.Droid
                         {
                             //show play button
                             FindViewById(Resource.Id.Play).Visibility = ViewStates.Visible;
-                            //FindViewById(Resource.Id.livetext).Visibility = ViewStates.Gone;
-                            //FindViewById<ToggleButton>(Resource.Id.Play).TextOn = Resources.GetString(Resource.String.live);
-                            //FindViewById<ToggleButton>(Resource.Id.Play).TextOff = Resources.GetString(Resource.String.live);
-                            //FindViewById(Resource.Id.Hold).Visibility = ViewStates.Gone;
-                            //FindViewById(Resource.Id.Skip).Visibility = ViewStates.Gone;
                             FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Gone;
                         }));
                         break;
@@ -1995,30 +1674,19 @@ namespace Bootleg.Droid
                         {
                             FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Gone;
                             FindViewById(Resource.Id.Play).Visibility = ViewStates.Gone;
-                            //FindViewById(Resource.Id.livetext).Visibility = ViewStates.Visible;
-                            //FindViewById(Resource.Id.Hold).Visibility = ViewStates.Visible;
-                            //FindViewById(Resource.Id.Skip).Visibility = ViewStates.Gone;
                         }));
-                    //(Application as BootleggerApp).Comms.NotReadyToShoot();
-                    LIVEMODE = true;
+                        LIVEMODE = true;
                         break;
                     case "selection":
                     default:
-                        //FindViewById<FrameLayout>(Resource.Id.rolesdemo).Post(new Action(() =>
-                        //{
                         RunOnUiThread(new Action(() =>
                         {
                             if (!shownonce)
                             {
                                 FindViewById(Resource.Id.Play).Visibility = ViewStates.Visible;
-                                //FindViewById(Resource.Id.livetext).Visibility = ViewStates.Gone;
                                 FindViewById<ToggleButton>(Resource.Id.Play).TextOn = "";
                                 FindViewById<ToggleButton>(Resource.Id.Play).TextOff = "";
-                                //FindViewById(Resource.Id.Hold).Visibility = ViewStates.Gone;
-                                //FindViewById(Resource.Id.Skip).Visibility = ViewStates.Gone;
-                                //FindViewById<FrameLayout>(Resource.Id.rolesdemo).Visibility = ViewStates.Gone;
-                                //FindViewById(Resource.Id.allbuttons).Visibility = ViewStates.Visible;
-                                //FindViewById(Resource.Id.startevent).Visibility = ViewStates.Gone;
+                               
                                 if (WhiteLabelConfig.SHOW_ALL_SHOTS)
                                 {
                                     FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Visible;
@@ -2043,10 +1711,12 @@ namespace Bootleg.Droid
 
         public View MakeView()
         {
-             // Create a new TextView
-             
-            TextView t = new TextView(this);
-            t.Gravity = GravityFlags.Top | GravityFlags.CenterHorizontal;
+            // Create a new TextView
+
+            TextView t = new TextView(this)
+            {
+                Gravity = GravityFlags.Top | GravityFlags.CenterHorizontal
+            };
             if (t.LayoutDirection == Android.Views.LayoutDirection.Ltr)
             {
                 t.SetPadding(30, 5, 5, 15);
@@ -2070,7 +1740,6 @@ namespace Bootleg.Droid
             //background beacon
             Beacons.BeaconInstance.InBackground = true;
 
-            //Console.WriteLine((Application as BootleggerApp).Comms.CurrentEvent.name);
 
             //tell client that not in shooting mode
             if (!WhiteLabelConfig.REDUCE_BANDWIDTH)
@@ -2119,11 +1788,13 @@ namespace Bootleg.Droid
             if (!from_roles.HasValue)
                 from_roles = Intent.GetBooleanExtra(Roles.FROM_ROLE, false);
 
-            var permstatus = new List<Plugin.Permissions.Abstractions.PermissionStatus>();
-            permstatus.Add(await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Camera));
-            permstatus.Add(await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Microphone));
-            permstatus.Add(await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Storage));
-            
+            var permstatus = new List<Plugin.Permissions.Abstractions.PermissionStatus>
+            {
+                await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Camera),
+                await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Microphone),
+                await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Storage)
+            };
+
             if (!permstatus.All((p) => p == Plugin.Permissions.Abstractions.PermissionStatus.Granted))
             {
                 var permsToAskFor = new[] { Plugin.Permissions.Abstractions.Permission.Camera, Plugin.Permissions.Abstractions.Permission.Microphone, Plugin.Permissions.Abstractions.Permission.Storage };
@@ -2143,10 +1814,9 @@ namespace Bootleg.Droid
             {
                 PermissionsGranted = true;
             }
-            
 
             //ask for location perms:
-            if (WhiteLabelConfig.LOCATION_SHOOTS_ENABLED)
+            if (WhiteLabelConfig.USE_GPS)
             {
                 var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Location);
                 //ask for location permission if its not already been denied
@@ -2211,17 +1881,7 @@ namespace Bootleg.Droid
                 FindViewById(Resource.Id.roleselector).Visibility = ViewStates.Gone;
             }
 
-
-
-
-
-            //fragment creation:
-            //selectrolefrag = new SelectRoleFrag(Bootlegger.BootleggerClient.CurrentEvent, true);
-
-            
-
-            //SupportFragmentManager.BeginTransaction().Replace(Resource.Id.roleselector, selectrolefrag).Commit();
-        }
+                    }
 
         SelectRoleFrag selectrolefrag;
 
@@ -2234,13 +1894,8 @@ namespace Bootleg.Droid
             Beacons.BeaconInstance.StopBroadcastingBle();
 
             Bootlegger.BootleggerClient.OnCountdown -= Comms_OnCountdown;
-            //Bootlegger.BootleggerClient.OnLive -= Comms_OnLive;
             Bootlegger.BootleggerClient.OnRoleChanged -= Comms_OnRoleChanged;
-            //Bootlegger.BootleggerClient.OnShotRequest -= Comms_OnShotRequest;
-            //Bootlegger.BootleggerClient.OnEventStarted -= Comms_OnEventStarted;
             Bootlegger.BootleggerClient.OnServerDied -= Comms_OnServerDied;
-            //Bootlegger.BootleggerClient.OnGainedConnection -= Comms_OnGainedConnection;
-            //Bootlegger.BootleggerClient.OnLostConnection -= Comms_OnLostConnection;
             Bootlegger.BootleggerClient.OnMessage -= Comms_OnMessage;
             Bootlegger.BootleggerClient.OnPhaseChange -= Comms_OnPhaseChange;
             Bootlegger.BootleggerClient.OnEventUpdated -= Comms_OnEventUpdated;
@@ -2254,11 +1909,6 @@ namespace Bootleg.Droid
 
         public enum CAMERA_POSITION { REAR=0, FRONT=1};
         CAMERA_POSITION CURRENTCAMERA;
-
-        //private void Open_Drawer(object sender, EventArgs e)
-        //{
-        //    tabHost.OpenDrawer((int)(GravityFlags.Start));
-        //}
 
         private void Cam_Switch(object sender, EventArgs e)
         {

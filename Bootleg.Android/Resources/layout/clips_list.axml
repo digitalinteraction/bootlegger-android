@@ -43,10 +43,12 @@
         android:elevation="4dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        app:contentInsetStart="0dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentLeft="true">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list"
+            android:requiresFadingEdge="horizontal"
             android:layout_gravity="end|right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

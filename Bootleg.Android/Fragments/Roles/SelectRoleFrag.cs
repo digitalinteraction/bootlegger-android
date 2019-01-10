@@ -59,7 +59,13 @@ namespace Bootleg.Droid.Fragments
 
         RoleListFragment rolelist;
         MapFragment map;
-        
+
+        public override void OnResume()
+        {
+            base.OnResume();
+
+
+        }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -121,20 +127,42 @@ namespace Bootleg.Droid.Fragments
                         //if ther is a current phase:
                         if (phasestouse.Contains(CurrentEvent.CurrentPhase))
                         {
-                            var tab1 = new RoleListFragment(CurrentEvent, CurrentEvent.CurrentPhase, dark);
-                            tab1.OnRoleSelected += Tab_OnRoleSelected;
-                            _adapter.AddTab(RolePageAdapter.TabType.LIST, tab1);
+                            if (savedInstanceState == null)
+                            {
+                                rolelist = new RoleListFragment(CurrentEvent, CurrentEvent.CurrentPhase, dark);
+                                rolelist.OnRoleSelected += Tab_OnRoleSelected;
+                            }
+                            else
+                            {
+                                rolelist = FragmentManager.FindFragmentByTag("android:switcher:" + Resource.Id.tabpager + ":0") as RoleListFragment;
+                            }
+
+
+                            _adapter.AddTab(RolePageAdapter.TabType.LIST, rolelist);
                             phasestouse.Remove(CurrentEvent.CurrentPhase);
-                            rolelist = tab1;
+                            //rolelist = rolelist;
                         }
 
                     }
                     else
                     {
-                        var tab = new RoleListFragment(CurrentEvent, null, dark);
-                        rolelist = tab;
-                        tab.OnRoleSelected += Tab_OnRoleSelected;
-                        _adapter.AddTab(RolePageAdapter.TabType.LIST, tab);
+                        if (savedInstanceState == null)
+                        {
+                            rolelist = new RoleListFragment(CurrentEvent, null, dark);
+                            rolelist.OnRoleSelected += Tab_OnRoleSelected;
+                        }
+                        else
+                        {
+                            rolelist = FragmentManager.FindFragmentByTag("android:switcher:" + Resource.Id.tabpager + ":0") as RoleListFragment;
+                            if (rolelist == null)
+                            {
+                                rolelist = new RoleListFragment(CurrentEvent, null, dark);
+                                rolelist.OnRoleSelected += Tab_OnRoleSelected;
+                            }
+                        }
+                        //var tab = new RoleListFragment(CurrentEvent, null, dark);
+                        //rolelist = tab;
+                        _adapter.AddTab(RolePageAdapter.TabType.LIST, rolelist);
                     }
                 }
 

@@ -100,9 +100,9 @@ namespace Bootleg.Droid.Screens
                 };
 
                 if (string.IsNullOrEmpty(item.iconbackground))
-                    Picasso.With(view.Context).Load(Resource.Drawable.event_back).CenterCrop().Fit().Into(view.FindViewById<ImageView>(Resource.Id.event_background));
+                    Picasso.With(view.Context).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(view.FindViewById<ImageView>(Resource.Id.event_background));
                 else
-                    Picasso.With(view.Context).Load(item.iconbackground).Placeholder(Resource.Drawable.event_back).CenterCrop().Fit().Into(view.FindViewById<ImageView>(Resource.Id.event_background));
+                    Picasso.With(view.Context).Load(item.iconbackground).Placeholder(Resource.Drawable.user_back).CenterCrop().Fit().Into(view.FindViewById<ImageView>(Resource.Id.event_background));
 
                 view.FindViewById<TextView>(Resource.Id.title).Text = item.name;
                 view.FindViewById<TextView>(Resource.Id.description).Text = item.description;

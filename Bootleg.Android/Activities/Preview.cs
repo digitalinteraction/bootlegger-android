@@ -242,7 +242,7 @@ namespace Bootleg.Droid.Screens
                 if (_readonly)
                     chips.Update(null, media);
                 else
-                    chips.Update(Bootlegger.BootleggerClient.CurrentEvent.topics, media);
+                    chips.Update(Bootlegger.BootleggerClient.CurrentEvent.topics.ToList(), media);
 
                 rv.SetAdapter(chips);
                 FindViewById(Resource.Id.videometadata).Visibility = ViewStates.Gone;

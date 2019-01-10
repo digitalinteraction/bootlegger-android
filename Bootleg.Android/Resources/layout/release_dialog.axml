@@ -2,8 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="24dp">
+    android:layout_height="match_parent">
+     <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/scroller"
+        android:requiresFadingEdge="vertical"
+        >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
     <TextView
         android:text="@string/policies"
         android:layout_width="match_parent"
@@ -27,7 +39,7 @@
         <TextView
             android:text="@string/ispublic"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical|left|start"
             android:id="@+id/publicview" />
     </LinearLayout>
@@ -52,12 +64,7 @@
             android:gravity="left|start"
             android:id="@+id/publicshare" />
     </LinearLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp">
+   
         <LinearLayout
             android:orientation="vertical"
             android:scrollbars="vertical"
@@ -69,11 +76,17 @@
                 android:layout_width="match_parent"
                 android:id="@+id/text" />
         </LinearLayout>
-    </ScrollView>
-    <TextView
+   
+        <TextView
         android:text="@string/wanttoshare"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:padding="3dp" />
+    </LinearLayout>
+     </ScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:background="#efefef"
+        android:layout_height="1px" />
 </LinearLayout>

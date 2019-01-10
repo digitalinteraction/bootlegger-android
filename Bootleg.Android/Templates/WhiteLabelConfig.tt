@@ -60,5 +60,6 @@ namespace Bootleg
 		public const bool LOCATION_SHOOTS_ENABLED = <#= Config.LOCATION_SHOOTS_ENABLED.ToString().ToLower() #>;
 		public const bool PUBLIC_TOPICS = <#= Config.PUBLIC_TOPICS.ToString().ToLower() #>;
 		public const string BRANCHKEY = "<#= Config.BRANCHKEY #>";
+        public const bool USE_GPS = <#= Config.USE_GPS.ToString().ToLower() #>;
 	}
 }

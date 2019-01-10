@@ -60,5 +60,6 @@ public class Config
 	public static bool ALLOW_BLE = true;
 	public static bool LOCATION_SHOOTS_ENABLED = true;
 	public static bool PUBLIC_TOPICS = false;
+    public static bool USE_GPS = true;
 }
 #>

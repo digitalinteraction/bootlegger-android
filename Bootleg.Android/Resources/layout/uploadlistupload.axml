@@ -24,15 +24,15 @@
             android:layout_width="wrap_content" />
         <TextView
             android:id="@+id/header"
-            android:layout_gravity="start|top"
+            android:layout_gravity="start|center"
             android:text="@string/uploadswaiting"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            
+            android:layout_height="wrap_content" />
         <Button
             android:layout_width="wrap_content"
             android:drawableTint="?attr/colorPrimary"
@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
             android:id="@+id/uploadbtn"
+            android:textAllCaps="false"
             android:text="@string/uploadnow"
             android:textColor="?attr/colorPrimary"
             android:gravity="end|center_vertical" />

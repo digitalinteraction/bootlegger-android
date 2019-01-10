@@ -22,6 +22,8 @@ using Android.Graphics.Drawables;
 using Android.Support.V7.Graphics;
 using System.Collections.Generic;
 using Bootleg.API.Model;
+using Android.Support.V4.Content.Res;
+using Android.Graphics;
 
 namespace Bootleg.Droid
 {
@@ -180,6 +182,9 @@ namespace Bootleg.Droid
             collapsingToolbar.SetTitle(CurrentEvent.name);
             //collapsingToolbar.SetCollapsedTitleTextColor(Color.Transparent);
             collapsingToolbar.SetExpandedTitleTextAppearance(Resource.Style.ExpandedAppBar);
+            Typeface font = ResourcesCompat.GetFont(this, Resource.Font.montserratregular);
+            FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).CollapsedTitleTypeface = font;
+            FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).ExpandedTitleTypeface = font;
 
             if (!string.IsNullOrEmpty(CurrentEvent.roleimg))
             {
@@ -196,8 +201,8 @@ namespace Bootleg.Droid
                     int dark = palette.GetVibrantColor(0);
                     if (dark == 0)
                         dark = palette.GetLightMutedColor(0);
-                    FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(vibrant);
-                    FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
+                    //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(vibrant);
+                    //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
                 }),null);
             else
                 Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));

@@ -29,7 +29,7 @@ namespace Bootleg.Droid.Fragments.Home
 
             //featured.OnConnect += Featured_OnConnect;
             nearby.OnConnect += Featured_OnConnect;
-            
+
         }
 
         //private async Task CalculateNearby(CancellationToken cancel)
@@ -43,21 +43,11 @@ namespace Bootleg.Droid.Fragments.Home
 
         bool hasposition = false;
 
-       
+
         public async override void OnResume()
         {
             base.OnResume();
             Plugin.Geolocator.Abstractions.Position pos;
-
-
-            //if (Context.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape)
-            //{
-            //    var lp = View.FindViewById<FrameLayout>(Resource.Id.featuredlayout).LayoutParameters as PercentLayoutHelper.PercentMarginLayoutParams;
-                
-            //    //PercentLayoutHelper.PercentLayoutParams params = (PercentLayoutHelper.PercentLayoutParams)view.getLayoutParams();
-            //    //PercentLayoutHelper.PercentLayoutInfo info = params.getPercentLayoutInfo();
-            //    info.widthPercent = width;
-            //}
 
             try
             {
@@ -108,20 +98,20 @@ namespace Bootleg.Droid.Fragments.Home
 
             // try to get live position:
             if (hasposition)
-            { 
+            {
                 try
                 {
                     pos = await CrossGeolocator.Current.GetPositionAsync(TimeSpan.FromSeconds(10));
                     if (pos != null)
                         Bootlegger.BootleggerClient.UserLocation = new Tuple<double, double>(pos.Latitude, pos.Longitude);
-                        //await CalculateNearby(new CancellationTokenSource().Token);
-                        EventListFragment.EventUpdateDelegate del = Bootlegger.BootleggerClient.UpdateFeatured;
-                        nearby.SetEvents("FeaturedEvents", del, new CancellationTokenSource().Token, EventAdapter.EventViewType.FEATURED);
-                    }
+                    //await CalculateNearby(new CancellationTokenSource().Token);
+                    EventListFragment.EventUpdateDelegate del = Bootlegger.BootleggerClient.UpdateFeatured;
+                    nearby.SetEvents("FeaturedEvents", del, new CancellationTokenSource().Token, EventAdapter.EventViewType.FEATURED);
+                }
                 catch
                 {
                     //do nothing, cannot get location
-                }            
+                }
             }
 
             await nearby.RefreshMe(true);
@@ -175,12 +165,12 @@ namespace Bootleg.Droid.Fragments.Home
             finally
             {
             }
-            
+
         }
 
         private async void HomePageList_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
-            if (e.Text.Count() > 0)
+            if (e.Text.Any())
                 View.FindViewById<ImageView>(Resource.Id.edit_status).SetImageDrawable(null);
 
             if (e.Text.Count() == 4)
@@ -192,7 +182,7 @@ namespace Bootleg.Droid.Fragments.Home
                     View.FindViewById(Resource.Id.edit_progress).Visibility = ViewStates.Visible;
                     //show spinner:
                     await Task.Delay(1000);
-                    var result = await Bootlegger.BootleggerClient.JoinSharedEvent(e.Text.ToString(),new CancellationTokenSource(TimeSpan.FromSeconds(30)).Token);
+                    var result = await Bootlegger.BootleggerClient.JoinSharedEvent(e.Text.ToString(), new CancellationTokenSource(TimeSpan.FromSeconds(30)).Token);
                     View.FindViewById<ImageView>(Resource.Id.edit_status).SetImageResource(Resource.Drawable.appbar_check);
                     OnEnterCode?.Invoke(e.Text.ToString());
                 }
@@ -204,7 +194,7 @@ namespace Bootleg.Droid.Fragments.Home
                 finally
                 {
                     View.FindViewById(Resource.Id.edit_progress).Visibility = ViewStates.Gone;
-                   
+
                     View.FindViewById<EditText>(Resource.Id.code).Text = "";
                 }
             }
@@ -228,7 +218,7 @@ namespace Bootleg.Droid.Fragments.Home
             }
             else
             {
-                LoginFuncs.ShowError(Activity,new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                LoginFuncs.ShowError(Activity, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
             }
         }
     }

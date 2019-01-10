@@ -242,7 +242,7 @@ namespace Bootleg.Droid
             //else
                 //prev = Bootlegger.BootleggerClient.CurrentEvent.topics.Split(',').ToList();
 
-            listAdapter = new ClipAdapter(Activity,  new Dictionary<string, List<MediaItem>>(), ChooserMode, Bootlegger.BootleggerClient.CurrentEvent.topics);
+            listAdapter = new ClipAdapter(Activity,  new Dictionary<string, List<MediaItem>>(), ChooserMode, Bootlegger.BootleggerClient.CurrentEvent.topics.ToList());
 
             listAdapter.OnPreview += _adatper_OnPreview;
             listAdapter.OnChosen += ListAdapter_OnChosen;
@@ -284,7 +284,7 @@ namespace Bootleg.Droid
                 rv.SetLayoutManager(new LinearLayoutManager(Activity, LinearLayoutManager.Horizontal, false));
 
                 var chips = new ChipAdapter(Activity, false);
-                chips.Update(Bootlegger.BootleggerClient.CurrentEvent.topics, null);
+                chips.Update(Bootlegger.BootleggerClient.CurrentEvent.topics.ToList(), null);
                 rv.SetAdapter(chips);
                 chips.OnTopicFilterChanged += Chips_OnTopicFilterChanged;
 

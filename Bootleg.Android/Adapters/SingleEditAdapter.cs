@@ -90,7 +90,7 @@ namespace Bootleg.Droid
                     view.FindViewById<ImageButton>(Resource.Id.deletebtn).Visibility = ViewStates.Visible;
 
                     //get index of the label for the media:
-                    var topics = BootleggerClient.CurrentEvent.topics;
+                    var topics = BootleggerClient.CurrentEvent.topics.ToList();
 
                     if (string.IsNullOrEmpty(item.titletext))
                     {

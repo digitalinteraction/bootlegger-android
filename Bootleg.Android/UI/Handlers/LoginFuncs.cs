@@ -128,12 +128,12 @@ namespace Bootleg.Droid.UI
                             {
                                 try
                                 {
-                                    FirebaseApp.InitializeApp(context);
+                                    //FirebaseApp.InitializeApp(context);
                                     var refreshedToken = FirebaseInstanceId.Instance.Token;
-                                    //Console.WriteLine("token: " + refreshedToken);
+                                    Console.WriteLine("token: " + refreshedToken);
                                     Bootleg.API.Bootlegger.BootleggerClient.RegisterForPush(refreshedToken, API.Bootlegger.Platform.Android);
                                 }
-                                catch
+                                catch (Exception e)
                                 {
                                     ShowError(context, new Exception("Firebase Error"));
                                 }

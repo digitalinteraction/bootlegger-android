@@ -1,4 +1,4 @@
-﻿<#@ template language="C#" #><#@ output extension=".xml" encoding="utf-8" #><#@ include file="../BuildVariants/Loader.t4" #><# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="uk.ac.ncl.di.bootlegger<# if (Config.NAMESPACE_EXT!="") {Write("."+Config.NAMESPACE_EXT); } #>" android:versionCode="75" android:versionName="hanson">
+﻿<#@ template language="C#" #><#@ output extension=".xml" encoding="utf-8" #><#@ include file="../Templates/Loader.t4" #><# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="uk.ac.ncl.di.bootlegger<# if (Config.NAMESPACE_EXT!="") {Write("."+Config.NAMESPACE_EXT); } #>" android:versionCode="75" android:versionName="hanson">
   <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="27" />
   <application android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="uk.ac.ncl.di.bootlegger.<#= Config.NAMESPACE #>" android:icon="@mipmap/ic_launcher">
     <receiver
@@ -14,6 +14,8 @@
         <category android:name="${applicationId}" />
       </intent-filter>
     </receiver>
+    <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_notification" />
+
   </application>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -35,8 +37,7 @@
   <uses-permission android:name="android.permission.BLUETOOTH" android:required="false" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:required="false" />
 
-  <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_notification" />
-
+  
   <activity android:name="net.hockeyapp.android.FeedbackActivity" android:theme="@style/CustomHockeyAppTheme">
   </activity>
   

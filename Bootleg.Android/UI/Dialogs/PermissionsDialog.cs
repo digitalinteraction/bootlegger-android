@@ -19,14 +19,16 @@ namespace Bootleg.Droid.UI
     {
         public static Task AskPermissions(Activity context,Shoot eventid,bool retry=false)
         {
-            if (WhiteLabelConfig.USE_RELEASE_DIALOG)
+            //if (WhiteLabelConfig.USE_RELEASE_DIALOG)
+            //SHOW DIALOG IF THE EVENT IS SET TO PUBLIC!
+            if (eventid.ispublic)
             {
                 if (retry || !Bootlegger.BootleggerClient.CurrentUser.permissions.ContainsKey(eventid.id))
                 {
                     TaskCompletionSource<bool> tcs = new TaskCompletionSource<bool>();
 
-                    var dialog = new Android.Support.V7.App.AlertDialog.Builder(context);
-                    dialog.SetTitle(Resource.String.sharename);
+                    var builder = new Android.Support.V7.App.AlertDialog.Builder(context);
+                    builder.SetTitle(Resource.String.sharename);
 
                     View di = context.LayoutInflater.Inflate(Resource.Layout.release_dialog, null);
                     if (eventid.release != null && eventid.release != "")
@@ -42,9 +44,9 @@ namespace Bootleg.Droid.UI
                     else
                         di.FindViewById<TextView>(Resource.Id.publicshare).Text = context.Resources.GetString(Resource.String.nopublicshare);
 
-                    dialog.SetView(di);
+                    builder.SetView(di);
 
-                    dialog.SetNegativeButton(Resource.String.yes_share, new EventHandler<DialogClickEventArgs>((oe, eo) =>
+                    builder.SetNegativeButton(Resource.String.yes_share, new EventHandler<DialogClickEventArgs>((oe, eo) =>
                     {
                         try
                         {
@@ -75,8 +77,24 @@ namespace Bootleg.Droid.UI
                     {
                         tcs.SetException(new NotGivenPermissionException(context.Resources.GetString(Resource.String.notacceptperms)));
                     }))
-                    .SetCancelable(true)
-                    .Show();
+                    .SetCancelable(true);
+                    var dialog = builder.Create();
+                    dialog.Show();
+
+                    dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = false;
+                    dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = false;
+
+                    //when scrolled to near bottom (or doesnt need scroll):
+                    di.FindViewById<ScrollView>(Resource.Id.scroller).ScrollChange+= (object sender, View.ScrollChangeEventArgs e) =>
+                    {
+                        var scroller = sender as ScrollView;
+                        if (scroller.ScrollY > scroller.MaxScrollAmount - 100)
+                        {
+                            dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = true;
+                            dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = true;
+                        }
+                    };
+
                     //continue
                     return tcs.Task;
                 }

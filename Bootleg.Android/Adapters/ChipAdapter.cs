@@ -4,11 +4,9 @@ using System.Linq;
 
 using Android.App;
 using Android.Graphics;
-using Android.Support.V4.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using Bootleg.API;
 using Bootleg.API.Model;
 using static Android.Graphics.PorterDuff;
 using static Android.Widget.CompoundButton;
@@ -144,22 +142,22 @@ namespace Bootleg.Droid.Adapters
         List<Topic> options;
         //List<string> selected;
 
-        internal void Update(List<Topic> options, MediaItem media)
+        internal void Update(List<Topic> optionsIn, MediaItem mediaIn)
         {
             this.options.Clear();
 
-            this.media = media;
+            media = mediaIn;
 
-            if (!media?.Static_Meta.ContainsKey($"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}") ?? false)
+            if (!mediaIn?.Static_Meta.ContainsKey($"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}") ?? false)
             {
-                media.Static_Meta.Add($"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}", "");
+                mediaIn.Static_Meta.Add($"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}", "");
             }
 
-            if (options == null || options?.Count == 0)
+            if (optionsIn == null || optionsIn?.Count == 0)
             {
                 //lookup and add topics from the metadata:
 
-                var ids = media.Static_Meta[$"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}"].Split(',');
+                var ids = mediaIn.Static_Meta[$"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}"].Split(',');
                 //var topics = ids.Select(i => BootleggerClient.CurrentEvent.topics.Find((obj) => obj.id == i) ?? null);
                 foreach (var t in ids)
                 {
@@ -167,14 +165,11 @@ namespace Bootleg.Droid.Adapters
                     if (tt != null)
                         this.options.Add(tt);
                 }
-                //this.options.AddRange();
             }
             else
             {
-                this.options.AddRange(options);
+                this.options.AddRange(optionsIn);
             }
-
-            //this.options.Remove("");
 
             NotifyDataSetChanged();
         }

@@ -152,7 +152,7 @@
     <string name="aboutbtn">About</string>
     <string name="sharevia">Share via</string>
     <string name="uploads">Uploads</string>
-    <string name="uploadswaiting">Waiting to Upload</string>
+    <string name="uploadswaiting">To Upload</string>
     <string name="datacharge">You are not on WiFi, uploading or playback could cause significant data charges.</string>
     <string name="datachargewithwarning">You are not on WiFi, uploading or playback could cause significant data charges. Videos will be deleted from your device.</string>
     <string name="deleteclipwarning">Videos will uploaded then deleted from your device to save space.</string>
@@ -312,5 +312,6 @@
     <string name="linecounter">%s / 8 lines</string>
     <string name="titlelengthwarning">Title is too long!</string>
     <string name="default_story_title">My Story</string>
-    
+    <string name="contributors">Contrib.</string>
+    <string name="access">Access</string>
   </resources>

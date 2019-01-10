@@ -7,6 +7,7 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.App;
 using Android.Views;
 using Android.Widget;
 using Firebase.Messaging;
@@ -30,11 +31,12 @@ namespace Bootleg.Droid.Util
             intent.AddFlags(ActivityFlags.ClearTop);
             var pendingIntent = PendingIntent.GetActivity(this, 0, intent, PendingIntentFlags.OneShot);
 
-            var notificationBuilder = new Notification.Builder(this)
+            var notificationBuilder = new NotificationCompat.Builder(this)
                 .SetSmallIcon(Resource.Drawable.ic_notification)
                 .SetContentTitle(title)
                 .SetContentText(body)
                 .SetAutoCancel(true)
+                .SetChannelId(BootleggerApp.CHANNEL_ID)
                 .SetContentIntent(pendingIntent);
 
             var notificationManager = NotificationManager.FromContext(this);
