@@ -87,10 +87,10 @@ namespace Bootleg.Droid.Screens
                 listview.AddItemDecoration(new Android.Support.V7.Widget.DividerItemDecoration(Activity, Android.Support.V7.Widget.DividerItemDecoration.Vertical));
                 listAdapter.Update(music);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 //dismiss dialog
-                LoginFuncs.ShowError(Activity, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(Activity, e);
                 Dismiss();
             }
         }

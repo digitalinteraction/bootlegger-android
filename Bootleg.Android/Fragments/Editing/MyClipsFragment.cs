@@ -101,11 +101,11 @@ namespace Bootleg.Droid
             {
                 //do nothing, moving screens
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 try
                 {
-                    LoginFuncs.ShowError(Activity, Resource.String.noconnectionshort);
+                    LoginFuncs.ShowError(Activity, e);
                     _adapter.FireSyncStatusChanged(MyClipsAdapter.ViewHolder.SyncStatus.OK, 0);
                 }
                 catch
@@ -190,12 +190,12 @@ namespace Bootleg.Droid
 
                             doing_work = false;
                         }
-                        catch (Exception)
+                        catch (Exception e)
                         {
                             try
                             {
                                 if ((Context.ApplicationContext as BootleggerApp).IsReallyConnected)
-                                    LoginFuncs.ShowError(Context, Resource.String.noconnectionshort);
+                                    LoginFuncs.ShowError(Context, e);
 
                                 _adapter.FireSyncStatusChanged(MyClipsAdapter.ViewHolder.SyncStatus.OK, 0);
                             }

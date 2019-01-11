@@ -314,4 +314,7 @@
     <string name="default_story_title">My Story</string>
     <string name="contributors">Contrib.</string>
     <string name="access">Access</string>
+    <string name="downloading">Downloading</string>
+    <string name="storiesdisabled">Publishing is currently disabled</string>
+    
   </resources>

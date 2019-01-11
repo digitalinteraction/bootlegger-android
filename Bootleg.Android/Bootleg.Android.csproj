@@ -132,9 +132,6 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Plugin.CurrentActivity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Plugin.CurrentActivity.2.1.0.2\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Geolocator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xam.Plugin.Geolocator.4.5.0.6\lib\monoandroid71\Plugin.Geolocator.dll</HintPath>
     </Reference>
@@ -296,6 +293,9 @@
     </Reference>
     <Reference Include="Xamarin.GooglePlayServices.Nearby">
       <HintPath>..\packages\Xamarin.GooglePlayServices.Nearby.70.1501.0-preview2\lib\MonoAndroid80\Xamarin.GooglePlayServices.Nearby.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.CurrentActivity">
+      <HintPath>..\packages\Plugin.CurrentActivity.2.1.0.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -785,6 +785,10 @@
       <DependentUpon>Strings.tt</DependentUpon>
     </AndroidResource>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\NeedsPermissionsException.cs" />
+    <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\NoNetworkException.cs" />
+    <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\UnknownNetworkException.cs" />
+    <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\StoriesDisabledException.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml">

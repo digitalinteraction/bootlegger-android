@@ -151,10 +151,10 @@ namespace Bootleg.Droid.Screens
                     view.FindViewById<View>(Resource.Id.locationinfo).Visibility = ViewStates.Gone;
 
             }
-            catch(Exception)
+            catch(Exception e)
             {
                 //dismiss dialog
-                LoginFuncs.ShowError(view.Context, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(view.Context, e);
                 Dismiss();
             }
         }

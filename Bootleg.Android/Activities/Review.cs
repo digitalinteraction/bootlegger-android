@@ -34,9 +34,9 @@ using System.Collections.Generic;
 using Android.Media;
 using System.Threading.Tasks;
 using Android.Content.Res;
-using Bootleg.API.Model;
-using Bootleg.API.Exceptions;
 using Android.Support.V4.Content.Res;
+using Bootleg.API.Exceptions;
+using Bootleg.API.Model;
 
 namespace Bootleg.Droid
 {
@@ -174,9 +174,9 @@ namespace Bootleg.Droid
                 {
                     //nothing, it was cancelled
                 }
-                catch
+                catch (Exception e)
                 {
-                    LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                    LoginFuncs.ShowError(this, e);
                 }
                 finally
                 {
@@ -245,12 +245,14 @@ namespace Bootleg.Droid
                 }
                 else
                 {
-                    Toast.MakeText(this, Resource.String.norolechosen, ToastLength.Long).Show();
+                    LoginFuncs.ShowToast(this, new RoleNotSelectedException());
+                    //Toast.MakeText(this, Resource.String.norolechosen, ToastLength.Long).Show();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Toast.MakeText(this, Resource.String.noconnectionshort, ToastLength.Long).Show();
+                LoginFuncs.ShowToast(this, ex);
+                //Toast.MakeText(this, Resource.String.noconnectionshort, ToastLength.Long).Show();
             }
             finally
             {
@@ -298,9 +300,9 @@ namespace Bootleg.Droid
                               receiver.LostWifi += Receiver_LostWifi;
                               receiver.GotWifi += Receiver_GotWifi;
                           }
-                          catch
+                          catch (Exception e)
                           {
-                              LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                              LoginFuncs.ShowError(this, e);
                           }
                       }))
                       .SetTitle(Resource.String.continuetitle)
@@ -518,7 +520,7 @@ namespace Bootleg.Droid
 
             if (Intent?.GetBooleanExtra("needsperms", false) ?? false)
             {
-                LoginFuncs.ShowError(this, Resource.String.acceptperms);
+                LoginFuncs.ShowError(this, new NeedsPermissionsException());
             }
         }
 
@@ -542,9 +544,9 @@ namespace Bootleg.Droid
                     StartActivityForResult(i, INGEST);
                     Bootlegger.BootleggerClient.CanUpload = false;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                    LoginFuncs.ShowError(this, ex);
                 }
                 finally
                 {
@@ -641,9 +643,9 @@ namespace Bootleg.Droid
                 {
                     //nothing, it was cancelled
                 }
-                catch
+                catch (Exception e)
                 {
-                    LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                    LoginFuncs.ShowError(this, e);
                 }
                 finally
                 {
@@ -805,7 +807,7 @@ namespace Bootleg.Droid
 
             cancel_download = new CancellationTokenSource();
 
-            AndHUD.Shared.Show(this, "Downloading", 0, MaskType.Black, null, null,true, () =>
+            AndHUD.Shared.Show(this, GetString(Resource.String.downloading), 0, MaskType.Black, null, null,true, () =>
             {
                 cancel_download.Cancel();
             });
@@ -869,7 +871,7 @@ namespace Bootleg.Droid
 
             if (data?.GetBooleanExtra("needsperms",false)??false && requestCode == VIDEOCAP)
             {
-                LoginFuncs.ShowError(this, Resource.String.acceptperms);
+                LoginFuncs.ShowError(this, new NeedsPermissionsException());
             }
 
             if (requestCode == EDIT_RESPONSE)

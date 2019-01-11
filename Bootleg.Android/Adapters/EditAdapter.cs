@@ -56,7 +56,11 @@ namespace Bootleg.Droid
                 //view.Click += View_Click;
 
                 if (view.FindViewById<ImageButton>(Resource.Id.popup) != null)
+                {
                     view.FindViewById<ImageButton>(Resource.Id.popup).Click += ViewHolder_Click3;
+                    if (adpt.CurrentEvent == null)
+                        view.FindViewById<ImageButton>(Resource.Id.popup).Visibility = ViewStates.Gone;
+                }
 
                     //if (view.FindViewById<ImageButton>(Resource.Id.sharebtn)!=null)
                     //    view.FindViewById<ImageButton>(Resource.Id.sharebtn).Click += ViewHolder_Click;
@@ -65,7 +69,9 @@ namespace Bootleg.Droid
                     //if (view.FindViewById<ImageButton>(Resource.Id.restartbtn) != null)
                     //    view.FindViewById<ImageButton>(Resource.Id.restartbtn).Click += ViewHolder_Click2;
 
-                    view.Click += View_Click;
+                view.Click += View_Click;
+
+
             }
 
             private void ViewHolder_Click3(object sender, EventArgs e)
@@ -80,10 +86,10 @@ namespace Bootleg.Droid
                 else
                     popup.Menu.FindItem(Resource.Id.restart_menu_item).SetVisible(false);
 
-                if (currentedit.progress > 97 && !currentedit.fail)
-                    popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(true);
-                else
-                    popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(false); 
+                //if (currentedit.progress > 97 && !currentedit.fail)
+                //    popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(true);
+                //else
+                popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(false);
 
                 if (currentedit.code == null)
                     popup.Menu.FindItem(Resource.Id.delete_menu_item).SetVisible(true);
@@ -121,9 +127,9 @@ namespace Bootleg.Droid
                         //refresh list:
                         adpt.OnRefresh?.Invoke();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        LoginFuncs.ShowError(view.Context,Resource.String.noconnectionshort);
+                        LoginFuncs.ShowError(view.Context,ex);
                     }
                 }
 

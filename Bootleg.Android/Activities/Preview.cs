@@ -26,6 +26,7 @@ using Com.Google.Android.Exoplayer2.Ext.Okhttp;
 using Square.OkHttp3;
 using System.Collections.Generic;
 using Bootleg.API.Model;
+using Bootleg.Droid.UI;
 
 namespace Bootleg.Droid.Screens
 {
@@ -198,9 +199,10 @@ namespace Bootleg.Droid.Screens
                 _player.Prepare(mediaSource);
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Toast.MakeText(this, Resource.String.cannotloadvideo, ToastLength.Short).Show();
+                //adjust to what kind of exception it is:
+                LoginFuncs.ShowToast(this, e);
             }
             finally
             {
@@ -301,9 +303,10 @@ namespace Bootleg.Droid.Screens
                         
                         _player.Prepare(mediaSource);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
-                        Toast.MakeText(this, Resource.String.cannotloadvideo, ToastLength.Short).Show();
+                        //Toast.MakeText(this, Resource.String.cannotloadvideo, ToastLength.Short).Show();
+                        LoginFuncs.ShowToast(this, e);
                     }
                 break;
 

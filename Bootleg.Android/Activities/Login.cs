@@ -88,7 +88,7 @@ namespace Bootleg.Droid
             }
             catch (Exception e)
             {
-                LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(this, e);
             }
             finally
             {
@@ -153,7 +153,7 @@ namespace Bootleg.Droid
                     await Bootlegger.BootleggerClient.OfflineConnect(Event.id, cancel.Token);
                         StartActivity(typeof(Video));
                     }
-                    catch (RoleNotSelectedException)
+                    catch (RoleNotSelectedException e)
                     {
                         //connect and start the role screen....
                         //only do this if we are actually online:
@@ -172,14 +172,14 @@ namespace Bootleg.Droid
                         }
                         else
                         {
-                            LoginFuncs.ShowError(this, Resource.String.norolechosen);
+                            LoginFuncs.ShowError(this, e);
                         //Toast.MakeText(this, Resource.String.norolechosen, ToastLength.Long).Show();
                         }
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         //Toast.MakeText(this, Resource.String.cantconnect, ToastLength.Long).Show();
-                        LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                        LoginFuncs.ShowError(this, e);
 
                 }
                 finally
@@ -511,9 +511,9 @@ namespace Bootleg.Droid
                                         StartActivityForResult(ii, Review.EDIT_RESPONSE);
                                         //StartActivity(typeof(Review));
                                     }
-                                    catch
+                                    catch (Exception ex)
                                     {
-                                        LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                                        LoginFuncs.ShowError(this, ex);
                                     }
                                 })
                                 .SetNegativeButton(Android.Resource.String.Cancel, (o, e) => { })
@@ -591,10 +591,10 @@ namespace Bootleg.Droid
                                    {
                                        AndHUD.Shared.Dismiss();
                                    }
-                                   catch (Exception)
+                                   catch (Exception ex)
                                    {
                                        AndHUD.Shared.Dismiss();
-                                       LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                                       LoginFuncs.ShowError(this, ex);
                                    }
                                })
                                .SetNegativeButton(Android.Resource.String.Cancel, (o, e) =>
@@ -709,7 +709,7 @@ namespace Bootleg.Droid
             //from video screen:
             if (data?.GetBooleanExtra("needsperms", false) ?? false)
             {
-                LoginFuncs.ShowError(this, Resource.String.acceptperms);
+                LoginFuncs.ShowError(this, new NeedsPermissionsException());
             }
 
             //from video screen -- therefore send to review:
@@ -964,7 +964,7 @@ namespace Bootleg.Droid
                 }
                 else
                 {
-                    LoginFuncs.ShowError(this, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                    LoginFuncs.ShowError(this, new NoNetworkException());
                     AndHUD.Shared.Dismiss();
                 }
             }
@@ -992,7 +992,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(this, new NoNetworkException());
             }
         }
 
@@ -1010,9 +1010,9 @@ namespace Bootleg.Droid
                 Intent i = new Intent(this.ApplicationContext, typeof(Uploads));
                 StartActivity(i);
             }
-            catch
+            catch (Exception ex)
             {
-                LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(this, ex);
             }
             finally
             {
@@ -1093,10 +1093,10 @@ namespace Bootleg.Droid
                     {
                         AndHUD.Shared.Dismiss();
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         AndHUD.Shared.Dismiss();
-                        LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                        LoginFuncs.ShowError(this, new NoNetworkException());
                     }
                 }
             }
@@ -1114,7 +1114,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(this, new NoNetworkException());
             }
         }
 
@@ -1162,7 +1162,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                LoginFuncs.ShowError(this, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(this, new NoNetworkException());
 
                 //Toast.MakeText(this, Resource.String.notconnected, ToastLength.Short).Show();
                 AndHUD.Shared.Dismiss();

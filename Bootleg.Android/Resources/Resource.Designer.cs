@@ -6280,6 +6280,9 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09010a
 			public const int dontmissout = 2131296522;
 			
+			// aapt resource value: 0x7f090141
+			public const int downloading = 2131296577;
+			
 			// aapt resource value: 0x7f090126
 			public const int edit_page1_description = 2131296550;
 			
@@ -6511,8 +6514,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900fb
 			public const int lookingfornew = 2131296507;
 			
-			// aapt resource value: 0x7f090144
-			public const int lostrealtime = 2131296580;
+			// aapt resource value: 0x7f090146
+			public const int lostrealtime = 2131296582;
 			
 			// aapt resource value: 0x7f090103
 			public const int me = 2131296515;
@@ -6568,8 +6571,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090121
 			public const int normalcamera = 2131296545;
 			
-			// aapt resource value: 0x7f090141
-			public const int norolechange = 2131296577;
+			// aapt resource value: 0x7f090143
+			public const int norolechange = 2131296579;
 			
 			// aapt resource value: 0x7f0900dc
 			public const int norolechosen = 2131296476;
@@ -6682,8 +6685,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900e4
 			public const int publicview = 2131296484;
 			
-			// aapt resource value: 0x7f090143
-			public const int readybtn = 2131296579;
+			// aapt resource value: 0x7f090145
+			public const int readybtn = 2131296581;
 			
 			// aapt resource value: 0x7f0900a7
 			public const int removeedit = 2131296423;
@@ -6781,6 +6784,9 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900a3
 			public const int stopshooting = 2131296419;
 			
+			// aapt resource value: 0x7f090142
+			public const int storiesdisabled = 2131296578;
+			
 			// aapt resource value: 0x7f090082
 			public const int suggestsshots = 2131296386;
 			
@@ -6874,8 +6880,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09007f
 			public const int whatisbootlegger = 2131296383;
 			
-			// aapt resource value: 0x7f090142
-			public const int wouldyoudorole = 2131296578;
+			// aapt resource value: 0x7f090144
+			public const int wouldyoudorole = 2131296580;
 			
 			// aapt resource value: 0x7f0900ee
 			public const int yes_share = 2131296494;

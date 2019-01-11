@@ -305,6 +305,10 @@ namespace Bootleg.Droid
         {
             //save it:
             //try TO SAVE:
+
+            //HACK TO STOP AUTOSAVE AS ITS NOT FIXED YET!
+            return;
+
             while (true)
             {
 
@@ -529,12 +533,16 @@ namespace Bootleg.Droid
 
             public override int GetMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder)
             {
+
                 if (viewHolder.AdapterPosition == _adapter.ItemCount - 1)
                 {
                     return MakeMovementFlags(0, 0);
                 }
                 else
                 {
+                    //stop playback
+                    editor.preview.StopPlayback();
+
                     //make bigger:
                     viewHolder.ItemView.ScaleX = 1.05f;
                     viewHolder.ItemView.ScaleY = 1.05f;
@@ -575,7 +583,7 @@ namespace Bootleg.Droid
                 _adapter.OnItemMove(p1.AdapterPosition, p2.AdapterPosition);
                 _adapter.NotifyDataSetChanged();
                 _timeline.NotifyDataSetChanged();
-                editor.preview.StopPlayback();
+                //editor.preview.StopPlayback();
                 _adapter.UpdatePlaying(null);
 
 
@@ -688,7 +696,9 @@ namespace Bootleg.Droid
                 }
                 catch (Exception e)
                 {
-                    Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+                    //Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+                    LoginFuncs.ShowToast(this, e);
+
                 }
 
                 Bootlegger.BootleggerClient.LogUserAction("EditScreenTrim",
@@ -736,7 +746,9 @@ namespace Bootleg.Droid
             }
             catch (Exception e)
             {
-                Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+                //Toast.MakeText(this, e.Message, ToastLength.Short).Show();
+                LoginFuncs.ShowToast(this,e);
+
             }
 
             Bootlegger.BootleggerClient.LogUserAction("EditScreenPlaySeq",
@@ -1085,7 +1097,8 @@ public void ExitSave()
                 _adapter.UpdateData(CurrentEdit.media);
                 _sliveradapter.UpdateData(CurrentEdit.media);
                 UpdateTimings();
-                Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
+                //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
+                LoginFuncs.ShowToast(this, ex);
             }
             AndHUD.Shared.Dismiss();
             diag.Cancel();
@@ -1134,12 +1147,13 @@ public void ExitSave()
                 Intent i = new Intent(this.ApplicationContext, typeof(Review));
                 StartActivity(i);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 _adapter.UpdateData(CurrentEdit.media);
                 _sliveradapter.UpdateData(CurrentEdit.media);
                 UpdateTimings();
-                Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
+                //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
+                LoginFuncs.ShowToast(this, ex);
             }
             AndHUD.Shared.Dismiss();
             diag.Cancel();

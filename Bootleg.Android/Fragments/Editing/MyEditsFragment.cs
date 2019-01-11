@@ -280,7 +280,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                LoginFuncs.ShowError(Activity,Resource.String.editready);
+                LoginFuncs.ShowMessage(Activity, Resource.String.editready);
             }
         }
 
@@ -362,7 +362,7 @@ namespace Bootleg.Droid
             catch (Exception e)
             {
                 if (Activity != null)
-                    LoginFuncs.ShowError(Activity,Resource.String.noconnectionshort);
+                    LoginFuncs.ShowError(Activity,e);
             }
             finally
             {

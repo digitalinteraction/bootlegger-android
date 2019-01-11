@@ -158,9 +158,9 @@ namespace Bootleg.Droid.Fragments.Home
                     await nearby.RefreshMe(true);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                LoginFuncs.ShowError(Activity, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(Activity, ex);
             }
             finally
             {

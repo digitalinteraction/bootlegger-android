@@ -238,11 +238,10 @@ namespace Bootleg.Droid
                     LoadEvents((Bootlegger.BootleggerClient.GetType().GetProperty(propertyname).GetValue(Bootlegger.BootleggerClient) as List<Shoot>).Find(ec=> ec.group == parent.group ).events, parent, eventviewtype);
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 try {
-                    LoginFuncs.ShowError(Activity, Resource.String.noconnectionshort);
-                    //Toast.MakeText(Activity, Resource.String.cantlistedits, ToastLength.Long).Show();
+                    LoginFuncs.ShowError(Activity, ex);
                 }
                 catch
                 {

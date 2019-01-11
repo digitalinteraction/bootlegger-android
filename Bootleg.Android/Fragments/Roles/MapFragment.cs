@@ -15,6 +15,7 @@ using Android.Graphics;
 using Android.Util;
 using Bootleg.Droid.UI;
 using Bootleg.API.Model;
+using Bootleg.API.Exceptions;
 
 namespace Bootleg.Droid
 {
@@ -100,7 +101,7 @@ namespace Bootleg.Droid
         public void OnError()
         {
             View.FindViewById(Resource.Id.mapprogress).Visibility = ViewStates.Gone;
-            LoginFuncs.ShowError(Context, Resource.String.noconnectionshort);
+            LoginFuncs.ShowError(Context, new UnknownNetworkException());
         }
 
         public void OnSuccess()

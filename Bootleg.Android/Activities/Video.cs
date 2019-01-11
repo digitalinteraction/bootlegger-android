@@ -805,9 +805,9 @@ namespace Bootleg.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
             RequestedOrientation = ScreenOrientation.Landscape;
 
             Bootlegger.BootleggerClient.InBackground = false;
@@ -907,7 +907,7 @@ namespace Bootleg.Droid
             if (WhiteLabelConfig.LARGE_SHOT_FONT)
                 FindViewById<TextView>(Resource.Id.overlaytext).SetTextSize(ComplexUnitType.Sp, 40);
 
-            if (bundle == null)
+            if (savedInstanceState == null)
             {
                 selectrolefrag = new SelectRoleFrag(Bootlegger.BootleggerClient.CurrentEvent, true);
                 Android.Support.V4.App.FragmentTransaction ft = SupportFragmentManager.BeginTransaction();
@@ -1769,7 +1769,7 @@ namespace Bootleg.Droid
         }
 
         object cameraDriverLock = new object();
-                bool disablelocation = false;
+        bool disablelocation = false;
 
         bool? from_roles;
 
@@ -1798,7 +1798,6 @@ namespace Bootleg.Droid
             if (!permstatus.All((p) => p == Plugin.Permissions.Abstractions.PermissionStatus.Granted))
             {
                 var permsToAskFor = new[] { Plugin.Permissions.Abstractions.Permission.Camera, Plugin.Permissions.Abstractions.Permission.Microphone, Plugin.Permissions.Abstractions.Permission.Storage };
-                //waitingonperms = true;
 
                 var hasperms = await Plugin.Permissions.CrossPermissions.Current.RequestPermissionsAsync(permsToAskFor);
 
@@ -1815,14 +1814,6 @@ namespace Bootleg.Droid
                 PermissionsGranted = true;
             }
 
-            //ask for location perms:
-            if (WhiteLabelConfig.USE_GPS)
-            {
-                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Location);
-                //ask for location permission if its not already been denied
-                if (status != Plugin.Permissions.Abstractions.PermissionStatus.Denied)
-                    await Plugin.Permissions.CrossPermissions.Current.RequestPermissionsAsync(Plugin.Permissions.Abstractions.Permission.Location);
-            }
 
             if (!PermissionsGranted)
             {
@@ -1863,16 +1854,32 @@ namespace Bootleg.Droid
                 }
             }
 
-            //restart position listener
-            if (await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Location) == Plugin.Permissions.Abstractions.PermissionStatus.Granted)
+
+            //ask for location perms:
+            if (WhiteLabelConfig.USE_GPS)
             {
-                disablelocation = false;
-                if (!Plugin.Geolocator.CrossGeolocator.Current.IsListening)
-                    await Plugin.Geolocator.CrossGeolocator.Current.StartListeningAsync(WhiteLabelConfig.GPS_RECORD_INTERVAL_SECS, 10, true);
-            }
-            else
-            {
-                disablelocation = true;
+                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Location);
+                
+                if (status != Plugin.Permissions.Abstractions.PermissionStatus.Granted)
+                {
+                    //if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Plugin.Permissions.Abstractions.Permission.Location))
+                    //{
+                    //    Console.WriteLine("needs alert for permissions");
+                    //}
+                    //ask for location permission if its not already been denied
+                    //if (status != Plugin.Permissions.Abstractions.PermissionStatus.Denied)
+                    var results = await Plugin.Permissions.CrossPermissions.Current.RequestPermissionsAsync(Plugin.Permissions.Abstractions.Permission.Location);
+                    if (results.First().Value != Plugin.Permissions.Abstractions.PermissionStatus.Granted)
+                    {
+                        disablelocation = true;
+                    }
+                }
+
+                if (!disablelocation)
+                {
+                    if (!Plugin.Geolocator.CrossGeolocator.Current.IsListening)
+                            await Plugin.Geolocator.CrossGeolocator.Current.StartListeningAsync(WhiteLabelConfig.GPS_RECORD_INTERVAL_SECS, 10, true);
+                }
             }
 
             if (from_roles.HasValue && from_roles==true && !WhiteLabelConfig.SHOW_ALL_SHOTS)
@@ -1881,7 +1888,7 @@ namespace Bootleg.Droid
                 FindViewById(Resource.Id.roleselector).Visibility = ViewStates.Gone;
             }
 
-                    }
+        }
 
         SelectRoleFrag selectrolefrag;
 
@@ -1975,7 +1982,8 @@ namespace Bootleg.Droid
 
         private void CameraDriver_OnError(string obj)
         {
-            Toast.MakeText(Application.Context, obj, ToastLength.Short).Show();
+            //Toast.MakeText(Application.Context, new Exce, ToastLength.Short).Show();
+            LoginFuncs.ShowToast(this, new Exception("Camera Problem"));
             Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH, true);
             Finish();
             return;

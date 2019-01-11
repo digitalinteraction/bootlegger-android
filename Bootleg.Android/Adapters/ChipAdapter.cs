@@ -8,6 +8,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Bootleg.API.Model;
+using Bootleg.Droid.UI;
 using static Android.Graphics.PorterDuff;
 using static Android.Widget.CompoundButton;
 using static Bootleg.API.Bootlegger;
@@ -70,10 +71,11 @@ namespace Bootleg.Droid.Adapters
 
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         //failed
-                        Toast.MakeText(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, Resource.String.noconnectionshort, ToastLength.Short).Show();
+                        LoginFuncs.ShowToast(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, ex);
+                        //Toast.MakeText(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, Resource.String.noconnectionshort, ToastLength.Short).Show();
                     }
 
                 }

@@ -3,8 +3,10 @@
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
  */
+using System;
 using Android.Hardware.Camera2;
 using Android.Widget;
+using Bootleg.Droid.UI;
 
 namespace Bootleg.Droid.Fragments
 {
@@ -34,7 +36,8 @@ namespace Bootleg.Droid.Fragments
         public override void OnConfigureFailed(CameraCaptureSession session)
         {
             if (null != fragment.Activity)
-                Toast.MakeText(fragment.Activity, "Failed", ToastLength.Short).Show();
+                LoginFuncs.ShowToast(fragment.Activity, new Exception("Failed to open camera"));
+            //Toast.MakeText(fragment.Activity, "Failed", ToastLength.Short).Show();
         }
     }
 }

@@ -281,7 +281,7 @@ namespace Bootleg.Droid
             {
                 _player.Prepare(mediaSource);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
 
@@ -374,9 +374,10 @@ namespace Bootleg.Droid
                         var mm = new ClippingMediaSource(ss, (long)m.inpoint.TotalMilliseconds * 1000, (long)m.outpoint.TotalMilliseconds * 1000);
                         source.AddMediaSource(mm);
                     }
-                    catch
+                    catch (Exception e)
                     {
-                        Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
+                        LoginFuncs.ShowToast(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, e);
+                        //Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
                     }
                 }
             }
@@ -402,7 +403,8 @@ namespace Bootleg.Droid
             {
                 Console.WriteLine(e);
 
-                Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
+                //Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
+                LoginFuncs.ShowToast(Context, e);
                 //LoginFuncs.ShowError(Context, e);
             }
         }
@@ -443,9 +445,10 @@ namespace Bootleg.Droid
                         {
                             _player.Prepare(mediaSource);
                         }
-                        catch
+                        catch (Exception e)
                         {
-                            Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
+                            //Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
+                            LoginFuncs.ShowToast(Context, e);
 
                             //LoginFuncs.ShowError(Context, new Exception(e.Message));
                         }
@@ -485,9 +488,9 @@ namespace Bootleg.Droid
                 });
                 source = uri;
             }
-            catch
+            catch (Exception e)
             {
-                LoginFuncs.ShowError(Context, Resource.String.noconnectionshort);
+                LoginFuncs.ShowError(Context, e);
             }
         }
 
@@ -586,7 +589,8 @@ namespace Bootleg.Droid
 
         void IPlayerEventListener.OnPlayerError(ExoPlaybackException p0)
         {
-            Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
+            LoginFuncs.ShowToast(Context, p0);
+            //Toast.MakeText(Context, Resource.String.noconnectionshort, ToastLength.Short).Show();
         }
 
         bool durationSet = false;

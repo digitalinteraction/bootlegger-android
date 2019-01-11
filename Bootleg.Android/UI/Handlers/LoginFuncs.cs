@@ -15,12 +15,12 @@ using Android.Support.CustomTabs;
 using Android.App;
 using Android.Support.V4.View;
 using Android.Views;
-using Plugin.Connectivity;
 using Bootleg.API;
 using Android.Support.V4.Content;
 using Firebase.Iid;
 using Android.Support.Design.Widget;
-using Firebase;
+using Bootleg.Droid.Screens;
+using Android.Widget;
 
 namespace Bootleg.Droid.UI
 {
@@ -46,13 +46,45 @@ namespace Bootleg.Droid.UI
             return tcs.Task;
         }
 
-        public static void ShowError(Context context, int res)
+
+        public static void ShowMessage(Context context, int res)
         {
-            ShowError(context ?? Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, new Exception(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity.GetString(res)));
+            Activity activity = (context ?? Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity) as Activity;
+
+            try
+            {
+                Snackbar.Make(activity.FindViewById(Resource.Id.main_content), activity.GetString(res), Snackbar.LengthShort)
+                    .Show();
+            }
+            catch
+            {
+                Console.WriteLine("Crashed trying to show error");
+            }
         }
+
+        //public static void ShowError(Context context, int res)
+        //{
+        //    ShowError(context ?? Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, new Exception(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity.GetString(res)));
+        //}
+
 
         public static void ShowError(Context context, Exception e)
         {
+            //detect type of exception and show corrent 
+
+            //NeedsPermissionsException - acceptperms
+
+            //RoleNotSelectedException - norolechosen
+
+            //NoNetworkException - no ip based off the back of the IsReallyConnected function
+
+            //UnknownNetworkException - not successful network operation, find out why and report
+
+
+
+            //Default is noconnectionshort
+
+
             try
             {
                 Snackbar.Make((context as Activity).FindViewById(Resource.Id.main_content), e.Message, Snackbar.LengthShort)
@@ -63,6 +95,9 @@ namespace Bootleg.Droid.UI
                 Console.WriteLine("Crashed trying to show error");
             }
         }
+
+
+
 
         public static void ShowHelp(Android.App.Activity context,string link)
         {
@@ -203,6 +238,23 @@ namespace Bootleg.Droid.UI
                 if (!firstrun)
                     throw new WebException(context.Resources.GetString(Resource.String.loginagain));
             }
+        }
+
+        internal static void ShowToast(Context activity, Exception e)
+        {
+            //default: Resource.String.cannotloadvideo
+            var message = activity.GetString(Resource.String.cannotloadvideo);
+            switch (e)
+            {
+                case StoriesDisabledException ex:
+                    message = activity.GetString(Resource.String.storiesdisabled);
+                    break;
+                default:
+
+                    break;
+            }
+
+            Toast.MakeText(activity, message, ToastLength.Short).Show();
         }
 
         internal static void OpenLogin(Activity context,string provider)

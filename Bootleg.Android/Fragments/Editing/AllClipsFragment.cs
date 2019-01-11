@@ -146,8 +146,8 @@ namespace Bootleg.Droid
             }
             catch(Exception e)
             {
-                LoginFuncs.ShowError(Activity, Resource.String.noconnectionshort);
-                //Toast.MakeText(Activity, Resource.String.noconnectionshort, ToastLength.Long).Show();
+                LoginFuncs.ShowError(Activity, e);
+
             }
             finally
             {
