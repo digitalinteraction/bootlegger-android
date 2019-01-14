@@ -249,12 +249,6 @@
     <Reference Include="AndHUD">
       <HintPath>..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common, Version=0.7.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.7.33\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.RangeSlider.Droid, Version=0.7.33.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.7.33\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
-    </Reference>
     <Reference Include="Plugin.Connectivity.Abstractions">
       <HintPath>..\packages\Xam.Plugin.Connectivity.4.0.0.190-beta\lib\MonoAndroid10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
@@ -296,6 +290,13 @@
     </Reference>
     <Reference Include="Plugin.CurrentActivity">
       <HintPath>..\packages\Plugin.CurrentActivity.2.1.0.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.RangeSlider.Common">
+      <HintPath>..\packages\Xamarin.RangeSlider.0.8.1\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Xamarin.RangeSlider.Droid">
+      <HintPath>..\packages\Xamarin.RangeSlider.0.8.1\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

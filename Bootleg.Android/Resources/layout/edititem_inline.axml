@@ -70,12 +70,13 @@
                     card_view:autoSizeTextType="uniform"
                     android:text="Title 1"
                     card_view:autoSizeMaxTextSize="24sp"
+                    card_view:autoSizeMinTextSize="6sp"
+                    android:hyphenationFrequency="none"
                     android:maxLines="8"
                     android:id="@+id/title"
                     android:textColor="#eeeeee"
                     android:gravity="center"
                     android:padding="4dp"
-                    android:textSize="18dp"
                     android:textStyle="bold"
                     android:background="#000000" />
                 <ImageButton

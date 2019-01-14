@@ -54,7 +54,7 @@ namespace Bootleg.Droid
             var captionStyleCompat = new CaptionStyleCompat(Android.Graphics.Color.White, Android.Graphics.Color.Transparent, Android.Graphics.Color.Transparent, CaptionStyleCompat.EdgeTypeNone, Android.Graphics.Color.Transparent, subtitleTypeface);
 
             _playerView.SubtitleView.SetStyle(captionStyleCompat);
-            _playerView.SubtitleView.SetFixedTextSize((int)ComplexUnitType.Sp, 32);
+            _playerView.SubtitleView.SetFixedTextSize((int)ComplexUnitType.Sp, 10);
 
             _playerView.SubtitleView.SetBottomPaddingFraction(0.4f);
             _playerView.SubtitleView.TextAlignment = TextAlignment.Center;
@@ -171,7 +171,11 @@ namespace Bootleg.Droid
             if (mediaSource != null)
             {
                 //current media cursor
-                cursor.TranslationX = (float)(((double)pos / dur) * track.MeasuredWidth);
+                if (Resources.Configuration.LayoutDirection == Android.Views.LayoutDirection.Rtl)
+                    cursor.TranslationX = track.MeasuredWidth + Utils.dp2px(Context, 34.5f) - (float)(((double)pos / dur) * track.MeasuredWidth);
+                else
+                    cursor.TranslationX = (float)(((double)pos / dur) * track.MeasuredWidth);
+
                 FindViewById<TextView>(Resource.Id.lefttime).Text = TimeSpan.FromMilliseconds(pos).ToString(@"mm\:ss");
                 if (_player.Duration > 0)
                     FindViewById<TextView>(Resource.Id.righttime).Text = TimeSpan.FromMilliseconds(_player.Duration).ToString(@"mm\:ss");
@@ -513,29 +517,24 @@ namespace Bootleg.Droid
 
         private void Seeker_RightValueChanged(object sender, EventArgs value)
         {
-            //seek to
-            
-            //if (touchingslider)
+            _player.PlayWhenReady = false;
+
+            long seektoval = 0;
+
+            if (Resources.Configuration.LayoutDirection == Android.Views.LayoutDirection.Rtl)
             {
-                _player.PlayWhenReady = false;
-
-                //video.Pause();
-                OutPoint = TimeSpan.FromMilliseconds(seeker.GetSelectedMaxValue());
-
-                long seektoval = (long)Math.Max(InPoint.TotalMilliseconds, (OutPoint - TimeSpan.FromSeconds(2)).TotalMilliseconds);
-                _player.SeekTo(seektoval);
-
-                _player.PlayWhenReady = true;
-                //video.Start();
-
-                //FindViewById<ImageView>(Resource.Id.pausebtn).Visibility = ViewStates.Gone;
-                //inoutrect.TranslationX = (float)((InPoint.TotalMilliseconds / _player.Duration) * track.MeasuredWidth);
-                //inoutrect.LayoutParameters.Width = (int)(((OutPoint.TotalMilliseconds - InPoint.TotalMilliseconds) / _player.Duration) * track.MeasuredWidth);
+                InPoint = TimeSpan.FromMilliseconds(_player.Duration +2   - seeker.GetSelectedMaxValue());
+                _player.SeekTo((int)InPoint.TotalMilliseconds);
             }
-            //else
-            //{
-            //    video.OutPoint = (int)seeker.GetSelectedMaxValue();
-            //}
+            else
+            {
+                OutPoint = TimeSpan.FromMilliseconds(seeker.GetSelectedMaxValue());
+                seektoval = (long)Math.Max(InPoint.TotalMilliseconds, (OutPoint - TimeSpan.FromSeconds(2)).TotalMilliseconds);
+                _player.SeekTo(seektoval);
+            }
+
+
+            _player.PlayWhenReady = true;
         }
 
         private void Seeker_LeftValueChanged(object sender, EventArgs value)
@@ -543,14 +542,22 @@ namespace Bootleg.Droid
             //seek to
             _player.PlayWhenReady = false;
 
-            InPoint = TimeSpan.FromMilliseconds(seeker.GetSelectedMinValue());
-            _player.SeekTo((int)seeker.GetSelectedMinValue());
+            long seektoval = 0;
+
+            if (Resources.Configuration.LayoutDirection == Android.Views.LayoutDirection.Rtl)
+            {
+                OutPoint = TimeSpan.FromMilliseconds(_player.Duration + 2 - seeker.GetSelectedMinValue());
+                seektoval = (long)Math.Max(InPoint.TotalMilliseconds, (OutPoint - TimeSpan.FromSeconds(2)).TotalMilliseconds);
+                _player.SeekTo(seektoval);
+            }
+            else
+            {
+                InPoint = TimeSpan.FromMilliseconds(seeker.GetSelectedMinValue());
+                _player.SeekTo((int)seeker.GetSelectedMinValue());
+                Console.WriteLine("left changed");
+            }
 
             _player.PlayWhenReady = true;
-
-            //FindViewById<ImageView>(Resource.Id.pausebtn).Visibility = ViewStates.Gone;
-            //inoutrect.TranslationX = (float)((InPoint.TotalMilliseconds / _player.Duration) * track.MeasuredWidth);
-            //inoutrect.LayoutParameters.Width = (int)(((OutPoint.TotalMilliseconds - InPoint.TotalMilliseconds) / _player.Duration) * track.MeasuredWidth);
         }
 
         public event Action<int, int, int, PLAYBACK_MODE> OnPositionChange;
@@ -681,8 +688,18 @@ namespace Bootleg.Droid
                     seeker.Post(() =>
                     {
                         seeker.SetRangeValues(0, _player.Duration + 2);
-                        seeker.SetSelectedMinValue((float)InPoint.TotalMilliseconds);
-                        seeker.SetSelectedMaxValue((float)OutPoint.TotalMilliseconds);
+
+                        if (Resources.Configuration.LayoutDirection == Android.Views.LayoutDirection.Rtl)
+                        {
+                            seeker.SetSelectedMinValue(_player.Duration - (float)InPoint.TotalMilliseconds);
+                            seeker.SetSelectedMaxValue(_player.Duration - (float)OutPoint.TotalMilliseconds);
+                        }
+                        else
+                        {
+                            seeker.SetSelectedMinValue((float)OutPoint.TotalMilliseconds);
+                            seeker.SetSelectedMaxValue((float)InPoint.TotalMilliseconds);
+
+                        }
                         seeker.Visibility = ViewStates.Visible;
                     });
             }

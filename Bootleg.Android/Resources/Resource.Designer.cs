@@ -6472,6 +6472,9 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09013c
 			public const int linecounter = 2131296572;
 			
+			// aapt resource value: 0x7f090143
+			public const int linetoolong = 2131296579;
+			
 			// aapt resource value: 0x7f090091
 			public const int loading = 2131296401;
 			
@@ -6514,8 +6517,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900fb
 			public const int lookingfornew = 2131296507;
 			
-			// aapt resource value: 0x7f090146
-			public const int lostrealtime = 2131296582;
+			// aapt resource value: 0x7f090147
+			public const int lostrealtime = 2131296583;
 			
 			// aapt resource value: 0x7f090103
 			public const int me = 2131296515;
@@ -6571,8 +6574,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090121
 			public const int normalcamera = 2131296545;
 			
-			// aapt resource value: 0x7f090143
-			public const int norolechange = 2131296579;
+			// aapt resource value: 0x7f090144
+			public const int norolechange = 2131296580;
 			
 			// aapt resource value: 0x7f0900dc
 			public const int norolechosen = 2131296476;
@@ -6685,8 +6688,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900e4
 			public const int publicview = 2131296484;
 			
-			// aapt resource value: 0x7f090145
-			public const int readybtn = 2131296581;
+			// aapt resource value: 0x7f090146
+			public const int readybtn = 2131296582;
 			
 			// aapt resource value: 0x7f0900a7
 			public const int removeedit = 2131296423;
@@ -6880,8 +6883,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09007f
 			public const int whatisbootlegger = 2131296383;
 			
-			// aapt resource value: 0x7f090144
-			public const int wouldyoudorole = 2131296580;
+			// aapt resource value: 0x7f090145
+			public const int wouldyoudorole = 2131296581;
 			
 			// aapt resource value: 0x7f0900ee
 			public const int yes_share = 2131296494;

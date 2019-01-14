@@ -88,8 +88,27 @@ namespace Bootleg.Droid.UI
                     di.FindViewById<ScrollView>(Resource.Id.scroller).ScrollChange+= (object sender, View.ScrollChangeEventArgs e) =>
                     {
                         var scroller = sender as ScrollView;
-                        if (scroller.ScrollY > scroller.MaxScrollAmount - 100)
+                        View view = (View)scroller.GetChildAt(0);
+
+                        // Calculate the scrolldiff
+                        int diff = (view.Bottom - (scroller.Height + scroller.ScrollY));
+
+                        //Console.WriteLine(diff);
+                        //Console.WriteLine(scroller);
+                        //Console.WriteLine(scroller.ScrollY);
+
+
+
+                        // if diff is zero, then the bottom has been reached
+                        if (diff <= 0)
                         {
+                            // notify that we have reached the bottom
+                            //Log.d(ScrollTest.LOG_TAG, "MyScrollView: Bottom has been reached");
+                        //}
+
+
+                        //if (scroller.ScrollY > scroller.MaxScrollAmount - di.Height)
+                        //{
                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = true;
                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = true;
                         }

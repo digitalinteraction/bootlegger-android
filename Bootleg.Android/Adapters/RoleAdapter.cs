@@ -42,14 +42,14 @@ namespace Bootleg.Droid
                 if (dark)
                 {
                     view.FindViewById<TextView>(Resource.Id.firstLine).SetTextColor(Android.Graphics.Color.WhiteSmoke);
-                    if (role.id == Bootlegger.BootleggerClient.CurrentClientRole.id)
-                    {
-                        view.FindViewById<ImageView>(Resource.Id.tick).Visibility = ViewStates.Visible;
-                    }
-                    else
-                    {
-                        view.FindViewById<ImageView>(Resource.Id.tick).Visibility = ViewStates.Invisible;
-                    }
+                    //if (role.id == Bootlegger.BootleggerClient.CurrentClientRole.id)
+                    //{
+                    //    view.FindViewById<ImageView>(Resource.Id.tick).Visibility = ViewStates.Visible;
+                    //}
+                    //else
+                    //{
+                    //    view.FindViewById<ImageView>(Resource.Id.tick).Visibility = ViewStates.Invisible;
+                    //}
                 }
 
                 //view.FindViewById<TextView>(Resource.Id.firstLine).Text = "دون قدما بتخصيص مليارات مع, يتمكن الأوروبية نفس كل, ٣٠ دار الدول ألمانيا. في عدد كانت الحكم, حتى سقطت انتهت مع. كل عدم وقوعها، العاصمة ارتكبها, دنو الأخذ الإطلاق م";

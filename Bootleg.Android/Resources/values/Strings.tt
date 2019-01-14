@@ -316,5 +316,6 @@
     <string name="access">Access</string>
     <string name="downloading">Downloading</string>
     <string name="storiesdisabled">Publishing is currently disabled</string>
+    <string name="linetoolong">Line %s is too long!</string>
     
   </resources>

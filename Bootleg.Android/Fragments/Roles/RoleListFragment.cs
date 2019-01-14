@@ -38,6 +38,7 @@ namespace Bootleg.Droid
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RetainInstance = true;
         }
 
         public event Action<Role> OnRoleSelected;

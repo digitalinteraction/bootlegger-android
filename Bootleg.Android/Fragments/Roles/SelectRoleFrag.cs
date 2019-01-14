@@ -95,7 +95,7 @@ namespace Bootleg.Droid.Fragments
                 _pager.Adapter = _adapter;
 
                 //has a map view:
-                if (CurrentEvent.roleimg != null)
+                if (!string.IsNullOrEmpty(CurrentEvent.roleimg))
                 {
                     if (savedInstanceState == null)
                     {
@@ -107,19 +107,15 @@ namespace Bootleg.Droid.Fragments
                         map = FragmentManager.FindFragmentByTag("android:switcher:" + Resource.Id.tabpager + ":0") as MapFragment;
                     }
                     _adapter.AddTab(RolePageAdapter.TabType.MAP, map);
-                    _tabs.Visibility = ViewStates.Visible;
+                    //_tabs.Visibility = ViewStates.Visible;
 
-                    if (WhiteLabelConfig.MAP_SELECTION_ONLY)
-                    {
-                        _tabs.Visibility = ViewStates.Gone;
-                    }
+                    //if (WhiteLabelConfig.MAP_SELECTION_ONLY)
+                    //{
+                    //    _tabs.Visibility = ViewStates.Gone;
+                    //}
                 }
-
-
-                //show role list when image is empty:
-                if (string.IsNullOrEmpty(CurrentEvent.roleimg))
-                {
-
+                else
+                { 
                     if (CurrentEvent.phases != null && CurrentEvent.CurrentPhase.roles != null && CurrentEvent.CurrentPhase.roles.Any())
                     {
                         var phasestouse = (from n in CurrentEvent.phases where n.roles != null select n).ToList();
@@ -160,8 +156,6 @@ namespace Bootleg.Droid.Fragments
                                 rolelist.OnRoleSelected += Tab_OnRoleSelected;
                             }
                         }
-                        //var tab = new RoleListFragment(CurrentEvent, null, dark);
-                        //rolelist = tab;
                         _adapter.AddTab(RolePageAdapter.TabType.LIST, rolelist);
                     }
                 }
@@ -174,6 +168,12 @@ namespace Bootleg.Droid.Fragments
         CancellationTokenSource cancel = new CancellationTokenSource();
 
         bool selectingrole = false;
+
+        public override void OnDestroyView()
+        {
+            base.OnDestroyView();
+            selectingrole = false;
+        }
 
         private async void Tab_OnRoleSelected(Role selected)
         {

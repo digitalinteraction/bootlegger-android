@@ -105,10 +105,7 @@ namespace Bootleg.Droid
                 else
                 {
                     CancellationTokenSource cancel = new CancellationTokenSource();
-                    AndHUD.Shared.Show(this, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true, () =>
-                    {
-                        cancel.Cancel();
-                    });
+                    AndHUD.Shared.Show(this, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true, cancel.Cancel);
 
                     try
                     {
@@ -341,7 +338,7 @@ namespace Bootleg.Droid
                         try
                         {
                             await Bootlegger.BootleggerClient.SaveEdit(CurrentEdit);
-                            if (CurrentEdit.media.Last().Status !=  MediaItem.MediaStatus.PLACEHOLDER)
+                            if (CurrentEdit.media.Last().Status != MediaItem.MediaStatus.PLACEHOLDER)
                                 CurrentEdit.media.Add(new MediaItem() { Status = MediaItem.MediaStatus.PLACEHOLDER });
                             Console.WriteLine($"Autosaved at {DateTime.Now.ToShortTimeString()}");
                         }
@@ -475,13 +472,21 @@ namespace Bootleg.Droid
         {
             if (mode == PLAYBACK_MODE.PLAY_EDIT)
             {
-                //tracker.TranslationX = Math.Min(((float)arg1 / arg2) * timeline.MeasuredWidth, timeline.MeasuredWidth);
-                tracker.TranslationX = Math.Min((float)(((CountToIndex(window) + arg1) / TotalMilis) * timeline.MeasuredWidth), timeline.MeasuredWidth);
+                if (Resources.Configuration.LayoutDirection == LayoutDirection.Rtl)
+                    tracker.TranslationX = timeline.MeasuredWidth + Utils.dp2px(this,34.5f) - Math.Min((float)(((CountToIndex(window) + arg1) / TotalMilis) * timeline.MeasuredWidth), timeline.MeasuredWidth);
+                else
+                    tracker.TranslationX = Math.Min((float)(((CountToIndex(window) + arg1) / TotalMilis) * timeline.MeasuredWidth), timeline.MeasuredWidth);
+
+
                 lefttimetotal.Text = TimeSpan.FromMilliseconds(CountToIndex(window) + arg1).ToString(@"mm\:ss");
             }
             else
             {
-                tracker.TranslationX = Math.Min((float)(((countuptocurrent() + arg1) / TotalMilis) * timeline.MeasuredWidth), timeline.MeasuredWidth);
+                if (Resources.Configuration.LayoutDirection == LayoutDirection.Rtl)
+                    tracker.TranslationX = timeline.MeasuredWidth + Utils.dp2px(this, 34.5f) - Math.Min((float)(((countuptocurrent() + arg1) / TotalMilis) * timeline.MeasuredWidth), timeline.MeasuredWidth);
+                else
+                    tracker.TranslationX = Math.Min((float)(((countuptocurrent() + arg1) / TotalMilis) * timeline.MeasuredWidth), timeline.MeasuredWidth);
+
                 lefttimetotal.Text = TimeSpan.FromMilliseconds(Math.Min((float)(((countuptocurrent() + arg1) / TotalMilis) * timeline.MeasuredWidth), timeline.MeasuredWidth)).ToString(@"mm\:ss");
 
             }
@@ -563,15 +568,6 @@ namespace Bootleg.Droid
 
                 }
             }
-
-            //public override void OnSelectedChanged(RecyclerView.ViewHolder viewHolder, int actionState)
-            //{
-            //    base.OnSelectedChanged(viewHolder, actionState);
-            //    if (actionState == ItemTouchHelper.ActionStateDrag)
-            //    {
-
-            //    }
-            //}
 
             public override bool CanDropOver(RecyclerView recyclerView, RecyclerView.ViewHolder current, RecyclerView.ViewHolder target)
             {
@@ -747,7 +743,7 @@ namespace Bootleg.Droid
             catch (Exception e)
             {
                 //Toast.MakeText(this, e.Message, ToastLength.Short).Show();
-                LoginFuncs.ShowToast(this,e);
+                LoginFuncs.ShowToast(this, e);
 
             }
 
@@ -916,11 +912,16 @@ namespace Bootleg.Droid
 
 
                     var dialog = builder.Show();
-                    
+
+                    var cantsubmit = false;
+
 
                     Button positiveButton = (Button)dialog.GetButton((int)DialogButtonType.Positive);
                     positiveButton.Click += delegate
                     {
+                        if (cantsubmit)
+                            return;
+
                         var lns = di.FindViewById<EditText>(Resource.Id.text).Text.ToString().Split('\n');
                         if (lns.Length > 8)
                         {
@@ -942,7 +943,8 @@ namespace Bootleg.Droid
                                 {
                                     CurrentEdit.media.RemoveAt(index);
                                 }
-                                catch {
+                                catch
+                                {
                                     index = CurrentEdit.media.Count() - 1;
                                 }
 
@@ -980,7 +982,33 @@ namespace Bootleg.Droid
                     dialog.FindViewById<EditText>(Resource.Id.text).RequestFocus();
                     dialog.FindViewById<EditText>(Resource.Id.text).TextChanged += (sender, e) =>
                     {
+                        int linetoolong = -1;
                         var lns = e.Text.ToString().Split('\n');
+
+
+                        for (int line = 0;line<lns.Length;line++)
+                        {
+                            if (lns[line].Length > 29)
+                            {
+                                linetoolong = line;
+                                break;
+                            }
+                        }
+
+                        if (linetoolong!=-1)
+                        {
+                            TextInputLayout titlelayout = dialog.FindViewById<TextInputLayout>(Resource.Id.textlayout);
+                            titlelayout.ErrorEnabled = true;
+                            titlelayout.Error = Resources.GetString(Resource.String.linetoolong,(linetoolong+1));
+                            cantsubmit = true;
+                        }
+                        else
+                        {
+                            TextInputLayout titlelayout = dialog.FindViewById<TextInputLayout>(Resource.Id.textlayout);
+                            titlelayout.ErrorEnabled = false;
+                            cantsubmit = false;
+                        }
+
                         dialog.FindViewById<TextView>(Resource.Id.counter).Text = GetString(Resource.String.linecounter, lns.Length);
                     };
 
@@ -998,174 +1026,174 @@ namespace Bootleg.Droid
 
         MediaItem currentpick;
 
-SingleEditAdapter _adapter;
-EditVideoView preview;
+        SingleEditAdapter _adapter;
+        EditVideoView preview;
 
 
-public void ExitSave()
-{
-    ShouldAutoSave = false;
-    preview.StopPlayback();
-    _adapter.UpdatePlaying(null);
-
-    if (CurrentEdit.media.Where(n => n.MediaType != Shot.ShotTypes.TITLE && n.Status != MediaItem.MediaStatus.PLACEHOLDER).Count() == 0)
-    {
-        Toast.MakeText(this, Resource.String.includevideo, ToastLength.Long).Show();
-        ShouldAutoSave = true;
-        return;
-    }
-
-    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
-    FrameLayout frameView = new FrameLayout(this);
-    builder.SetView(frameView);
-    var diag = builder.Create();
-    diag.SetTitle(Resource.String.saveedit);
-
-    LayoutInflater inflater = diag.LayoutInflater;
-    View dialoglayout = inflater.Inflate(Resource.Layout.editsavedlg, frameView);
-
-    //set title of video if there is one:
-    if (string.IsNullOrWhiteSpace(CurrentEdit.title))
-    {
-        if (CurrentEdit.media.First().MediaType == Shot.ShotTypes.TITLE)
-            CurrentEdit.title = CurrentEdit.media.First().titletext;
-    }
-
-    //adjust for audio:
-    if (CurrentMusic != null)
-    {
-        foreach (var m in CurrentEdit.media)
+        public void ExitSave()
         {
-            m.audio = null;
-            m.credits = null;
-        }
+            ShouldAutoSave = false;
+            preview.StopPlayback();
+            _adapter.UpdatePlaying(null);
 
-        CurrentEdit.media.First().audio = CurrentMusic.path;
-        CurrentEdit.media.First().credits = CurrentMusic.caption;
-    }
-
-    dialoglayout.FindViewById<TextView>(Resource.Id.title).Text = CurrentEdit.title;
-
-    if (WhiteLabelConfig.USE_EDIT_DESCRIPTION)
-    {
-        dialoglayout.FindViewById<TextView>(Resource.Id.description).Text = CurrentEdit.description;
-    }
-    else
-    {
-        dialoglayout.FindViewById<TextView>(Resource.Id.description).Visibility = ViewStates.Gone;
-    }
-
-    dialoglayout.FindViewById<Button>(Resource.Id.savebtn).Click += async (o, e) =>
-    {
-        bool doit = true;
-        if (dialoglayout.FindViewById<TextView>(Resource.Id.title).Text.Length < 5)
-        {
-            TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.title_layout);
-            titlelayout.ErrorEnabled = true;
-            titlelayout.Error = Resources.GetString(Resource.String.entertitle);
-            doit = false;
-        }
-
-        if (WhiteLabelConfig.USE_EDIT_DESCRIPTION)
-        {
-            if (dialoglayout.FindViewById<TextView>(Resource.Id.description).Text.Length < 5)
+            if (!CurrentEdit.media.Any(n => n.MediaType != Shot.ShotTypes.TITLE && n.Status != MediaItem.MediaStatus.PLACEHOLDER))
             {
-                TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.description_layout);
-                titlelayout.ErrorEnabled = true;
-                titlelayout.Error = Resources.GetString(Resource.String.enterdescription);
-                doit = false;
+                Toast.MakeText(this, Resource.String.includevideo, ToastLength.Long).Show();
+                ShouldAutoSave = true;
+                return;
             }
-        }
 
-        if (doit)
-        {
-            CurrentEdit.title = dialoglayout.FindViewById<TextView>(Resource.Id.title).Text;
-            CurrentEdit.description = dialoglayout.FindViewById<TextView>(Resource.Id.description).Text;
-            AndHUD.Shared.Show(this, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true);
-            try
+            Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+            FrameLayout frameView = new FrameLayout(this);
+            builder.SetView(frameView);
+            var diag = builder.Create();
+            diag.SetTitle(Resource.String.saveedit);
+
+            LayoutInflater inflater = diag.LayoutInflater;
+            View dialoglayout = inflater.Inflate(Resource.Layout.editsavedlg, frameView);
+
+            //set title of video if there is one:
+            if (string.IsNullOrWhiteSpace(CurrentEdit.title))
             {
-                await Bootlegger.BootleggerClient.SaveEdit(CurrentEdit);
-                Intent i = new Intent(this.ApplicationContext, typeof(Review));
+                if (CurrentEdit.media.First().MediaType == Shot.ShotTypes.TITLE)
+                    CurrentEdit.title = CurrentEdit.media.First().titletext;
+            }
+
+            //adjust for audio:
+            if (CurrentMusic != null)
+            {
+                foreach (var m in CurrentEdit.media)
+                {
+                    m.audio = null;
+                    m.credits = null;
+                }
+
+                CurrentEdit.media.First().audio = CurrentMusic.path;
+                CurrentEdit.media.First().credits = CurrentMusic.caption;
+            }
+
+            dialoglayout.FindViewById<TextView>(Resource.Id.title).Text = CurrentEdit.title;
+
+            if (WhiteLabelConfig.USE_EDIT_DESCRIPTION)
+            {
+                dialoglayout.FindViewById<TextView>(Resource.Id.description).Text = CurrentEdit.description;
+            }
+            else
+            {
+                dialoglayout.FindViewById<TextView>(Resource.Id.description).Visibility = ViewStates.Gone;
+            }
+
+            dialoglayout.FindViewById<Button>(Resource.Id.savebtn).Click += async (o, e) =>
+            {
+                bool doit = true;
+                if (dialoglayout.FindViewById<TextView>(Resource.Id.title).Text.Length < 5)
+                {
+                    TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.title_layout);
+                    titlelayout.ErrorEnabled = true;
+                    titlelayout.Error = Resources.GetString(Resource.String.entertitle);
+                    doit = false;
+                }
+
+                if (WhiteLabelConfig.USE_EDIT_DESCRIPTION)
+                {
+                    if (dialoglayout.FindViewById<TextView>(Resource.Id.description).Text.Length < 5)
+                    {
+                        TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.description_layout);
+                        titlelayout.ErrorEnabled = true;
+                        titlelayout.Error = Resources.GetString(Resource.String.enterdescription);
+                        doit = false;
+                    }
+                }
+
+                if (doit)
+                {
+                    CurrentEdit.title = dialoglayout.FindViewById<TextView>(Resource.Id.title).Text;
+                    CurrentEdit.description = dialoglayout.FindViewById<TextView>(Resource.Id.description).Text;
+                    AndHUD.Shared.Show(this, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true);
+                    try
+                    {
+                        await Bootlegger.BootleggerClient.SaveEdit(CurrentEdit);
+                        Intent i = new Intent(this.ApplicationContext, typeof(Review));
                 //i.PutExtra("processed", true);
                 //i.AddFlags(ActivityFlags.ClearTop);
                 i.PutExtra("processed", true);
-                StartActivity(i);
-                Finish();
-            }
-            catch (Exception ex)
-            {
-                _adapter.UpdateData(CurrentEdit.media);
-                _sliveradapter.UpdateData(CurrentEdit.media);
-                UpdateTimings();
+                        StartActivity(i);
+                        Finish();
+                    }
+                    catch (Exception ex)
+                    {
+                        _adapter.UpdateData(CurrentEdit.media);
+                        _sliveradapter.UpdateData(CurrentEdit.media);
+                        UpdateTimings();
                 //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
                 LoginFuncs.ShowToast(this, ex);
-            }
-            AndHUD.Shared.Dismiss();
-            diag.Cancel();
-            ShouldAutoSave = true;
-        }
-    };
-    dialoglayout.FindViewById<Button>(Resource.Id.sharebtn).Click += async (o, e) =>
-    {
-        bool doit = true;
-
-        if (dialoglayout.FindViewById<TextView>(Resource.Id.title).Text.Length < 5)
-        {
-            TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.title_layout);
-            titlelayout.ErrorEnabled = true;
-            titlelayout.Error = Resources.GetString(Resource.String.entertitle);
-            doit = false;
-        }
-
-        if (WhiteLabelConfig.USE_EDIT_DESCRIPTION)
-        {
-            if (dialoglayout.FindViewById<TextView>(Resource.Id.description).Text.Length < 5)
+                    }
+                    AndHUD.Shared.Dismiss();
+                    diag.Cancel();
+                    ShouldAutoSave = true;
+                }
+            };
+            dialoglayout.FindViewById<Button>(Resource.Id.sharebtn).Click += async (o, e) =>
             {
-                TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.description_layout);
-                titlelayout.ErrorEnabled = true;
-                titlelayout.Error = Resources.GetString(Resource.String.enterdescription);
-                doit = false;
-            }
-        }
+                bool doit = true;
 
-        if (doit)
-        {
-            CurrentEdit.title = dialoglayout.FindViewById<TextView>(Resource.Id.title).Text;
-            CurrentEdit.description = dialoglayout.FindViewById<TextView>(Resource.Id.description).Text;
-            AndHUD.Shared.Show(this, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true);
-            try
-            {
-                await Bootlegger.BootleggerClient.StartEdit(CurrentEdit);
+                if (dialoglayout.FindViewById<TextView>(Resource.Id.title).Text.Length < 5)
+                {
+                    TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.title_layout);
+                    titlelayout.ErrorEnabled = true;
+                    titlelayout.Error = Resources.GetString(Resource.String.entertitle);
+                    doit = false;
+                }
 
-                Bundle conData = new Bundle();
-                conData.PutBoolean("processed", true);
+                if (WhiteLabelConfig.USE_EDIT_DESCRIPTION)
+                {
+                    if (dialoglayout.FindViewById<TextView>(Resource.Id.description).Text.Length < 5)
+                    {
+                        TextInputLayout titlelayout = dialoglayout.FindViewById<TextInputLayout>(Resource.Id.description_layout);
+                        titlelayout.ErrorEnabled = true;
+                        titlelayout.Error = Resources.GetString(Resource.String.enterdescription);
+                        doit = false;
+                    }
+                }
 
-                Intent intent = new Intent();
-                intent.PutExtras(conData);
-                SetResult(Result.Ok, intent);
+                if (doit)
+                {
+                    CurrentEdit.title = dialoglayout.FindViewById<TextView>(Resource.Id.title).Text;
+                    CurrentEdit.description = dialoglayout.FindViewById<TextView>(Resource.Id.description).Text;
+                    AndHUD.Shared.Show(this, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true);
+                    try
+                    {
+                        await Bootlegger.BootleggerClient.StartEdit(CurrentEdit);
 
-                Intent i = new Intent(this.ApplicationContext, typeof(Review));
-                StartActivity(i);
-            }
-            catch (Exception ex)
-            {
-                _adapter.UpdateData(CurrentEdit.media);
-                _sliveradapter.UpdateData(CurrentEdit.media);
-                UpdateTimings();
+                        Bundle conData = new Bundle();
+                        conData.PutBoolean("processed", true);
+
+                        Intent intent = new Intent();
+                        intent.PutExtras(conData);
+                        SetResult(Result.Ok, intent);
+
+                        Intent i = new Intent(this.ApplicationContext, typeof(Review));
+                        StartActivity(i);
+                    }
+                    catch (Exception ex)
+                    {
+                        _adapter.UpdateData(CurrentEdit.media);
+                        _sliveradapter.UpdateData(CurrentEdit.media);
+                        UpdateTimings();
                 //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
                 LoginFuncs.ShowToast(this, ex);
-            }
-            AndHUD.Shared.Dismiss();
-            diag.Cancel();
-            ShouldAutoSave = true;
+                    }
+                    AndHUD.Shared.Dismiss();
+                    diag.Cancel();
+                    ShouldAutoSave = true;
+                }
+            };
+            diag.SetCancelable(true);
+            diag.Show();
+            dialoglayout.Post(() =>
+            {
+                dialoglayout.FindViewById<TextView>(Resource.Id.title).RequestFocus();
+            });
         }
-    };
-    diag.SetCancelable(true);
-    diag.Show();
-    dialoglayout.Post(() =>
-    {
-        dialoglayout.FindViewById<TextView>(Resource.Id.title).RequestFocus();
-    });
-}
     }
 }

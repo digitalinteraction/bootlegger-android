@@ -33,36 +33,33 @@
                     android:background="#77000000"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
-                    android:layoutDirection="ltr"
-                    android:layout_marginEnd="30dp"
-                    android:layout_marginStart="30dp" />
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginStart="40dp" />
                 <TextView
                     android:includeFontPadding="false"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:text="00:00"
                     android:textColor="#000000"
                     android:id="@+id/righttimetotal"
                     android:textSize="10sp"
-                    android:gravity="center_vertical|right"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_marginRight="3dp"
+                    android:gravity="center_vertical|center"
+                    android:layout_gravity="center_vertical|end"
                     android:alpha="0.6" />
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:text="00:00"
                     android:includeFontPadding="false"
                     android:textColor="#000000"
                     android:id="@+id/lefttimetotal"
                     android:textSize="10sp"
-                    android:gravity="center_vertical|left"
-                    android:layout_gravity="center_vertical|left"
-                    android:alpha="0.6"
-                    android:layout_marginStart="3dp" />
+                    android:gravity="center_vertical|center"
+                    android:layout_gravity="center_vertical|start"
+                    android:alpha="0.6" />
                 <View
                     android:id="@+id/pos"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginStart="34.5dp"
                     android:layout_width="9dp"
                     android:background="@drawable/round"
                     android:layout_height="9dp"
