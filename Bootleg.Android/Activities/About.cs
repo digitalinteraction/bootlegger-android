@@ -105,19 +105,10 @@ namespace Bootleg.Droid
                 FindViewById(Resource.Id.links).Visibility = ViewStates.Gone;
             }
 
-            //Picasso.With(this).Load(Resource.Drawable.logo_white).NoFade().Fit().CenterInside().Into(FindViewById<ImageView>(Resource.Id.logo1));
-            Picasso.With(this).Load(Resource.Drawable.openlab_dark).NoFade().Into(FindViewById<ImageView>(Resource.Id.logo2));
+            //Picasso.With(this).Load(Resource.Drawable.openlab).NoFade().Into(FindViewById<ImageView>(Resource.Id.logo2));
+            //Picasso.With(this).Load(Resource.Drawable.ifrc).NoFade().Into(FindViewById<ImageView>(Resource.Id.logo1));
 
-            //FeedbackManager.Register(this,WhiteLabelConfig.INSIGHTSKEY);
-
-
-            FindViewById<Button>(Resource.Id.feedback_btn).Visibility = ViewStates.Gone;
-
-            //Button feedbackButton = FindViewById<Button>(Resource.Id.feedback_btn);
-            //feedbackButton.Click += (o,e) =>
-            //{
-            //    FeedbackManager.ShowFeedbackActivity(this);
-            //};
+            FindViewById<Button>(Resource.Id.feedback_btn).Visibility = ViewStates.Gone;    
         }
 
         void Link_Click(object sender, EventArgs e)

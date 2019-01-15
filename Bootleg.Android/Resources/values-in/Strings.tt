@@ -8,7 +8,7 @@
       <#= GetString(Config.APP_NAME) #> membantu Anda mengambil gambar untuk film. Cari tahu lebih lanjut di
     </string>
     <string name="About">
-      <#= GetString(Config.APP_ABOUT_TEXT) #>
+      Aplikasi ini dikembangkan sebagai bagian dari program penelitian yang sedang dilakukan, yang menggali nilai pembuatan video partisipatif menggunakan narasi buatan sendiri yang ekspresif.
     </string>
     <string name="whatisbootlegger">
       <#= GetString(Config.APP_NAME) #> mengkoordinasikan orang-orang yang ingin membuat video
@@ -213,7 +213,7 @@
     <string name="newshoottitle">Mulai Pengambilan Gambar Baru</string>
     <string name="contributedfootage">Ada %d kontribusi dari orang lain untuk membuat video dengan ...</string>
     <string name="roledescision">
-      Keputusan <#= GetString(Config.CAMERA_NAME) #>
+      Keputusan Kategori
     </string>
     <string name="logouttitle">Benar-benar akan Keluar?</string>
     <string name="logoutmsg">Anda akan kehilangan semua video yang belum diunggah</string>

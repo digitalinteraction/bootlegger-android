@@ -793,6 +793,8 @@
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\SessionLostException.cs" />
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\NeedsUpdateException.cs" />
     <AndroidResource Include="Resources\drawable\baseline_videocam_24.xml" />
+    <AndroidResource Include="Resources\Drawable\ifrc.png" />
+    <AndroidResource Include="Resources\Drawable\openlab.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml">
@@ -980,9 +982,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Icon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidEnvironment Include="BuildProperties.txt" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_file_upload_white_24dp.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_file_upload_white_24dp.png" />
@@ -1125,7 +1124,6 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_action_about.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_about.png" />
     <AndroidResource Include="Resources\drawable\logo_black.png" />
-    <AndroidResource Include="Resources\drawable\background.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_new.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_action_new.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_action_new.png" />
@@ -1256,7 +1254,6 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_white_48dp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_menu_white_48dp.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu_white_48dp.png" />
-    <AndroidResource Include="Resources\drawable\openlab_dark.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_add_white_36dp.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_add_white_36dp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_white_36dp.png" />
@@ -1368,7 +1365,6 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_check_black_24dp.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_check_black_24dp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_check_black_24dp.png" />
-    <AndroidResource Include="Resources\drawable\logo_white.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_arrow_forward_black_24dp.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_arrow_forward_black_24dp.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_arrow_forward_black_24dp.png" />

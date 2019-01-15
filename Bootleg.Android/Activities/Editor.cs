@@ -304,12 +304,12 @@ namespace Bootleg.Droid
             //try TO SAVE:
 
             //HACK TO STOP AUTOSAVE AS ITS NOT FIXED YET!
-            return;
+            //return;
 
             while (true)
             {
 
-                Thread.Sleep(TimeSpan.FromSeconds(3));
+                Thread.Sleep(TimeSpan.FromSeconds(30));
                 if (CurrentEdit != null && ShouldAutoSave)
                 {
                     //set title of video if there is one:

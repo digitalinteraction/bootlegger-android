@@ -65,7 +65,7 @@
       <#= GetString(Config.APP_NAME) #> helps you shoot films. Find out more at
     </string>
     <string name="About">
-      <#= GetString(Config.APP_ABOUT_TEXT) #>
+     This application has been developed as part of an ongoing research programme exploring the value of participatory video creation for expressive self driven narrative.
     </string>
     <string name="ingesttitle">Tagging Videos for %s</string>
     <string name="whatisbootlegger">
@@ -110,7 +110,7 @@
     <string name="notacceptperms">You have chosen not to accept the permission changed so you will have to stop contributing.</string>
     <string name="iunderstand">I Understand</string>
     <string name="EventPosition">
-      Select a <#= GetString(Config.CAMERA_NAME) #> for your next video.
+      Select a theme for your next video.
     </string>
     <string name="Finished">I am finished at this shoot</string>
     <string name="Choose">Pick a template to use</string>
@@ -174,9 +174,6 @@
     <string name="longershoottitle">Enter a longer shoot name</string>
     <string name="problemcreateshoot">Cannot start new shoot</string>
     <!--<string name="cantlistedits">Cannot list edits, you may be offline</string>-->
-    <string name="cantgiverole">
-      We can\'t seem to give you a <#= GetString(Config.CAMERA_NAME) #> at this shoot right now, try selecting the shoot again
-    </string>
     <string name="googleplayerror">Google Play Services is not installed or needs updating</string>
     <string name="tryagain">%1$s. Please try again.</string>
     <string name="role_repeat">We think you are signed in elsewhere, continue?</string>
@@ -189,7 +186,7 @@
     <string name="Closed">Production is not possible on this event at the moment.</string>
     <string name="noperms">You have not granted permissions for the app to work, so it will now close.</string>
     <string name="norolechosen">
-      You did not choose a <#= GetString(Config.CAMERA_NAME) #> before going offline, go online to continue
+      You did not choose a Theme before going offline, go online to continue
     </string>
     <string name="cannotloadvideo">Cannot load video, it may be processing so try again soon</string>
     <string name="entertitle">enter a longer title</string>
@@ -225,7 +222,7 @@
     <string name="phasechange">The shoot is now about %s, you may have been assigned new things to film</string>
     <string name="shootupdatedlong">The shoot has been updated, there may be new options</string>
     <string name="phasechangerole">
-      The shoot is now about %s so you should change your <#= GetString(Config.CAMERA_NAME) #>
+      The shoot is now about %s so you should change your Theme
     </string>
 
     <!-- INTERFACE ELEMENTS -->
@@ -256,9 +253,7 @@
     <string name="editready">Your story will be ready to view shortly…</string>
     <string name="allclear">Uploading complete!</string>
     <string name="sendingall">You are sending us everything you have recorded.</string>
-    <string name="noshoots">
-      <#= GetString(Config.NO_SHOOTS) #>
-    </string>
+    <string name="noshoots">Enter a code…</string>
     <string name="imagedownload">Downloading images. This could take about 30 seconds…</string>
     <plurals name="shootcount">
       <item quantity="one">%d shoot</item>
@@ -294,9 +289,7 @@
     <string name="newshoothint">Shoot Name</string>
     <string name="newshoottitle">Start New Shoot</string>
     <string name="contributedfootage">There are %d contributions from other people to make a video with…</string>
-    <string name="roledescision">
-      <#= GetString(Config.CAMERA_NAME) #> Descision
-    </string>
+    <string name="roledescision">Theme Descision</string>
     <string  name="logouttitle">Really Logout?</string>
     <string  name="logoutmsg">You will lose forever all videos not already uploaded</string>
     <string name="search">Search</string>

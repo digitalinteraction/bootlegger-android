@@ -8,9 +8,6 @@ public class Config
 	//Additional namespace to add to the normal bootlegger one
 	public static string NAMESPACE_EXT = "";
 	public static Dictionary<string,string> APP_NAME = new Dictionary<string,string>();
-	public static Dictionary<string,string> CAMERA_NAME = new Dictionary<string,string>();
-	public static Dictionary<string,string> NO_SHOOTS = new Dictionary<string,string>();
-	public static Dictionary<string,string> APP_ABOUT_TEXT = new Dictionary<string,string>();
 
 	//Login redirect URL scheme
 	public static string DATASCHEME = "";
