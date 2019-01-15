@@ -160,5 +160,5 @@
         android:layout_margin="16dp"
         app:borderWidth="0dp"
         android:layout_gravity="bottom|right|end"
-        android:src="@drawable/ic_photo_camera_white_24dp" />
+        android:src="@drawable/baseline_videocam_24" />
 </android.support.design.widget.CoordinatorLayout>

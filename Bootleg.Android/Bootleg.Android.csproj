@@ -790,6 +790,9 @@
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\NoNetworkException.cs" />
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\UnknownNetworkException.cs" />
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\StoriesDisabledException.cs" />
+    <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\SessionLostException.cs" />
+    <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\NeedsUpdateException.cs" />
+    <AndroidResource Include="Resources\drawable\baseline_videocam_24.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml">
@@ -932,9 +935,6 @@
     <AndroidResource Include="Resources\layout\moreshoots.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\makeshoot.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\help_cutout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -958,9 +958,6 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\video_meta.axml">
       <SubType>AndroidResource</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\WebLayout.axml">
-      <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>

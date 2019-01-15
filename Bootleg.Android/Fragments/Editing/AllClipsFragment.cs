@@ -55,17 +55,12 @@ namespace Bootleg.Droid
 
         void RefreshOffline()
         {
-
-            //var dat = new Dictionary<string, List<MediaItem>>() { { "all", Bootlegger.BootleggerClient.QueryMediaByTopic(tagfilter) } };
             var dat = Bootlegger.BootleggerClient.QueryMediaByTopic(tagfilter.Select((arg) => arg.id).ToList())
                        .GroupBy(n => n.Contributor)
                        .OrderBy(a => (a.Key == Bootlegger.BootleggerClient.CurrentUser.displayName) ? 1 : 2)
                        .ToDictionary(n => n.Key, n => n.ToList());
 
-            //var dat = new Dictionary<string, List<MediaItem>>() { { "all",  } };
             listAdapter.UpdateData(dat);
-
-            //listAdapter.UpdateData(dat);
 
             if (listAdapter.ItemCount == 0)
             {
@@ -97,15 +92,6 @@ namespace Bootleg.Droid
                     Bootlegger.BootleggerClient.GetEveryonesMedia(cancel.Token);
                 }
 
-
-                //var prev = Resources.GetStringArray(Resource.Array.default_edit_topics).ToList();
-
-
-                //if (string.IsNullOrEmpty(Bootlegger.BootleggerClient.CurrentEvent.topics))
-                    //Bootlegger.BootleggerClient.CurrentEvent.topics = string.Join(",", prev);
-                //else
-                    //prev = Bootlegger.BootleggerClient.CurrentEvent.topics.Split(',').ToList();
-
                 if (ChooserMode == ClipViewMode.INGEST)
                 {
                     listAdapter.UpdateData(Bootlegger.BootleggerClient.QueryMedia(sortFilter, sortDirection));
@@ -117,14 +103,12 @@ namespace Bootleg.Droid
                         .OrderBy(a => (a.Key == Bootlegger.BootleggerClient.CurrentUser.displayName) ? 1 : 2)
                         .ToDictionary(n => n.Key, n => n.ToList());
 
-                    //listAdapter.UpdateData(new Dictionary<string, List<MediaItem>>() { { "all", Bootlegger.BootleggerClient.QueryMediaByTopic(new List<string>()) } });
                     listAdapter.UpdateData(dat);
 
                 }
                 else
                 {
                     listAdapter.UpdateData(new Dictionary<string, List<MediaItem>>() { { "all", Bootlegger.BootleggerClient.QueryMediaByTopic(new List<string>()) } });
-                    //listAdapter.UpdateData(dat);
                 }
 
                 if (!data)
@@ -154,8 +138,7 @@ namespace Bootleg.Droid
                 if (!data)
                     loading = false;
             }
-            //if  doing a hard-reload, dont hide progress
-            
+            //if  doing a hard-reload, dont hide progress   
         }
 
         private void ListAdapter_OnChosen(MediaItem obj)
@@ -166,7 +149,6 @@ namespace Bootleg.Droid
         public override void OnStart()
         {
             base.OnStart();
-            //Bootlegger.BootleggerClient.OnMoreMediaLoaded += Comms_OnMoreMediaLoaded;
             Bootlegger.BootleggerClient.OnMediaLoadingComplete += Comms_OnMediaLoadingComplete;
 
             if (firstload)
@@ -188,8 +170,6 @@ namespace Bootleg.Droid
         public override void OnResume()
         {
             base.OnResume();
-
-            //RefreshOffline();
         }
         View theview;
         ClipAdapter listAdapter;
@@ -236,12 +216,6 @@ namespace Bootleg.Droid
 
             var cols = Activity.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape ? 3 : 2;
 
-            //var prev = Resources.GetStringArray(Resource.Array.default_edit_topics).ToList();
-            //if (string.IsNullOrEmpty(Bootlegger.BootleggerClient.CurrentEvent.topics))
-            //    Bootlegger.BootleggerClient.CurrentEvent.topics = string.Join(",", prev);
-            //else
-                //prev = Bootlegger.BootleggerClient.CurrentEvent.topics.Split(',').ToList();
-
             listAdapter = new ClipAdapter(Activity,  new Dictionary<string, List<MediaItem>>(), ChooserMode, Bootlegger.BootleggerClient.CurrentEvent.topics.ToList());
 
             listAdapter.OnPreview += _adatper_OnPreview;
@@ -264,13 +238,6 @@ namespace Bootleg.Droid
 
             theview = view;
 
-            //var options = Resources.GetStringArray(Resource.Array.default_edit_topics).ToList();
-            //if (string.IsNullOrEmpty(Bootlegger.BootleggerClient.CurrentEvent.topics))
-                //Bootlegger.BootleggerClient.CurrentEvent.topics = string.Join(",", options);
-            //else
-                //options = Bootlegger.BootleggerClient.CurrentEvent.topics.Split(',').ToList();
-
-
             if (ChooserMode == ClipViewMode.INGEST)
             {
                 view.FindViewById<FloatingActionButton>(Resource.Id.continuebtn).Click += AllClipsFragment_Click;
@@ -292,22 +259,6 @@ namespace Bootleg.Droid
 
                 view.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.filtertoolbar).InflateMenu(Resource.Menu.selectclip);
                 view.FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.filtertoolbar).MenuItemClick += AllClipsFragment_MenuItemClick;
-
-            //FindViewById<ImageButton>(Resource.Id.ingestbtn).Click += IngestOpen;
-
-
-
-                //     < ImageButton
-                //android: layout_height = "48dp"
-                //android: layout_width = "48dp"
-                //android: padding = "4dp"
-                //android: layout_margin = "2dp"
-                //android: background = "?attr/selectableItemBackground"
-                //android: id = "@+id/ingestbtn"
-                //android: src = "@drawable/ic_tag_white_48dp"
-                //android: scaleType = "fitCenter"
-                //android: adjustViewBounds = "true" />
-
             }
             else
             {
@@ -439,27 +390,6 @@ namespace Bootleg.Droid
                 new KeyValuePair<string, string>("eventid", Bootlegger.BootleggerClient.CurrentEvent.id));
         }
 
-        
-
-        //private void Comms_OnMoreMediaLoaded(List<MediaItem> moremedia)
-        //{
-        //    //if (reviewscreen != null)
-        //    //{
-        //    //Console.WriteLine("more media");
-        //    if (ChooserMode == ClipViewMode.INGEST)
-        //    {
-        //        //listAdapter.UpdateData((Activity.Application as BootleggerApp).Comms.QueryMedia());
-        //        Activity.RunOnUiThread(() =>
-        //        {
-
-        //            var dat = Bootlegger.BootleggerClient.QueryMedia(sortFilter, sortDirection);
-
-        //            //if (listAdapter.ItemCount > 0)
-        //            //reviewscreen.ChangeTab(1, "All Clips (" + (listAdapter.ItemCount - dat.Count) + ")");
-        //        });
-        //    }
-        //}
-
         private void MyEditsFragment_Refresh(object sender, EventArgs e)
         {
             if (ChooserMode == ClipViewMode.INGEST || ChooserMode == ClipViewMode.LIST)
@@ -478,7 +408,6 @@ namespace Bootleg.Droid
                 cancel.Cancel();
             }
             catch { }
-            //Bootlegger.BootleggerClient.OnMoreMediaLoaded -= Comms_OnMoreMediaLoaded;
             Bootlegger.BootleggerClient.OnMediaLoadingComplete -= Comms_OnMediaLoadingComplete;
         }
 
@@ -506,7 +435,6 @@ namespace Bootleg.Droid
 
         private bool loading = true;
         public ClipViewMode ChooserMode { get; set; }
-        //private Review review;
 
         public override void OnLowMemory()
         {
@@ -515,11 +443,7 @@ namespace Bootleg.Droid
 
         public void NotifyUpdate(MediaItem item)
         {
-            //var tmp = ;
-            //var index = 
             listAdapter.UpdateItem(listAdapter.IndexOf(item), item);
-
-            //listAdapter.NotifyItemChanged(listAdapter.IndexOf(item));
         }
 
         internal void Refresh()

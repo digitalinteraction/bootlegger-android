@@ -222,26 +222,26 @@ namespace Bootleg.Droid.Fragments
                             .SetCancelable(false)
                             .Show();
                     }
-                    catch (NotGivenPermissionException)
+                    catch (NotGivenPermissionException e)
                     {
                         AndHUD.Shared.Dismiss();
                         selectingrole = false;
                         try
                         {
-                            LoginFuncs.ShowError(this.Activity, new Exception(Resources.GetString(Resource.String.acceptperms)));
+                            LoginFuncs.ShowError(this.Activity, e);
                             //Toast.MakeText(Activity, Resource.String.acceptperms, ToastLength.Long).Show();
                         }
                         catch { }
                         return;
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         AndHUD.Shared.Dismiss();
                         selectingrole = false;
                         try
                         {
                             //Toast.MakeText(Activity, Resource.String.problemconnecting, ToastLength.Long).Show();
-                            LoginFuncs.ShowError(this.Activity, new Exception(Resources.GetString(Resource.String.problemconnecting)));
+                            LoginFuncs.ShowError(this.Activity, e);
                         }
                         catch { }
                         return;
@@ -307,9 +307,8 @@ namespace Bootleg.Droid.Fragments
                         selectingrole = false;
                         try
                         {
-                            LoginFuncs.ShowError(this.Activity, new Exception(Resources.GetString(Resource.String.cantgiverole)));
+                            LoginFuncs.ShowError(this.Activity, new RoleNotSelectedException());
 
-                            //Toast.MakeText(Activity, Resource.String.cantgiverole, ToastLength.Short).Show();
                         }
                         catch { }
                     }
@@ -320,8 +319,7 @@ namespace Bootleg.Droid.Fragments
                     selectingrole = false;
                     try
                     {
-                        LoginFuncs.ShowError(this.Activity, new Exception(Resources.GetString(Resource.String.problemconnecting)));
-                        //Toast.MakeText(Activity, Resource.String.problemconnecting, ToastLength.Long).Show();
+                        LoginFuncs.ShowError(this.Activity, e);
                     }
                     catch { }
                 }

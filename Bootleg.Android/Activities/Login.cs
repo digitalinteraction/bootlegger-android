@@ -124,10 +124,10 @@ namespace Bootleg.Droid
                         //await (Application as BootleggerApp).Comms.ConnectToEvent(Shoot, true, cancel.Token, false);
                         //StartActivity(typeof(Roles));
                     } 
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         
-                       LoginFuncs.ShowError(this,new Exception(Resources.GetString(Resource.String.problemconnecting)));
+                       LoginFuncs.ShowError(this,e);
                     }
                     finally
                     {
@@ -136,7 +136,7 @@ namespace Bootleg.Droid
                 }
                 else
                 {
-                    LoginFuncs.ShowError(this, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                    LoginFuncs.ShowError(this, new NoNetworkException());
                     AndHUD.Shared.Dismiss();
                 }
             }

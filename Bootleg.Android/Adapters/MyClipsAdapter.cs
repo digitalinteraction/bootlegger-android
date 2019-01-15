@@ -6,27 +6,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Android.App;
 using Android.Views;
 using Android.Widget;
 using Bootleg.API;
 using Square.Picasso;
 using Android.Support.V7.Widget;
-//using Com.Tonicartos.Superslim;
 using Android.Graphics;
 using Android.Support.V4.Content;
 using static Bootleg.Droid.MyClipsAdapter.ViewHolder;
 using Bootleg.API.Model;
-//using Android.Content.Res;
 
 namespace Bootleg.Droid
 {
     public class MyClipsAdapter : RecyclerView.Adapter
     {
-        //private bool doing_work;
 
-        public enum TileType:int { MEDIAITEM=1, UPLOADER=2, SYNC=3};
+        public enum TileType : int { MEDIAITEM = 1, UPLOADER = 2, SYNC = 3 };
 
         public class HeaderMediaItem
         {
@@ -46,7 +42,7 @@ namespace Bootleg.Droid
             private View view;
             MyClipsAdapter adpt;
             public event Action<MediaItem> OnDelete;
-            public event Action<MediaItem,View> OnPreview;
+            public event Action<MediaItem, View> OnPreview;
             HeaderMediaItem media;
 
             public ViewHolder(View itemView, MyClipsAdapter adpt) : base(itemView)
@@ -65,8 +61,8 @@ namespace Bootleg.Droid
                     adpt.OnSyncStatusChanged += Adpt_OnSyncStatusChanged;
                     view.FindViewById<Button>(Resource.Id.syncnow).Click += (obj, args) =>
                     {
-                    //initiate sync:
-                    adpt.FireRefreshClips();
+                        //initiate sync:
+                        adpt.FireRefreshClips();
                     };
                 }
 
@@ -84,7 +80,7 @@ namespace Bootleg.Droid
                 });
             }
 
-          
+
             internal void SetItem(HeaderMediaItem item)
             {
                 if (item.ViewType == TileType.SYNC)
@@ -101,18 +97,6 @@ namespace Bootleg.Droid
                     //if there is media waiting for upload:
                     if (Bootlegger.BootleggerClient.MyMediaEditing.Count == 0 && Bootlegger.BootleggerClient.UploadQueueEditing.Count == 0)
                     {
-                        //if none of my media, and none pending upload
-                        if ((Bootlegger.BootleggerClient.CurrentEvent.publicedit || Bootlegger.BootleggerClient.CurrentEvent.publicview) && Bootlegger.BootleggerClient.CurrentEvent.numberofclips > 0)
-                        {
-                            //if public edit
-                            //view.FindViewById<TextView>(Resource.Id.nofootage).Text = adpt.context.Resources.GetString(Resource.String.contributedfootage, Bootlegger.BootleggerClient.CurrentEvent.numberofclips);
-                        }
-                        else
-                        {
-                            //if not public edit
-                            //view.FindViewById<TextView>(Resource.Id.nofootage).Text = adpt.context.Resources.GetString(Resource.String.nofootage);
-                        }
-
                         //show message
                         view.FindViewById<View>(Resource.Id.emptytext).Visibility = ViewStates.Visible;
                     }
@@ -126,14 +110,6 @@ namespace Bootleg.Droid
                 {
                     media = null;
 
-                    
-                    //Bootlegger.BootleggerClient.OnGlobalUploadProgress += BootleggerClient_OnGlobalUploadProgress;
-                    //Bootlegger.BootleggerClient.OnCurrentUploadsComplete += Comms_OnCurrentUploadsComplete;
-
-                    //link upload info:
-                    //if (Bootlegger.BootleggerClient.UploadQueueEditing.Count > 0)
-                    //{
-                        //view.FindViewById<View>(Resource.Id.uploadtile).Visibility = ViewStates.Visible;
 
                     if (Bootlegger.BootleggerClient.CanUpload)
                     {
@@ -145,11 +121,6 @@ namespace Bootleg.Droid
                     }
 
                     view.FindViewById<TextView>(Resource.Id.subheader).Text = view.Context.GetString(Resource.String.waitingtoupload, Bootlegger.BootleggerClient.UploadQueueEditing.Count);
-                    //}
-                    //else
-                    //{
-                    //    view.FindViewById<View>(Resource.Id.uploadtile).Visibility = ViewStates.Gone;
-                    //}
                 }
                 else
                 {
@@ -162,23 +133,18 @@ namespace Bootleg.Droid
                         try
                         {
                             //21 / 01 / 2016 20:31:18.41 pm + 00
-                            if (item.MediaItem.CreatedAt != null)
-                            {
-                                view.FindViewById<TextView>(Resource.Id.uploadsubtitle).Text = item.MediaItem.CreatedAt.LocalizeTimeDiff();
-                            }
-
-                            //view.FindViewById<TextView>(Resource.Id.uploadsubtitle).Text = DateTime.ParseExact(media.Static_Meta["captured_at"].ToString(), "dd/MM/yyyy H:mm:ss.ff ", CultureInfo.InvariantCulture).ToString("hhtt ddd dd MMM");
+                            view.FindViewById<TextView>(Resource.Id.uploadsubtitle).Text = item.MediaItem.CreatedAt.LocalizeTimeDiff();
                         }
                         catch
                         {
-                            view.FindViewById<TextView>(Resource.Id.uploadsubtitle).Text = media.MediaItem.Static_Meta["captured_at"].ToString();
+                            view.FindViewById<TextView>(Resource.Id.uploadsubtitle).Text = media.MediaItem.Static_Meta["captured_at"];
                         }
                     }
                     else
                     {
                         try
                         {
-                            view.FindViewById<TextView>(Resource.Id.uploadsubtitle).Text = media.MediaItem.Static_Meta["captured_at"].ToString();
+                            view.FindViewById<TextView>(Resource.Id.uploadsubtitle).Text = media.MediaItem.Static_Meta["captured_at"];
                         }
                         catch
                         {
@@ -203,8 +169,7 @@ namespace Bootleg.Droid
                             view.FindViewById<ImageView>(Resource.Id.mediatype).SetImageResource(Resource.Drawable.ic_mic_white_48dp);
                             break;
                     }
-                    //if (changed)
-                    //{
+
                     switch (media.MediaItem.MediaType)
                     {
                         case Shot.ShotTypes.VIDEO:
@@ -249,12 +214,10 @@ namespace Bootleg.Droid
 
                     media.MediaItem.OnChanged += (sender) =>
                     {
-                        view.Post(() =>
-                        {
-                            UpdateProgress();   
-                            //adpt.NotifyItemChanged(AdapterPosition);
-                        });
+                        view.Post(UpdateProgress);
                     };
+
+
                 }
             }
 
@@ -263,6 +226,7 @@ namespace Bootleg.Droid
             private void Adpt_OnSyncStatusChanged(SyncStatus status, int obj)
             {
                 view.FindViewById(Resource.Id.syncnow).Visibility = ViewStates.Gone;
+
                 switch (status)
                 {
                     case SyncStatus.SYNCING:
@@ -343,7 +307,7 @@ namespace Bootleg.Droid
 
             private void ViewHolder_Click1(object sender, EventArgs e)
             {
-                OnPreview?.Invoke(media.MediaItem,view);
+                OnPreview?.Invoke(media.MediaItem, view);
             }
 
             private void ViewHolder_Click(object sender, EventArgs e)
@@ -372,37 +336,29 @@ namespace Bootleg.Droid
             int count = 0;
             count += (notuploaded.Count > 0) ? notuploaded.Count + 2 : 0;
             count += uploaded.Count;
-            //if (count == items.Count)
-            //    return;
             items = null;
             items = new List<HeaderMediaItem>();
 
-            //if (WhiteLabelConfig.REDUCE_BANDWIDTH)
-            //{
-            //    items.Add(new HeaderMediaItem() { ViewType = TileType.LOADER, SectionFirstPosition = 0 });
-            //}
 
             int headerCount = 0;
 
             if (notuploaded.Count > 0)
             {
-                items.Add(new HeaderMediaItem() { ViewType = TileType.UPLOADER, SectionFirstPosition = 0, SubText = Java.Lang.String.Format("%d", notuploaded.Count), Icon = Resource.Drawable.ic_timelapse_white_24dp, HeaderText = context.GetString(Resource.String.uploadswaiting) });
+                items.Add(new HeaderMediaItem { ViewType = TileType.UPLOADER, SectionFirstPosition = 0, SubText = Java.Lang.String.Format("%d", notuploaded.Count), Icon = Resource.Drawable.ic_timelapse_white_24dp, HeaderText = context.GetString(Resource.String.uploadswaiting) });
                 headerCount++;
 
                 foreach (var i in notuploaded)
                 {
-                    items.Add(new HeaderMediaItem() { ViewType = TileType.MEDIAITEM, MediaItem = i, SectionFirstPosition = 0 });
+                    items.Add(new HeaderMediaItem { ViewType = TileType.MEDIAITEM, MediaItem = i, SectionFirstPosition = 0 });
                 }
 
-
-                
             }
 
-            items.Add(new HeaderMediaItem() { ViewType = TileType.SYNC, SectionFirstPosition = Math.Max(items.Count - 1 + headerCount,0), SubText = Java.Lang.String.Format("%d", uploaded.Count), Icon = Resource.Drawable.ic_film_play_button, HeaderText = context.GetString(Resource.String.allvideos) });
+            items.Add(new HeaderMediaItem() { ViewType = TileType.SYNC, SectionFirstPosition = Math.Max(items.Count - 1 + headerCount, 0), SubText = Java.Lang.String.Format("%d", uploaded.Count), Icon = Resource.Drawable.ic_film_play_button, HeaderText = context.GetString(Resource.String.allvideos) });
             headerCount++;
             foreach (var i in uploaded)
             {
-                items.Add(new HeaderMediaItem() { ViewType = TileType.MEDIAITEM, NoHeaders = headerCount==0,   MediaItem = i, SectionFirstPosition = (notuploaded.Count>0) ? (notuploaded.Count - 1 + headerCount):0 });
+                items.Add(new HeaderMediaItem() { ViewType = TileType.MEDIAITEM, NoHeaders = headerCount == 0, MediaItem = i, SectionFirstPosition = (notuploaded.Count > 0) ? (notuploaded.Count - 1 + headerCount) : 0 });
             }
             NotifyDataSetChanged();
         }
@@ -428,11 +384,11 @@ namespace Bootleg.Droid
             OnSyncStatusChanged?.Invoke(status, media);
         }
 
-        public MyClipsAdapter(Activity context, List<MediaItem> notuploaded,List<MediaItem> uploaded)
+        public MyClipsAdapter(Activity context, List<MediaItem> notuploaded, List<MediaItem> uploaded)
         {
             this.context = context;
             UpdateData(notuploaded, uploaded);
-           
+
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -442,7 +398,7 @@ namespace Bootleg.Droid
             ViewHolder view = holder as ViewHolder;
             view.SetItem(item);
             //GridSLM.LayoutParams lp = GridSLM.LayoutParams.From(view.ItemView.LayoutParameters);
-            
+
             //lp.SetSlm(GridSLM.Id);
             //lp.NumColumns = 3;
             ////lp.ColumnWidth = 300;
@@ -469,20 +425,20 @@ namespace Bootleg.Droid
                     itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.uploadlistsync, parent, false);
                     break;
             }
-            
+
             ViewHolder vh = new ViewHolder(itemView, this);
             vh.OnDelete += Vh_OnDelete;
             vh.OnPreview += Vh_OnPreview;
-            return vh;   
+            return vh;
         }
 
-        private void Vh_OnPreview(MediaItem obj,View v)
+        private void Vh_OnPreview(MediaItem obj, View v)
         {
-            OnPreview?.Invoke(obj,v);
+            OnPreview?.Invoke(obj, v);
         }
 
         public event Action<MediaItem> OnDelete;
-        public event Action<MediaItem,View> OnPreview;
+        public event Action<MediaItem, View> OnPreview;
 
         private void Vh_OnDelete(MediaItem obj)
         {
@@ -499,8 +455,8 @@ namespace Bootleg.Droid
             return (int)items[position].ViewType;
         }
 
-       
+
     }
 
-        
-    }
+
+}

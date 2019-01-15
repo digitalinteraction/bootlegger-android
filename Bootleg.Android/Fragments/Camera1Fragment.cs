@@ -153,6 +153,8 @@ namespace Bootleg.Droid.Fragments
 
             SetupComplete?.Invoke();
 
+            //view.Post(() => view.RequestLayout());
+
             return view;
         }
 

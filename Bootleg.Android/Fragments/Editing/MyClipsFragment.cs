@@ -88,13 +88,15 @@ namespace Bootleg.Droid
                 await Bootlegger.BootleggerClient.GetMyMedia(cancel.Token);
 
                 //if I can edit everyones media:
-                if (Bootlegger.BootleggerClient.CurrentEvent.publicview || Bootlegger.BootleggerClient.CurrentEvent.publicedit)
+                if (Bootlegger.BootleggerClient.CurrentEvent.publicedit)
                 {
                     //load everyones media:
                     Bootlegger.BootleggerClient.GetEveryonesMedia(cancel.Token);
                 }
 
                 _adapter.UpdateData(Bootlegger.BootleggerClient.UploadQueueEditing, Bootlegger.BootleggerClient.MyMediaEditing);
+                _adapter.FireSyncStatusChanged(MyClipsAdapter.ViewHolder.SyncStatus.OK, 0);
+
                 OnRefresh?.Invoke();
             }
             catch (TaskCanceledException)
@@ -179,9 +181,11 @@ namespace Bootleg.Droid
                             if (info.numberofclips > mediahave)
                             {
                                 //if can see the clips:
-                                //if (Bootlegger.BootleggerClient.CurrentEvent.publicedit || Bootlegger.BootleggerClient.CurrentEvent.publicview)
-
-                                _adapter.FireSyncStatusChanged(MyClipsAdapter.ViewHolder.SyncStatus.MISSING, (info.numberofclips - mediahave));
+                                if (Bootlegger.BootleggerClient.CurrentEvent.publicedit)
+                                //if (Bootlegger.publicedit || )
+                                    _adapter.FireSyncStatusChanged(MyClipsAdapter.ViewHolder.SyncStatus.MISSING, (info.numberofclips - mediahave));
+                                else
+                                    _adapter.FireSyncStatusChanged(MyClipsAdapter.ViewHolder.SyncStatus.OK, 0);
                             }
                             else
                             {

@@ -168,8 +168,8 @@
     <string name="updatedsecurity">
       Sorry, you must update <#= GetString(Config.APP_NAME) #> to continue as we have updated our security protocols
     </string>
-    <string name="failedconnection">Sorry, we could not log you in</string>
-    <string name="loginagain">Please try logging in again</string>
+    
+    
     <string name="invalidcode">That code is invalid</string>
     <string name="longershoottitle">Enter a longer shoot name</string>
     <string name="problemcreateshoot">Cannot start new shoot</string>
@@ -306,8 +306,7 @@
     <string name="savecancelmsg">Save your story?</string>
     <string name="topic">By Tag</string>
     <string name="copyof">Copy of %s</string>
-    <string name="connectionissuetitle">Connection Issue</string>
-    <string name="connectionissuebody">We are having trouble retrieving your information. Login again to continue.</string>
+    
     
     <string name="linecounter">%s / 8 lines</string>
     <string name="titlelengthwarning">Title is too long!</string>
@@ -318,4 +317,14 @@
     <string name="storiesdisabled">Publishing is currently disabled</string>
     <string name="linetoolong">Line %s is too long!</string>
     
+    <string name="errornonetwork">Error 1: No network connection</string>
+    <string name="errornoapplication">Error 2: Cannot connect to application</string>
+    <string name="apikeynovalid">Error 3: Invalid API Key</string>
+    
+    <string name="connectionissuetitle">Connection Issue</string>
+    <string name="connectionissuebody">Error 4: We are having trouble retrieving your information. Login again to continue.</string>
+    <string name="loginagain">Error 5: Please try logging in again</string>
+    <string name="errorcanceled">Error 6: Request cancelled by participant</string>
+    <string name="errorserver">Error 7: Server error</string>
+    <string name="errorunknown">Error 8: Unknown Network Error</string>
   </resources>

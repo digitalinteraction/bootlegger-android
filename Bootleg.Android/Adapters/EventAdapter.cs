@@ -410,10 +410,10 @@ namespace Bootleg.Droid
 
             switch (viewType)
             {
-                case (int)TileType.NEWSHOOT:
-                    itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.makeshoot, parent, false);
-                    vh = new ViewHolder(itemView, null, null, OnMakeShoot, null,null, ViewType, this, viewType);
-                    return vh;
+                //case (int)TileType.NEWSHOOT:
+                    //itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.makeshoot, parent, false);
+                    //vh = new ViewHolder(itemView, null, null, OnMakeShoot, null,null, ViewType, this, viewType);
+                    //return vh;
 
                 case (int)TileType.EMPTY:
                     itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.emptyshoots, parent, false);

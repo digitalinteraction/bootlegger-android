@@ -17,7 +17,7 @@ namespace Bootleg.Droid.UI
 {
     public static class PermissionsDialog
     {
-        public static Task AskPermissions(Activity context,Shoot eventid,bool retry=false)
+        public static Task AskPermissions(Activity context, Shoot eventid, bool retry = false)
         {
             //if (WhiteLabelConfig.USE_RELEASE_DIALOG)
             //SHOW DIALOG IF THE EVENT IS SET TO PUBLIC!
@@ -31,7 +31,7 @@ namespace Bootleg.Droid.UI
                     builder.SetTitle(Resource.String.sharename);
 
                     View di = context.LayoutInflater.Inflate(Resource.Layout.release_dialog, null);
-                    if (eventid.release != null && eventid.release != "")
+                    if (!string.IsNullOrEmpty(eventid.release))
                         di.FindViewById<TextView>(Resource.Id.text).TextFormatted = (Android.Text.Html.FromHtml(eventid.release));
 
                     if (eventid.publicview)
@@ -84,42 +84,39 @@ namespace Bootleg.Droid.UI
                     dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = false;
                     dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = false;
 
+
                     //when scrolled to near bottom (or doesnt need scroll):
-                    di.FindViewById<ScrollView>(Resource.Id.scroller).ScrollChange+= (object sender, View.ScrollChangeEventArgs e) =>
-                    {
-                        var scroller = sender as ScrollView;
-                        View view = (View)scroller.GetChildAt(0);
+                    di.FindViewById<ScrollView>(Resource.Id.scroller).ScrollChange += (object sender, View.ScrollChangeEventArgs e) =>
+                     {
+                         var scroller = sender as ScrollView;
+                         View view = (View)scroller.GetChildAt(0);
 
                         // Calculate the scrolldiff
                         int diff = (view.Bottom - (scroller.Height + scroller.ScrollY));
 
-                        //Console.WriteLine(diff);
-                        //Console.WriteLine(scroller);
-                        //Console.WriteLine(scroller.ScrollY);
-
-
-
                         // if diff is zero, then the bottom has been reached
                         if (diff <= 0)
+                         {
+                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = true;
+                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = true;
+                         }
+                     };
+
+                    di.Post(() =>
+                    {
+                        if (di.FindViewById<ScrollView>(Resource.Id.scroller).GetChildAt(0).Bottom == (di.FindViewById<ScrollView>(Resource.Id.scroller).Height + di.FindViewById<ScrollView>(Resource.Id.scroller).ScrollY))
                         {
-                            // notify that we have reached the bottom
-                            //Log.d(ScrollTest.LOG_TAG, "MyScrollView: Bottom has been reached");
-                        //}
-
-
-                        //if (scroller.ScrollY > scroller.MaxScrollAmount - di.Height)
-                        //{
                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = true;
                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = true;
                         }
-                    };
+                    });
 
                     //continue
                     return tcs.Task;
                 }
                 else
                 {
-                   return Task.FromResult(true);
+                    return Task.FromResult(true);
                 }
             }
             else

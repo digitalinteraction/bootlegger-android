@@ -2998,26 +2998,26 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f02006c
 			public const int avd_hide_password = 2130837612;
 			
-			// aapt resource value: 0x7f02017b
-			public const int avd_hide_password_1 = 2130837883;
-			
 			// aapt resource value: 0x7f02017c
-			public const int avd_hide_password_2 = 2130837884;
+			public const int avd_hide_password_1 = 2130837884;
 			
 			// aapt resource value: 0x7f02017d
-			public const int avd_hide_password_3 = 2130837885;
+			public const int avd_hide_password_2 = 2130837885;
+			
+			// aapt resource value: 0x7f02017e
+			public const int avd_hide_password_3 = 2130837886;
 			
 			// aapt resource value: 0x7f02006d
 			public const int avd_show_password = 2130837613;
 			
-			// aapt resource value: 0x7f02017e
-			public const int avd_show_password_1 = 2130837886;
-			
 			// aapt resource value: 0x7f02017f
-			public const int avd_show_password_2 = 2130837887;
+			public const int avd_show_password_1 = 2130837887;
 			
 			// aapt resource value: 0x7f020180
-			public const int avd_show_password_3 = 2130837888;
+			public const int avd_show_password_2 = 2130837888;
+			
+			// aapt resource value: 0x7f020181
+			public const int avd_show_password_3 = 2130837889;
 			
 			// aapt resource value: 0x7f02006e
 			public const int background = 2130837614;
@@ -3065,766 +3065,769 @@ namespace Bootleg.Droid
 			public const int baseline_text_fields_black_24 = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int bottom_shade = 2130837629;
+			public const int baseline_videocam_24 = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int btn_outline = 2130837630;
+			public const int bottom_shade = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int btn_toggle = 2130837631;
+			public const int btn_outline = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int btn_toggle_background = 2130837632;
+			public const int btn_toggle = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int btn_toggle_background_flash = 2130837633;
+			public const int btn_toggle_background = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int btn_toggle_flash = 2130837634;
+			public const int btn_toggle_background_flash = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int camera = 2130837635;
+			public const int btn_toggle_flash = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int chip_background = 2130837636;
+			public const int camera = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int chip_off = 2130837637;
+			public const int chip_background = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int chip_on = 2130837638;
+			public const int chip_off = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int circle1 = 2130837639;
+			public const int chip_on = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int circle1fill = 2130837640;
+			public const int circle1 = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int common_full_open_on_phone = 2130837641;
+			public const int circle1fill = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int common_google_signin_btn_icon_dark = 2130837642;
+			public const int common_full_open_on_phone = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int common_google_signin_btn_icon_dark_focused = 2130837643;
+			public const int common_google_signin_btn_icon_dark = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int common_google_signin_btn_icon_dark_normal = 2130837644;
+			public const int common_google_signin_btn_icon_dark_focused = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int common_google_signin_btn_icon_dark_normal_background = 2130837645;
+			public const int common_google_signin_btn_icon_dark_normal = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int common_google_signin_btn_icon_disabled = 2130837646;
+			public const int common_google_signin_btn_icon_dark_normal_background = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int common_google_signin_btn_icon_light = 2130837647;
+			public const int common_google_signin_btn_icon_disabled = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int common_google_signin_btn_icon_light_focused = 2130837648;
+			public const int common_google_signin_btn_icon_light = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int common_google_signin_btn_icon_light_normal = 2130837649;
+			public const int common_google_signin_btn_icon_light_focused = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int common_google_signin_btn_icon_light_normal_background = 2130837650;
+			public const int common_google_signin_btn_icon_light_normal = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int common_google_signin_btn_text_dark = 2130837651;
+			public const int common_google_signin_btn_icon_light_normal_background = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int common_google_signin_btn_text_dark_focused = 2130837652;
+			public const int common_google_signin_btn_text_dark = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int common_google_signin_btn_text_dark_normal = 2130837653;
+			public const int common_google_signin_btn_text_dark_focused = 2130837653;
 			
 			// aapt resource value: 0x7f020096
-			public const int common_google_signin_btn_text_dark_normal_background = 2130837654;
+			public const int common_google_signin_btn_text_dark_normal = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int common_google_signin_btn_text_disabled = 2130837655;
+			public const int common_google_signin_btn_text_dark_normal_background = 2130837655;
 			
 			// aapt resource value: 0x7f020098
-			public const int common_google_signin_btn_text_light = 2130837656;
+			public const int common_google_signin_btn_text_disabled = 2130837656;
 			
 			// aapt resource value: 0x7f020099
-			public const int common_google_signin_btn_text_light_focused = 2130837657;
+			public const int common_google_signin_btn_text_light = 2130837657;
 			
 			// aapt resource value: 0x7f02009a
-			public const int common_google_signin_btn_text_light_normal = 2130837658;
+			public const int common_google_signin_btn_text_light_focused = 2130837658;
 			
 			// aapt resource value: 0x7f02009b
-			public const int common_google_signin_btn_text_light_normal_background = 2130837659;
+			public const int common_google_signin_btn_text_light_normal = 2130837659;
 			
 			// aapt resource value: 0x7f02009c
-			public const int comms = 2130837660;
+			public const int common_google_signin_btn_text_light_normal_background = 2130837660;
 			
 			// aapt resource value: 0x7f02009d
-			public const int conn = 2130837661;
+			public const int comms = 2130837661;
 			
 			// aapt resource value: 0x7f02009e
-			public const int corners = 2130837662;
+			public const int conn = 2130837662;
 			
 			// aapt resource value: 0x7f02009f
-			public const int cursorback = 2130837663;
+			public const int corners = 2130837663;
 			
 			// aapt resource value: 0x7f0200a0
-			public const int design_bottom_navigation_item_background = 2130837664;
+			public const int cursorback = 2130837664;
 			
 			// aapt resource value: 0x7f0200a1
-			public const int design_fab_background = 2130837665;
+			public const int design_bottom_navigation_item_background = 2130837665;
 			
 			// aapt resource value: 0x7f0200a2
-			public const int design_ic_visibility = 2130837666;
+			public const int design_fab_background = 2130837666;
 			
 			// aapt resource value: 0x7f0200a3
-			public const int design_ic_visibility_off = 2130837667;
+			public const int design_ic_visibility = 2130837667;
 			
 			// aapt resource value: 0x7f0200a4
-			public const int design_password_eye = 2130837668;
+			public const int design_ic_visibility_off = 2130837668;
 			
 			// aapt resource value: 0x7f0200a5
-			public const int design_snackbar_background = 2130837669;
+			public const int design_password_eye = 2130837669;
 			
 			// aapt resource value: 0x7f0200a6
-			public const int drawer_shadow = 2130837670;
+			public const int design_snackbar_background = 2130837670;
 			
 			// aapt resource value: 0x7f0200a7
-			public const int edit_page1 = 2130837671;
+			public const int drawer_shadow = 2130837671;
 			
 			// aapt resource value: 0x7f0200a8
-			public const int edit_page2 = 2130837672;
+			public const int edit_page1 = 2130837672;
 			
 			// aapt resource value: 0x7f0200a9
-			public const int edit_page3 = 2130837673;
+			public const int edit_page2 = 2130837673;
 			
 			// aapt resource value: 0x7f0200aa
-			public const int exo_controls_fastforward = 2130837674;
+			public const int edit_page3 = 2130837674;
 			
 			// aapt resource value: 0x7f0200ab
-			public const int exo_controls_fullscreen_enter = 2130837675;
+			public const int exo_controls_fastforward = 2130837675;
 			
 			// aapt resource value: 0x7f0200ac
-			public const int exo_controls_fullscreen_exit = 2130837676;
+			public const int exo_controls_fullscreen_enter = 2130837676;
 			
 			// aapt resource value: 0x7f0200ad
-			public const int exo_controls_next = 2130837677;
+			public const int exo_controls_fullscreen_exit = 2130837677;
 			
 			// aapt resource value: 0x7f0200ae
-			public const int exo_controls_pause = 2130837678;
+			public const int exo_controls_next = 2130837678;
 			
 			// aapt resource value: 0x7f0200af
-			public const int exo_controls_play = 2130837679;
+			public const int exo_controls_pause = 2130837679;
 			
 			// aapt resource value: 0x7f0200b0
-			public const int exo_controls_previous = 2130837680;
+			public const int exo_controls_play = 2130837680;
 			
 			// aapt resource value: 0x7f0200b1
-			public const int exo_controls_repeat_all = 2130837681;
+			public const int exo_controls_previous = 2130837681;
 			
 			// aapt resource value: 0x7f0200b2
-			public const int exo_controls_repeat_off = 2130837682;
+			public const int exo_controls_repeat_all = 2130837682;
 			
 			// aapt resource value: 0x7f0200b3
-			public const int exo_controls_repeat_one = 2130837683;
+			public const int exo_controls_repeat_off = 2130837683;
 			
 			// aapt resource value: 0x7f0200b4
-			public const int exo_controls_rewind = 2130837684;
+			public const int exo_controls_repeat_one = 2130837684;
 			
 			// aapt resource value: 0x7f0200b5
-			public const int exo_controls_shuffle = 2130837685;
+			public const int exo_controls_rewind = 2130837685;
 			
 			// aapt resource value: 0x7f0200b6
-			public const int exo_edit_mode_logo = 2130837686;
+			public const int exo_controls_shuffle = 2130837686;
 			
 			// aapt resource value: 0x7f0200b7
-			public const int facebook_oauth = 2130837687;
+			public const int exo_edit_mode_logo = 2130837687;
 			
 			// aapt resource value: 0x7f0200b8
-			public const int focus_inner = 2130837688;
+			public const int facebook_oauth = 2130837688;
 			
 			// aapt resource value: 0x7f0200b9
-			public const int focus_outer = 2130837689;
+			public const int focus_inner = 2130837689;
 			
 			// aapt resource value: 0x7f0200ba
-			public const int googleg_disabled_color_18 = 2130837690;
+			public const int focus_outer = 2130837690;
 			
 			// aapt resource value: 0x7f0200bb
-			public const int googleg_standard_color_18 = 2130837691;
+			public const int googleg_disabled_color_18 = 2130837691;
 			
 			// aapt resource value: 0x7f0200bc
-			public const int help_bubble = 2130837692;
+			public const int googleg_standard_color_18 = 2130837692;
 			
 			// aapt resource value: 0x7f0200bd
-			public const int helpbtn = 2130837693;
+			public const int help_bubble = 2130837693;
 			
 			// aapt resource value: 0x7f0200be
-			public const int hold = 2130837694;
+			public const int helpbtn = 2130837694;
 			
 			// aapt resource value: 0x7f0200bf
-			public const int ic_access_time_white_24dp = 2130837695;
+			public const int hold = 2130837695;
 			
 			// aapt resource value: 0x7f0200c0
-			public const int ic_account_circle_white_24dp = 2130837696;
+			public const int ic_access_time_white_24dp = 2130837696;
 			
 			// aapt resource value: 0x7f0200c1
-			public const int ic_action_about = 2130837697;
+			public const int ic_account_circle_white_24dp = 2130837697;
 			
 			// aapt resource value: 0x7f0200c2
-			public const int ic_action_accounts = 2130837698;
+			public const int ic_action_about = 2130837698;
 			
 			// aapt resource value: 0x7f0200c3
-			public const int ic_action_bitmap = 2130837699;
+			public const int ic_action_accounts = 2130837699;
 			
 			// aapt resource value: 0x7f0200c4
-			public const int ic_action_bleed_lines_2 = 2130837700;
+			public const int ic_action_bitmap = 2130837700;
 			
 			// aapt resource value: 0x7f0200c5
-			public const int ic_action_cancel = 2130837701;
+			public const int ic_action_bleed_lines_2 = 2130837701;
 			
 			// aapt resource value: 0x7f0200c6
-			public const int ic_action_edit = 2130837702;
+			public const int ic_action_cancel = 2130837702;
 			
 			// aapt resource value: 0x7f0200c7
-			public const int ic_action_flash_off = 2130837703;
+			public const int ic_action_edit = 2130837703;
 			
 			// aapt resource value: 0x7f0200c8
-			public const int ic_action_flash_on = 2130837704;
+			public const int ic_action_flash_off = 2130837704;
 			
 			// aapt resource value: 0x7f0200c9
-			public const int ic_action_forward = 2130837705;
+			public const int ic_action_flash_on = 2130837705;
 			
 			// aapt resource value: 0x7f0200ca
-			public const int ic_action_labels = 2130837706;
+			public const int ic_action_forward = 2130837706;
 			
 			// aapt resource value: 0x7f0200cb
-			public const int ic_action_more_horiz = 2130837707;
+			public const int ic_action_labels = 2130837707;
 			
 			// aapt resource value: 0x7f0200cc
-			public const int ic_action_network_wifi = 2130837708;
+			public const int ic_action_more_horiz = 2130837708;
 			
 			// aapt resource value: 0x7f0200cd
-			public const int ic_action_new = 2130837709;
+			public const int ic_action_network_wifi = 2130837709;
 			
 			// aapt resource value: 0x7f0200ce
-			public const int ic_action_new_label = 2130837710;
+			public const int ic_action_new = 2130837710;
 			
 			// aapt resource value: 0x7f0200cf
-			public const int ic_action_overflow = 2130837711;
+			public const int ic_action_new_label = 2130837711;
 			
 			// aapt resource value: 0x7f0200d0
-			public const int ic_action_pause = 2130837712;
+			public const int ic_action_overflow = 2130837712;
 			
 			// aapt resource value: 0x7f0200d1
-			public const int ic_action_person = 2130837713;
+			public const int ic_action_pause = 2130837713;
 			
 			// aapt resource value: 0x7f0200d2
-			public const int ic_action_picture = 2130837714;
+			public const int ic_action_person = 2130837714;
 			
 			// aapt resource value: 0x7f0200d3
-			public const int ic_action_settings = 2130837715;
+			public const int ic_action_picture = 2130837715;
 			
 			// aapt resource value: 0x7f0200d4
-			public const int ic_action_sort_by_attributes = 2130837716;
+			public const int ic_action_settings = 2130837716;
 			
 			// aapt resource value: 0x7f0200d5
-			public const int ic_action_sort_by_attributes_interface_button_option_1 = 2130837717;
+			public const int ic_action_sort_by_attributes = 2130837717;
 			
 			// aapt resource value: 0x7f0200d6
-			public const int ic_action_star = 2130837718;
+			public const int ic_action_sort_by_attributes_interface_button_option_1 = 2130837718;
 			
 			// aapt resource value: 0x7f0200d7
-			public const int ic_action_storage = 2130837719;
+			public const int ic_action_star = 2130837719;
 			
 			// aapt resource value: 0x7f0200d8
-			public const int ic_action_switch_camera = 2130837720;
+			public const int ic_action_storage = 2130837720;
 			
 			// aapt resource value: 0x7f0200d9
-			public const int ic_action_timer = 2130837721;
+			public const int ic_action_switch_camera = 2130837721;
 			
 			// aapt resource value: 0x7f0200da
-			public const int ic_action_video_call = 2130837722;
+			public const int ic_action_timer = 2130837722;
 			
 			// aapt resource value: 0x7f0200db
-			public const int ic_action_video_editing = 2130837723;
+			public const int ic_action_video_call = 2130837723;
 			
 			// aapt resource value: 0x7f0200dc
-			public const int ic_action_video_library = 2130837724;
+			public const int ic_action_video_editing = 2130837724;
 			
 			// aapt resource value: 0x7f0200dd
-			public const int ic_add_black_36dp = 2130837725;
+			public const int ic_action_video_library = 2130837725;
 			
 			// aapt resource value: 0x7f0200de
-			public const int ic_add_dock = 2130837726;
+			public const int ic_add_black_36dp = 2130837726;
 			
 			// aapt resource value: 0x7f0200df
-			public const int ic_add_song = 2130837727;
+			public const int ic_add_dock = 2130837727;
 			
 			// aapt resource value: 0x7f0200e0
-			public const int ic_add_white_24dp = 2130837728;
+			public const int ic_add_song = 2130837728;
 			
 			// aapt resource value: 0x7f0200e1
-			public const int ic_add_white_36dp = 2130837729;
+			public const int ic_add_white_24dp = 2130837729;
 			
 			// aapt resource value: 0x7f0200e2
-			public const int ic_arrow_back_white_24dp = 2130837730;
+			public const int ic_add_white_36dp = 2130837730;
 			
 			// aapt resource value: 0x7f0200e3
-			public const int ic_arrow_forward_black_24dp = 2130837731;
+			public const int ic_arrow_back_white_24dp = 2130837731;
 			
 			// aapt resource value: 0x7f0200e4
-			public const int ic_arrow_forward_white_24dp = 2130837732;
+			public const int ic_arrow_forward_black_24dp = 2130837732;
 			
 			// aapt resource value: 0x7f0200e5
-			public const int ic_arrow_forward_white_48dp = 2130837733;
+			public const int ic_arrow_forward_white_24dp = 2130837733;
 			
 			// aapt resource value: 0x7f0200e6
-			public const int ic_audiotrack_black_48dp = 2130837734;
+			public const int ic_arrow_forward_white_48dp = 2130837734;
 			
 			// aapt resource value: 0x7f0200e7
-			public const int ic_broken_image_white_48dp = 2130837735;
+			public const int ic_audiotrack_black_48dp = 2130837735;
 			
 			// aapt resource value: 0x7f0200e8
-			public const int ic_change = 2130837736;
+			public const int ic_broken_image_white_48dp = 2130837736;
 			
 			// aapt resource value: 0x7f0200e9
-			public const int ic_check_black_24dp = 2130837737;
+			public const int ic_change = 2130837737;
 			
 			// aapt resource value: 0x7f0200ea
-			public const int ic_clapper_add = 2130837738;
+			public const int ic_check_black_24dp = 2130837738;
 			
 			// aapt resource value: 0x7f0200eb
-			public const int ic_clapperboard = 2130837739;
+			public const int ic_clapper_add = 2130837739;
 			
 			// aapt resource value: 0x7f0200ec
-			public const int ic_close = 2130837740;
+			public const int ic_clapperboard = 2130837740;
 			
 			// aapt resource value: 0x7f0200ed
-			public const int ic_cloud_upload_white_48dp = 2130837741;
+			public const int ic_close = 2130837741;
 			
 			// aapt resource value: 0x7f0200ee
-			public const int ic_content_cut_white_36dp = 2130837742;
+			public const int ic_cloud_upload_white_48dp = 2130837742;
 			
 			// aapt resource value: 0x7f0200ef
-			public const int ic_delete_black_24dp = 2130837743;
+			public const int ic_content_cut_white_36dp = 2130837743;
 			
 			// aapt resource value: 0x7f0200f0
-			public const int ic_directions_white_24dp = 2130837744;
+			public const int ic_delete_black_24dp = 2130837744;
 			
 			// aapt resource value: 0x7f0200f1
-			public const int ic_done_black_24dp = 2130837745;
+			public const int ic_directions_white_24dp = 2130837745;
 			
 			// aapt resource value: 0x7f0200f2
-			public const int ic_done_white_24dp = 2130837746;
+			public const int ic_done_black_24dp = 2130837746;
 			
 			// aapt resource value: 0x7f0200f3
-			public const int ic_drawer = 2130837747;
+			public const int ic_done_white_24dp = 2130837747;
 			
 			// aapt resource value: 0x7f0200f4
-			public const int ic_edit_black_24dp = 2130837748;
+			public const int ic_drawer = 2130837748;
 			
 			// aapt resource value: 0x7f0200f5
-			public const int ic_edit_white_24dp = 2130837749;
+			public const int ic_edit_black_24dp = 2130837749;
 			
 			// aapt resource value: 0x7f0200f6
-			public const int ic_email_black_48dp = 2130837750;
+			public const int ic_edit_white_24dp = 2130837750;
 			
 			// aapt resource value: 0x7f0200f7
-			public const int ic_error_black_24dp = 2130837751;
+			public const int ic_email_black_48dp = 2130837751;
 			
 			// aapt resource value: 0x7f0200f8
-			public const int ic_errorstatus = 2130837752;
+			public const int ic_error_black_24dp = 2130837752;
 			
 			// aapt resource value: 0x7f0200f9
-			public const int ic_event_white_48dp = 2130837753;
+			public const int ic_errorstatus = 2130837753;
 			
 			// aapt resource value: 0x7f0200fa
-			public const int ic_exit_to_app_white_48dp = 2130837754;
+			public const int ic_event_white_48dp = 2130837754;
 			
 			// aapt resource value: 0x7f0200fb
-			public const int ic_file_upload_white_24dp = 2130837755;
+			public const int ic_exit_to_app_white_48dp = 2130837755;
 			
 			// aapt resource value: 0x7f0200fc
-			public const int ic_film_play_button = 2130837756;
+			public const int ic_file_upload_white_24dp = 2130837756;
 			
 			// aapt resource value: 0x7f0200fd
-			public const int ic_film_roll = 2130837757;
+			public const int ic_film_play_button = 2130837757;
 			
 			// aapt resource value: 0x7f0200fe
-			public const int ic_film_roll_add = 2130837758;
+			public const int ic_film_roll = 2130837758;
 			
 			// aapt resource value: 0x7f0200ff
-			public const int ic_fullscreen_white_36dp = 2130837759;
+			public const int ic_film_roll_add = 2130837759;
 			
 			// aapt resource value: 0x7f020100
-			public const int ic_headset_mic_white_48dp = 2130837760;
+			public const int ic_fullscreen_white_36dp = 2130837760;
 			
 			// aapt resource value: 0x7f020101
-			public const int ic_home_white_24dp = 2130837761;
+			public const int ic_headset_mic_white_48dp = 2130837761;
 			
 			// aapt resource value: 0x7f020102
-			public const int ic_info_black_24dp = 2130837762;
+			public const int ic_home_white_24dp = 2130837762;
 			
 			// aapt resource value: 0x7f020103
-			public const int ic_info_outline_white_48dp = 2130837763;
+			public const int ic_info_black_24dp = 2130837763;
 			
 			// aapt resource value: 0x7f020104
-			public const int ic_info_white_24dp = 2130837764;
+			public const int ic_info_outline_white_48dp = 2130837764;
 			
 			// aapt resource value: 0x7f020105
-			public const int ic_list_white_24dp = 2130837765;
+			public const int ic_info_white_24dp = 2130837765;
 			
 			// aapt resource value: 0x7f020106
-			public const int ic_location_on_white_24dp = 2130837766;
+			public const int ic_list_white_24dp = 2130837766;
 			
 			// aapt resource value: 0x7f020107
-			public const int ic_lock_open_black_48dp = 2130837767;
+			public const int ic_location_on_white_24dp = 2130837767;
 			
 			// aapt resource value: 0x7f020108
-			public const int ic_map = 2130837768;
+			public const int ic_lock_open_black_48dp = 2130837768;
 			
 			// aapt resource value: 0x7f020109
-			public const int ic_map_white_48dp = 2130837769;
+			public const int ic_map = 2130837769;
 			
 			// aapt resource value: 0x7f02010a
-			public const int ic_menu_white_48dp = 2130837770;
+			public const int ic_map_white_48dp = 2130837770;
 			
 			// aapt resource value: 0x7f02010b
-			public const int ic_mic_white_48dp = 2130837771;
+			public const int ic_menu_white_48dp = 2130837771;
 			
 			// aapt resource value: 0x7f02010c
-			public const int ic_more_horiz_white_48dp = 2130837772;
+			public const int ic_mic_white_48dp = 2130837772;
 			
 			// aapt resource value: 0x7f02010d
-			public const int ic_music_accepted_2 = 2130837773;
+			public const int ic_more_horiz_white_48dp = 2130837773;
 			
 			// aapt resource value: 0x7f02010e
-			public const int ic_music_edit_button = 2130837774;
+			public const int ic_music_accepted_2 = 2130837774;
 			
 			// aapt resource value: 0x7f02010f
-			public const int ic_navigate_next_white_48dp = 2130837775;
+			public const int ic_music_edit_button = 2130837775;
 			
 			// aapt resource value: 0x7f020110
-			public const int ic_notification = 2130837776;
+			public const int ic_navigate_next_white_48dp = 2130837776;
 			
 			// aapt resource value: 0x7f020111
-			public const int ic_ondemand_video_white_24dp = 2130837777;
+			public const int ic_notification = 2130837777;
 			
 			// aapt resource value: 0x7f020112
-			public const int ic_overlay_off = 2130837778;
+			public const int ic_ondemand_video_white_24dp = 2130837778;
 			
 			// aapt resource value: 0x7f020113
-			public const int ic_overlay_on = 2130837779;
+			public const int ic_overlay_off = 2130837779;
 			
 			// aapt resource value: 0x7f020114
-			public const int ic_people_white_24dp = 2130837780;
+			public const int ic_overlay_on = 2130837780;
 			
 			// aapt resource value: 0x7f020115
-			public const int ic_people_white_48dp = 2130837781;
+			public const int ic_people_white_24dp = 2130837781;
 			
 			// aapt resource value: 0x7f020116
-			public const int ic_photo_camera_white_24dp = 2130837782;
+			public const int ic_people_white_48dp = 2130837782;
 			
 			// aapt resource value: 0x7f020117
-			public const int ic_photo_white_48dp = 2130837783;
+			public const int ic_photo_camera_white_24dp = 2130837783;
 			
 			// aapt resource value: 0x7f020118
-			public const int ic_play_arrow_black_24dp = 2130837784;
+			public const int ic_photo_white_48dp = 2130837784;
 			
 			// aapt resource value: 0x7f020119
-			public const int ic_premium_badge = 2130837785;
+			public const int ic_play_arrow_black_24dp = 2130837785;
 			
 			// aapt resource value: 0x7f02011a
-			public const int ic_question_mark = 2130837786;
+			public const int ic_premium_badge = 2130837786;
 			
 			// aapt resource value: 0x7f02011b
-			public const int ic_record = 2130837787;
+			public const int ic_question_mark = 2130837787;
 			
 			// aapt resource value: 0x7f02011c
-			public const int ic_record_on = 2130837788;
+			public const int ic_record = 2130837788;
 			
 			// aapt resource value: 0x7f02011d
-			public const int ic_rounded_pause_button_2 = 2130837789;
+			public const int ic_record_on = 2130837789;
 			
 			// aapt resource value: 0x7f02011e
-			public const int ic_save_white_48dp = 2130837790;
+			public const int ic_rounded_pause_button_2 = 2130837790;
 			
 			// aapt resource value: 0x7f02011f
-			public const int ic_scissors_1 = 2130837791;
+			public const int ic_save_white_48dp = 2130837791;
 			
 			// aapt resource value: 0x7f020120
-			public const int ic_search_white_24dp = 2130837792;
+			public const int ic_scissors_1 = 2130837792;
 			
 			// aapt resource value: 0x7f020121
-			public const int ic_search_white_48dp = 2130837793;
+			public const int ic_search_white_24dp = 2130837793;
 			
 			// aapt resource value: 0x7f020122
-			public const int ic_select = 2130837794;
+			public const int ic_search_white_48dp = 2130837794;
 			
 			// aapt resource value: 0x7f020123
-			public const int ic_settings_backup_restore_black_24dp = 2130837795;
+			public const int ic_select = 2130837795;
 			
 			// aapt resource value: 0x7f020124
-			public const int ic_settings_backup_restore_white_24dp = 2130837796;
+			public const int ic_settings_backup_restore_black_24dp = 2130837796;
 			
 			// aapt resource value: 0x7f020125
-			public const int ic_settings_white_48dp = 2130837797;
+			public const int ic_settings_backup_restore_white_24dp = 2130837797;
 			
 			// aapt resource value: 0x7f020126
-			public const int ic_share_black_24dp = 2130837798;
+			public const int ic_settings_white_48dp = 2130837798;
 			
 			// aapt resource value: 0x7f020127
-			public const int ic_share_white_24dp = 2130837799;
+			public const int ic_share_black_24dp = 2130837799;
 			
 			// aapt resource value: 0x7f020128
-			public const int ic_share_white_48dp = 2130837800;
+			public const int ic_share_white_24dp = 2130837800;
 			
 			// aapt resource value: 0x7f020129
-			public const int ic_stop_white_36dp = 2130837801;
+			public const int ic_share_white_48dp = 2130837801;
 			
 			// aapt resource value: 0x7f02012a
-			public const int ic_subdirectory_arrow_right_black_24dp = 2130837802;
+			public const int ic_stop_white_36dp = 2130837802;
 			
 			// aapt resource value: 0x7f02012b
-			public const int ic_successstatus = 2130837803;
+			public const int ic_subdirectory_arrow_right_black_24dp = 2130837803;
 			
 			// aapt resource value: 0x7f02012c
-			public const int ic_supervisor_account_white_48dp = 2130837804;
+			public const int ic_successstatus = 2130837804;
 			
 			// aapt resource value: 0x7f02012d
-			public const int ic_tag_white_24dp = 2130837805;
+			public const int ic_supervisor_account_white_48dp = 2130837805;
 			
 			// aapt resource value: 0x7f02012e
-			public const int ic_tag_white_48dp = 2130837806;
+			public const int ic_tag_white_24dp = 2130837806;
 			
 			// aapt resource value: 0x7f02012f
-			public const int ic_text_fields_white_36dp = 2130837807;
+			public const int ic_tag_white_48dp = 2130837807;
 			
 			// aapt resource value: 0x7f020130
-			public const int ic_timelapse_white_24dp = 2130837808;
+			public const int ic_text_fields_white_36dp = 2130837808;
 			
 			// aapt resource value: 0x7f020131
-			public const int ic_touch_app_black_24dp = 2130837809;
+			public const int ic_timelapse_white_24dp = 2130837809;
 			
 			// aapt resource value: 0x7f020132
-			public const int ic_touch_app_white_48dp = 2130837810;
+			public const int ic_touch_app_black_24dp = 2130837810;
 			
 			// aapt resource value: 0x7f020133
-			public const int ic_video_library_black_24dp = 2130837811;
+			public const int ic_touch_app_white_48dp = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int ic_video_library_white_24dp = 2130837812;
+			public const int ic_video_library_black_24dp = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int ic_videocam_white_24dp = 2130837813;
+			public const int ic_video_library_white_24dp = 2130837813;
 			
 			// aapt resource value: 0x7f020136
-			public const int ic_view_comfy_white_48dp = 2130837814;
+			public const int ic_videocam_white_24dp = 2130837814;
 			
 			// aapt resource value: 0x7f020137
-			public const int ic_vpn_key_black_36dp = 2130837815;
+			public const int ic_view_comfy_white_48dp = 2130837815;
 			
 			// aapt resource value: 0x7f020138
-			public const int ic_vpn_key_white_36dp = 2130837816;
+			public const int ic_vpn_key_black_36dp = 2130837816;
 			
 			// aapt resource value: 0x7f020139
-			public const int Icon = 2130837817;
+			public const int ic_vpn_key_white_36dp = 2130837817;
 			
 			// aapt resource value: 0x7f02013a
-			public const int ingest_page1 = 2130837818;
+			public const int Icon = 2130837818;
 			
 			// aapt resource value: 0x7f02013b
-			public const int joinbtn = 2130837819;
+			public const int ingest_page1 = 2130837819;
 			
 			// aapt resource value: 0x7f02013c
-			public const int loading = 2130837820;
+			public const int joinbtn = 2130837820;
 			
 			// aapt resource value: 0x7f02013d
-			public const int login_back = 2130837821;
+			public const int loading = 2130837821;
 			
 			// aapt resource value: 0x7f02013e
-			public const int logo_black = 2130837822;
+			public const int login_back = 2130837822;
 			
 			// aapt resource value: 0x7f02013f
-			public const int logo_svg = 2130837823;
+			public const int logo_black = 2130837823;
 			
 			// aapt resource value: 0x7f020140
-			public const int logo_white = 2130837824;
+			public const int logo_svg = 2130837824;
 			
 			// aapt resource value: 0x7f020141
-			public const int logout = 2130837825;
+			public const int logo_white = 2130837825;
 			
 			// aapt resource value: 0x7f020142
-			public const int maplocation = 2130837826;
+			public const int logout = 2130837826;
 			
 			// aapt resource value: 0x7f020143
-			public const int me = 2130837827;
+			public const int maplocation = 2130837827;
 			
 			// aapt resource value: 0x7f020144
-			public const int msg = 2130837828;
+			public const int me = 2130837828;
 			
 			// aapt resource value: 0x7f020145
-			public const int msg_bkg = 2130837829;
+			public const int msg = 2130837829;
 			
 			// aapt resource value: 0x7f020146
-			public const int navigation_empty_icon = 2130837830;
+			public const int msg_bkg = 2130837830;
 			
 			// aapt resource value: 0x7f020147
-			public const int newshootback = 2130837831;
+			public const int navigation_empty_icon = 2130837831;
 			
 			// aapt resource value: 0x7f020148
-			public const int notification = 2130837832;
+			public const int newshootback = 2130837832;
 			
 			// aapt resource value: 0x7f020149
-			public const int notification_action_background = 2130837833;
+			public const int notification = 2130837833;
 			
 			// aapt resource value: 0x7f02014a
-			public const int notification_bg = 2130837834;
+			public const int notification_action_background = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int notification_bg_low = 2130837835;
+			public const int notification_bg = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
-			public const int notification_bg_low_normal = 2130837836;
+			public const int notification_bg_low = 2130837836;
 			
 			// aapt resource value: 0x7f02014d
-			public const int notification_bg_low_pressed = 2130837837;
+			public const int notification_bg_low_normal = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int notification_bg_normal = 2130837838;
+			public const int notification_bg_low_pressed = 2130837838;
 			
 			// aapt resource value: 0x7f02014f
-			public const int notification_bg_normal_pressed = 2130837839;
+			public const int notification_bg_normal = 2130837839;
 			
 			// aapt resource value: 0x7f020150
-			public const int notification_icon_background = 2130837840;
-			
-			// aapt resource value: 0x7f020179
-			public const int notification_template_icon_bg = 2130837881;
-			
-			// aapt resource value: 0x7f02017a
-			public const int notification_template_icon_low_bg = 2130837882;
+			public const int notification_bg_normal_pressed = 2130837840;
 			
 			// aapt resource value: 0x7f020151
-			public const int notification_tile_bg = 2130837841;
+			public const int notification_icon_background = 2130837841;
+			
+			// aapt resource value: 0x7f02017a
+			public const int notification_template_icon_bg = 2130837882;
+			
+			// aapt resource value: 0x7f02017b
+			public const int notification_template_icon_low_bg = 2130837883;
 			
 			// aapt resource value: 0x7f020152
-			public const int notify_panel_notification_icon_bg = 2130837842;
+			public const int notification_tile_bg = 2130837842;
 			
 			// aapt resource value: 0x7f020153
-			public const int openlab_dark = 2130837843;
+			public const int notify_panel_notification_icon_bg = 2130837843;
 			
 			// aapt resource value: 0x7f020154
-			public const int orangecircle = 2130837844;
+			public const int openlab_dark = 2130837844;
 			
 			// aapt resource value: 0x7f020155
-			public const int overlays = 2130837845;
+			public const int orangecircle = 2130837845;
 			
 			// aapt resource value: 0x7f020156
-			public const int packing = 2130837846;
+			public const int overlays = 2130837846;
 			
 			// aapt resource value: 0x7f020157
-			public const int playindicator = 2130837847;
+			public const int packing = 2130837847;
 			
 			// aapt resource value: 0x7f020158
-			public const int popup = 2130837848;
+			public const int playindicator = 2130837848;
 			
 			// aapt resource value: 0x7f020159
-			public const int progress = 2130837849;
+			public const int popup = 2130837849;
 			
 			// aapt resource value: 0x7f02015a
-			public const int raised_btn = 2130837850;
+			public const int progress = 2130837850;
 			
 			// aapt resource value: 0x7f02015b
-			public const int record = 2130837851;
+			public const int raised_btn = 2130837851;
 			
 			// aapt resource value: 0x7f02015c
-			public const int record_btn = 2130837852;
+			public const int record = 2130837852;
 			
 			// aapt resource value: 0x7f02015d
-			public const int record_lg = 2130837853;
+			public const int record_btn = 2130837853;
 			
 			// aapt resource value: 0x7f02015e
-			public const int record_lg_on = 2130837854;
+			public const int record_lg = 2130837854;
 			
 			// aapt resource value: 0x7f02015f
-			public const int Red_signin_Long_base_44dp = 2130837855;
+			public const int record_lg_on = 2130837855;
 			
 			// aapt resource value: 0x7f020160
-			public const int rotate = 2130837856;
+			public const int Red_signin_Long_base_44dp = 2130837856;
 			
 			// aapt resource value: 0x7f020161
-			public const int round = 2130837857;
+			public const int rotate = 2130837857;
 			
 			// aapt resource value: 0x7f020162
-			public const int rounded = 2130837858;
+			public const int round = 2130837858;
 			
 			// aapt resource value: 0x7f020163
-			public const int rounded_corner = 2130837859;
+			public const int rounded = 2130837859;
 			
 			// aapt resource value: 0x7f020164
-			public const int rounded_corner_dark = 2130837860;
+			public const int rounded_corner = 2130837860;
 			
 			// aapt resource value: 0x7f020165
-			public const int roundedbg = 2130837861;
+			public const int rounded_corner_dark = 2130837861;
 			
 			// aapt resource value: 0x7f020166
-			public const int roundedbgdark = 2130837862;
+			public const int roundedbg = 2130837862;
 			
 			// aapt resource value: 0x7f020167
-			public const int slide1 = 2130837863;
+			public const int roundedbgdark = 2130837863;
 			
 			// aapt resource value: 0x7f020168
-			public const int slide2 = 2130837864;
+			public const int slide1 = 2130837864;
 			
 			// aapt resource value: 0x7f020169
-			public const int slide3 = 2130837865;
+			public const int slide2 = 2130837865;
 			
 			// aapt resource value: 0x7f02016a
-			public const int splash_logo = 2130837866;
+			public const int slide3 = 2130837866;
 			
 			// aapt resource value: 0x7f02016b
-			public const int splashscreen = 2130837867;
+			public const int splash_logo = 2130837867;
 			
 			// aapt resource value: 0x7f02016c
-			public const int started = 2130837868;
+			public const int splashscreen = 2130837868;
 			
 			// aapt resource value: 0x7f02016d
-			public const int tag = 2130837869;
+			public const int started = 2130837869;
 			
 			// aapt resource value: 0x7f02016e
-			public const int toggle = 2130837870;
+			public const int tag = 2130837870;
 			
 			// aapt resource value: 0x7f02016f
-			public const int tooltip_frame_dark = 2130837871;
+			public const int toggle = 2130837871;
 			
 			// aapt resource value: 0x7f020170
-			public const int tooltip_frame_light = 2130837872;
+			public const int tooltip_frame_dark = 2130837872;
 			
 			// aapt resource value: 0x7f020171
-			public const int up_bk = 2130837873;
+			public const int tooltip_frame_light = 2130837873;
 			
 			// aapt resource value: 0x7f020172
-			public const int upload = 2130837874;
+			public const int up_bk = 2130837874;
 			
 			// aapt resource value: 0x7f020173
-			public const int uploads_background = 2130837875;
+			public const int upload = 2130837875;
 			
 			// aapt resource value: 0x7f020174
-			public const int user_back = 2130837876;
+			public const int uploads_background = 2130837876;
 			
 			// aapt resource value: 0x7f020175
-			public const int video_editing = 2130837877;
+			public const int user_back = 2130837877;
 			
 			// aapt resource value: 0x7f020176
-			public const int video_player = 2130837878;
+			public const int video_editing = 2130837878;
 			
 			// aapt resource value: 0x7f020177
-			public const int video_trim = 2130837879;
+			public const int video_player = 2130837879;
 			
 			// aapt resource value: 0x7f020178
-			public const int white_svg = 2130837880;
+			public const int video_trim = 2130837880;
+			
+			// aapt resource value: 0x7f020179
+			public const int white_svg = 2130837881;
 			
 			static Drawable()
 			{
@@ -3861,20 +3864,20 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d004d
 			public const int CTRL = 2131558477;
 			
-			// aapt resource value: 0x7f0d01cd
-			public const int Closed = 2131558861;
+			// aapt resource value: 0x7f0d01cc
+			public const int Closed = 2131558860;
 			
 			// aapt resource value: 0x7f0d004e
 			public const int FUNCTION = 2131558478;
 			
-			// aapt resource value: 0x7f0d01c1
-			public const int Help = 2131558849;
+			// aapt resource value: 0x7f0d01c0
+			public const int Help = 2131558848;
 			
 			// aapt resource value: 0x7f0d004f
 			public const int META = 2131558479;
 			
-			// aapt resource value: 0x7f0d018d
-			public const int Play = 2131558797;
+			// aapt resource value: 0x7f0d018c
+			public const int Play = 2131558796;
 			
 			// aapt resource value: 0x7f0d0050
 			public const int SHIFT = 2131558480;
@@ -3882,14 +3885,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0051
 			public const int SYM = 2131558481;
 			
-			// aapt resource value: 0x7f0d01bc
-			public const int VideoPreview = 2131558844;
+			// aapt resource value: 0x7f0d01bb
+			public const int VideoPreview = 2131558843;
 			
-			// aapt resource value: 0x7f0d01a3
-			public const int accessimg = 2131558819;
+			// aapt resource value: 0x7f0d01a2
+			public const int accessimg = 2131558818;
 			
-			// aapt resource value: 0x7f0d0178
-			public const int action0 = 2131558776;
+			// aapt resource value: 0x7f0d0177
+			public const int action0 = 2131558775;
 			
 			// aapt resource value: 0x7f0d00a8
 			public const int action_bar = 2131558568;
@@ -3912,20 +3915,20 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0086
 			public const int action_bar_title = 2131558534;
 			
-			// aapt resource value: 0x7f0d0175
-			public const int action_container = 2131558773;
+			// aapt resource value: 0x7f0d0174
+			public const int action_container = 2131558772;
 			
 			// aapt resource value: 0x7f0d00a9
 			public const int action_context_bar = 2131558569;
 			
-			// aapt resource value: 0x7f0d017c
-			public const int action_divider = 2131558780;
+			// aapt resource value: 0x7f0d017b
+			public const int action_divider = 2131558779;
 			
 			// aapt resource value: 0x7f0d0133
 			public const int action_help = 2131558707;
 			
-			// aapt resource value: 0x7f0d0176
-			public const int action_image = 2131558774;
+			// aapt resource value: 0x7f0d0175
+			public const int action_image = 2131558773;
 			
 			// aapt resource value: 0x7f0d0003
 			public const int action_menu_divider = 2131558403;
@@ -3945,11 +3948,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0132
 			public const int action_search = 2131558706;
 			
-			// aapt resource value: 0x7f0d0177
-			public const int action_text = 2131558775;
+			// aapt resource value: 0x7f0d0176
+			public const int action_text = 2131558774;
 			
-			// aapt resource value: 0x7f0d0184
-			public const int actions = 2131558788;
+			// aapt resource value: 0x7f0d0183
+			public const int actions = 2131558787;
 			
 			// aapt resource value: 0x7f0d0089
 			public const int activity_chooser_view_content = 2131558537;
@@ -3978,8 +3981,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d006b
 			public const int all = 2131558507;
 			
-			// aapt resource value: 0x7f0d01c0
-			public const int allbuttons = 2131558848;
+			// aapt resource value: 0x7f0d01bf
+			public const int allbuttons = 2131558847;
 			
 			// aapt resource value: 0x7f0d00d7
 			public const int allclips = 2131558615;
@@ -3987,8 +3990,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d011c
 			public const int alledits = 2131558684;
 			
-			// aapt resource value: 0x7f0d01c8
-			public const int allshots = 2131558856;
+			// aapt resource value: 0x7f0d01c7
+			public const int allshots = 2131558855;
 			
 			// aapt resource value: 0x7f0d0052
 			public const int always = 2131558482;
@@ -3996,11 +3999,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d015a
 			public const int appbar = 2131558746;
 			
-			// aapt resource value: 0x7f0d018a
-			public const int arrow_down = 2131558794;
-			
 			// aapt resource value: 0x7f0d0189
-			public const int arrow_up = 2131558793;
+			public const int arrow_down = 2131558793;
+			
+			// aapt resource value: 0x7f0d0188
+			public const int arrow_up = 2131558792;
 			
 			// aapt resource value: 0x7f0d006f
 			public const int async = 2131558511;
@@ -4035,14 +4038,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00c4
 			public const int camera_preview = 2131558596;
 			
-			// aapt resource value: 0x7f0d0179
-			public const int cancel_action = 2131558777;
+			// aapt resource value: 0x7f0d0178
+			public const int cancel_action = 2131558776;
 			
-			// aapt resource value: 0x7f0d01ba
-			public const int cancelbtn = 2131558842;
+			// aapt resource value: 0x7f0d01b9
+			public const int cancelbtn = 2131558841;
 			
-			// aapt resource value: 0x7f0d0197
-			public const int capture = 2131558807;
+			// aapt resource value: 0x7f0d0196
+			public const int capture = 2131558806;
 			
 			// aapt resource value: 0x7f0d00fc
 			public const int cardview = 2131558652;
@@ -4059,8 +4062,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d009f
 			public const int checkbox = 2131558559;
 			
-			// aapt resource value: 0x7f0d01ad
-			public const int chip = 2131558829;
+			// aapt resource value: 0x7f0d01ac
+			public const int chip = 2131558828;
 			
 			// aapt resource value: 0x7f0d00dd
 			public const int chkApplication = 2131558621;
@@ -4077,8 +4080,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00d0
 			public const int choosebtn = 2131558608;
 			
-			// aapt resource value: 0x7f0d0180
-			public const int chronometer = 2131558784;
+			// aapt resource value: 0x7f0d017f
+			public const int chronometer = 2131558783;
 			
 			// aapt resource value: 0x7f0d0067
 			public const int clip_horizontal = 2131558503;
@@ -4095,8 +4098,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0147
 			public const int closebtn = 2131558727;
 			
-			// aapt resource value: 0x7f0d01c9
-			public const int closeshots = 2131558857;
+			// aapt resource value: 0x7f0d01c8
+			public const int closeshots = 2131558856;
 			
 			// aapt resource value: 0x7f0d0131
 			public const int code = 2131558705;
@@ -4110,8 +4113,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00cd
 			public const int colorbar = 2131558605;
 			
-			// aapt resource value: 0x7f0d01a9
-			public const int completed = 2131558825;
+			// aapt resource value: 0x7f0d01a8
+			public const int completed = 2131558824;
 			
 			// aapt resource value: 0x7f0d00e5
 			public const int connectbtn = 2131558629;
@@ -4122,29 +4125,29 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0092
 			public const int contentPanel = 2131558546;
 			
-			// aapt resource value: 0x7f0d01bb
-			public const int content_frame = 2131558843;
+			// aapt resource value: 0x7f0d01ba
+			public const int content_frame = 2131558842;
 			
 			// aapt resource value: 0x7f0d00d9
 			public const int continuebtn = 2131558617;
 			
-			// aapt resource value: 0x7f0d0193
-			public const int contributions = 2131558803;
-			
 			// aapt resource value: 0x7f0d0192
-			public const int contributors = 2131558802;
+			public const int contributions = 2131558802;
+			
+			// aapt resource value: 0x7f0d0191
+			public const int contributors = 2131558801;
 			
 			// aapt resource value: 0x7f0d00eb
 			public const int coordinator = 2131558635;
 			
-			// aapt resource value: 0x7f0d01dd
-			public const int copy_menu_item = 2131558877;
+			// aapt resource value: 0x7f0d01db
+			public const int copy_menu_item = 2131558875;
 			
-			// aapt resource value: 0x7f0d01b9
-			public const int count = 2131558841;
+			// aapt resource value: 0x7f0d01b8
+			public const int count = 2131558840;
 			
-			// aapt resource value: 0x7f0d01ab
-			public const int counter = 2131558827;
+			// aapt resource value: 0x7f0d01aa
+			public const int counter = 2131558826;
 			
 			// aapt resource value: 0x7f0d0099
 			public const int custom = 2131558553;
@@ -4152,8 +4155,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0098
 			public const int customPanel = 2131558552;
 			
-			// aapt resource value: 0x7f0d0194
-			public const int customTitle = 2131558804;
+			// aapt resource value: 0x7f0d0193
+			public const int customTitle = 2131558803;
 			
 			// aapt resource value: 0x7f0d0036
 			public const int dark = 2131558454;
@@ -4161,8 +4164,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00d1
 			public const int date = 2131558609;
 			
-			// aapt resource value: 0x7f0d019f
-			public const int datetime = 2131558815;
+			// aapt resource value: 0x7f0d019e
+			public const int datetime = 2131558814;
 			
 			// aapt resource value: 0x7f0d00a6
 			public const int decor_content_parent = 2131558566;
@@ -4173,8 +4176,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d015c
 			public const int defaultback = 2131558748;
 			
-			// aapt resource value: 0x7f0d01dc
-			public const int delete_menu_item = 2131558876;
+			// aapt resource value: 0x7f0d01da
+			public const int delete_menu_item = 2131558874;
 			
 			// aapt resource value: 0x7f0d00fd
 			public const int deletebtn = 2131558653;
@@ -4209,8 +4212,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d003b
 			public const int disableHome = 2131558459;
 			
-			// aapt resource value: 0x7f0d01a1
-			public const int distance = 2131558817;
+			// aapt resource value: 0x7f0d01a0
+			public const int distance = 2131558816;
 			
 			// aapt resource value: 0x7f0d0105
 			public const int edit_preview = 2131558661;
@@ -4251,8 +4254,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d004a
 			public const int end = 2131558474;
 			
-			// aapt resource value: 0x7f0d0186
-			public const int end_padder = 2131558790;
+			// aapt resource value: 0x7f0d0185
+			public const int end_padder = 2131558789;
 			
 			// aapt resource value: 0x7f0d0059
 			public const int enterAlways = 2131558489;
@@ -4266,14 +4269,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0134
 			public const int event_icon = 2131558708;
 			
-			// aapt resource value: 0x7f0d0169
-			public const int eventimg = 2131558761;
+			// aapt resource value: 0x7f0d0168
+			public const int eventimg = 2131558760;
 			
 			// aapt resource value: 0x7f0d013e
 			public const int eventsView = 2131558718;
 			
-			// aapt resource value: 0x7f0d0170
-			public const int eventstitle = 2131558768;
+			// aapt resource value: 0x7f0d016f
+			public const int eventstitle = 2131558767;
 			
 			// aapt resource value: 0x7f0d005b
 			public const int exitUntilCollapsed = 2131558491;
@@ -4341,14 +4344,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00f7
 			public const int failreason = 2131558647;
 			
-			// aapt resource value: 0x7f0d0174
-			public const int featuredlayout = 2131558772;
+			// aapt resource value: 0x7f0d0173
+			public const int featuredlayout = 2131558771;
 			
 			// aapt resource value: 0x7f0d00bd
 			public const int feedback_btn = 2131558589;
 			
-			// aapt resource value: 0x7f0d01b0
-			public const int filesize = 2131558832;
+			// aapt resource value: 0x7f0d01af
+			public const int filesize = 2131558831;
 			
 			// aapt resource value: 0x7f0d0069
 			public const int fill = 2131558505;
@@ -4380,8 +4383,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d007e
 			public const int fixed_width = 2131558526;
 			
-			// aapt resource value: 0x7f0d01c2
-			public const int flash = 2131558850;
+			// aapt resource value: 0x7f0d01c1
+			public const int flash = 2131558849;
 			
 			// aapt resource value: 0x7f0d00ca
 			public const int focus_inner = 2131558602;
@@ -4401,14 +4404,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d000a
 			public const int ghost_view = 2131558410;
 			
-			// aapt resource value: 0x7f0d01ce
-			public const int goback = 2131558862;
+			// aapt resource value: 0x7f0d01cd
+			public const int goback = 2131558861;
 			
 			// aapt resource value: 0x7f0d0077
 			public const int grid = 2131558519;
 			
-			// aapt resource value: 0x7f0d0171
-			public const int header = 2131558769;
+			// aapt resource value: 0x7f0d0170
+			public const int header = 2131558768;
 			
 			// aapt resource value: 0x7f0d010c
 			public const int helpbtn = 2131558668;
@@ -4416,8 +4419,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0148
 			public const int helpoverlay = 2131558728;
 			
-			// aapt resource value: 0x7f0d019d
-			public const int hideidentity = 2131558813;
+			// aapt resource value: 0x7f0d019c
+			public const int hideidentity = 2131558812;
 			
 			// aapt resource value: 0x7f0d0005
 			public const int home = 2131558405;
@@ -4431,8 +4434,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d008e
 			public const int icon = 2131558542;
 			
-			// aapt resource value: 0x7f0d0185
-			public const int icon_group = 2131558789;
+			// aapt resource value: 0x7f0d0184
+			public const int icon_group = 2131558788;
 			
 			// aapt resource value: 0x7f0d0032
 			public const int icon_only = 2131558450;
@@ -4440,8 +4443,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0054
 			public const int ifRoom = 2131558484;
 			
-			// aapt resource value: 0x7f0d01a5
-			public const int im = 2131558821;
+			// aapt resource value: 0x7f0d01a4
+			public const int im = 2131558820;
 			
 			// aapt resource value: 0x7f0d008b
 			public const int image = 2131558539;
@@ -4449,38 +4452,35 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00d4
 			public const int imageView1 = 2131558612;
 			
-			// aapt resource value: 0x7f0d01d7
-			public const int imageView2 = 2131558871;
+			// aapt resource value: 0x7f0d01d6
+			public const int imageView2 = 2131558870;
 			
 			// aapt resource value: 0x7f0d00ff
 			public const int imageadd = 2131558655;
 			
-			// aapt resource value: 0x7f0d01d3
-			public const int imageplayer = 2131558867;
+			// aapt resource value: 0x7f0d01d2
+			public const int imageplayer = 2131558866;
 			
 			// aapt resource value: 0x7f0d015e
 			public const int imgGravatar = 2131558750;
 			
-			// aapt resource value: 0x7f0d0167
-			public const int imgview = 2131558759;
-			
 			// aapt resource value: 0x7f0d0119
 			public const int indicator = 2131558681;
 			
-			// aapt resource value: 0x7f0d0181
-			public const int info = 2131558785;
+			// aapt resource value: 0x7f0d0180
+			public const int info = 2131558784;
 			
 			// aapt resource value: 0x7f0d0125
 			public const int infopanel = 2131558693;
 			
-			// aapt resource value: 0x7f0d01df
-			public const int ingest_menu_item = 2131558879;
+			// aapt resource value: 0x7f0d01dd
+			public const int ingest_menu_item = 2131558877;
+			
+			// aapt resource value: 0x7f0d01ce
+			public const int initprogress = 2131558862;
 			
 			// aapt resource value: 0x7f0d01cf
-			public const int initprogress = 2131558863;
-			
-			// aapt resource value: 0x7f0d01d0
-			public const int initprogressbar = 2131558864;
+			public const int initprogressbar = 2131558863;
 			
 			// aapt resource value: 0x7f0d0074
 			public const int inline = 2131558516;
@@ -4542,11 +4542,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00b8
 			public const int linearLayout1 = 2131558584;
 			
-			// aapt resource value: 0x7f0d016a
-			public const int linearLayout2 = 2131558762;
+			// aapt resource value: 0x7f0d0169
+			public const int linearLayout2 = 2131558761;
 			
-			// aapt resource value: 0x7f0d019c
-			public const int linearLayout8 = 2131558812;
+			// aapt resource value: 0x7f0d019b
+			public const int linearLayout8 = 2131558811;
 			
 			// aapt resource value: 0x7f0d00bc
 			public const int link = 2131558588;
@@ -4566,8 +4566,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d008d
 			public const int list_item = 2131558541;
 			
-			// aapt resource value: 0x7f0d016d
-			public const int listview = 2131558765;
+			// aapt resource value: 0x7f0d016c
+			public const int listview = 2131558764;
 			
 			// aapt resource value: 0x7f0d00e6
 			public const int loading = 2131558630;
@@ -4581,8 +4581,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0159
 			public const int loadingProgressWheel = 2131558745;
 			
-			// aapt resource value: 0x7f0d01a0
-			public const int locationinfo = 2131558816;
+			// aapt resource value: 0x7f0d019f
+			public const int locationinfo = 2131558815;
 			
 			// aapt resource value: 0x7f0d015d
 			public const int loginbtn = 2131558749;
@@ -4602,32 +4602,32 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00d2
 			public const int main_content = 2131558610;
 			
-			// aapt resource value: 0x7f0d0168
-			public const int mapprogress = 2131558760;
+			// aapt resource value: 0x7f0d0167
+			public const int mapprogress = 2131558759;
 			
-			// aapt resource value: 0x7f0d01da
-			public const int masked = 2131558874;
+			// aapt resource value: 0x7f0d01d8
+			public const int masked = 2131558872;
 			
 			// aapt resource value: 0x7f0d007a
 			public const int match_header = 2131558522;
 			
-			// aapt resource value: 0x7f0d017b
-			public const int media_actions = 2131558779;
+			// aapt resource value: 0x7f0d017a
+			public const int media_actions = 2131558778;
 			
-			// aapt resource value: 0x7f0d01ae
-			public const int mediatype = 2131558830;
+			// aapt resource value: 0x7f0d01ad
+			public const int mediatype = 2131558829;
 			
-			// aapt resource value: 0x7f0d01e0
-			public const int menu_community_overflow_share = 2131558880;
+			// aapt resource value: 0x7f0d01de
+			public const int menu_community_overflow_share = 2131558878;
 			
-			// aapt resource value: 0x7f0d01ac
-			public const int message = 2131558828;
+			// aapt resource value: 0x7f0d01ab
+			public const int message = 2131558827;
 			
-			// aapt resource value: 0x7f0d01cc
-			public const int messageholder = 2131558860;
+			// aapt resource value: 0x7f0d01cb
+			public const int messageholder = 2131558859;
 			
-			// aapt resource value: 0x7f0d01d4
-			public const int metadata = 2131558868;
+			// aapt resource value: 0x7f0d01d3
+			public const int metadata = 2131558867;
 			
 			// aapt resource value: 0x7f0d004b
 			public const int middle = 2131558475;
@@ -4635,29 +4635,29 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d006c
 			public const int mini = 2131558508;
 			
-			// aapt resource value: 0x7f0d01b8
-			public const int msg1 = 2131558840;
+			// aapt resource value: 0x7f0d01b7
+			public const int msg1 = 2131558839;
 			
 			// aapt resource value: 0x7f0d0042
 			public const int multiply = 2131558466;
 			
-			// aapt resource value: 0x7f0d016f
-			public const int myclips = 2131558767;
+			// aapt resource value: 0x7f0d016e
+			public const int myclips = 2131558766;
 			
 			// aapt resource value: 0x7f0d0139
 			public const int myclipsimg = 2131558713;
 			
-			// aapt resource value: 0x7f0d019b
-			public const int myrole = 2131558811;
+			// aapt resource value: 0x7f0d019a
+			public const int myrole = 2131558810;
 			
-			// aapt resource value: 0x7f0d01a2
-			public const int navigateto = 2131558818;
+			// aapt resource value: 0x7f0d01a1
+			public const int navigateto = 2131558817;
 			
 			// aapt resource value: 0x7f0d00f0
 			public const int navigation_header_container = 2131558640;
 			
-			// aapt resource value: 0x7f0d0173
-			public const int nearbybody = 2131558771;
+			// aapt resource value: 0x7f0d0172
+			public const int nearbybody = 2131558770;
 			
 			// aapt resource value: 0x7f0d0140
 			public const int nearbyheader = 2131558720;
@@ -4665,14 +4665,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0055
 			public const int never = 2131558485;
 			
-			// aapt resource value: 0x7f0d0195
-			public const int newedit = 2131558805;
+			// aapt resource value: 0x7f0d0194
+			public const int newedit = 2131558804;
 			
 			// aapt resource value: 0x7f0d0164
 			public const int newshoot = 2131558756;
 			
-			// aapt resource value: 0x7f0d0196
-			public const int newtag = 2131558806;
+			// aapt resource value: 0x7f0d0195
+			public const int newtag = 2131558805;
 			
 			// aapt resource value: 0x7f0d011b
 			public const int next = 2131558683;
@@ -4680,8 +4680,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0155
 			public const int no_licenses_text = 2131558741;
 			
-			// aapt resource value: 0x7f0d01b5
-			public const int nofootage = 2131558837;
+			// aapt resource value: 0x7f0d01b4
+			public const int nofootage = 2131558836;
 			
 			// aapt resource value: 0x7f0d0031
 			public const int none = 2131558449;
@@ -4689,14 +4689,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0039
 			public const int normal = 2131558457;
 			
-			// aapt resource value: 0x7f0d0183
-			public const int notification_background = 2131558787;
-			
-			// aapt resource value: 0x7f0d017e
-			public const int notification_main_column = 2131558782;
+			// aapt resource value: 0x7f0d0182
+			public const int notification_background = 2131558786;
 			
 			// aapt resource value: 0x7f0d017d
-			public const int notification_main_column_container = 2131558781;
+			public const int notification_main_column = 2131558781;
+			
+			// aapt resource value: 0x7f0d017c
+			public const int notification_main_column_container = 2131558780;
 			
 			// aapt resource value: 0x7f0d00e4
 			public const int number = 2131558628;
@@ -4728,8 +4728,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0149
 			public const int openhelp = 2131558729;
 			
-			// aapt resource value: 0x7f0d0191
-			public const int organisedby = 2131558801;
+			// aapt resource value: 0x7f0d0190
+			public const int organisedby = 2131558800;
 			
 			// aapt resource value: 0x7f0d0138
 			public const int organiser = 2131558712;
@@ -4743,11 +4743,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0075
 			public const int overlay = 2131558517;
 			
-			// aapt resource value: 0x7f0d01bd
-			public const int overlayimg = 2131558845;
+			// aapt resource value: 0x7f0d01bc
+			public const int overlayimg = 2131558844;
 			
-			// aapt resource value: 0x7f0d01be
-			public const int overlaytext = 2131558846;
+			// aapt resource value: 0x7f0d01bd
+			public const int overlaytext = 2131558845;
 			
 			// aapt resource value: 0x7f0d0112
 			public const int page_one = 2131558674;
@@ -4770,8 +4770,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d000b
 			public const int parent_matrix = 2131558411;
 			
-			// aapt resource value: 0x7f0d01b2
-			public const int pendingimg = 2131558834;
+			// aapt resource value: 0x7f0d01b1
+			public const int pendingimg = 2131558833;
 			
 			// aapt resource value: 0x7f0d012a
 			public const int phase = 2131558698;
@@ -4791,8 +4791,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00e7
 			public const int pos = 2131558631;
 			
-			// aapt resource value: 0x7f0d016e
-			public const int previewbtn = 2131558766;
+			// aapt resource value: 0x7f0d016d
+			public const int previewbtn = 2131558765;
 			
 			// aapt resource value: 0x7f0d00f8
 			public const int progress = 2131558648;
@@ -4806,32 +4806,32 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0007
 			public const int progress_horizontal = 2131558407;
 			
-			// aapt resource value: 0x7f0d0190
-			public const int publicshare = 2131558800;
-			
 			// aapt resource value: 0x7f0d018f
-			public const int publicview = 2131558799;
+			public const int publicshare = 2131558799;
+			
+			// aapt resource value: 0x7f0d018e
+			public const int publicview = 2131558798;
 			
 			// aapt resource value: 0x7f0d00a1
 			public const int radio = 2131558561;
 			
-			// aapt resource value: 0x7f0d018b
-			public const int recordbtnwrapper = 2131558795;
+			// aapt resource value: 0x7f0d018a
+			public const int recordbtnwrapper = 2131558794;
 			
-			// aapt resource value: 0x7f0d018e
-			public const int recordlight = 2131558798;
+			// aapt resource value: 0x7f0d018d
+			public const int recordlight = 2131558797;
 			
-			// aapt resource value: 0x7f0d01de
-			public const int restart_menu_item = 2131558878;
+			// aapt resource value: 0x7f0d01dc
+			public const int restart_menu_item = 2131558876;
 			
 			// aapt resource value: 0x7f0d0063
 			public const int right = 2131558499;
 			
-			// aapt resource value: 0x7f0d0182
-			public const int right_icon = 2131558786;
+			// aapt resource value: 0x7f0d0181
+			public const int right_icon = 2131558785;
 			
-			// aapt resource value: 0x7f0d017f
-			public const int right_side = 2131558783;
+			// aapt resource value: 0x7f0d017e
+			public const int right_side = 2131558782;
 			
 			// aapt resource value: 0x7f0d012d
 			public const int righttime = 2131558701;
@@ -4842,17 +4842,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0128
 			public const int role = 2131558696;
 			
-			// aapt resource value: 0x7f0d019a
-			public const int roles_frag_holder = 2131558810;
+			// aapt resource value: 0x7f0d0199
+			public const int roles_frag_holder = 2131558809;
 			
-			// aapt resource value: 0x7f0d01c6
-			public const int roleselector = 2131558854;
+			// aapt resource value: 0x7f0d01c5
+			public const int roleselector = 2131558853;
 			
 			// aapt resource value: 0x7f0d00c7
 			public const int rootlayout = 2131558599;
 			
-			// aapt resource value: 0x7f0d01bf
-			public const int rotatewarning = 2131558847;
+			// aapt resource value: 0x7f0d01be
+			public const int rotatewarning = 2131558846;
 			
 			// aapt resource value: 0x7f0d000c
 			public const int save_image_matrix = 2131558412;
@@ -4884,8 +4884,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d006e
 			public const int scrollable = 2131558510;
 			
-			// aapt resource value: 0x7f0d0187
-			public const int scroller = 2131558791;
+			// aapt resource value: 0x7f0d0186
+			public const int scroller = 2131558790;
 			
 			// aapt resource value: 0x7f0d00ac
 			public const int search_badge = 2131558572;
@@ -4929,20 +4929,20 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00b6
 			public const int select_dialog_listview = 2131558582;
 			
-			// aapt resource value: 0x7f0d016b
-			public const int selectionmask = 2131558763;
+			// aapt resource value: 0x7f0d016a
+			public const int selectionmask = 2131558762;
 			
 			// aapt resource value: 0x7f0d010f
 			public const int selector = 2131558671;
 			
-			// aapt resource value: 0x7f0d01db
-			public const int share_menu_item = 2131558875;
+			// aapt resource value: 0x7f0d01d9
+			public const int share_menu_item = 2131558873;
 			
 			// aapt resource value: 0x7f0d0120
 			public const int sharebtn = 2131558688;
 			
-			// aapt resource value: 0x7f0d019e
-			public const int shootclosed = 2131558814;
+			// aapt resource value: 0x7f0d019d
+			public const int shootclosed = 2131558813;
 			
 			// aapt resource value: 0x7f0d00a0
 			public const int shortcut = 2131558560;
@@ -4953,17 +4953,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00c2
 			public const int shots = 2131558594;
 			
-			// aapt resource value: 0x7f0d01c7
-			public const int shotselector = 2131558855;
+			// aapt resource value: 0x7f0d01c6
+			public const int shotselector = 2131558854;
 			
-			// aapt resource value: 0x7f0d01cb
-			public const int shotselectorlist = 2131558859;
+			// aapt resource value: 0x7f0d01ca
+			public const int shotselectorlist = 2131558858;
 			
 			// aapt resource value: 0x7f0d00c3
 			public const int shotslist = 2131558595;
 			
-			// aapt resource value: 0x7f0d01a7
-			public const int shottype = 2131558823;
+			// aapt resource value: 0x7f0d01a6
+			public const int shottype = 2131558822;
 			
 			// aapt resource value: 0x7f0d003d
 			public const int showCustom = 2131558461;
@@ -4974,8 +4974,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d003f
 			public const int showTitle = 2131558463;
 			
-			// aapt resource value: 0x7f0d01c5
-			public const int showoverlay = 2131558853;
+			// aapt resource value: 0x7f0d01c4
+			public const int showoverlay = 2131558852;
 			
 			// aapt resource value: 0x7f0d0118
 			public const int skip = 2131558680;
@@ -5016,8 +5016,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0033
 			public const int standard = 2131558451;
 			
-			// aapt resource value: 0x7f0d01a6
-			public const int star = 2131558822;
+			// aapt resource value: 0x7f0d01a5
+			public const int star = 2131558821;
 			
 			// aapt resource value: 0x7f0d00cf
 			public const int starbtn = 2131558607;
@@ -5025,17 +5025,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0064
 			public const int start = 2131558500;
 			
-			// aapt resource value: 0x7f0d01a4
-			public const int startshooting = 2131558820;
+			// aapt resource value: 0x7f0d01a3
+			public const int startshooting = 2131558819;
 			
-			// aapt resource value: 0x7f0d017a
-			public const int status_bar_latest_event_content = 2131558778;
+			// aapt resource value: 0x7f0d0179
+			public const int status_bar_latest_event_content = 2131558777;
 			
 			// aapt resource value: 0x7f0d0076
 			public const int sticky = 2131558518;
 			
-			// aapt resource value: 0x7f0d01b7
-			public const int subheader = 2131558839;
+			// aapt resource value: 0x7f0d01b6
+			public const int subheader = 2131558838;
 			
 			// aapt resource value: 0x7f0d00a2
 			public const int submenuarrow = 2131558562;
@@ -5043,8 +5043,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00b3
 			public const int submit_area = 2131558579;
 			
-			// aapt resource value: 0x7f0d01b4
-			public const int subtitle = 2131558836;
+			// aapt resource value: 0x7f0d01b3
+			public const int subtitle = 2131558835;
 			
 			// aapt resource value: 0x7f0d0080
 			public const int surface_view = 2131558528;
@@ -5052,14 +5052,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00d6
 			public const int swiperefresh = 2131558614;
 			
+			// aapt resource value: 0x7f0d01c2
+			public const int switchcam = 2131558850;
+			
 			// aapt resource value: 0x7f0d01c3
-			public const int switchcam = 2131558851;
+			public const int switchrole = 2131558851;
 			
-			// aapt resource value: 0x7f0d01c4
-			public const int switchrole = 2131558852;
-			
-			// aapt resource value: 0x7f0d01b3
-			public const int syncnow = 2131558835;
+			// aapt resource value: 0x7f0d01b2
+			public const int syncnow = 2131558834;
 			
 			// aapt resource value: 0x7f0d003a
 			public const int tabMode = 2131558458;
@@ -5106,8 +5106,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0015
 			public const int textinput_error = 2131558421;
 			
-			// aapt resource value: 0x7f0d01aa
-			public const int textlayout = 2131558826;
+			// aapt resource value: 0x7f0d01a9
+			public const int textlayout = 2131558825;
 			
 			// aapt resource value: 0x7f0d00c6
 			public const int texture = 2131558598;
@@ -5118,8 +5118,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0110
 			public const int theroot = 2131558672;
 			
-			// aapt resource value: 0x7f0d016c
-			public const int tick = 2131558764;
+			// aapt resource value: 0x7f0d016b
+			public const int tick = 2131558763;
 			
 			// aapt resource value: 0x7f0d0127
 			public const int time = 2131558695;
@@ -5127,11 +5127,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0107
 			public const int timeline = 2131558663;
 			
-			// aapt resource value: 0x7f0d01d5
-			public const int timemeta = 2131558869;
+			// aapt resource value: 0x7f0d01d4
+			public const int timemeta = 2131558868;
 			
-			// aapt resource value: 0x7f0d018c
-			public const int timestamp = 2131558796;
+			// aapt resource value: 0x7f0d018b
+			public const int timestamp = 2131558795;
 			
 			// aapt resource value: 0x7f0d001c
 			public const int title = 2131558428;
@@ -5148,11 +5148,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0100
 			public const int titleadd = 2131558656;
 			
-			// aapt resource value: 0x7f0d0199
-			public const int titleblack = 2131558809;
-			
 			// aapt resource value: 0x7f0d0198
-			public const int titlewhite = 2131558808;
+			public const int titleblack = 2131558808;
+			
+			// aapt resource value: 0x7f0d0197
+			public const int titlewhite = 2131558807;
 			
 			// aapt resource value: 0x7f0d00b7
 			public const int toolbar = 2131558583;
@@ -5178,8 +5178,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0130
 			public const int trackposition = 2131558704;
 			
-			// aapt resource value: 0x7f0d0188
-			public const int tracks = 2131558792;
+			// aapt resource value: 0x7f0d0187
+			public const int tracks = 2131558791;
 			
 			// aapt resource value: 0x7f0d000f
 			public const int transition_current_scene = 2131558415;
@@ -5205,8 +5205,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d00c1
 			public const int tv_title = 2131558593;
 			
-			// aapt resource value: 0x7f0d01a8
-			public const int txt = 2131558824;
+			// aapt resource value: 0x7f0d01a7
+			public const int txt = 2131558823;
 			
 			// aapt resource value: 0x7f0d0085
 			public const int underline = 2131558533;
@@ -5217,8 +5217,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0009
 			public const int up = 2131558409;
 			
-			// aapt resource value: 0x7f0d01b6
-			public const int uploadbtn = 2131558838;
+			// aapt resource value: 0x7f0d01b5
+			public const int uploadbtn = 2131558837;
 			
 			// aapt resource value: 0x7f0d013b
 			public const int uploadcount = 2131558715;
@@ -5229,11 +5229,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d013c
 			public const int uploadimg = 2131558716;
 			
-			// aapt resource value: 0x7f0d01af
-			public const int uploadprogress = 2131558831;
+			// aapt resource value: 0x7f0d01ae
+			public const int uploadprogress = 2131558830;
 			
-			// aapt resource value: 0x7f0d01b1
-			public const int uploadsubtitle = 2131558833;
+			// aapt resource value: 0x7f0d01b0
+			public const int uploadsubtitle = 2131558832;
 			
 			// aapt resource value: 0x7f0d0161
 			public const int uploadtile = 2131558753;
@@ -5259,32 +5259,29 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0d0122
 			public const int videoWrapper = 2131558690;
 			
-			// aapt resource value: 0x7f0d01d6
-			public const int videometadata = 2131558870;
+			// aapt resource value: 0x7f0d01d5
+			public const int videometadata = 2131558869;
 			
-			// aapt resource value: 0x7f0d01d2
-			public const int videoplayer = 2131558866;
+			// aapt resource value: 0x7f0d01d1
+			public const int videoplayer = 2131558865;
 			
 			// aapt resource value: 0x7f0d0123
 			public const int videoview = 2131558691;
 			
-			// aapt resource value: 0x7f0d01d1
-			public const int videowrapper = 2131558865;
+			// aapt resource value: 0x7f0d01d0
+			public const int videowrapper = 2131558864;
 			
-			// aapt resource value: 0x7f0d01ca
-			public const int view1 = 2131558858;
+			// aapt resource value: 0x7f0d01c9
+			public const int view1 = 2131558857;
 			
 			// aapt resource value: 0x7f0d0016
 			public const int view_offset_helper = 2131558422;
 			
-			// aapt resource value: 0x7f0d0172
-			public const int viewadminpanel = 2131558770;
+			// aapt resource value: 0x7f0d0171
+			public const int viewadminpanel = 2131558769;
 			
-			// aapt resource value: 0x7f0d01d9
-			public const int visible = 2131558873;
-			
-			// aapt resource value: 0x7f0d01d8
-			public const int webview = 2131558872;
+			// aapt resource value: 0x7f0d01d7
+			public const int visible = 2131558871;
 			
 			// aapt resource value: 0x7f0d0034
 			public const int wide = 2131558452;
@@ -5646,181 +5643,175 @@ namespace Bootleg.Droid
 			public const int Main_Tabs = 2131034205;
 			
 			// aapt resource value: 0x7f05005e
-			public const int makeshoot = 2131034206;
+			public const int MapFragment = 2131034206;
 			
 			// aapt resource value: 0x7f05005f
-			public const int MapFragment = 2131034207;
+			public const int moreshoots = 2131034207;
 			
 			// aapt resource value: 0x7f050060
-			public const int moreshoots = 2131034208;
+			public const int musicdialog = 2131034208;
 			
 			// aapt resource value: 0x7f050061
-			public const int musicdialog = 2131034209;
+			public const int musicitem = 2131034209;
 			
 			// aapt resource value: 0x7f050062
-			public const int musicitem = 2131034210;
+			public const int myclips = 2131034210;
 			
 			// aapt resource value: 0x7f050063
-			public const int myclips = 2131034211;
+			public const int myeditstitle = 2131034211;
 			
 			// aapt resource value: 0x7f050064
-			public const int myeditstitle = 2131034212;
+			public const int myeventstitle = 2131034212;
 			
 			// aapt resource value: 0x7f050065
-			public const int myeventstitle = 2131034213;
+			public const int nearbybox = 2131034213;
 			
 			// aapt resource value: 0x7f050066
-			public const int nearbybox = 2131034214;
+			public const int notification_action = 2131034214;
 			
 			// aapt resource value: 0x7f050067
-			public const int notification_action = 2131034215;
+			public const int notification_action_tombstone = 2131034215;
 			
 			// aapt resource value: 0x7f050068
-			public const int notification_action_tombstone = 2131034216;
+			public const int notification_media_action = 2131034216;
 			
 			// aapt resource value: 0x7f050069
-			public const int notification_media_action = 2131034217;
+			public const int notification_media_cancel_action = 2131034217;
 			
 			// aapt resource value: 0x7f05006a
-			public const int notification_media_cancel_action = 2131034218;
+			public const int notification_template_big_media = 2131034218;
 			
 			// aapt resource value: 0x7f05006b
-			public const int notification_template_big_media = 2131034219;
+			public const int notification_template_big_media_custom = 2131034219;
 			
 			// aapt resource value: 0x7f05006c
-			public const int notification_template_big_media_custom = 2131034220;
+			public const int notification_template_big_media_narrow = 2131034220;
 			
 			// aapt resource value: 0x7f05006d
-			public const int notification_template_big_media_narrow = 2131034221;
+			public const int notification_template_big_media_narrow_custom = 2131034221;
 			
 			// aapt resource value: 0x7f05006e
-			public const int notification_template_big_media_narrow_custom = 2131034222;
+			public const int notification_template_custom_big = 2131034222;
 			
 			// aapt resource value: 0x7f05006f
-			public const int notification_template_custom_big = 2131034223;
+			public const int notification_template_icon_group = 2131034223;
 			
 			// aapt resource value: 0x7f050070
-			public const int notification_template_icon_group = 2131034224;
+			public const int notification_template_lines_media = 2131034224;
 			
 			// aapt resource value: 0x7f050071
-			public const int notification_template_lines_media = 2131034225;
+			public const int notification_template_media = 2131034225;
 			
 			// aapt resource value: 0x7f050072
-			public const int notification_template_media = 2131034226;
+			public const int notification_template_media_custom = 2131034226;
 			
 			// aapt resource value: 0x7f050073
-			public const int notification_template_media_custom = 2131034227;
+			public const int notification_template_part_chronometer = 2131034227;
 			
 			// aapt resource value: 0x7f050074
-			public const int notification_template_part_chronometer = 2131034228;
+			public const int notification_template_part_time = 2131034228;
 			
 			// aapt resource value: 0x7f050075
-			public const int notification_template_part_time = 2131034229;
+			public const int popup_horizontal = 2131034229;
 			
 			// aapt resource value: 0x7f050076
-			public const int popup_horizontal = 2131034230;
+			public const int popup_vertical = 2131034230;
 			
 			// aapt resource value: 0x7f050077
-			public const int popup_vertical = 2131034231;
+			public const int record_btn = 2131034231;
 			
 			// aapt resource value: 0x7f050078
-			public const int record_btn = 2131034232;
+			public const int release_dialog = 2131034232;
 			
 			// aapt resource value: 0x7f050079
-			public const int release_dialog = 2131034233;
+			public const int Review = 2131034233;
 			
 			// aapt resource value: 0x7f05007a
-			public const int Review = 2131034234;
+			public const int roleitem = 2131034234;
 			
 			// aapt resource value: 0x7f05007b
-			public const int roleitem = 2131034235;
+			public const int Roles = 2131034235;
 			
 			// aapt resource value: 0x7f05007c
-			public const int Roles = 2131034236;
+			public const int Roles_Activity = 2131034236;
 			
 			// aapt resource value: 0x7f05007d
-			public const int Roles_Activity = 2131034237;
+			public const int select_dialog_item_material = 2131034237;
 			
 			// aapt resource value: 0x7f05007e
-			public const int select_dialog_item_material = 2131034238;
+			public const int select_dialog_multichoice_material = 2131034238;
 			
 			// aapt resource value: 0x7f05007f
-			public const int select_dialog_multichoice_material = 2131034239;
+			public const int select_dialog_singlechoice_material = 2131034239;
 			
 			// aapt resource value: 0x7f050080
-			public const int select_dialog_singlechoice_material = 2131034240;
+			public const int Settings = 2131034240;
 			
 			// aapt resource value: 0x7f050081
-			public const int Settings = 2131034241;
+			public const int shoot_template = 2131034241;
 			
 			// aapt resource value: 0x7f050082
-			public const int shoot_template = 2131034242;
+			public const int shootinfo = 2131034242;
 			
 			// aapt resource value: 0x7f050083
-			public const int shootinfo = 2131034243;
+			public const int shot = 2131034243;
 			
 			// aapt resource value: 0x7f050084
-			public const int shot = 2131034244;
+			public const int shot_release_dialog = 2131034244;
 			
 			// aapt resource value: 0x7f050085
-			public const int shot_release_dialog = 2131034245;
+			public const int shotitem = 2131034245;
 			
 			// aapt resource value: 0x7f050086
-			public const int shotitem = 2131034246;
+			public const int shotselector = 2131034246;
 			
 			// aapt resource value: 0x7f050087
-			public const int shotselector = 2131034247;
+			public const int simple_circles = 2131034247;
 			
 			// aapt resource value: 0x7f050088
-			public const int simple_circles = 2131034248;
+			public const int support_simple_spinner_dropdown_item = 2131034248;
 			
 			// aapt resource value: 0x7f050089
-			public const int support_simple_spinner_dropdown_item = 2131034249;
+			public const int textentrydialog = 2131034249;
 			
 			// aapt resource value: 0x7f05008a
-			public const int textentrydialog = 2131034250;
+			public const int tooltip = 2131034250;
 			
 			// aapt resource value: 0x7f05008b
-			public const int tooltip = 2131034251;
+			public const int topicchip = 2131034251;
 			
 			// aapt resource value: 0x7f05008c
-			public const int topicchip = 2131034252;
+			public const int uploadlistitem = 2131034252;
 			
 			// aapt resource value: 0x7f05008d
-			public const int uploadlistitem = 2131034253;
+			public const int uploadlistsync = 2131034253;
 			
 			// aapt resource value: 0x7f05008e
-			public const int uploadlistsync = 2131034254;
+			public const int uploadlistupload = 2131034254;
 			
 			// aapt resource value: 0x7f05008f
-			public const int uploadlistupload = 2131034255;
+			public const int Uploads = 2131034255;
 			
 			// aapt resource value: 0x7f050090
-			public const int Uploads = 2131034256;
+			public const int Video = 2131034256;
 			
 			// aapt resource value: 0x7f050091
-			public const int Video = 2131034257;
+			public const int Video_Main = 2131034257;
 			
 			// aapt resource value: 0x7f050092
-			public const int Video_Main = 2131034258;
+			public const int video_meta = 2131034258;
 			
 			// aapt resource value: 0x7f050093
-			public const int video_meta = 2131034259;
+			public const int videoheaderfixed = 2131034259;
 			
 			// aapt resource value: 0x7f050094
-			public const int videoheaderfixed = 2131034260;
+			public const int VideoPreview = 2131034260;
 			
 			// aapt resource value: 0x7f050095
-			public const int VideoPreview = 2131034261;
+			public const int VideoPreviewFullscreen = 2131034261;
 			
 			// aapt resource value: 0x7f050096
-			public const int VideoPreviewFullscreen = 2131034262;
-			
-			// aapt resource value: 0x7f050097
-			public const int WebLayout = 2131034263;
-			
-			// aapt resource value: 0x7f050098
-			public const int zoom = 2131034264;
+			public const int zoom = 2131034262;
 			
 			static Layout()
 			{
@@ -5926,8 +5917,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09009e
 			public const int Choose = 2131296414;
 			
-			// aapt resource value: 0x7f0900da
-			public const int Closed = 2131296474;
+			// aapt resource value: 0x7f0900d8
+			public const int Closed = 2131296472;
 			
 			// aapt resource value: 0x7f090059
 			public const int Email = 2131296345;
@@ -5941,17 +5932,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090058
 			public const int HelpLink = 2131296344;
 			
-			// aapt resource value: 0x7f090107
-			public const int INVITED = 2131296519;
-			
-			// aapt resource value: 0x7f090106
-			public const int OWNER = 2131296518;
-			
 			// aapt resource value: 0x7f090105
-			public const int PUBLIC = 2131296517;
+			public const int INVITED = 2131296517;
 			
 			// aapt resource value: 0x7f090104
-			public const int Settings = 2131296516;
+			public const int OWNER = 2131296516;
+			
+			// aapt resource value: 0x7f090103
+			public const int PUBLIC = 2131296515;
+			
+			// aapt resource value: 0x7f090102
+			public const int Settings = 2131296514;
 			
 			// aapt resource value: 0x7f09007c
 			public const int TagLine = 2131296380;
@@ -6046,29 +6037,32 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900c1
 			public const int aboutbtn = 2131296449;
 			
-			// aapt resource value: 0x7f09011f
-			public const int abouttitle = 2131296543;
+			// aapt resource value: 0x7f09011d
+			public const int abouttitle = 2131296541;
 			
 			// aapt resource value: 0x7f090098
 			public const int acceptperms = 2131296408;
 			
-			// aapt resource value: 0x7f090140
-			public const int access = 2131296576;
+			// aapt resource value: 0x7f09013c
+			public const int access = 2131296572;
 			
-			// aapt resource value: 0x7f090117
-			public const int agree = 2131296535;
+			// aapt resource value: 0x7f090115
+			public const int agree = 2131296533;
 			
-			// aapt resource value: 0x7f090112
-			public const int allclear = 2131296530;
+			// aapt resource value: 0x7f090110
+			public const int allclear = 2131296528;
 			
 			// aapt resource value: 0x7f090085
 			public const int alluploadsdone = 2131296389;
 			
-			// aapt resource value: 0x7f090119
-			public const int allvideos = 2131296537;
+			// aapt resource value: 0x7f090117
+			public const int allvideos = 2131296535;
 			
 			// aapt resource value: 0x7f090081
 			public const int andaction = 2131296385;
+			
+			// aapt resource value: 0x7f090142
+			public const int apikeynovalid = 2131296578;
 			
 			// aapt resource value: 0x7f090008
 			public const int app_name = 2131296264;
@@ -6103,20 +6097,20 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090068
 			public const int bywho = 2131296360;
 			
-			// aapt resource value: 0x7f090134
-			public const int cache = 2131296564;
+			// aapt resource value: 0x7f090132
+			public const int cache = 2131296562;
 			
 			// aapt resource value: 0x7f0900b9
 			public const int cancelbtn = 2131296441;
 			
-			// aapt resource value: 0x7f0900dd
-			public const int cannotloadvideo = 2131296477;
+			// aapt resource value: 0x7f0900db
+			public const int cannotloadvideo = 2131296475;
 			
-			// aapt resource value: 0x7f0900f2
-			public const int canshare = 2131296498;
+			// aapt resource value: 0x7f0900f0
+			public const int canshare = 2131296496;
 			
-			// aapt resource value: 0x7f0900d3
-			public const int cantgiverole = 2131296467;
+			// aapt resource value: 0x7f0900d1
+			public const int cantgiverole = 2131296465;
 			
 			// aapt resource value: 0x7f090042
 			public const int character_counter_pattern = 2131296322;
@@ -6142,8 +6136,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09008d
 			public const int chooseatrack = 2131296397;
 			
-			// aapt resource value: 0x7f090109
-			public const int clipswaiting = 2131296521;
+			// aapt resource value: 0x7f090107
+			public const int clipswaiting = 2131296519;
 			
 			// aapt resource value: 0x7f09007a
 			public const int closed = 2131296378;
@@ -6205,17 +6199,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090090
 			public const int completededits = 2131296400;
 			
-			// aapt resource value: 0x7f0900e2
-			public const int conncancel = 2131296482;
+			// aapt resource value: 0x7f0900e0
+			public const int conncancel = 2131296480;
 			
-			// aapt resource value: 0x7f09011a
-			public const int connecting = 2131296538;
+			// aapt resource value: 0x7f090118
+			public const int connecting = 2131296536;
 			
-			// aapt resource value: 0x7f09013b
-			public const int connectionissuebody = 2131296571;
+			// aapt resource value: 0x7f090144
+			public const int connectionissuebody = 2131296580;
 			
-			// aapt resource value: 0x7f09013a
-			public const int connectionissuetitle = 2131296570;
+			// aapt resource value: 0x7f090143
+			public const int connectionissuetitle = 2131296579;
 			
 			// aapt resource value: 0x7f090093
 			public const int continueanyway = 2131296403;
@@ -6226,23 +6220,23 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090094
 			public const int continuetitle = 2131296404;
 			
-			// aapt resource value: 0x7f09012f
-			public const int contributedfootage = 2131296559;
+			// aapt resource value: 0x7f09012d
+			public const int contributedfootage = 2131296557;
 			
-			// aapt resource value: 0x7f09013f
-			public const int contributors = 2131296575;
+			// aapt resource value: 0x7f09013b
+			public const int contributors = 2131296571;
 			
 			// aapt resource value: 0x7f090071
 			public const int copybtn = 2131296369;
 			
-			// aapt resource value: 0x7f090139
-			public const int copyof = 2131296569;
+			// aapt resource value: 0x7f090137
+			public const int copyof = 2131296567;
 			
-			// aapt resource value: 0x7f0900f5
-			public const int crewreminder_content = 2131296501;
+			// aapt resource value: 0x7f0900f3
+			public const int crewreminder_content = 2131296499;
 			
-			// aapt resource value: 0x7f0900f4
-			public const int crewreminder_title = 2131296500;
+			// aapt resource value: 0x7f0900f2
+			public const int crewreminder_title = 2131296498;
 			
 			// aapt resource value: 0x7f0900c5
 			public const int datacharge = 2131296453;
@@ -6253,8 +6247,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09009f
 			public const int datausagetitle = 2131296415;
 			
-			// aapt resource value: 0x7f09013e
-			public const int default_story_title = 2131296574;
+			// aapt resource value: 0x7f09013a
+			public const int default_story_title = 2131296570;
 			
 			// aapt resource value: 0x7f090002
 			public const int default_web_client_id = 2131296258;
@@ -6277,35 +6271,35 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900b7
 			public const int description = 2131296439;
 			
-			// aapt resource value: 0x7f09010a
-			public const int dontmissout = 2131296522;
+			// aapt resource value: 0x7f090108
+			public const int dontmissout = 2131296520;
 			
-			// aapt resource value: 0x7f090141
-			public const int downloading = 2131296577;
+			// aapt resource value: 0x7f09013d
+			public const int downloading = 2131296573;
+			
+			// aapt resource value: 0x7f090124
+			public const int edit_page1_description = 2131296548;
+			
+			// aapt resource value: 0x7f090123
+			public const int edit_page1_title = 2131296547;
 			
 			// aapt resource value: 0x7f090126
-			public const int edit_page1_description = 2131296550;
+			public const int edit_page2_description = 2131296550;
 			
 			// aapt resource value: 0x7f090125
-			public const int edit_page1_title = 2131296549;
+			public const int edit_page2_title = 2131296549;
 			
 			// aapt resource value: 0x7f090128
-			public const int edit_page2_description = 2131296552;
+			public const int edit_page3_description = 2131296552;
 			
 			// aapt resource value: 0x7f090127
-			public const int edit_page2_title = 2131296551;
+			public const int edit_page3_title = 2131296551;
 			
-			// aapt resource value: 0x7f09012a
-			public const int edit_page3_description = 2131296554;
+			// aapt resource value: 0x7f0900e7
+			public const int editerror = 2131296487;
 			
-			// aapt resource value: 0x7f090129
-			public const int edit_page3_title = 2131296553;
-			
-			// aapt resource value: 0x7f0900e9
-			public const int editerror = 2131296489;
-			
-			// aapt resource value: 0x7f090111
-			public const int editready = 2131296529;
+			// aapt resource value: 0x7f09010f
+			public const int editready = 2131296527;
 			
 			// aapt resource value: 0x7f0900be
 			public const int edits = 2131296446;
@@ -6313,17 +6307,32 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090076
 			public const int enableble = 2131296374;
 			
-			// aapt resource value: 0x7f0900df
-			public const int enterdescription = 2131296479;
+			// aapt resource value: 0x7f0900dd
+			public const int enterdescription = 2131296477;
 			
-			// aapt resource value: 0x7f090108
-			public const int entersharecode = 2131296520;
+			// aapt resource value: 0x7f090106
+			public const int entersharecode = 2131296518;
 			
-			// aapt resource value: 0x7f0900de
-			public const int entertitle = 2131296478;
+			// aapt resource value: 0x7f0900dc
+			public const int entertitle = 2131296476;
 			
 			// aapt resource value: 0x7f090087
 			public const int entertitledialog = 2131296391;
+			
+			// aapt resource value: 0x7f090146
+			public const int errorcanceled = 2131296582;
+			
+			// aapt resource value: 0x7f090141
+			public const int errornoapplication = 2131296577;
+			
+			// aapt resource value: 0x7f090140
+			public const int errornonetwork = 2131296576;
+			
+			// aapt resource value: 0x7f090147
+			public const int errorserver = 2131296583;
+			
+			// aapt resource value: 0x7f090148
+			public const int errorunknown = 2131296584;
 			
 			// aapt resource value: 0x7f090084
 			public const int everyonesvideo = 2131296388;
@@ -6361,11 +6370,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090053
 			public const int exo_controls_stop_description = 2131296339;
 			
-			// aapt resource value: 0x7f0900ce
-			public const int failedconnection = 2131296462;
+			// aapt resource value: 0x7f090149
+			public const int failedconnection = 2131296585;
 			
-			// aapt resource value: 0x7f0900ff
-			public const int failedtoupload = 2131296511;
+			// aapt resource value: 0x7f0900fd
+			public const int failedtoupload = 2131296509;
 			
 			// aapt resource value: 0x7f090021
 			public const int fcm_fallback_notification_channel_label = 2131296289;
@@ -6382,8 +6391,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900a8
 			public const int finishedbtn = 2131296424;
 			
-			// aapt resource value: 0x7f090102
-			public const int finishedvideos = 2131296514;
+			// aapt resource value: 0x7f090100
+			public const int finishedvideos = 2131296512;
 			
 			// aapt resource value: 0x7f0900a1
 			public const int finishshooting = 2131296417;
@@ -6394,8 +6403,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090000
 			public const int gcm_defaultSenderId = 2131296256;
 			
-			// aapt resource value: 0x7f09011c
-			public const int getmorehelp = 2131296540;
+			// aapt resource value: 0x7f09011a
+			public const int getmorehelp = 2131296538;
 			
 			// aapt resource value: 0x7f090097
 			public const int goahead = 2131296407;
@@ -6412,17 +6421,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090006
 			public const int google_storage_bucket = 2131296262;
 			
-			// aapt resource value: 0x7f0900d4
-			public const int googleplayerror = 2131296468;
+			// aapt resource value: 0x7f0900d2
+			public const int googleplayerror = 2131296466;
 			
-			// aapt resource value: 0x7f09010b
-			public const int guest = 2131296523;
+			// aapt resource value: 0x7f090109
+			public const int guest = 2131296521;
 			
 			// aapt resource value: 0x7f0900ac
 			public const int help = 2131296428;
 			
-			// aapt resource value: 0x7f09010d
-			public const int helpoverlay = 2131296525;
+			// aapt resource value: 0x7f09010b
+			public const int helpoverlay = 2131296523;
 			
 			// aapt resource value: 0x7f0900b3
 			public const int hideident = 2131296435;
@@ -6433,17 +6442,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090096
 			public const int illreview = 2131296406;
 			
-			// aapt resource value: 0x7f090115
-			public const int imagedownload = 2131296533;
+			// aapt resource value: 0x7f090113
+			public const int imagedownload = 2131296531;
 			
 			// aapt resource value: 0x7f090075
 			public const int includevideo = 2131296373;
 			
-			// aapt resource value: 0x7f09012c
-			public const int ingest_page1_description = 2131296556;
+			// aapt resource value: 0x7f09012a
+			public const int ingest_page1_description = 2131296554;
 			
-			// aapt resource value: 0x7f09012b
-			public const int ingest_page1_title = 2131296555;
+			// aapt resource value: 0x7f090129
+			public const int ingest_page1_title = 2131296553;
 			
 			// aapt resource value: 0x7f09007e
 			public const int ingesttitle = 2131296382;
@@ -6451,11 +6460,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09008f
 			public const int inprogressedits = 2131296399;
 			
-			// aapt resource value: 0x7f0900d0
-			public const int invalidcode = 2131296464;
+			// aapt resource value: 0x7f0900ce
+			public const int invalidcode = 2131296462;
 			
-			// aapt resource value: 0x7f0900f1
-			public const int ispublic = 2131296497;
+			// aapt resource value: 0x7f0900ef
+			public const int ispublic = 2131296495;
 			
 			// aapt resource value: 0x7f09009b
 			public const int iunderstand = 2131296411;
@@ -6469,11 +6478,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09000b
 			public const int license_content_error = 2131296267;
 			
-			// aapt resource value: 0x7f09013c
-			public const int linecounter = 2131296572;
+			// aapt resource value: 0x7f090138
+			public const int linecounter = 2131296568;
 			
-			// aapt resource value: 0x7f090143
-			public const int linetoolong = 2131296579;
+			// aapt resource value: 0x7f09013f
+			public const int linetoolong = 2131296575;
 			
 			// aapt resource value: 0x7f090091
 			public const int loading = 2131296401;
@@ -6481,17 +6490,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900a0
 			public const int locationwarn = 2131296416;
 			
-			// aapt resource value: 0x7f0900d7
-			public const int loggedinelsewhere = 2131296471;
+			// aapt resource value: 0x7f0900d5
+			public const int loggedinelsewhere = 2131296469;
 			
 			// aapt resource value: 0x7f0900a9
 			public const int loggingout = 2131296425;
 			
-			// aapt resource value: 0x7f0900cf
-			public const int loginagain = 2131296463;
+			// aapt resource value: 0x7f090145
+			public const int loginagain = 2131296581;
 			
-			// aapt resource value: 0x7f09010c
-			public const int loginbtn = 2131296524;
+			// aapt resource value: 0x7f09010a
+			public const int loginbtn = 2131296522;
 			
 			// aapt resource value: 0x7f090089
 			public const int logintitle = 2131296393;
@@ -6505,23 +6514,23 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900b1
 			public const int logoutbtn = 2131296433;
 			
-			// aapt resource value: 0x7f090132
-			public const int logoutmsg = 2131296562;
+			// aapt resource value: 0x7f090130
+			public const int logoutmsg = 2131296560;
 			
-			// aapt resource value: 0x7f090131
-			public const int logouttitle = 2131296561;
+			// aapt resource value: 0x7f09012f
+			public const int logouttitle = 2131296559;
 			
-			// aapt resource value: 0x7f0900d1
-			public const int longershoottitle = 2131296465;
+			// aapt resource value: 0x7f0900cf
+			public const int longershoottitle = 2131296463;
 			
-			// aapt resource value: 0x7f0900fb
-			public const int lookingfornew = 2131296507;
+			// aapt resource value: 0x7f0900f9
+			public const int lookingfornew = 2131296505;
 			
-			// aapt resource value: 0x7f090147
-			public const int lostrealtime = 2131296583;
+			// aapt resource value: 0x7f09014d
+			public const int lostrealtime = 2131296589;
 			
-			// aapt resource value: 0x7f090103
-			public const int me = 2131296515;
+			// aapt resource value: 0x7f090101
+			public const int me = 2131296513;
 			
 			// aapt resource value: 0x7f0900cb
 			public const int mustupdate = 2131296459;
@@ -6529,17 +6538,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900af
 			public const int mytags = 2131296431;
 			
-			// aapt resource value: 0x7f090118
-			public const int newedit = 2131296536;
+			// aapt resource value: 0x7f090116
+			public const int newedit = 2131296534;
 			
-			// aapt resource value: 0x7f09012d
-			public const int newshoothint = 2131296557;
+			// aapt resource value: 0x7f09012b
+			public const int newshoothint = 2131296555;
 			
-			// aapt resource value: 0x7f09012e
-			public const int newshoottitle = 2131296558;
+			// aapt resource value: 0x7f09012c
+			public const int newshoottitle = 2131296556;
 			
-			// aapt resource value: 0x7f0900fe
-			public const int newvideos = 2131296510;
+			// aapt resource value: 0x7f0900fc
+			public const int newvideos = 2131296508;
 			
 			// aapt resource value: 0x7f0900ae
 			public const int next = 2131296430;
@@ -6547,8 +6556,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09000c
 			public const int no_licenses_available = 2131296268;
 			
-			// aapt resource value: 0x7f0900ef
-			public const int no_share = 2131296495;
+			// aapt resource value: 0x7f0900ed
+			public const int no_share = 2131296493;
 			
 			// aapt resource value: 0x7f09007b
 			public const int noconnectionshort = 2131296379;
@@ -6556,41 +6565,41 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900b6
 			public const int noedits = 2131296438;
 			
-			// aapt resource value: 0x7f090116
-			public const int nofootage = 2131296534;
+			// aapt resource value: 0x7f090114
+			public const int nofootage = 2131296532;
 			
-			// aapt resource value: 0x7f0900ea
-			public const int nolocalserverfound = 2131296490;
+			// aapt resource value: 0x7f0900e8
+			public const int nolocalserverfound = 2131296488;
 			
 			// aapt resource value: 0x7f090064
 			public const int nomusic = 2131296356;
 			
-			// aapt resource value: 0x7f0900db
-			public const int noperms = 2131296475;
+			// aapt resource value: 0x7f0900d9
+			public const int noperms = 2131296473;
 			
-			// aapt resource value: 0x7f0900e8
-			public const int nopublicshare = 2131296488;
+			// aapt resource value: 0x7f0900e6
+			public const int nopublicshare = 2131296486;
 			
-			// aapt resource value: 0x7f090121
-			public const int normalcamera = 2131296545;
+			// aapt resource value: 0x7f09011f
+			public const int normalcamera = 2131296543;
 			
-			// aapt resource value: 0x7f090144
-			public const int norolechange = 2131296580;
+			// aapt resource value: 0x7f09014a
+			public const int norolechange = 2131296586;
 			
-			// aapt resource value: 0x7f0900dc
-			public const int norolechosen = 2131296476;
+			// aapt resource value: 0x7f0900da
+			public const int norolechosen = 2131296474;
 			
-			// aapt resource value: 0x7f090114
-			public const int noshoots = 2131296532;
-			
-			// aapt resource value: 0x7f0900e3
-			public const int nospace = 2131296483;
-			
-			// aapt resource value: 0x7f0900e0
-			public const int nostorage = 2131296480;
+			// aapt resource value: 0x7f090112
+			public const int noshoots = 2131296530;
 			
 			// aapt resource value: 0x7f0900e1
-			public const int nostorageavail = 2131296481;
+			public const int nospace = 2131296481;
+			
+			// aapt resource value: 0x7f0900de
+			public const int nostorage = 2131296478;
+			
+			// aapt resource value: 0x7f0900df
+			public const int nostorageavail = 2131296479;
 			
 			// aapt resource value: 0x7f09009a
 			public const int notacceptperms = 2131296410;
@@ -6601,8 +6610,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090092
 			public const int notnow = 2131296402;
 			
-			// aapt resource value: 0x7f0900e5
-			public const int notpublicview = 2131296485;
+			// aapt resource value: 0x7f0900e3
+			public const int notpublicview = 2131296483;
 			
 			// aapt resource value: 0x7f090065
 			public const int nownearby = 2131296357;
@@ -6613,8 +6622,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090061
 			public const int ochkNetwork = 2131296353;
 			
-			// aapt resource value: 0x7f09011b
-			public const int ofcount = 2131296539;
+			// aapt resource value: 0x7f090119
+			public const int ofcount = 2131296537;
 			
 			// aapt resource value: 0x7f0900ca
 			public const int opensource = 2131296458;
@@ -6643,38 +6652,38 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090047
 			public const int path_password_strike_through = 2131296327;
 			
-			// aapt resource value: 0x7f09010f
-			public const int pause = 2131296527;
+			// aapt resource value: 0x7f09010d
+			public const int pause = 2131296525;
 			
-			// aapt resource value: 0x7f0900ed
-			public const int permissions_message = 2131296493;
+			// aapt resource value: 0x7f0900eb
+			public const int permissions_message = 2131296491;
 			
-			// aapt resource value: 0x7f0900ec
-			public const int permissions_title = 2131296492;
+			// aapt resource value: 0x7f0900ea
+			public const int permissions_title = 2131296490;
 			
 			// aapt resource value: 0x7f090099
 			public const int permschanged = 2131296409;
 			
+			// aapt resource value: 0x7f0900f6
+			public const int phasechange = 2131296502;
+			
+			// aapt resource value: 0x7f0900f5
+			public const int phasechange_title = 2131296501;
+			
 			// aapt resource value: 0x7f0900f8
-			public const int phasechange = 2131296504;
+			public const int phasechangerole = 2131296504;
 			
-			// aapt resource value: 0x7f0900f7
-			public const int phasechange_title = 2131296503;
-			
-			// aapt resource value: 0x7f0900fa
-			public const int phasechangerole = 2131296506;
-			
-			// aapt resource value: 0x7f0900f0
-			public const int policies = 2131296496;
+			// aapt resource value: 0x7f0900ee
+			public const int policies = 2131296494;
 			
 			// aapt resource value: 0x7f09000e
 			public const int preferences_license_summary = 2131296270;
 			
-			// aapt resource value: 0x7f0900eb
-			public const int problemconnecting = 2131296491;
+			// aapt resource value: 0x7f0900e9
+			public const int problemconnecting = 2131296489;
 			
-			// aapt resource value: 0x7f0900d2
-			public const int problemcreateshoot = 2131296466;
+			// aapt resource value: 0x7f0900d0
+			public const int problemcreateshoot = 2131296464;
 			
 			// aapt resource value: 0x7f0900bb
 			public const int processbtn = 2131296443;
@@ -6682,14 +6691,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090007
 			public const int project_id = 2131296263;
 			
-			// aapt resource value: 0x7f0900e7
-			public const int publicshare = 2131296487;
+			// aapt resource value: 0x7f0900e5
+			public const int publicshare = 2131296485;
 			
-			// aapt resource value: 0x7f0900e4
-			public const int publicview = 2131296484;
+			// aapt resource value: 0x7f0900e2
+			public const int publicview = 2131296482;
 			
-			// aapt resource value: 0x7f090146
-			public const int readybtn = 2131296582;
+			// aapt resource value: 0x7f09014c
+			public const int readybtn = 2131296588;
 			
 			// aapt resource value: 0x7f0900a7
 			public const int removeedit = 2131296423;
@@ -6700,11 +6709,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090072
 			public const int restartbtn = 2131296370;
 			
-			// aapt resource value: 0x7f0900d6
-			public const int role_repeat = 2131296470;
+			// aapt resource value: 0x7f0900d4
+			public const int role_repeat = 2131296468;
 			
-			// aapt resource value: 0x7f090130
-			public const int roledescision = 2131296560;
+			// aapt resource value: 0x7f09012e
+			public const int roledescision = 2131296558;
 			
 			// aapt resource value: 0x7f0900ba
 			public const int savebtn = 2131296442;
@@ -6712,14 +6721,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900bc
 			public const int savebtnshort = 2131296444;
 			
-			// aapt resource value: 0x7f090137
-			public const int savecancelmsg = 2131296567;
+			// aapt resource value: 0x7f090135
+			public const int savecancelmsg = 2131296565;
 			
 			// aapt resource value: 0x7f0900bf
 			public const int saveedit = 2131296447;
 			
-			// aapt resource value: 0x7f090133
-			public const int search = 2131296563;
+			// aapt resource value: 0x7f090131
+			public const int search = 2131296561;
 			
 			// aapt resource value: 0x7f090033
 			public const int search_menu_title = 2131296307;
@@ -6727,14 +6736,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090066
 			public const int seeall = 2131296358;
 			
-			// aapt resource value: 0x7f090136
-			public const int selectavideotoinsert = 2131296566;
+			// aapt resource value: 0x7f090134
+			public const int selectavideotoinsert = 2131296564;
 			
 			// aapt resource value: 0x7f090095
 			public const int sendeverything = 2131296405;
 			
-			// aapt resource value: 0x7f090113
-			public const int sendingall = 2131296531;
+			// aapt resource value: 0x7f090111
+			public const int sendingall = 2131296529;
 			
 			// aapt resource value: 0x7f0900a6
 			public const int settingsbtn = 2131296422;
@@ -6742,8 +6751,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090063
 			public const int sharebtn = 2131296355;
 			
-			// aapt resource value: 0x7f0900e6
-			public const int sharename = 2131296486;
+			// aapt resource value: 0x7f0900e4
+			public const int sharename = 2131296484;
 			
 			// aapt resource value: 0x7f0900c2
 			public const int sharevia = 2131296450;
@@ -6754,11 +6763,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900c8
 			public const int shootcodetitle = 2131296456;
 			
-			// aapt resource value: 0x7f0900f9
-			public const int shootupdatedlong = 2131296505;
+			// aapt resource value: 0x7f0900f7
+			public const int shootupdatedlong = 2131296503;
 			
-			// aapt resource value: 0x7f090124
-			public const int shottiming = 2131296548;
+			// aapt resource value: 0x7f090122
+			public const int shottiming = 2131296546;
 			
 			// aapt resource value: 0x7f0900b5
 			public const int shownotice = 2131296437;
@@ -6766,8 +6775,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f09008b
 			public const int single_shoot_msg = 2131296395;
 			
-			// aapt resource value: 0x7f090120
-			public const int single_shoot_title = 2131296544;
+			// aapt resource value: 0x7f09011e
+			public const int single_shoot_title = 2131296542;
 			
 			// aapt resource value: 0x7f0900ad
 			public const int skip = 2131296429;
@@ -6787,17 +6796,17 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900a3
 			public const int stopshooting = 2131296419;
 			
-			// aapt resource value: 0x7f090142
-			public const int storiesdisabled = 2131296578;
+			// aapt resource value: 0x7f09013e
+			public const int storiesdisabled = 2131296574;
 			
 			// aapt resource value: 0x7f090082
 			public const int suggestsshots = 2131296386;
 			
-			// aapt resource value: 0x7f090123
-			public const int swipe = 2131296547;
+			// aapt resource value: 0x7f090121
+			public const int swipe = 2131296545;
 			
-			// aapt resource value: 0x7f0900fc
-			public const int syncnow = 2131296508;
+			// aapt resource value: 0x7f0900fa
+			public const int syncnow = 2131296506;
 			
 			// aapt resource value: 0x7f090073
 			public const int tagging = 2131296371;
@@ -6805,29 +6814,29 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090083
 			public const int thatsawrap = 2131296387;
 			
-			// aapt resource value: 0x7f090135
-			public const int them = 2131296565;
+			// aapt resource value: 0x7f090133
+			public const int them = 2131296563;
 			
 			// aapt resource value: 0x7f0900b8
 			public const int title = 2131296440;
 			
-			// aapt resource value: 0x7f09013d
-			public const int titlelengthwarning = 2131296573;
+			// aapt resource value: 0x7f090139
+			public const int titlelengthwarning = 2131296569;
 			
-			// aapt resource value: 0x7f090138
-			public const int topic = 2131296568;
+			// aapt resource value: 0x7f090136
+			public const int topic = 2131296566;
 			
-			// aapt resource value: 0x7f09011e
-			public const int touchfocus = 2131296542;
+			// aapt resource value: 0x7f09011c
+			public const int touchfocus = 2131296540;
 			
-			// aapt resource value: 0x7f0900d5
-			public const int tryagain = 2131296469;
+			// aapt resource value: 0x7f0900d3
+			public const int tryagain = 2131296467;
 			
-			// aapt resource value: 0x7f0900d8
-			public const int tryupdate = 2131296472;
+			// aapt resource value: 0x7f0900d6
+			public const int tryupdate = 2131296470;
 			
-			// aapt resource value: 0x7f0900d9
-			public const int tryupdatefeatures = 2131296473;
+			// aapt resource value: 0x7f0900d7
+			public const int tryupdatefeatures = 2131296471;
 			
 			// aapt resource value: 0x7f09008e
 			public const int unfinishededits = 2131296398;
@@ -6835,23 +6844,23 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900cd
 			public const int updatedsecurity = 2131296461;
 			
-			// aapt resource value: 0x7f0900fd
-			public const int updatingvideos = 2131296509;
+			// aapt resource value: 0x7f0900fb
+			public const int updatingvideos = 2131296507;
 			
-			// aapt resource value: 0x7f090110
-			public const int upload = 2131296528;
+			// aapt resource value: 0x7f09010e
+			public const int upload = 2131296526;
 			
 			// aapt resource value: 0x7f0900b0
 			public const int uploadbtn = 2131296432;
 			
-			// aapt resource value: 0x7f0900f6
-			public const int uploadcomplete = 2131296502;
+			// aapt resource value: 0x7f0900f4
+			public const int uploadcomplete = 2131296500;
 			
-			// aapt resource value: 0x7f090100
-			public const int uploadfailmsg = 2131296512;
+			// aapt resource value: 0x7f0900fe
+			public const int uploadfailmsg = 2131296510;
 			
-			// aapt resource value: 0x7f090101
-			public const int uploadfailshort = 2131296513;
+			// aapt resource value: 0x7f0900ff
+			public const int uploadfailshort = 2131296511;
 			
 			// aapt resource value: 0x7f090086
 			public const int uploadingclips = 2131296390;
@@ -6868,29 +6877,29 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900c4
 			public const int uploadswaiting = 2131296452;
 			
-			// aapt resource value: 0x7f090122
-			public const int usefulhints = 2131296546;
+			// aapt resource value: 0x7f090120
+			public const int usefulhints = 2131296544;
 			
 			// aapt resource value: 0x7f0900bd
 			public const int videos = 2131296445;
 			
-			// aapt resource value: 0x7f09010e
-			public const int waitingtoupload = 2131296526;
+			// aapt resource value: 0x7f09010c
+			public const int waitingtoupload = 2131296524;
 			
-			// aapt resource value: 0x7f0900f3
-			public const int wanttoshare = 2131296499;
+			// aapt resource value: 0x7f0900f1
+			public const int wanttoshare = 2131296497;
 			
 			// aapt resource value: 0x7f09007f
 			public const int whatisbootlegger = 2131296383;
 			
-			// aapt resource value: 0x7f090145
-			public const int wouldyoudorole = 2131296581;
+			// aapt resource value: 0x7f09014b
+			public const int wouldyoudorole = 2131296587;
 			
-			// aapt resource value: 0x7f0900ee
-			public const int yes_share = 2131296494;
+			// aapt resource value: 0x7f0900ec
+			public const int yes_share = 2131296492;
 			
-			// aapt resource value: 0x7f09011d
-			public const int zoom = 2131296541;
+			// aapt resource value: 0x7f09011b
+			public const int zoom = 2131296539;
 			
 			static String()
 			{

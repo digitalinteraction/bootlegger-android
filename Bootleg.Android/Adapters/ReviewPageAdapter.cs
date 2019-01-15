@@ -66,9 +66,8 @@ namespace Bootleg.Droid.Adapters
                 case TabType.INGEST:
                     myDrawable = ContextCompat.GetDrawable(context, Resource.Drawable.ic_tag_white_24dp);
                     break;
-                case TabType.CLIPS:
                 default:
-                    myDrawable = ContextCompat.GetDrawable(context, Resource.Drawable.ic_photo_camera_white_24dp);
+                    myDrawable = ContextCompat.GetDrawable(context, Resource.Drawable.baseline_videocam_24);
                     break;
             }
             var sb = new SpannableString(" "); // space added before text for convenience

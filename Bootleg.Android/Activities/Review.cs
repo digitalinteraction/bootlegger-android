@@ -143,9 +143,9 @@ namespace Bootleg.Droid
                         {
                             //nothing, it was cancelled
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            LoginFuncs.ShowError(this, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                            LoginFuncs.ShowError(this, ex);
                         }
                         finally
                         {
@@ -336,7 +336,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                LoginFuncs.ShowError(this, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                LoginFuncs.ShowError(this, new NoNetworkException());
             }
         }
 

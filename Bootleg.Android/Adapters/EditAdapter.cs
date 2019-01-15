@@ -81,7 +81,7 @@ namespace Bootleg.Droid
                 popup.MenuInflater.Inflate(Resource.Menu.edit_menu, popup.Menu);
                 popup.MenuItemClick += Popup_MenuItemClick;
 
-                if (currentedit.fail)
+                if (currentedit.failed)
                     popup.Menu.FindItem(Resource.Id.restart_menu_item).SetVisible(true);
                 else
                     popup.Menu.FindItem(Resource.Id.restart_menu_item).SetVisible(false);
@@ -213,7 +213,7 @@ namespace Bootleg.Droid
                         view.FindViewById<RadialProgress.CleanRadialProgressView>(Resource.Id.progress).ProgressColor = new Color(ContextCompat.GetColor(view.Context,Resource.Color.blue));
                         
                         //finished
-                        if (currentedit.progress > 97 && !currentedit.fail)
+                        if (currentedit.progress > 97 && !currentedit.failed)
                         {
                             //view.FindViewById<ImageButton>(Resource.Id.sharebtn).Visibility = ViewStates.Visible;
                             view.FindViewById<View>(Resource.Id.progress).Visibility = ViewStates.Gone;
@@ -228,7 +228,7 @@ namespace Bootleg.Droid
 
                         //view.FindViewById<ImageButton>(Resource.Id.deletebtn).Visibility = ViewStates.Gone;
 
-                        if (currentedit.fail)
+                        if (currentedit.failed)
                         {
                             //view.FindViewById<ImageButton>(Resource.Id.restartbtn).Visibility = ViewStates.Visible;
                             view.FindViewById<View>(Resource.Id.progress).Visibility = ViewStates.Gone;

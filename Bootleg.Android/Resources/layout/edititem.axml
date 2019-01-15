@@ -27,8 +27,9 @@
                 android:background="#E0E0E0"
                 android:id="@+id/editimage" />
             <TextView
-                android:background="@color/dark_orange"
+                android:background="@color/orange"
                 android:padding="5dp"
+                android:textColor="@android:color/white"
                 android:id="@+id/failreason"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

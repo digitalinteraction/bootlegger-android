@@ -21,6 +21,7 @@ using Firebase.Iid;
 using Android.Support.Design.Widget;
 using Bootleg.Droid.Screens;
 using Android.Widget;
+using static Bootleg.Droid.UI.PermissionsDialog;
 
 namespace Bootleg.Droid.UI
 {
@@ -53,20 +54,13 @@ namespace Bootleg.Droid.UI
 
             try
             {
-                Snackbar.Make(activity.FindViewById(Resource.Id.main_content), activity.GetString(res), Snackbar.LengthShort)
-                    .Show();
+                Snackbar.Make(activity.FindViewById(Resource.Id.main_content), activity.GetString(res), Snackbar.LengthShort).Show();
             }
             catch
             {
                 Console.WriteLine("Crashed trying to show error");
             }
         }
-
-        //public static void ShowError(Context context, int res)
-        //{
-        //    ShowError(context ?? Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity, new Exception(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity.GetString(res)));
-        //}
-
 
         public static void ShowError(Context context, Exception e)
         {
@@ -80,15 +74,58 @@ namespace Bootleg.Droid.UI
 
             //UnknownNetworkException - not successful network operation, find out why and report
 
+            //var message = context.GetString(Resource.String.noconnectionshort);
+            var message = e.Message;
 
 
-            //Default is noconnectionshort
+            switch (e)
+            {
 
+                case ApiKeyException ex:
+                    message = context.GetString(Resource.String.apikeynovalid);
+                    break;
+
+                case NeedsPermissionsException ex:
+                case NotGivenPermissionException exx:
+                    message = context.GetString(Resource.String.acceptperms);
+                    break;
+
+                case RoleNotSelectedException ex:
+                    message = context.GetString(Resource.String.norolechosen);
+                    break;
+
+                case NoNetworkException ex:
+                    message = context.GetString(Resource.String.errornonetwork);
+                    break;
+
+                case UnknownNetworkException ex:
+                    message = context.GetString(Resource.String.errorunknown);
+                    break;
+
+                case NeedsUpdateException ex:
+                    message = context.GetString(Resource.String.errornonetwork);
+                    break;
+
+                case SessionLostException ex:
+                    message = context.GetString(Resource.String.loginagain);
+                    break;
+
+                case ServerErrorException ex:
+                    message = context.GetString(Resource.String.errorserver);
+                    break;
+
+                case TaskCanceledException ex:
+                    message = context.GetString(Resource.String.errorcanceled);
+                    break;
+
+                case StoriesDisabledException ex:
+                    message = context.GetString(Resource.String.storiesdisabled);
+                    break;
+            }
 
             try
             {
-                Snackbar.Make((context as Activity).FindViewById(Resource.Id.main_content), e.Message, Snackbar.LengthShort)
-                    .Show();
+                Snackbar.Make((context as Activity).FindViewById(Resource.Id.main_content), message, Snackbar.LengthShort).Show();
             }
             catch
             {
@@ -148,7 +185,7 @@ namespace Bootleg.Droid.UI
 
                         if (!(context.Application as BootleggerApp).IsReallyConnected)
                         {
-                            throw new Exception(context.Resources.GetString(Resource.String.noconnectionshort));
+                            throw new NoNetworkException();
                         }
                         else
                         {
@@ -165,7 +202,7 @@ namespace Bootleg.Droid.UI
                                 {
                                     //FirebaseApp.InitializeApp(context);
                                     var refreshedToken = FirebaseInstanceId.Instance.Token;
-                                    Console.WriteLine("token: " + refreshedToken);
+                                    //Console.WriteLine("token: " + refreshedToken);
                                     Bootleg.API.Bootlegger.BootleggerClient.RegisterForPush(refreshedToken, API.Bootlegger.Platform.Android);
                                 }
                                 catch (Exception e)
@@ -183,11 +220,13 @@ namespace Bootleg.Droid.UI
                     {
                         if ((context.Application as BootleggerApp).IsReallyConnected)
                         {
-                            ShowError(context, new Exception(context.Resources.GetString(Resource.String.mustupdate)));
+                            throw new NeedsUpdateException();
+                            //ShowError(context,new NeedsUpdateException());
                         }
                         else
                         {
-                            ShowError(context, new Exception(context.Resources.GetString(Resource.String.notconnected)));
+                            throw new NoNetworkException();
+                            //ShowError(context, new NoNetworkException());
                         }
                         throw e;
                     }
@@ -195,11 +234,13 @@ namespace Bootleg.Droid.UI
                     {
                         if ((context.Application as BootleggerApp).IsReallyConnected)
                         {
-                            ShowError(context, e);
+                            throw new ApiKeyException();
+                            //ShowError(context, new ApiKeyException());
                         }
                         else
                         {
-                            ShowError(context, new Exception(context.Resources.GetString(Resource.String.notconnected)));
+                            throw new NoNetworkException();
+                            //ShowError(context, new NoNetworkException());
                         }
 
                         throw e;
@@ -208,17 +249,12 @@ namespace Bootleg.Droid.UI
                     {
                         if ((context.Application as BootleggerApp).IsReallyConnected)
                         {
-                            //could not log you in -- therefore pop up login workflow:
-                            //OpenLogin(context, null);
-
-                            ShowError(context, new Exception(context.Resources.GetString(Resource.String.loginagain)));
+                            throw new SessionLostException();
                         }
-
-                        if (!(context.Application as BootleggerApp).IsReallyConnected)
-                        {
-                            ShowError(context,new Exception(context.Resources.GetString(Resource.String.notconnected)));
+                        else
+                        {   
+                            throw new NoNetworkException();
                         }
-                        throw e;
                     }
                 }
                 catch (TaskCanceledException e)

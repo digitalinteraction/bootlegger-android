@@ -13,6 +13,7 @@ using Plugin.Permissions;
 using Bootleg.Droid.UI;
 using Android.Support.V4.Widget;
 using Bootleg.API.Model;
+using Bootleg.API.Exceptions;
 
 namespace Bootleg.Droid.Fragments.Home
 {
@@ -218,7 +219,7 @@ namespace Bootleg.Droid.Fragments.Home
             }
             else
             {
-                LoginFuncs.ShowError(Activity, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                LoginFuncs.ShowError(Activity, new NoNetworkException());
             }
         }
     }

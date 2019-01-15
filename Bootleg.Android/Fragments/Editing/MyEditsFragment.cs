@@ -225,9 +225,9 @@ namespace Bootleg.Droid
             {
                 //do nothing
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                LoginFuncs.ShowError(Context, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                LoginFuncs.ShowError(Context, e);
             }
             finally
             {
@@ -258,7 +258,7 @@ namespace Bootleg.Droid
         private void _adapter_OnPreview(Edit obj,View v)
         {
             //open preview:
-            if (!string.IsNullOrEmpty(obj.code) && obj.progress>97 && !obj.fail)
+            if (!string.IsNullOrEmpty(obj.code) && obj.progress>97 && !obj.failed)
             {
                 OnPreview?.Invoke(obj, v);
             }

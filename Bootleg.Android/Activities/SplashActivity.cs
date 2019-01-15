@@ -364,8 +364,6 @@ namespace Bootleg.Droid
             {
                 sessionlostdialogopen = true;
                 Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(Plugin.CurrentActivity.CrossCurrentActivity.Current.Activity);
-                //FrameLayout frameView = new FrameLayout(this);
-                //builder.SetView(frameView);
                 builder.SetPositiveButton(Android.Resource.String.Ok, (o, e) =>
                 {
                     sessionlostdialogopen = false;
@@ -378,10 +376,6 @@ namespace Bootleg.Droid
                 diag.SetCancelable(false);
                 diag.Show();
             }
-
-            //Bootleg.API.Bootlegger.BootleggerClient.Logout();
-
-            //StartActivity(typeof(Login));
         }
 
         internal class WizardPagerAdapter : PagerAdapter
