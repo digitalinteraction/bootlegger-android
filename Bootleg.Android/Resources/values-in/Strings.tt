@@ -97,7 +97,6 @@
     <string name="updatedsecurity">
       Maaf, Anda harus memperbarui  <#= GetString(Config.APP_NAME) #> untuk melanjutkan karena kami telah memperbarui protokol keamanan kami
     </string>
-    <string name="failedconnection">Maaf, kami tidak bisa memasukkan Anda</string>
     <string name="loginagain">Silakan coba masuk kembali</string>
     <string name="invalidcode">Kode tidak valid</string>
     <string name="longershoottitle">Masukkan nama yang lebih panjang untuk pengambilan gambar</string>
@@ -202,12 +201,6 @@
     <string name="edit_page3_description">Geser video untuk menghapus, atau tekan dan tahan untuk menyeret</string>
 
     <!-- LIVEMODE -->
-    <string name="norolechange">Anda tidak dapat mengubah Kategori saat merekam!</string>
-    <string name="wouldyoudorole">Dapatkah Anda melakukan Kategori %s sekarang?</string>
-    <string name="readybtn">Baik, Saya Siap</string>
-    <string name="lostrealtime">
-      Kami telah kehilangan komunikasi real-time dengan direktur  <#= GetString(Config.APP_NAME) #>. Anda perlu menyambung kembali untuk melanjutkan.
-    </string>
     <string name="them">mereka</string>
     <string name="newshoothint">Nama Pengambilan Gambar</string>
     <string name="newshoottitle">Mulai Pengambilan Gambar Baru</string>

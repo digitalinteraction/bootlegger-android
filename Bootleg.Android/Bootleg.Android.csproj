@@ -74,7 +74,7 @@
     <Debugger>Xamarin</Debugger>
     <DevInstrumentationEnabled>False</DevInstrumentationEnabled>
     <DebugSymbols>False</DebugSymbols>
-    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
+    <JavaMaximumHeapSize>3G</JavaMaximumHeapSize>
     <CustomCommands>
       <CustomCommands>
         <Command>
@@ -83,6 +83,7 @@
         </Command>
       </CustomCommands>
     </CustomCommands>
+    <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AndroidAltBeaconLibrary, Version=2.7.0.0, Culture=neutral, processorArchitecture=MSIL">

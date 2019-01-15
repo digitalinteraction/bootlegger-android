@@ -2998,26 +2998,26 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f02006c
 			public const int avd_hide_password = 2130837612;
 			
+			// aapt resource value: 0x7f020179
+			public const int avd_hide_password_1 = 2130837881;
+			
 			// aapt resource value: 0x7f02017a
-			public const int avd_hide_password_1 = 2130837882;
+			public const int avd_hide_password_2 = 2130837882;
 			
 			// aapt resource value: 0x7f02017b
-			public const int avd_hide_password_2 = 2130837883;
-			
-			// aapt resource value: 0x7f02017c
-			public const int avd_hide_password_3 = 2130837884;
+			public const int avd_hide_password_3 = 2130837883;
 			
 			// aapt resource value: 0x7f02006d
 			public const int avd_show_password = 2130837613;
 			
+			// aapt resource value: 0x7f02017c
+			public const int avd_show_password_1 = 2130837884;
+			
 			// aapt resource value: 0x7f02017d
-			public const int avd_show_password_1 = 2130837885;
+			public const int avd_show_password_2 = 2130837885;
 			
 			// aapt resource value: 0x7f02017e
-			public const int avd_show_password_2 = 2130837886;
-			
-			// aapt resource value: 0x7f02017f
-			public const int avd_show_password_3 = 2130837887;
+			public const int avd_show_password_3 = 2130837886;
 			
 			// aapt resource value: 0x7f02006e
 			public const int baseline_add_24 = 2130837614;
@@ -3697,11 +3697,11 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f02014f
 			public const int notification_icon_background = 2130837839;
 			
-			// aapt resource value: 0x7f020178
-			public const int notification_template_icon_bg = 2130837880;
+			// aapt resource value: 0x7f020177
+			public const int notification_template_icon_bg = 2130837879;
 			
-			// aapt resource value: 0x7f020179
-			public const int notification_template_icon_low_bg = 2130837881;
+			// aapt resource value: 0x7f020178
+			public const int notification_template_icon_low_bg = 2130837880;
 			
 			// aapt resource value: 0x7f020150
 			public const int notification_tile_bg = 2130837840;
@@ -3819,9 +3819,6 @@ namespace Bootleg.Droid
 			
 			// aapt resource value: 0x7f020176
 			public const int video_trim = 2130837878;
-			
-			// aapt resource value: 0x7f020177
-			public const int white_svg = 2130837879;
 			
 			static Drawable()
 			{
@@ -6106,8 +6103,8 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900ef
 			public const int canshare = 2131296495;
 			
-			// aapt resource value: 0x7f090149
-			public const int cantgiverole = 2131296585;
+			// aapt resource value: 0x7f090148
+			public const int cantgiverole = 2131296584;
 			
 			// aapt resource value: 0x7f090042
 			public const int character_counter_pattern = 2131296322;
@@ -6367,9 +6364,6 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f090053
 			public const int exo_controls_stop_description = 2131296339;
 			
-			// aapt resource value: 0x7f090148
-			public const int failedconnection = 2131296584;
-			
 			// aapt resource value: 0x7f0900fc
 			public const int failedtoupload = 2131296508;
 			
@@ -6523,9 +6517,6 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900f8
 			public const int lookingfornew = 2131296504;
 			
-			// aapt resource value: 0x7f09014d
-			public const int lostrealtime = 2131296589;
-			
 			// aapt resource value: 0x7f090100
 			public const int me = 2131296512;
 			
@@ -6579,9 +6570,6 @@ namespace Bootleg.Droid
 			
 			// aapt resource value: 0x7f09011e
 			public const int normalcamera = 2131296542;
-			
-			// aapt resource value: 0x7f09014a
-			public const int norolechange = 2131296586;
 			
 			// aapt resource value: 0x7f0900d9
 			public const int norolechosen = 2131296473;
@@ -6693,9 +6681,6 @@ namespace Bootleg.Droid
 			
 			// aapt resource value: 0x7f0900e1
 			public const int publicview = 2131296481;
-			
-			// aapt resource value: 0x7f09014c
-			public const int readybtn = 2131296588;
 			
 			// aapt resource value: 0x7f0900a7
 			public const int removeedit = 2131296423;
@@ -6888,9 +6873,6 @@ namespace Bootleg.Droid
 			
 			// aapt resource value: 0x7f09007f
 			public const int whatisbootlegger = 2131296383;
-			
-			// aapt resource value: 0x7f09014b
-			public const int wouldyoudorole = 2131296587;
 			
 			// aapt resource value: 0x7f0900eb
 			public const int yes_share = 2131296491;

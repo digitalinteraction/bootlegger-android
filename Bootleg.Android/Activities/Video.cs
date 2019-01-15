@@ -787,7 +787,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                Toast.MakeText(this,Resource.String.norolechange,ToastLength.Short).Show();
+                //Toast.MakeText(this,Resource.String.norolechange,ToastLength.Short).Show();
             }
         }
 
@@ -1229,7 +1229,7 @@ namespace Bootleg.Droid
                 if (recording)
                     record();
                 Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                builder.SetMessage(Resource.String.lostrealtime);
+
                 builder.SetNeutralButton(Android.Resource.String.Ok,new EventHandler<DialogClickEventArgs>((o,q) =>
                 {
                     //(Application as BootleggerApp).TOTALFAIL = true;
@@ -1304,17 +1304,17 @@ namespace Bootleg.Droid
 
         void Comms_OnRoleChanged(Role obj)
         {
-            RunOnUiThread(new Action(() =>
-            {
-                Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
-                builder.SetMessage(Resources.GetString(Resource.String.wouldyoudorole,obj.name)).SetPositiveButton(Android.Resource.String.Yes, new EventHandler<DialogClickEventArgs>((o, e) =>
-                {
-                    Bootlegger.BootleggerClient.AcceptRole(obj);
-                })).SetNegativeButton(Android.Resource.String.No, new EventHandler<DialogClickEventArgs>((o, e) =>
-                {
-                    Bootlegger.BootleggerClient.RejectRole(obj);
-                })).SetCancelable(false).Show();
-            }));
+            //RunOnUiThread(new Action(() =>
+            //{
+            //    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle);
+            //    builder.SetMessage(Resources.GetString(Resource.String.wouldyoudorole,obj.name)).SetPositiveButton(Android.Resource.String.Yes, new EventHandler<DialogClickEventArgs>((o, e) =>
+            //    {
+            //        Bootlegger.BootleggerClient.AcceptRole(obj);
+            //    })).SetNegativeButton(Android.Resource.String.No, new EventHandler<DialogClickEventArgs>((o, e) =>
+            //    {
+            //        Bootlegger.BootleggerClient.RejectRole(obj);
+            //    })).SetCancelable(false).Show();
+            //}));
         }
 
         int expectedrecordlength = 0;

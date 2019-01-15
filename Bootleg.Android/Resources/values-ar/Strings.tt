@@ -136,13 +136,11 @@
     <string name="mustupdate">عذرًا، يجب عليك تحديث قصتنا IFRC للمتابعة حيث أننا قمنا بإضافة ميزات جديدة</string>
     <string name="notconnected">أنت غير متصل بأي شبكة</string>
     <string name="updatedsecurity">عذرًا، يجب عليك تحديث قصتنا IFRC للمتابعة حيث أننا قد قمنا بتحديث بروتوكولات الأمان الخاصة بنا</string>
-    <string name="failedconnection">عذرًا، لم نتمكن من تسجيل دخولك</string>
     <string name="loginagain">يُرجى محاولة تسجيل الدخول مرة أخرى</string>
     <string name="invalidcode">هذا الرمز غير صالح</string>
     <string name="longershoottitle">أدخِل اسمًا أطول للتصوير</string>
     <string name="problemcreateshoot">لا يمكن بدء تصوير جديد</string>
     <!--<string name="cantlistedits">Cannot list edits, you may be offline</string>-->
-    <string name="cantgiverole">لا يبدو أننا قادرون على منحك موضوعًا عند هذه اللقطة الآن فورًا، حاوِل اختيار اللقطة مرة أخرى</string>
     <string name="googleplayerror">خدمات Google Play غير مثبتة أو بحاجة للتحديث</string>
     <string name="tryagain">%1$s. يُرجى المحاولة مرة أخرى.</string>
     <string name="role_repeat">نعتقد أنك قد قمت بتسجيل الدخول في مكان آخر، المتابعة؟</string>
