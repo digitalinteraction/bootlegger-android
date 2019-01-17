@@ -54,7 +54,8 @@ namespace Bootleg.Droid
             var captionStyleCompat = new CaptionStyleCompat(Android.Graphics.Color.White, Android.Graphics.Color.Transparent, Android.Graphics.Color.Transparent, CaptionStyleCompat.EdgeTypeNone, Android.Graphics.Color.Transparent, subtitleTypeface);
 
             _playerView.SubtitleView.SetStyle(captionStyleCompat);
-            _playerView.SubtitleView.SetFixedTextSize((int)ComplexUnitType.Sp, 10);
+            _playerView.SubtitleView.SetFractionalTextSize(0.06f);
+            //_playerView.SubtitleView.SetFixedTextSize((int)ComplexUnitType.Sp, 10);
 
             _playerView.SubtitleView.SetBottomPaddingFraction(0.4f);
             _playerView.SubtitleView.TextAlignment = TextAlignment.Center;
@@ -72,7 +73,7 @@ namespace Bootleg.Droid
             /*************/
 
             _audioPlayer = ExoPlayerFactory.NewSimpleInstance(Context, new DefaultTrackSelector());
-            _audioPlayer.Volume = 0.5f;
+            _audioPlayer.Volume = 0.4f;
             _audioPlayer.RepeatMode = Player.RepeatModeOne;
 
             cursor = FindViewById<View>(Resource.Id.trackposition);

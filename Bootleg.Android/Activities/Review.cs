@@ -245,13 +245,13 @@ namespace Bootleg.Droid
                 }
                 else
                 {
-                    LoginFuncs.ShowToast(this, new RoleNotSelectedException());
+                    LoginFuncs.ShowError(this, new RoleNotSelectedException());
                     //Toast.MakeText(this, Resource.String.norolechosen, ToastLength.Long).Show();
                 }
             }
             catch (Exception ex)
             {
-                LoginFuncs.ShowToast(this, ex);
+                LoginFuncs.ShowError(this, ex);
                 //Toast.MakeText(this, Resource.String.noconnectionshort, ToastLength.Long).Show();
             }
             finally

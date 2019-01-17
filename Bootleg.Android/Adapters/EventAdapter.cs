@@ -141,7 +141,7 @@ namespace Bootleg.Droid
 
                     if (view.FindViewById<TextView>(Resource.Id.joincode) != null)
                     { 
-                        if (string.IsNullOrEmpty(item.Event.joincode) || WhiteLabelConfig.LOCAL_SERVER)
+                        if (string.IsNullOrEmpty(item.Event.joincode) || WhiteLabelConfig.LOCAL_SERVER || item.Event.ispublic)
                         {
                             view.FindViewById<TextView>(Resource.Id.joincode).Visibility = ViewStates.Gone;
                         }

@@ -1399,7 +1399,6 @@ namespace Bootleg.Droid
             if (FindViewById(Resource.Id.helpoverlay).Visibility == ViewStates.Visible)
             {
                 FindViewById(Resource.Id.helpoverlay).Visibility = ViewStates.Gone;
-                //tabHost.CloseDrawers();
             }
             else
             {
@@ -1447,40 +1446,18 @@ namespace Bootleg.Droid
 
         async void ShowLeaveDialog(bool cancelable, bool perms = false)
         {
-            if (LIVEMODE)
-            {
-                //do you want to exit button:
-                new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.MyAlertDialogStyle).SetMessage(Resource.String.stopreturn)
-                .SetPositiveButton(Android.Resource.String.Yes, new EventHandler<DialogClickEventArgs>(async (oe, eo) =>
-                {
-                    if (recording)
-                        await StopRecording();
-                    Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH, true);
 
-                    Intent intent = new Intent();
-                    intent.PutExtra("videocap", true);
-                    intent.PutExtra("eventid", Bootlegger.BootleggerClient.CurrentEvent.id);
-                    SetResult(Result.Ok, intent);
-                    Finish();
-                }))
-                .SetTitle(Resource.String.stopshooting)
-                .SetCancelable(!cancelable)
-                .Show();
-            }
-            else
-            {
-                if (recording)
-                    await StopRecording();
-                Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH, true);
-                Intent intent = new Intent();
-                intent.PutExtra("videocap", true);
-                if (perms)
-                    intent.PutExtra("needsperms", true);
+            if (recording)
+                await StopRecording();
+            Bootlegger.BootleggerClient.UnSelectRole(!WhiteLabelConfig.REDUCE_BANDWIDTH, true);
+            Intent intent = new Intent();
+            intent.PutExtra("videocap", true);
+            if (perms)
+                intent.PutExtra("needsperms", true);
 
-                intent.PutExtra("eventid", Bootlegger.BootleggerClient.CurrentEvent.id);
-                SetResult(Result.Ok, intent);
-                Finish();
-            }
+            intent.PutExtra("eventid", Bootlegger.BootleggerClient.CurrentEvent.id);
+            SetResult(Result.Ok, intent);
+            Finish();
         }
 
         private void ShowShotRelease(Shot item)
