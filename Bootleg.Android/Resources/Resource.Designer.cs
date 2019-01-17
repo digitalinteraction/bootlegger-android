@@ -6103,9 +6103,6 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900ef
 			public const int canshare = 2131296495;
 			
-			// aapt resource value: 0x7f090148
-			public const int cantgiverole = 2131296584;
-			
 			// aapt resource value: 0x7f090042
 			public const int character_counter_pattern = 2131296322;
 			

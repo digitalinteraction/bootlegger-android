@@ -4,21 +4,6 @@
     <string name="ApplicationName">
         <#= GetString(Config.APP_NAME) #>
     </string>
-<string name="AppLink" translatable="false">
-      <#= Config.APP_URL_LINK #>
-    </string>
-    <string name="AppLinkText" translatable="false">
-      <#= Config.APP_LINK_TEXT #>
-    </string>
-    <string name="HelpLink" translatable="false">
-      <#= Config.APP_HELP_LINK #>
-    </string>
-    <string name="Email" translatable="false">
-      <#= Config.APP_HELP_EMAIL #>
-    </string>
-    <string name="BRANCHKEY" translatable="false">
-      <#= Config.BRANCHKEY #>
-    </string>
 
     <!-- INFO STRINGS -->
     <string name="sharebtn">المشاركة</string>

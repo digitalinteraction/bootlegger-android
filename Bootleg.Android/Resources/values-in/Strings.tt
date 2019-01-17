@@ -101,8 +101,6 @@
     <string name="invalidcode">Kode tidak valid</string>
     <string name="longershoottitle">Masukkan nama yang lebih panjang untuk pengambilan gambar</string>
     <string name="problemcreateshoot">Tidak dapat memulai pengambilan gambar baru</string>
-    <!--<string name="cantlistedits">Tidak dapat membuat daftar sunting, Anda mungkin sedang offline</string>-->
-    <string name="cantgiverole">Kami sepertinya tidak dapat memberikan Kategori untuk pengambilan gambar ini sekarang, coba pilih pengambilan gambar lagi</string>
     <string name="googleplayerror">Google Play Services tidak terpasang atau perlu diperbarui</string>
     <string name="tryagain">%1$s. Silakan coba lagi.</string>
     <string name="role_repeat">Sepertinya Anda sudah masuk di tempat lain, ingin melanjutkan?</string>

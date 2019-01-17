@@ -80,12 +80,11 @@
                     android:textStyle="bold"
                     android:background="#000000" />
                 <ImageButton
-                    android:layout_width="32dp"
-                    android:layout_margin="5dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:layout_height="32dp"
+                    android:layout_width="48dp"
+                    android:layout_margin="1dp"
+                    android:layout_height="48dp"
                     android:layout_gravity="end|top"
-                    android:padding="0dp"
+                    android:backgroundTint="#33000000"
                     android:id="@+id/deletebtn"
                     android:src="@drawable/baseline_delete_white_24"
                     android:scaleType="centerInside"

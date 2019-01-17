@@ -207,7 +207,7 @@ namespace Bootleg.Droid
 
                     view.FindViewById<TextView>(Resource.Id.title).Text = currentedit.title;
                     //Console.WriteLine(currentedit.title);
-                    view.FindViewById<TextView>(Resource.Id.date).Text = currentedit.createdAt.LocalizeTimeDiff();
+                    view.FindViewById<TextView>(Resource.Id.date).Text = currentedit.updatedAt.LocalizeTimeDiff();
                     if (currentedit.code!=null) // still editing, or has been submitted
                     {
                         view.FindViewById<RadialProgress.CleanRadialProgressView>(Resource.Id.progress).ProgressColor = new Color(ContextCompat.GetColor(view.Context,Resource.Color.blue));
