@@ -1,4 +1,4 @@
-<#@ template hostspecific="true" language="C#" #><#@ output extension=".xml" encoding="utf-8" #><#@ include file="../../BuildVariants/Loader.t4" #><# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #><resources xmlns:android="http://schemas.android.com/apk/res/android">
+<#@ template hostspecific="true" language="C#" #><#@ output extension=".xml" encoding="utf-8" #><#@ include file="../../Templates/Loader.t4" #><# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #><resources xmlns:android="http://schemas.android.com/apk/res/android">
   <color name="orange"><#= Config.WARNING_COLOR #></color>
   <color name="dark_orange"><#= Config.WARNING_COLOR_DARK #></color>
   <color name="blue"><#= Config.PRIMARY_COLOR #></color>
