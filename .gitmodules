@@ -1,3 +1,3 @@
 [submodule "Bootleg.Android/Bootleg.API"]
 	path = Bootleg.Android/Bootleg.API
-	url = ssh://git@openlab.ncl.ac.uk:17150/bootlegging/ourstory-api-csharp.git
+	url = https://github.com/digitalinteraction/ourstory-api-csharp
