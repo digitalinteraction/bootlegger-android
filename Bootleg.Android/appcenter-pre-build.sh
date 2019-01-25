@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 GOOGLE_JSON_FILE=$APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/google-services.json
 
 if [ ! -e "$GOOGLE_JSON_FILE" ]
