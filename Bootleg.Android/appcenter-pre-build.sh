@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 GOOGLE_JSON_FILE=$APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/google-services.json
 
+if [ ! -n "$GOOGLE_JSON" ]
+then
+    echo "You need define the GOOGLE_JSON variable in App Center"
+    exit
+fi
+
 if [ ! -e "$GOOGLE_JSON_FILE" ]
 then
     echo "Writing Google Json"
