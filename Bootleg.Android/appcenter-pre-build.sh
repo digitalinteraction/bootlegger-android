@@ -1,10 +1,27 @@
 #!/usr/bin/env bash
 GOOGLE_JSON_FILE=$APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/google-services.json
+OURSTORY_VERSION_FILE=$APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/BuildVariants/Versions/OurStory.t4
 
 if [ ! -n "$GOOGLE_JSON" ]
 then
     echo "You need define the GOOGLE_JSON variable in App Center"
     exit
+fi
+
+if [ ! -n "$OURSTORY_VERSION" ]
+then
+    echo "You need define the OURSTORY_VERSION variable in App Center"
+    exit
+fi
+
+if [ ! -e "$OURSTORY_VERSION_FILE" ]
+then
+    echo "Writing Version File"
+    echo "$OURSTORY_VERSION" > $OURSTORY_VERSION_FILE
+    sed -i -e 's/\\"/'\"'/g' $OURSTORY_VERSION_FILE
+
+    echo "File content:"
+    cat $OURSTORY_VERSION_FILE
 fi
 
 if [ ! -e "$GOOGLE_JSON_FILE" ]
@@ -16,3 +33,5 @@ then
     echo "File content:"
     cat $GOOGLE_JSON_FILE
 fi
+
+msbuild $APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/Bootleg.Android.csproj /t:TransformAll
