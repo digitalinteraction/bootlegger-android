@@ -15,6 +15,7 @@ catch
 	try
 	{
 		DirectoryCopy(Host.ResolvePath(Path.Combine("..","BuildVariants","Versions",Config.FOLDER,"ios")), Host.ResolvePath(Path.Combine("..","Resources")), true);
+	}
 	catch
 	{
 		Console.WriteLine("No assets copied");
