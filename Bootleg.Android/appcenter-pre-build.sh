@@ -44,5 +44,3 @@ do
 		echo WARNING: Input file not a TT: "$filename"
 	fi	
 done
-
-# mono /Applications/Visual\ Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe Activities/SplashActivity.partial.tt
