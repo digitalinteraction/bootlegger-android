@@ -17,6 +17,7 @@ fi
 if [ ! -e "$OURSTORY_VERSION_FILE" ]
 then
     echo "Writing Version File"
+    mkdir -p $APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/BuildVariants/Versions
     echo "$OURSTORY_VERSION" > $OURSTORY_VERSION_FILE
     sed -i -e 's/\\"/'\"'/g' $OURSTORY_VERSION_FILE
 
