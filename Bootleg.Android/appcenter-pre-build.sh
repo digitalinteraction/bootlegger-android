@@ -34,4 +34,15 @@ then
     cat $GOOGLE_JSON_FILE
 fi
 
-msbuild $APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/Bootleg.Android.csproj /t:TransformAll
+for filename in $(find . -type f -name '*.tt')
+do
+    if [[ ${filename: -3} == ".tt" ]]
+	then
+		echo "$filename"
+		mono /Applications/Visual\ Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe "$filename"		
+	else
+		echo WARNING: Input file not a TT: "$filename"
+	fi	
+done
+
+# mono /Applications/Visual\ Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe Activities/SplashActivity.partial.tt

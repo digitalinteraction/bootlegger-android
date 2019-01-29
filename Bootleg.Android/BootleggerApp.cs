@@ -291,6 +291,7 @@ namespace Bootleg.Droid
                     .SetContentTitle(Resources.GetString(Resource.String.uploadcomplete))
                     .SetContentIntent(resultPendingIntent)
                     .SetSmallIcon(Resource.Drawable.ic_notification)
+                    .SetVibrate(null)
                     .SetContentText(Resources.GetString(Resource.String.alluploadsdone));
                 uploadbuilder.SetChannelId(CHANNEL_ID);
                 uploadnotification = uploadbuilder.Build();
@@ -335,6 +336,7 @@ namespace Bootleg.Droid
                         .SetContentTitle(Resources.GetString(Resource.String.uploadingclips))
                         .SetContentIntent(resultPendingIntent)
                         .SetSmallIcon(Resource.Drawable.ic_notification)
+                        .SetVibrate(null)
                         .SetProgress(100, 0, false)
                         .SetContentText(Resources.GetString(Resource.String.uploadprogress, arg2, arg3));
                     uploadbuilder.SetOngoing(true);
