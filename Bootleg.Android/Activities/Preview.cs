@@ -39,25 +39,25 @@ namespace Bootleg.Droid.Screens
         {
             base.OnCreate(savedInstanceState);
 
-            Window.SetStatusBarColor(Color.Transparent);
+            //Window.SetStatusBarColor(Color.Transparent);
             SetTheme(Resource.Style.Theme_Normal);
 
             RequestWindowFeature(WindowFeatures.NoTitle);
-            Window.AddFlags(WindowManagerFlags.Fullscreen);
-            Window.AddFlags(WindowManagerFlags.LayoutNoLimits);            
+            //Window.AddFlags(WindowManagerFlags.Fullscreen);
+            ////Window.AddFlags(WindowManagerFlags.LayoutNoLimits); 
+            //Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
 
-            if ((int)Build.VERSION.SdkInt >= 21)
-            {
-                Window.SetFlags(WindowManagerFlags.TranslucentStatus, WindowManagerFlags.TranslucentStatus);
-            }
+            //if ((int)Build.VERSION.SdkInt >= 21)
+            //{
+            //    Window.SetFlags(WindowManagerFlags.TranslucentStatus, WindowManagerFlags.TranslucentStatus);
+            //}
 
-            Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(SystemUiFlags.Fullscreen | SystemUiFlags.LayoutStable);
+            //Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(SystemUiFlags.Fullscreen | SystemUiFlags.LayoutFullscreen | SystemUiFlags.HideNavigation | SystemUiFlags.LayoutStable);
             //Window.DecorView.SetOnSystemUiVisibilityChangeListener(this);
-
             SetContentView(Resource.Layout.VideoPreviewFullscreen);
 
-            FindViewById<ImageButton>(Resource.Id.sharebtn).Click += Preview_Click;
-            FindViewById<ImageButton>(Resource.Id.sharebtn).Visibility = ViewStates.Gone;
+            //FindViewById<ImageButton>(Resource.Id.sharebtn).Click += Preview_Click;
+            //FindViewById<ImageButton>(Resource.Id.sharebtn).Visibility = ViewStates.Gone;
 
             
 
@@ -87,9 +87,42 @@ namespace Bootleg.Droid.Screens
             }
         }
 
+
+
         protected override void OnResume()
         {
             base.OnResume();
+
+            if ((int)Build.VERSION.SdkInt >= 19 &&(int)Build.VERSION.SdkInt < 21)
+            {
+                Window.AddFlags(WindowManagerFlags.TranslucentStatus | WindowManagerFlags.TranslucentNavigation);
+                //setWindowFlag(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                        //| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, true);
+            }
+            if ((int)Build.VERSION.SdkInt >= 19)
+            {
+                Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(SystemUiFlags.LayoutFullscreen | SystemUiFlags.LayoutHideNavigation | SystemUiFlags.LayoutStable);
+                //View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                //                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                //                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                //);
+            }
+            if ((int)Build.VERSION.SdkInt >= 21)
+            {
+                Window.ClearFlags(WindowManagerFlags.TranslucentStatus | WindowManagerFlags.TranslucentNavigation);
+                //WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                //| WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, false);
+                Window.SetNavigationBarColor(Color.Transparent);
+                Window.SetStatusBarColor(Color.Transparent);
+            }
+
+
+
+            //Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(SystemUiFlags.LayoutFullscreen | SystemUiFlags.LayoutHideNavigation | SystemUiFlags.LayoutStable);
+            Window.AddFlags(WindowManagerFlags.Fullscreen);
+            //Window.AddFlags(WindowManagerFlags.TranslucentNavigation);
+           
+
 
             _player = ExoPlayerFactory.NewSimpleInstance(this, new DefaultTrackSelector());
             _player.PlayWhenReady = true;
@@ -164,7 +197,7 @@ namespace Bootleg.Droid.Screens
 
             //AndHUD.Shared.Show(this, "Loading...", -1, MaskType.Black, null, null, true);
             //FindViewById<EditVideoView>(Resource.Id.videoplayer).ClearVideoSource();
-            FindViewById<ImageButton>(Resource.Id.sharebtn).Visibility = ViewStates.Visible;
+            //FindViewById<ImageButton>(Resource.Id.sharebtn).Visibility = ViewStates.Visible;
             //get video url:
             try {                
                 //set other fields:
@@ -212,14 +245,14 @@ namespace Bootleg.Droid.Screens
 
         IMediaSource mediaSource;
 
-        private void Preview_Click(object sender, EventArgs e)
-        {
-            Intent sharingIntent = new Intent(Intent.ActionSend);
-            sharingIntent.SetType("text/plain");
-            sharingIntent.PutExtra(Intent.ExtraSubject, shareedit.title);
-            sharingIntent.PutExtra(Intent.ExtraText, Bootlegger.BootleggerClient.server + "/v/" + shareedit.shortlink);
-            StartActivity(Intent.CreateChooser(sharingIntent, new Java.Lang.String(Resources.GetString(Resource.String.sharevia))));
-        }
+        //private void Preview_Click(object sender, EventArgs e)
+        //{
+        //    Intent sharingIntent = new Intent(Intent.ActionSend);
+        //    sharingIntent.SetType("text/plain");
+        //    sharingIntent.PutExtra(Intent.ExtraSubject, shareedit.title);
+        //    sharingIntent.PutExtra(Intent.ExtraText, Bootlegger.BootleggerClient.server + "/v/" + shareedit.shortlink);
+        //    StartActivity(Intent.CreateChooser(sharingIntent, new Java.Lang.String(Resources.GetString(Resource.String.sharevia))));
+        //}
 
         public async void PlayVideo(MediaItem media)
         {
