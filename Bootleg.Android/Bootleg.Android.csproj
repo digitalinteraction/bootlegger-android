@@ -954,9 +954,6 @@
     <AndroidResource Include="Resources\layout\uploadlistsync.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\menu\share_menu.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\VideoPreview.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>

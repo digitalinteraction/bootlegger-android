@@ -89,7 +89,7 @@ namespace Bootleg.Droid
                 //if (currentedit.progress > 97 && !currentedit.fail)
                 //    popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(true);
                 //else
-                popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(false);
+                //popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(false);
 
                 if (currentedit.code == null)
                     popup.Menu.FindItem(Resource.Id.delete_menu_item).SetVisible(true);
@@ -107,8 +107,8 @@ namespace Bootleg.Droid
 
             private async void Popup_MenuItemClick(object sender, Android.Support.V7.Widget.PopupMenu.MenuItemClickEventArgs e)
             {
-                if (e.Item.ItemId == Resource.Id.share_menu_item)
-                    ViewHolder_Click(null, null);
+                //if (e.Item.ItemId == Resource.Id.share_menu_item)
+                    //ViewHolder_Click(null, null);
 
                 if (e.Item.ItemId == Resource.Id.restart_menu_item)
                     ViewHolder_Click2(null, null);

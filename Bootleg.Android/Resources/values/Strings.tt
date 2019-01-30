@@ -33,7 +33,6 @@
     <string name="ochkIP">Internet Available</string>
     
     <!-- INFO STRINGS -->
-    <string name="sharebtn">Share</string>
     <string name="nomusic">No Music</string>
     <string name="nownearby">Now &amp; Nearby</string>
     <string name="seeall">See all</string>
@@ -142,7 +141,7 @@
     <string name="title">Title</string>
     <string name="cancelbtn">Discard Changes</string>
     <string name="savebtn">Save &amp; Change Later</string>
-    <string name="processbtn">Publish &amp; Share Story</string>
+    <string name="processbtn">Publish Story</string>share
     <string name="savebtnshort">Save</string>
 
     <string name="videos">VIDEOS</string>
@@ -150,7 +149,6 @@
     <string name="saveedit">Save or Publish</string>
     <string name="findevent">Find a Shoot</string>
     <string name="aboutbtn">About</string>
-    <string name="sharevia">Share via</string>
     <string name="uploads">Uploads</string>
     <string name="uploadswaiting">To Upload</string>
     <string name="datacharge">You are not on WiFi, uploading or playback could cause significant data charges.</string>
