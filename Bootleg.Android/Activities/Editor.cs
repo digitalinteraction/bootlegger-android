@@ -309,7 +309,7 @@ namespace Bootleg.Droid
             while (true)
             {
 
-                Thread.Sleep(TimeSpan.FromSeconds(30));
+                Thread.Sleep(TimeSpan.FromSeconds(5));
                 if (CurrentEdit != null && ShouldAutoSave)
                 {
                     //set title of video if there is one:
@@ -497,6 +497,7 @@ namespace Bootleg.Droid
             base.OnPause();
             preview.StopPlayback();
             preview.Release();
+            CurrentEdit = null;
         }
 
         SliverEditAdapter _sliveradapter;
@@ -876,6 +877,7 @@ namespace Bootleg.Droid
                      //CurrentEdit = OriginalVersion;
                      ShouldAutoSave = false;
                      await Bootlegger.BootleggerClient.SaveEdit(OriginalVersion);
+                     autosaver.Dispose();
                      Finish();
                  });
                 builder.Create().Show();
@@ -1118,6 +1120,7 @@ namespace Bootleg.Droid
                 //i.AddFlags(ActivityFlags.ClearTop);
                 i.PutExtra("processed", true);
                         StartActivity(i);
+                        autosaver.Dispose();
                         Finish();
                     }
                     catch (Exception ex)
@@ -1180,8 +1183,8 @@ namespace Bootleg.Droid
                         _adapter.UpdateData(CurrentEdit.media);
                         _sliveradapter.UpdateData(CurrentEdit.media);
                         UpdateTimings();
-                //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
-                LoginFuncs.ShowToast(this, ex);
+                        //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
+                        LoginFuncs.ShowToast(this, ex);
                     }
                     AndHUD.Shared.Dismiss();
                     diag.Cancel();
@@ -1189,6 +1192,10 @@ namespace Bootleg.Droid
                 }
             };
             diag.SetCancelable(true);
+            diag.CancelEvent += (o,e) =>
+            {
+                ShouldAutoSave = true;
+            };
             diag.Show();
             dialoglayout.Post(() =>
             {

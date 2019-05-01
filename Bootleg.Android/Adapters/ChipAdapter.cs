@@ -91,29 +91,36 @@ namespace Bootleg.Droid.Adapters
 
             internal void SetItem(Topic item)
             {
-                currentitem = item;
-                view.FindViewById<ToggleButton>(Resource.Id.chip).TextOn = item.GetLocalisedTagName(view.Resources.Configuration.Locale.Language);
-                view.FindViewById<ToggleButton>(Resource.Id.chip).TextOff = item.GetLocalisedTagName(view.Resources.Configuration.Locale.Language);
-                view.FindViewById<ToggleButton>(Resource.Id.chip).Text = item.GetLocalisedTagName(view.Resources.Configuration.Locale.Language);
-
-                view.FindViewById<ToggleButton>(Resource.Id.chip).Enabled = !adpt._readonly;
-                //view.FindViewById<ToggleButton>(Resource.Id.chip).Clickable = !adpt._readonly;
-
-                if (adpt.media != null)
+                try
                 {
-                    view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange -= ViewHolder_Select;
+                    currentitem = item;
+                    view.FindViewById<ToggleButton>(Resource.Id.chip).TextOn = item.GetLocalisedTagName(view.Resources.Configuration.Locale.Language);
+                    view.FindViewById<ToggleButton>(Resource.Id.chip).TextOff = item.GetLocalisedTagName(view.Resources.Configuration.Locale.Language);
+                    view.FindViewById<ToggleButton>(Resource.Id.chip).Text = item.GetLocalisedTagName(view.Resources.Configuration.Locale.Language);
 
-                    view.FindViewById<ToggleButton>(Resource.Id.chip).Checked = adpt.media.Static_Meta?[$"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}"].Split(',').Contains(item.id) ?? false;
+                    view.FindViewById<ToggleButton>(Resource.Id.chip).Enabled = !adpt._readonly;
+                    //view.FindViewById<ToggleButton>(Resource.Id.chip).Clickable = !adpt._readonly;
 
-                    view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange += ViewHolder_Select;
+                    if (adpt.media != null)
+                    {
+                        view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange -= ViewHolder_Select;
 
-                    if (view.FindViewById<ToggleButton>(Resource.Id.chip).Checked && !adpt._readonly)
-                        view.FindViewById<ToggleButton>(Resource.Id.chip).SetCompoundDrawablesWithIntrinsicBounds(0, 0, Resource.Drawable.baseline_check_white_24, 0);
+                        view.FindViewById<ToggleButton>(Resource.Id.chip).Checked = adpt.media.Static_Meta?[$"{((!WhiteLabelConfig.PUBLIC_TOPICS) ? BootleggerClient.CurrentUser?.id : "")}-{MetaDataFields.Topics}"].Split(',').Contains(item.id) ?? false;
+
+                        view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange += ViewHolder_Select;
+
+                        if (view.FindViewById<ToggleButton>(Resource.Id.chip).Checked && !adpt._readonly)
+                            view.FindViewById<ToggleButton>(Resource.Id.chip).SetCompoundDrawablesWithIntrinsicBounds(0, 0, Resource.Drawable.baseline_check_white_24, 0);
+                    }
+                    else
+                    {
+                        view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange -= ViewHolder_Select;
+                        view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange += ViewHolder_Select;
+                    }
                 }
-                else
+                catch
                 {
-                    view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange -= ViewHolder_Select;
-                    view.FindViewById<ToggleButton>(Resource.Id.chip).CheckedChange += ViewHolder_Select;
+                    //failed to do somthing with item...
                 }
 
                 //var index = item.ToCharArray().Sum(x => x);
