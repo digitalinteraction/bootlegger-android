@@ -16,7 +16,7 @@ public class Config
 	//Codebase Namespace
 	public static string NAMESPACE = "";
 	public static string HOCKEYAPPID = "";
-	public static string APIKEY = "";
+	public static string APIKEY = "replaceme";
 	public static string SERVER = "";
 	public static int PORT = 0;
 	public static string PRIMARY_COLOR = "";

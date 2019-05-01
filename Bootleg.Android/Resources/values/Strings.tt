@@ -141,7 +141,7 @@
     <string name="title">Title</string>
     <string name="cancelbtn">Discard Changes</string>
     <string name="savebtn">Save &amp; Change Later</string>
-    <string name="processbtn">Publish Story</string>share
+    <string name="processbtn">Publish Story</string>
     <string name="savebtnshort">Save</string>
 
     <string name="videos">VIDEOS</string>

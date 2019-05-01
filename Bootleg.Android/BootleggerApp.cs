@@ -261,7 +261,8 @@ namespace Bootleg.Droid
             {
 
                 NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
-                NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Our Story", NotificationImportance.Default);
+                NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Our Story",NotificationImportance.Low);
+                channel.EnableVibration(false);
                 channel.Description = "Our Story";
                 notificationManager.CreateNotificationChannel(channel);
             }
@@ -291,7 +292,7 @@ namespace Bootleg.Droid
                     .SetContentTitle(Resources.GetString(Resource.String.uploadcomplete))
                     .SetContentIntent(resultPendingIntent)
                     .SetSmallIcon(Resource.Drawable.ic_notification)
-                    .SetVibrate(null)
+                    
                     .SetContentText(Resources.GetString(Resource.String.alluploadsdone));
                 uploadbuilder.SetChannelId(CHANNEL_ID);
                 uploadnotification = uploadbuilder.Build();
@@ -336,7 +337,6 @@ namespace Bootleg.Droid
                         .SetContentTitle(Resources.GetString(Resource.String.uploadingclips))
                         .SetContentIntent(resultPendingIntent)
                         .SetSmallIcon(Resource.Drawable.ic_notification)
-                        .SetVibrate(null)
                         .SetProgress(100, 0, false)
                         .SetContentText(Resources.GetString(Resource.String.uploadprogress, arg2, arg3));
                     uploadbuilder.SetOngoing(true);
@@ -349,6 +349,9 @@ namespace Bootleg.Droid
                     uploadbuilder.SetProgress(100, (int)(arg1 * 100), false);
                     uploadbuilder.SetChannelId(CHANNEL_ID);
                 }
+
+                uploadbuilder.SetVibrate(null);
+                uploadbuilder.SetOnlyAlertOnce(true);
 
                 NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
                 uploadnotification = uploadbuilder.Build();

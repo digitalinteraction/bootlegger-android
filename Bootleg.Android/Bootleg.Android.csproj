@@ -5,7 +5,7 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
     <JavaMaximumHeapSize>3G</JavaMaximumHeapSize>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
@@ -33,7 +33,6 @@
     </JavaMaximumHeapSize>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -60,7 +59,12 @@
     </CustomCommands>
     <AndroidLinkMode>None</AndroidLinkMode>
     <NoWarn>CS0162,CS0618</NoWarn>
-    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;x86_64</AndroidSupportedAbis>
+    <AndroidSupportedAbis>
+    </AndroidSupportedAbis>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <BundleAssemblies>false</BundleAssemblies>
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -74,7 +78,8 @@
     <Debugger>Xamarin</Debugger>
     <DevInstrumentationEnabled>False</DevInstrumentationEnabled>
     <DebugSymbols>False</DebugSymbols>
-    <DebugType></DebugType>
+    <DebugType>
+    </DebugType>
     <JavaMaximumHeapSize>3G</JavaMaximumHeapSize>
     <CustomCommands>
       <CustomCommands>
@@ -786,6 +791,8 @@
     </Compile>
     <AndroidResource Include="Resources\values-ar\Strings.xml">
       <DependentUpon>Strings.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </AndroidResource>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\NeedsPermissionsException.cs" />
@@ -1871,11 +1878,7 @@
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\values-ar\" />
-    <Folder Include="Resources\font\" />
-    <Folder Include="Templates\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -1945,4 +1948,7 @@
   <Import Project="..\packages\Xamarin.Firebase.Iid.70.1620.0-preview2\build\MonoAndroid80\Xamarin.Firebase.Iid.targets" Condition="Exists('..\packages\Xamarin.Firebase.Iid.70.1620.0-preview2\build\MonoAndroid80\Xamarin.Firebase.Iid.targets')" />
   <Import Project="..\packages\Xamarin.Firebase.Messaging.70.1710.0-preview2\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets" Condition="Exists('..\packages\Xamarin.Firebase.Messaging.70.1710.0-preview2\build\MonoAndroid80\Xamarin.Firebase.Messaging.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Nearby.70.1501.0-preview2\build\MonoAndroid80\Xamarin.GooglePlayServices.Nearby.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Nearby.70.1501.0-preview2\build\MonoAndroid80\Xamarin.GooglePlayServices.Nearby.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(ProjectDir)\Properties\AndroidManifest_Init.xml" "$(ProjectDir)\Properties\AndroidManifest.xml" /y</PreBuildEvent>
+  </PropertyGroup>
 </Project>
