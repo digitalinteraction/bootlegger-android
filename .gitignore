@@ -189,3 +189,4 @@ WhiteLabelConfig.cs
 *.apk
 Strings.xml
 BuildVariants
+/Bootleg.Android/Keystore
