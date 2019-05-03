@@ -52,6 +52,7 @@ namespace Bootleg.Droid
                     FindViewById(Resource.Id.offlineChecks).Visibility = ViewStates.Visible;
                     FindViewById(Resource.Id.onlineChecks).Visibility = ViewStates.Gone;
 
+
                     bool checkNetwork = false, checkIP = false, checkApplication = false, checkConnection = false;
                     while (!(checkNetwork && checkIP && checkApplication && checkConnection))
                     {
@@ -59,12 +60,13 @@ namespace Bootleg.Droid
                         checkNetwork = CrossConnectivity.Current.ConnectionTypes.Contains(Plugin.Connectivity.Abstractions.ConnectionType.WiFi) || CrossConnectivity.Current.ConnectionTypes.Contains(Plugin.Connectivity.Abstractions.ConnectionType.Desktop);
                         RunOnUiThread(() =>
                         {
+                            var test = FindViewById<TextView>(Resource.Id.chkNetwork).GetCompoundDrawablesRelative();
 
                             try
                             {
-                                FindViewById<TextView>(Resource.Id.ochkNetwork).GetCompoundDrawables()[0].Mutate().SetColorFilter(Color.Transparent, ((checkNetwork) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
+                                FindViewById<TextView>(Resource.Id.chkNetwork).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkNetwork) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
                             }
-                            catch
+                            catch (Exception e)
                             {
 
                             }
@@ -78,7 +80,7 @@ namespace Bootleg.Droid
                             {
                                 try
                                 {
-                                    FindViewById<TextView>(Resource.Id.ochkIP).GetCompoundDrawables()[0].Mutate().SetColorFilter(Color.Transparent, ((checkIP) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
+                                    FindViewById<TextView>(Resource.Id.chkIP).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkIP) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
                                 }
                                 catch { }
                             });
@@ -91,7 +93,7 @@ namespace Bootleg.Droid
                             {
                                 try
                                 {
-                                    FindViewById<TextView>(Resource.Id.ochkApplication).GetCompoundDrawables()[0].Mutate().SetColorFilter(Color.Transparent, ((checkApplication) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
+                                    FindViewById<TextView>(Resource.Id.chkApplication).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkApplication) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
                                 }
                                 catch { }
                             });
@@ -104,7 +106,7 @@ namespace Bootleg.Droid
                             {
                                 try
                                 {
-                                    FindViewById<TextView>(Resource.Id.ochkConnection).GetCompoundDrawables()[0].Mutate().SetColorFilter(Color.Transparent, ((checkConnection) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
+                                    FindViewById<TextView>(Resource.Id.chkConnection).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkConnection) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
                                 }
                                 catch { }
                             });

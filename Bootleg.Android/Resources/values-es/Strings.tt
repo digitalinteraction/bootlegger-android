@@ -318,4 +318,5 @@
     <string name="errorcanceled"> Error 6: Solicitud cancelada por el participante </string>
     <string name="errorserver"> Error 7: error del servidor </string>
     <string name="errorunknown"> Error 8: Error de red desconocido </string>
+    <string name="myshoots">Mis Brotes</string>
   </resources>

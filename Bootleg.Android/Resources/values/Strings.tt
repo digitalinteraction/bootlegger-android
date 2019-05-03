@@ -318,4 +318,5 @@
     <string name="errorcanceled">Error 6: Request cancelled by participant</string>
     <string name="errorserver">Error 7: Server error</string>
     <string name="errorunknown">Error 8: Unknown Network Error</string>
+    <string name="myshoots">My Shoots</string>
   </resources>

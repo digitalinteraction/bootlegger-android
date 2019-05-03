@@ -6514,6 +6514,9 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900c9
 			public const int mustupdate = 2131296457;
 			
+			// aapt resource value: 0x7f090146
+			public const int myshoots = 2131296582;
+			
 			// aapt resource value: 0x7f0900ae
 			public const int mytags = 2131296430;
 			
@@ -6721,14 +6724,14 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900a5
 			public const int settingsbtn = 2131296421;
 			
-			// aapt resource value: 0x7f090147
-			public const int sharebtn = 2131296583;
+			// aapt resource value: 0x7f090148
+			public const int sharebtn = 2131296584;
 			
 			// aapt resource value: 0x7f0900e1
 			public const int sharename = 2131296481;
 			
-			// aapt resource value: 0x7f090146
-			public const int sharevia = 2131296582;
+			// aapt resource value: 0x7f090147
+			public const int sharevia = 2131296583;
 			
 			// aapt resource value: 0x7f0900c7
 			public const int shootcodemessage = 2131296455;

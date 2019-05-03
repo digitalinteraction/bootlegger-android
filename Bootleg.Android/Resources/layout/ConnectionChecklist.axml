@@ -32,45 +32,45 @@
             android:layout_height="wrap_content"
             android:text="@string/chkNetwork"
             android:id="@+id/chkNetwork"
+            android:drawablePadding="8dp"
+            android:drawableTint="@android:color/transparent"
+            android:drawableStart="@drawable/baseline_check_white_24"
             android:textSize="20sp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:id="@+id/chkIP"
             android:text="@string/chkIP"
-            android:checkMark="@drawable/appbar_check"
-            android:checked="false"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/baseline_check_white_24"
+            android:drawableTint="@android:color/transparent"
             android:gravity="center_vertical"
             android:textSize="20sp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:id="@+id/chkApplication"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/baseline_check_white_24"
             android:text="@string/chkApplication"
-            android:checkMark="@drawable/appbar_check"
-            android:checked="false"
+            android:drawableTint="@android:color/transparent"
             android:gravity="center_vertical"
             android:textSize="20sp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:id="@+id/chkConnection"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/baseline_check_white_24"
             android:text="@string/chkConnection"
-            android:checkMark="@drawable/appbar_check"
-            android:checked="false"
+            android:drawableTint="@android:color/transparent"
             android:gravity="center_vertical"
             android:textSize="20sp" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/onlineChecks"
         android:orientation="vertical"
-            android:visibility="gone"
+        android:visibility="gone"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -83,7 +83,6 @@
             android:textSize="20sp"
             android:drawablePadding="8dp"
             android:drawableStart="@drawable/baseline_check_white_24"
-            android:allowUndo="false" 
             />
         <TextView
             android:layout_width="match_parent"
@@ -119,8 +118,6 @@
     <TextView
         android:layout_marginTop="8dp"
         android:layout_marginBottom="28dp"
-        
-        
         android:layout_width="match_parent"
         android:textSize="20sp"
         android:layout_height="match_parent"
