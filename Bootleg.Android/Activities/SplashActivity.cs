@@ -88,7 +88,7 @@ namespace Bootleg.Droid
 
                         if (checkNetwork && checkIP)
                         {
-                            checkApplication = await CrossConnectivity.Current.IsRemoteReachable(WhiteLabelConfig.SERVER, 5000);
+                            checkApplication = await CrossConnectivity.Current.IsReachable(WhiteLabelConfig.SERVER.Replace("http://",""), 5000);
                             RunOnUiThread(() =>
                             {
                                 try

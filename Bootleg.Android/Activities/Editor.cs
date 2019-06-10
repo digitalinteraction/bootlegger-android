@@ -840,41 +840,48 @@ namespace Bootleg.Droid
 
         public override void OnBackPressed()
         {
-            if (TRIMMODE)
+            try
             {
-                TRIMMODE = false;
-                _adapter.TrimMode(null, false);
-                preview.StopPlayback();
-                _adapter.UpdatePlaying(null);
-                TrimOff();
-                return;
-            }
-
-            if (IsExpanded)
-            {
-                currentpick = null;
-                CollapsePane();
-                (allclipsfragment as IImagePausable).Pause();
-            }
-            else
-            {
-
-                Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
-                builder.SetMessage(Resource.String.savecancelmsg);
-                builder.SetPositiveButton(Resource.String.savebtnshort, (e, o) =>
+                if (TRIMMODE)
                 {
-                    ExitSave();
-                })
-                .SetNegativeButton(Resource.String.cancelbtn, async (e, o) =>
-                 {
+                    TRIMMODE = false;
+                    _adapter.TrimMode(null, false);
+                    preview.StopPlayback();
+                    _adapter.UpdatePlaying(null);
+                    TrimOff();
+                    return;
+                }
+
+                if (IsExpanded)
+                {
+                    currentpick = null;
+                    CollapsePane();
+                    (allclipsfragment as IImagePausable).Pause();
+                }
+                else
+                {
+
+                    Android.Support.V7.App.AlertDialog.Builder builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+                    builder.SetMessage(Resource.String.savecancelmsg);
+                    builder.SetPositiveButton(Resource.String.savebtnshort, (e, o) =>
+                    {
+                        ExitSave();
+                    })
+                    .SetNegativeButton(Resource.String.cancelbtn, async (e, o) =>
+                     {
                      //Reset back to old version:
                      //CurrentEdit = OriginalVersion;
                      ShouldAutoSave = false;
-                     await Bootlegger.BootleggerClient.SaveEdit(OriginalVersion);
-                     autosaver.Dispose();
-                     Finish();
-                 });
-                builder.Create().Show();
+                         await Bootlegger.BootleggerClient.SaveEdit(OriginalVersion);
+                         autosaver.Dispose();
+                         Finish();
+                     });
+                    builder.Create().Show();
+                }
+            }
+            catch (Exception e)
+            {
+                LoginFuncs.ShowError(this, e);
             }
         }
 

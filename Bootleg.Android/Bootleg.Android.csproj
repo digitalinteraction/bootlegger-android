@@ -298,12 +298,11 @@
     <Reference Include="Plugin.CurrentActivity">
       <HintPath>..\packages\Plugin.CurrentActivity.2.1.0.4\lib\monoandroid44\Plugin.CurrentActivity.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Common">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.8.1\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Xamarin.RangeSlider.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.RangeSlider.1.0.1\lib\MonoAndroid10\Xamarin.RangeSlider.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.RangeSlider.Droid">
-      <HintPath>..\packages\Xamarin.RangeSlider.0.8.1\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
+    <Reference Include="Xamarin.RangeSlider.Droid, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.RangeSlider.1.0.1\lib\MonoAndroid10\Xamarin.RangeSlider.Droid.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -690,15 +690,20 @@ namespace Bootleg.Droid
                     {
                         seeker.SetRangeValues(0, _player.Duration + 2);
 
+                        //seeker.SetSelectedMinValue(0);
+                        //seeker.SetSelectedMaxValue(_player.Duration + 2);
+                        //seeker.Visibility = ViewStates.Visible;
+                        //return;
+
                         if (Resources.Configuration.LayoutDirection == Android.Views.LayoutDirection.Rtl)
                         {
-                            seeker.SetSelectedMinValue(_player.Duration - (float)InPoint.TotalMilliseconds);
-                            seeker.SetSelectedMaxValue(_player.Duration - (float)OutPoint.TotalMilliseconds);
+                            seeker.SetSelectedMinValue(_player.Duration - (float)OutPoint.TotalMilliseconds);
+                            seeker.SetSelectedMaxValue(_player.Duration - (float)InPoint.TotalMilliseconds);
                         }
                         else
                         {
-                            seeker.SetSelectedMinValue((float)OutPoint.TotalMilliseconds);
-                            seeker.SetSelectedMaxValue((float)InPoint.TotalMilliseconds);
+                            seeker.SetSelectedMinValue((float)InPoint.TotalMilliseconds);
+                            seeker.SetSelectedMaxValue((float)OutPoint.TotalMilliseconds);
 
                         }
                         seeker.Visibility = ViewStates.Visible;
