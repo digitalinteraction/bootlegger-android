@@ -10,6 +10,4 @@ Requires an Our Story server running.
 
 ![](platform.svg)
 
-Our Story is an open source suite of tools developed by [Open Lab](http://openlab.ncl.ac.uk) that enables community commissioning and contribution of video. See [the website]( https://guide.ourstory.tv/platform) for more information.
-
-*Copyright Newcastle University 2016*
+Our Story is an open source suite of tools developed by [Open Lab](http://openlab.ncl.ac.uk) that enables community commissioning and contribution of video. See [the website]( https://guide.ourstory.tv) for more information.
