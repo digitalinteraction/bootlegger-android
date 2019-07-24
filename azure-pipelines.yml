@@ -21,6 +21,9 @@ steps:
     restoreSolution: '**/*.sln'
 
 - task: Bash@3
+  env:
+    GOOGLE_JSON: $(GOOGLE_JSON)
+    OURSTORY_VERSION: ${OURSTORY_VERSION}
   inputs:
     filePath: 'Bootleg.Android/appcenter-pre-build.sh'
 
