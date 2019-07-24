@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'macOS-10.14'
 
 variables:
   buildConfiguration: 'Release'
@@ -32,3 +32,11 @@ steps:
     projectFile: '**/*.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
+
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'TitanKeystore'
+    apksignerKeystorePassword: ${KeystorePassword}
+    apksignerKeystoreAlias: 'ifrc1'
+    apksignerKeyPassword: ${KeystorePassword}
