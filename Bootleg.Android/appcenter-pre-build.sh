@@ -36,10 +36,10 @@
 # fi
 
 echo "Link Version T4: ${Agent.TempDirectory}/Titan.t4 to ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4"
-ln -s ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4 ${Agent.TempDirectory}/Titan.t4
+ln -s ${Agent.TempDirectory}/Titan.t4 ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4
 
 echo "Link Google Json: ${Agent.TempDirectory}/google-services.json to ${Build.SourcesDirectory}/Bootleg.Android/google-services.json"
-ln -s ${Build.SourcesDirectory}/Bootleg.Android/google-services.json ${Agent.TempDirectory}/google-services.json
+ln -s ${Agent.TempDirectory}/google-services.json ${Build.SourcesDirectory}/Bootleg.Android/google-services.json
 
 echo "Running T4 Process"
 for filename in $(find . -type f -name '*.tt')
