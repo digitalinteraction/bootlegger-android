@@ -10,6 +10,7 @@
     android:paddingTop="32dp"
     android:paddingStart="28dp"
     android:paddingEnd="28dp"
+        
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r:30,l|S:#83ee00ff:16,0,l:16,56,l:16,0,r">
@@ -20,8 +21,8 @@
         android:layout_height="wrap_content"
         android:text="@string/chkTitle" />
     <LinearLayout
-        android:layout_margin="30dp"
-        android:visibility="visible"
+        
+        android:visibility="gone"
         android:id="@+id/offlineChecks"
         android:orientation="vertical"
         android:gravity="center_horizontal"
@@ -32,10 +33,11 @@
             android:layout_height="wrap_content"
             android:text="@string/chkNetwork"
             android:id="@+id/chkNetwork"
+            android:gravity="center_vertical"
             android:drawablePadding="8dp"
             android:drawableTint="@android:color/transparent"
             android:drawableStart="@drawable/baseline_check_white_24"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +47,7 @@
             android:drawableStart="@drawable/baseline_check_white_24"
             android:drawableTint="@android:color/transparent"
             android:gravity="center_vertical"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +57,7 @@
             android:text="@string/chkApplication"
             android:drawableTint="@android:color/transparent"
             android:gravity="center_vertical"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,12 +67,12 @@
             android:text="@string/chkConnection"
             android:drawableTint="@android:color/transparent"
             android:gravity="center_vertical"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/onlineChecks"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -80,8 +82,9 @@
             android:id="@+id/ochkNetwork"
             android:text="@string/ochkNetwork"
             android:gravity="center_vertical"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:drawablePadding="8dp"
+            android:drawableTint="@android:color/transparent"
             android:drawableStart="@drawable/baseline_check_white_24"
             />
         <TextView
@@ -93,7 +96,7 @@
             android:text="@string/ochkIP"
             android:gravity="center_vertical"
              android:drawableTint="@android:color/transparent"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -103,7 +106,7 @@
             android:text="@string/chkApplication"
             android:gravity="center_vertical"
              android:drawableTint="@android:color/transparent"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,13 +116,13 @@
             android:text="@string/chkConnection"
             android:gravity="center_vertical"
             android:drawableTint="@android:color/transparent"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
     </LinearLayout>
     <TextView
         android:layout_marginTop="8dp"
         android:layout_marginBottom="28dp"
         android:layout_width="match_parent"
-        android:textSize="20sp"
+        android:textSize="20dp"
         android:layout_height="match_parent"
         android:gravity="bottom"
         android:text="@string/chkFooter" />

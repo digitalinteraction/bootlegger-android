@@ -69,8 +69,12 @@ namespace Bootleg.Droid
         {
             base.OnDestroy();
 
-            //dont do this if its going to the preview screen:
-            Bootlegger.BootleggerClient.CanUpload = false;
+            //dont do this if its going to the preview screen, or if rotating the screen:
+            if (IsFinishing)
+                Bootlegger.BootleggerClient.CanUpload = false;
+
+
+
             Picasso.With(this).CancelTag(this);
         }
 
@@ -107,6 +111,7 @@ namespace Bootleg.Droid
             }
 
             Bootlegger.BootleggerClient.OnCurrentUploadsComplete += Comms_OnCurrentUploadsComplete;
+            Bootlegger.BootleggerClient.OnCurrentUploadsFailed += BootleggerClient_OnCurrentUploadsFailed;
 
             //disable new edit button if no clips:
             Myclips_OnRefresh();
@@ -116,7 +121,17 @@ namespace Bootleg.Droid
             //myingest.Refresh();
         }
 
-     
+        private void BootleggerClient_OnCurrentUploadsFailed()
+        {
+            //reset UI:
+
+            RunOnUiThread(() =>
+            {
+                LoginFuncs.ShowError(this, new NoNetworkException());
+                myclips.RefreshUploads();
+            });
+        }
+
         private async void Review_Click(object sender, EventArgs ee)
         {
             cancel = new CancellationTokenSource();
@@ -277,66 +292,80 @@ namespace Bootleg.Droid
 
         void CheckUpload()
         {
-            if ((Application as BootleggerApp).IsReallyConnected)
+            try
             {
-                if (CrossConnectivity.Current.ConnectionTypes.Contains(Plugin.Connectivity.Abstractions.ConnectionType.WiFi))
+                if ((Application as BootleggerApp).IsReallyConnected)
                 {
-                    // Do whatever
-                    new Android.Support.V7.App.AlertDialog.Builder(this).SetMessage(Resource.String.deleteclipwarning)
-                      .SetNegativeButton(Android.Resource.String.Cancel, new EventHandler<DialogClickEventArgs>((oe, eo) =>
-                      {
-                      //do nothing...
-                      }))
-                      .SetPositiveButton(Resource.String.continueanyway, new EventHandler<DialogClickEventArgs>(async (oe, eo) =>
-                      {
-                          try
+                    if (CrossConnectivity.Current.ConnectionTypes.Contains(Plugin.Connectivity.Abstractions.ConnectionType.WiFi))
+                    {
+                        // Do whatever
+                        new Android.Support.V7.App.AlertDialog.Builder(this).SetMessage(Resource.String.deleteclipwarning)
+                          .SetNegativeButton(Android.Resource.String.Cancel, new EventHandler<DialogClickEventArgs>((oe, eo) =>
                           {
-                              await LoginFuncs.TryLogin(this, cancel.Token);
+                          //do nothing...
+                      }))
+                          .SetPositiveButton(Resource.String.continueanyway, new EventHandler<DialogClickEventArgs>(async (oe, eo) =>
+                          {
+                              try
+                              {
+                                  await LoginFuncs.TryLogin(this, cancel.Token);
                               //await Bootlegger.BootleggerClient.OfflineConnect(Bootlegger.BootleggerClient.CurrentEvent.id);
                               Bootlegger.BootleggerClient.CanUpload = true;
-                              oktocontinueon3g = false;
+                                  oktocontinueon3g = false;
                               //myclips.Redraw();
                               FindViewById<Button>(Resource.Id.uploadbtn).Text = Resources.GetString(Resource.String.pause);
-                              receiver.LostWifi += Receiver_LostWifi;
-                              receiver.GotWifi += Receiver_GotWifi;
-                          }
-                          catch (Exception e)
-                          {
-                              LoginFuncs.ShowError(this, e);
-                          }
-                      }))
-                      .SetTitle(Resource.String.continuetitle)
-                      .SetCancelable(false)
-                      .Show();
+                                  receiver.LostWifi += Receiver_LostWifi;
+                                  receiver.GotWifi += Receiver_GotWifi;
+                              }
+                              catch (Exception e)
+                              {
+                                  LoginFuncs.ShowError(this, e);
+                              }
+                          }))
+                          .SetTitle(Resource.String.continuetitle)
+                          .SetCancelable(false)
+                          .Show();
+                    }
+                    else
+                    {
+                        new Android.Support.V7.App.AlertDialog.Builder(this).SetMessage(Resource.String.datachargewithwarning)
+                       .SetNegativeButton(Resource.String.notnow, new EventHandler<DialogClickEventArgs>((oe, eo) =>
+                       {
+                       //do nothing...
+                   }))
+                       .SetPositiveButton(Resource.String.continueanyway, new EventHandler<DialogClickEventArgs>(async (oe, eo) =>
+                       {
+                           try
+                           {
+                               oktocontinueon3g = true;
+                               //await connection:
+                               await LoginFuncs.TryLogin(this, cancel.Token);
+                               //await Bootlegger.BootleggerClient.OfflineConnect(Bootlegger.BootleggerClient.CurrentEvent.id);
+
+                               Bootlegger.BootleggerClient.CanUpload = true;
+                               //myclips.Redraw();
+                               FindViewById<Button>(Resource.Id.uploadbtn).Text = Resources.GetString(Resource.String.pause);
+                               receiver.LostWifi += Receiver_LostWifi;
+                               receiver.GotWifi += Receiver_GotWifi;
+                           }
+                           catch (Exception e)
+                           {
+                               LoginFuncs.ShowError(this, e);
+                           }
+                       }))
+                        .SetTitle(Resource.String.continuetitle)
+                        .SetCancelable(false)
+                        .Show();
+                    }
                 }
                 else
                 {
-                    new Android.Support.V7.App.AlertDialog.Builder(this).SetMessage(Resource.String.datachargewithwarning)
-                   .SetNegativeButton(Resource.String.notnow, new EventHandler<DialogClickEventArgs>((oe, eo) =>
-                   {
-                   //do nothing...
-                    }))
-                   .SetPositiveButton(Resource.String.continueanyway, new EventHandler<DialogClickEventArgs>(async (oe, eo) =>
-                   {
-                       oktocontinueon3g = true;
-                       //await connection:
-                       await LoginFuncs.TryLogin(this, cancel.Token);
-                       //await Bootlegger.BootleggerClient.OfflineConnect(Bootlegger.BootleggerClient.CurrentEvent.id);
-
-                       Bootlegger.BootleggerClient.CanUpload = true;
-                       //myclips.Redraw();
-                       FindViewById<Button>(Resource.Id.uploadbtn).Text = Resources.GetString(Resource.String.pause);
-                       receiver.LostWifi += Receiver_LostWifi;
-                       receiver.GotWifi += Receiver_GotWifi;
-                   }))
-                   .SetTitle(Resource.String.continuetitle)
-                   .SetCancelable(false)
-                   .Show();
+                    LoginFuncs.ShowError(this, new NoNetworkException());
                 }
             }
-            else
+            catch (Exception e)
             {
-                LoginFuncs.ShowError(this, new NoNetworkException());
+                LoginFuncs.ShowError(this, e);
             }
         }
 
@@ -555,7 +584,7 @@ namespace Bootleg.Droid
             }
             else
             {
-                LoginFuncs.ShowError(this, new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                LoginFuncs.ShowError(this, new NoNetworkException());
             }
         }
 

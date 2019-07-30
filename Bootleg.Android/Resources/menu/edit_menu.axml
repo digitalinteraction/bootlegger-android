@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
   <item
@@ -7,7 +7,7 @@
   <item
       android:id="@+id/copy_menu_item"
        android:title="@string/copybtn"/>
-  <item
+<!--  <item
       android:id="@+id/restart_menu_item"
-       android:title="@string/restartbtn"/>
+       android:title="@string/restartbtn"/>-->
 </menu>

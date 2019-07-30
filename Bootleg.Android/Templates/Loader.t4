@@ -1,3 +1,2 @@
-﻿<#@ CleanupBehavior processor="T4VSHost" CleanupAfterProcessingtemplate="true" #>
-<# //Bootstrap file for loading the right Build Variant. Change this to match your selected build #>
-<#@ include file="Defs.t4" #><#@ include file="..\\BuildVariants\\Versions\\Titan.t4" #>
+﻿<# //Bootstrap file for loading the right Build Variant. Change this to match your selected build #>
+<#@ include file="Defs.t4" #><#@ include file="../BuildVariants/Versions/OurStory.t4" #>

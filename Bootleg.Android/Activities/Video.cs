@@ -1709,7 +1709,7 @@ namespace Bootleg.Droid
         {
             base.OnPause();
             //background beacon
-            Beacons.BeaconInstance.InBackground = true;
+            //Beacons.BeaconInstance.InBackground = true;
 
 
             //tell client that not in shooting mode
@@ -1803,8 +1803,8 @@ namespace Bootleg.Droid
             if (WhiteLabelConfig.ALLOW_BLE)
             {
                 //start broadcasting beacon
-                await Beacons.BeaconInstance.StartBroadcastingBle(this, Bootlegger.BootleggerClient.CurrentEvent);
-                Beacons.BeaconInstance.InBackground = false;
+                //await Beacons.BeaconInstance.StartBroadcastingBle(this, Bootlegger.BootleggerClient.CurrentEvent);
+                //Beacons.BeaconInstance.InBackground = false;
             }
 
             //Insights.Track("VideoScreen");
@@ -1872,7 +1872,7 @@ namespace Bootleg.Droid
             //started = false;
 
             //stop ble beacon
-            Beacons.BeaconInstance.StopBroadcastingBle();
+            //Beacons.BeaconInstance.StopBroadcastingBle();
 
             Bootlegger.BootleggerClient.OnCountdown -= Comms_OnCountdown;
             Bootlegger.BootleggerClient.OnRoleChanged -= Comms_OnRoleChanged;

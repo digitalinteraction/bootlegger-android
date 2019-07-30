@@ -17,7 +17,6 @@ using Bootleg.API;
 using Bootleg.Droid.UI;
 using Android.Net.Wifi;
 using static Android.Net.Wifi.WifiManager;
-using BranchXamarinSDK;
 using System.Collections.Generic;
 using Android.Gms.Common;
 using System.Threading.Tasks;
@@ -28,7 +27,7 @@ using System.Threading;
 
 namespace Bootleg.Droid
 {
-    public partial class SplashActivity : FragmentActivity, IBranchSessionInterface
+    public partial class SplashActivity : FragmentActivity
     {
         //Action cancellationFunc;
         CancellationTokenSource cancelCheck = new CancellationTokenSource();
@@ -161,6 +160,7 @@ namespace Bootleg.Droid
                             {
                                 try
                                 {
+                                    FindViewById<TextView>(Resource.Id.ochkNetwork).GetCompoundDrawables()[0].Mutate().SetColorFilter(Color.Transparent, ((checkNetwork) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
                                     FindViewById<TextView>(Resource.Id.ochkIP).GetCompoundDrawables()[0].Mutate().SetColorFilter(Color.Transparent, ((checkIP) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
                                 }
                                 catch { }
@@ -245,7 +245,7 @@ namespace Bootleg.Droid
             //SetContentView(Resource.Layout.FirstRun);
             SetContentView(Resource.Layout.ConnectionChecklist);
 
-            BranchAndroid.Init(this, Resources.GetString(Resource.String.BRANCHKEY), this);
+            //BranchAndroid.Init(this, Resources.GetString(Resource.String.BRANCHKEY), this);
 
             IsPlayServicesAvailable();
 
@@ -254,7 +254,7 @@ namespace Bootleg.Droid
 
             if (WhiteLabelConfig.LOCAL_SERVER)
             {
-                Uri connectionuri = new Uri("http://10.10.10.1");
+                Uri connectionuri = new Uri($"{WhiteLabelConfig.SERVER}:{WhiteLabelConfig.PORT}");
                 Bootlegger.BootleggerClient.StartWithLocal(connectionuri);
             }
 
@@ -496,10 +496,10 @@ namespace Bootleg.Droid
             //StartActivity(intent);
         }
 
-        public void SessionRequestError(BranchError error)
-        {
-            Console.WriteLine("Branch session initialization error: " + error.ErrorCode);
-            Console.WriteLine(error.ErrorMessage);
-        }
+        //public void SessionRequestError(BranchError error)
+        //{
+        //    Console.WriteLine("Branch session initialization error: " + error.ErrorCode);
+        //    Console.WriteLine(error.ErrorMessage);
+        //}
     }
 }

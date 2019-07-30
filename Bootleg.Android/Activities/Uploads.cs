@@ -271,15 +271,16 @@ namespace Bootleg.Droid
 
         private void Comms_OnCurrentUploadsComplete()
         {
-            RunOnUiThread(() =>
-            {
-                FindViewById<View>(Resource.Id.nofootage).Visibility = ViewStates.Visible;
-                FindViewById<View>(Resource.Id.msg1).Visibility = ViewStates.Gone;
-                //FindViewById<View>(Resource.Id.msg2).Visibility = ViewStates.Gone;
-                FindViewById<View>(Resource.Id.count).Visibility = ViewStates.Gone;
-                FindViewById<View>(Resource.Id.uploadprogress).Visibility = ViewStates.Gone;
-                FindViewById<ImageButton>(Resource.Id.cancelbtn).Visibility = ViewStates.Gone;
-            });
+            //RunOnUiThread(() =>
+            //{
+            //    FindViewById<View>(Resource.Id.nofootage).Visibility = ViewStates.Visible;
+            //    FindViewById<View>(Resource.Id.msg1).Visibility = ViewStates.Gone;
+            //    //FindViewById<View>(Resource.Id.msg2).Visibility = ViewStates.Gone;
+            //    FindViewById<View>(Resource.Id.count).Visibility = ViewStates.Gone;
+            //    FindViewById<View>(Resource.Id.uploadprogress).Visibility = ViewStates.Gone;
+            //    FindViewById<ImageButton>(Resource.Id.cancelbtn).Visibility = ViewStates.Gone;
+            //});
+            Finish();
         }
 
         private void Comms_OnGlobalUploadProgress(double arg1, int arg2, int arg3)

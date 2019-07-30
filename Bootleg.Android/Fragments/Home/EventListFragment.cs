@@ -130,9 +130,9 @@ namespace Bootleg.Droid
                             {
                                 //do nothing...
                             }
-                            catch (Exception)
+                            catch (Exception e)
                             {
-                                OnError?.Invoke(new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                                OnError?.Invoke(e);
                             }
                         }
                         events = Bootlegger.BootleggerClient.GetType().GetProperty(propertyname).GetValue(Bootlegger.BootleggerClient) as List<Shoot>;
@@ -164,12 +164,12 @@ namespace Bootleg.Droid
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 if (Activity != null)
                 {
                     //failed to refresh for some reason
-                    OnError?.Invoke(new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                    OnError?.Invoke(e);
                 }  
             }
         }
@@ -224,9 +224,9 @@ namespace Bootleg.Droid
                 {
                     //do nothing...
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    OnError?.Invoke(new Exception(Resources.GetString(Resource.String.noconnectionshort)));
+                    OnError?.Invoke(ex);
                 }
 
                 if (parent==null)

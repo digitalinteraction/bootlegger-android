@@ -38,7 +38,7 @@ namespace Bootleg.Droid
         //}
 
         //private bool editing;
-
+    
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -147,7 +147,7 @@ namespace Bootleg.Droid
             _adapter.OnEdit += _adapter_OnEdit;
             _adapter.OnPreview += _adapter_OnPreview;
             _adapter.OnDelete += _adapter_OnDelete;
-            _adapter.OnRestart += _adapter_OnRestart;
+            //_adapter.OnRestart += _adapter_OnRestart;
             _adapter.OnRefresh += _adapter_OnRefresh;
 
             view.FindViewById<SwipeRefreshLayout>(Resource.Id.swiperefresh).Refresh += MyEditsFragment_Refresh;
@@ -217,7 +217,7 @@ namespace Bootleg.Droid
             {
                 cancel = new CancellationTokenSource();
                 await LoginFuncs.TryLogin(Activity, cancel.Token);
-                await Bootlegger.BootleggerClient.RestartEdit(obj);
+                //await Bootlegger.BootleggerClient.RestartEdit(obj);
                 _adapter.UpdateData(Bootlegger.BootleggerClient.MyEdits,true);
                 _adapter.NotifyDataSetChanged();
             }

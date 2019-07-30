@@ -4,7 +4,7 @@
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
 <#@ output extension=".cs" encoding="utf-8" #>
-<#@ include file="..\\Templates\\Loader.t4" #>
+<#@ include file="../Templates/Loader.t4" #>
 /* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
@@ -21,7 +21,6 @@ using Android.Views;
 using Android.Widget;
 using Bootleg.API;
 using Bootleg.Droid.UI;
-using BranchXamarinSDK;
 using RestSharp.Extensions.MonoHttp;
 using System;
 using System.Linq;
@@ -32,7 +31,7 @@ namespace Bootleg.Droid
     [Activity(Theme = "@style/Theme.Splash", MainLauncher = true, NoHistory = true)]
     [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = "<#= Config.DATASCHEME #>")]
     //[IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = "https", DataHost = "<#= Config.SERVERHOST #>",DataPathPrefix = "/watch/view/")]
-    public partial class SplashActivity : FragmentActivity, IBranchSessionInterface
+    public partial class SplashActivity : FragmentActivity
     {
 		
 		

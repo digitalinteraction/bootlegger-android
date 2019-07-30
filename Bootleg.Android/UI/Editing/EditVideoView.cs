@@ -26,6 +26,7 @@ using Com.Google.Android.Exoplayer2.Text;
 using Bootleg.API.Model;
 using Android.Support.V4.Content.Res;
 using Java.Net;
+using System.Threading.Tasks;
 
 namespace Bootleg.Droid
 {
@@ -323,7 +324,7 @@ namespace Bootleg.Droid
 
         List<MediaItem> currentsequence;
 
-        public async void PlaySequence(List<MediaItem> meta, MediaItem startingat)
+        public async Task PlaySequence(List<MediaItem> meta, MediaItem startingat)
         {
             currentsequence = meta;
             currentmode = PLAYBACK_MODE.PLAY_EDIT;
@@ -339,18 +340,9 @@ namespace Bootleg.Droid
             {
                 if (m.MediaType == Shot.ShotTypes.TITLE)
                 {
-                    //var textn = m.titletext.Split('\n');
-
-                    //var titletext = System.Uri.EscapeDataString(m.titletext.TrimStart('\n'));
-                    //var titletext = URLEncoder.Encode(m.titletext.TrimStart('\n'),"utf-8");
                     var titletext = m.titletext.TrimStart('\n');
 
-
-                    //var numlines = titletext.Split('\n').Length;
-                    //line:-{4-numlines}
-                    //string text = URLEncoder.Encode($"WEBVTT\n\n00:00.000 --> 00:{m.outpoint.Seconds.ToString("D2")}.000\n{titletext}", "utf-8");
                     string text = $"WEBVTT\n\n00:00.000 --> 00:{m.outpoint.Seconds.ToString("D2")}.000\n{titletext}";
-
 
                     Format textFormat = Format.CreateTextSampleFormat(null, MimeTypes.TextVtt, Format.NoValue, "en");
 
@@ -367,7 +359,7 @@ namespace Bootleg.Droid
                     {
                         var uri = await Bootlegger.BootleggerClient.GetVideoUrl(m);
                         ExtractorMediaSource ss;
-                        if (uri.StartsWith("file://"))
+                        if (uri.StartsWith("file://",StringComparison.InvariantCulture))
                         {
                             ss = new ExtractorMediaSource(Android.Net.Uri.Parse(uri), defaultDataSourceFactory, extractorsFactory, null, null);
                         }
@@ -651,10 +643,17 @@ namespace Bootleg.Droid
                 durationSet = true;
 
 
+                //Console.WriteLine("File:" + _player.CurrentPeriodIndex);
+                //Console.WriteLine("File Outpoint: " + OutPoint.TotalMilliseconds);
+                //Console.WriteLine("File Duration:" + _player.Duration);
+
+
                 if (currentmode == PLAYBACK_MODE.TRIM_CLIP)
                 { 
                     InPoint = currentitem.inpoint;
                     OutPoint = currentitem.outpoint;
+
+                   
 
                     if (OutPoint == InPoint || OutPoint == TimeSpan.Zero)
                     {

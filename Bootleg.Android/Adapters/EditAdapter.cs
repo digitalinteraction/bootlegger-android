@@ -81,10 +81,10 @@ namespace Bootleg.Droid
                 popup.MenuInflater.Inflate(Resource.Menu.edit_menu, popup.Menu);
                 popup.MenuItemClick += Popup_MenuItemClick;
 
-                if (currentedit.failed)
-                    popup.Menu.FindItem(Resource.Id.restart_menu_item).SetVisible(true);
-                else
-                    popup.Menu.FindItem(Resource.Id.restart_menu_item).SetVisible(false);
+                //if (currentedit.failed)
+                //    popup.Menu.FindItem(Resource.Id.restart_menu_item).SetVisible(true);
+                //else
+                //    popup.Menu.FindItem(Resource.Id.restart_menu_item).SetVisible(false);
 
                 //if (currentedit.progress > 97 && !currentedit.fail)
                 //    popup.Menu.FindItem(Resource.Id.share_menu_item).SetVisible(true);
@@ -110,8 +110,8 @@ namespace Bootleg.Droid
                 //if (e.Item.ItemId == Resource.Id.share_menu_item)
                     //ViewHolder_Click(null, null);
 
-                if (e.Item.ItemId == Resource.Id.restart_menu_item)
-                    ViewHolder_Click2(null, null);
+                //if (e.Item.ItemId == Resource.Id.restart_menu_item)
+                //    ViewHolder_Click2(null, null);
 
                 if (e.Item.ItemId == Resource.Id.copy_menu_item)
                 {
@@ -144,11 +144,11 @@ namespace Bootleg.Droid
                     adpt.OnPreview(currentedit,view);
             }
 
-            private void ViewHolder_Click2(object sender, EventArgs e)
-            {
+            //private void ViewHolder_Click2(object sender, EventArgs e)
+            //{
                 //restart edit after fail...
-                adpt.OnRestart?.Invoke(currentedit);
-            }
+                //adpt.OnRestart?.Invoke(currentedit);
+            //}
 
             private void ViewHolder_Click1(object sender, EventArgs e)
             {
@@ -185,7 +185,7 @@ namespace Bootleg.Droid
                                 if (media != null)
                                 {
                                     Picasso.With(view.Context).
-                                    Load(Bootlegger.BootleggerClient.LoginUrl.Scheme + "://" + Bootlegger.BootleggerClient.LoginUrl.Host + "/media/thumbnail/" + media.id + "?s=" + WhiteLabelConfig.THUMBNAIL_SIZE).
+                                    Load(Bootlegger.BootleggerClient.LoginUrl.Scheme + "://" + Bootlegger.BootleggerClient.LoginUrl.Host + ":" + Bootlegger.BootleggerClient.LoginUrl.Port + "/media/thumbnail/" + media.id + "?s=" + WhiteLabelConfig.THUMBNAIL_SIZE).
                                     Config(Bitmap.Config.Rgb565).
                                     Tag(adpt).
                                     Fit().
@@ -289,7 +289,7 @@ namespace Bootleg.Droid
         public event Action<Edit,View> OnPreview;
         public event Action<Edit> OnEdit;
         public event Action<Edit> OnDelete;
-        public event Action<Edit> OnRestart;
+        //public event Action<Edit> OnRestart;
         public event Action OnRefresh;
 
 

@@ -4,7 +4,7 @@ public class Config
 {
 	//Folder name of this BuildVariant
 	public static string FOLDER = "";
-	public static string CBID = "blgr";
+	public static string CBID = "";
 	//Additional namespace to add to the normal bootlegger one
 	public static string NAMESPACE_EXT = "";
 	public static Dictionary<string,string> APP_NAME = new Dictionary<string,string>();
@@ -12,7 +12,6 @@ public class Config
 	//Login redirect URL scheme
 	public static string DATASCHEME = "";
 	public static string SERVERHOST = "";
-	public static string BRANCHKEY = "";
 	//Codebase Namespace
 	public static string NAMESPACE = "";
 	public static string HOCKEYAPPID = "";

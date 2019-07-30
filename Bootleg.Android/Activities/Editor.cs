@@ -46,6 +46,7 @@ namespace Bootleg.Droid
             if (!string.IsNullOrEmpty(edit))
             {
                 CurrentEdit = JsonConvert.DeserializeObject<Edit>(edit);
+                CurrentEdit.media.RemoveAll(o => o.Status == MediaItem.MediaStatus.PLACEHOLDER);
                 _adapter.UpdateData(CurrentEdit.media);
                 _sliveradapter.UpdateData(CurrentEdit.media);
             }
@@ -491,7 +492,7 @@ namespace Bootleg.Droid
             base.OnPause();
             preview.StopPlayback();
             preview.Release();
-            CurrentEdit = null;
+            //CurrentEdit = null;
         }
 
         SliverEditAdapter _sliveradapter;

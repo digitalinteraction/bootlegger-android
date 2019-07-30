@@ -16,7 +16,6 @@ using static Android.App.Application;
 using Android.OS;
 using System.Linq;
 using static Square.Picasso.Picasso;
-using BranchXamarinSDK;
 using Plugin.CurrentActivity;
 using Square.OkHttp;
 using Android.Icu.Util;
@@ -33,10 +32,10 @@ namespace Bootleg.Droid
 #else
     [Application(Debuggable = false)]
 #endif
-    [MetaData("io.branch.sdk.auto_link_disable", Value = "false")]
-	[MetaData("io.branch.sdk.TestMode", Value = "true")]
-	[MetaData("io.branch.sdk.BranchKey", Value = "@string/BRANCHKEY")]
-    [MetaData("com.google.android.nearby.messages.API_KEY",Value = WhiteLabelConfig.GOOGLE_NEARBY_KEY)]
+    //[MetaData("io.branch.sdk.auto_link_disable", Value = "false")]
+	//[MetaData("io.branch.sdk.TestMode", Value = "true")]
+	//[MetaData("io.branch.sdk.BranchKey", Value = "@string/BRANCHKEY")]
+    //[MetaData("com.google.android.nearby.messages.API_KEY",Value = WhiteLabelConfig.GOOGLE_NEARBY_KEY)]
     public class BootleggerApp : Android.App.Application, IActivityLifecycleCallbacks, IListener
     {
         public static string LOG_TAG = WhiteLabelConfig.BUILD_VARIANT;
@@ -245,14 +244,18 @@ namespace Bootleg.Droid
             //Firebase.FirebaseApp.InitializeApp(this);
             CrossCurrentActivity.Current.Init(this);
 
-            if (!string.IsNullOrWhiteSpace(WhiteLabelConfig.BRANCHKEY))
-                BranchAndroid.GetAutoInstance(ApplicationContext);
-
             //CrashManager.Register(ApplicationContext, WhiteLabelConfig.HOCKEYAPPID);
             //MetricsManager.Register(this,WhiteLabelConfig.HOCKEYAPPID);
             //FeedbackManager.Register(ApplicationContext, WhiteLabelConfig.HOCKEYAPPID);
             //FeedbackManager.CheckForAnswersAndNotify(ApplicationContext);
-            AppCenter.Start(WhiteLabelConfig.HOCKEYAPPID, typeof(Analytics), typeof(Crashes));
+            try
+            {
+                AppCenter.Start(WhiteLabelConfig.HOCKEYAPPID, typeof(Analytics), typeof(Crashes));
+            }
+            catch
+            {
+
+            }
             
 
             RegisterActivityLifecycleCallbacks(this);

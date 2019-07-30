@@ -31,7 +31,6 @@ namespace Bootleg
 		public const string CBID = "<#= Config.CBID #>";
 		public const string APIKEY = "<#= Config.APIKEY #>";
 		public const string SERVER = "<#= Config.SERVER #>";
-		public const string GOOGLE_NEARBY_KEY = "<#= Config.GOOGLE_NEARBY_KEY #>";
 		public const int PORT = <#= Config.PORT #>;
 		public const string PRIMARY_COLOR = "<#= Config.PRIMARY_COLOR #>";
 		public const string PRIMARY_TINT = "<#= Config.PRIMARY_TINT #>";
@@ -66,7 +65,6 @@ namespace Bootleg
 		public const bool ALLOW_BLE = <#= Config.ALLOW_BLE.ToString().ToLower() #>;
 		public const bool LOCATION_SHOOTS_ENABLED = <#= Config.LOCATION_SHOOTS_ENABLED.ToString().ToLower() #>;
 		public const bool PUBLIC_TOPICS = <#= Config.PUBLIC_TOPICS.ToString().ToLower() #>;
-		public const string BRANCHKEY = "<#= Config.BRANCHKEY #>";
         public const bool USE_GPS = <#= Config.USE_GPS.ToString().ToLower() #>;
 	}
 }
