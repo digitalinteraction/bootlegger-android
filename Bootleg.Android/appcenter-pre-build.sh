@@ -35,6 +35,8 @@
 #     cat $GOOGLE_JSON_FILE
 # fi
 
+printenv
+
 echo "Link Version T4: ${Agent.TempDirectory}/Titan.t4 to ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4"
 ln -s ${Agent.TempDirectory}/Titan.t4 ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4
 
