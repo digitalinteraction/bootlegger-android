@@ -36,10 +36,10 @@
 # fi
 
 echo "Link Version T4"
-ln -s -t ./Bootleg.Android/BuildVariants/Versions/OurStory.t4 $(T4File.secureFilePath)
+ln -s ./Bootleg.Android/BuildVariants/Versions/OurStory.t4 $(Agent.TempDirectory)/Titan.t4
 
 echo "Link Google Json"
-ln -s -t ./Bootleg.Android/google-services.json $(GoogleFile.secureFilePath)
+ln -s ./Bootleg.Android/google-services.json $(Agent.TempDirectory)/google-services.json
 
 echo "Running T4 Process"
 for filename in $(find . -type f -name '*.tt')
