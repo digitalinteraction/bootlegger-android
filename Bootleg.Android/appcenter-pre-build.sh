@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # GOOGLE_JSON_FILE=$APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/google-services.json
 # OURSTORY_VERSION_FILE=$APPCENTER_SOURCE_DIRECTORY/Bootleg.Android/BuildVariants/Versions/OurStory.t4
 
