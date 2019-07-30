@@ -35,13 +35,11 @@
 #     cat $GOOGLE_JSON_FILE
 # fi
 
-printenv
+echo "Link Version T4: ${AGENT_TEMPDIRECTORY}/Titan.t4 to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/OurStory.t4"
+ln -s ${AGENT_TEMPDIRECTORY}/Titan.t4 ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/OurStory.t4
 
-echo "Link Version T4: ${Agent.TempDirectory}/Titan.t4 to ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4"
-ln -s ${Agent.TempDirectory}/Titan.t4 ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4
-
-echo "Link Google Json: ${Agent.TempDirectory}/google-services.json to ${Build.SourcesDirectory}/Bootleg.Android/google-services.json"
-ln -s ${Agent.TempDirectory}/google-services.json ${Build.SourcesDirectory}/Bootleg.Android/google-services.json
+echo "Link Google Json: ${AGENT_TEMPDIRECTORY}/google-services.json to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/google-services.json"
+ln -s ${AGENT_TEMPDIRECTORY}/google-services.json ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/google-services.json
 
 echo "Running T4 Process"
 for filename in $(find . -type f -name '*.tt')
