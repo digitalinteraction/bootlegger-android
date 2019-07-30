@@ -20,10 +20,17 @@ steps:
   inputs:
     restoreSolution: '**/*.sln'
 
+- task: DownloadSecureFile@1
+  name: T4File
+  inputs:
+    secureFile: 'Titan.t4'
+
+- task: DownloadSecureFile@1
+  name: GoogleFile
+  inputs:
+    secureFile: 'google-services.json'
+
 - task: Bash@3
-  env:
-    GOOGLE_JSON: $(GOOGLE_JSON)
-    OURSTORY_VERSION: ${OURSTORY_VERSION}
   inputs:
     filePath: 'Bootleg.Android/appcenter-pre-build.sh'
 
