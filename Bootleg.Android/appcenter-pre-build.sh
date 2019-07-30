@@ -35,10 +35,10 @@
 #     cat $GOOGLE_JSON_FILE
 # fi
 
-echo "Link Version T4"
+echo "Link Version T4: ${Agent.TempDirectory}/Titan.t4 to ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4"
 ln -s ${Build.SourcesDirectory}/Bootleg.Android/BuildVariants/Versions/OurStory.t4 ${Agent.TempDirectory}/Titan.t4
 
-echo "Link Google Json"
+echo "Link Google Json: ${Agent.TempDirectory}/google-services.json to ${Build.SourcesDirectory}/Bootleg.Android/google-services.json"
 ln -s ${Build.SourcesDirectory}/Bootleg.Android/google-services.json ${Agent.TempDirectory}/google-services.json
 
 echo "Running T4 Process"
