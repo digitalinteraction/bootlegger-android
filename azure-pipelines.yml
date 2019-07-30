@@ -1,0 +1,42 @@
+# Xamarin.Android
+# Build a Xamarin.Android project.
+# Add steps that test, sign, and distribute an app, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
+
+trigger:
+- master
+
+pool:
+  vmImage: 'macOS-10.14'
+
+variables:
+  buildConfiguration: 'Release'
+  outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '**/*.sln'
+
+- task: Bash@3
+  env:
+    GOOGLE_JSON: $(GOOGLE_JSON)
+    OURSTORY_VERSION: ${OURSTORY_VERSION}
+  inputs:
+    filePath: 'Bootleg.Android/appcenter-pre-build.sh'
+
+- task: XamarinAndroid@1
+  inputs:
+    projectFile: '**/*.csproj'
+    outputDirectory: '$(outputDirectory)'
+    configuration: '$(buildConfiguration)'
+
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'TitanKeystore'
+    apksignerKeystorePassword: ${KeystorePassword}
+    apksignerKeystoreAlias: 'ifrc1'
+    apksignerKeyPassword: ${KeystorePassword}
