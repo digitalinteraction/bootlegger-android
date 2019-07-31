@@ -43,7 +43,7 @@ steps:
 - task: AndroidSigning@3
   inputs:
     apkFiles: '**/*.apk'
-    apksignerKeystoreFile: 'TitanKeystore'
+    apksignerKeystoreFile: 'ourstory.keystore'
     apksignerKeystorePassword: ${KeystorePassword}
-    apksignerKeystoreAlias: 'ifrc1'
+    apksignerKeystoreAlias: 'ourstory'
     apksignerKeyPassword: ${KeystorePassword}
