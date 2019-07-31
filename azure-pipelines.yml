@@ -41,6 +41,8 @@ steps:
     configuration: '$(buildConfiguration)'
 
 - task: AndroidSigning@3
+  env:
+    KeystorePassword: ${KeystorePassword}
   inputs:
     apkFiles: '**/*.apk'
     apksignerKeystoreFile: 'ourstory.keystore'
