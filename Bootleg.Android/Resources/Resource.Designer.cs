@@ -6693,9 +6693,6 @@ namespace Bootleg.Droid
 			// aapt resource value: 0x7f0900a0
 			public const int settingsbtn = 2131296416;
 			
-			// aapt resource value: 0x7f090143
-			public const int sharebtn = 2131296579;
-			
 			// aapt resource value: 0x7f0900dc
 			public const int sharename = 2131296476;
 			
