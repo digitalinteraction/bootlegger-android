@@ -28,5 +28,10 @@ steps:
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 
-- publish: '**/*.apk'
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.apk'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- publish: $(Build.ArtifactStagingDirectory)
   artifact: Apks
