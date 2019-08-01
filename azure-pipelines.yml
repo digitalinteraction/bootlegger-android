@@ -7,7 +7,6 @@ variables:
 
 jobs:
 - job: Titan
-  dependsOn: SetupEnvironment
   pool:
     vmImage: 'macOS-latest'
   steps:
@@ -16,7 +15,6 @@ jobs:
       flavour: 'Titan'
 
 - job: OurStory
-  dependsOn: SetupEnvironment
   pool:
     vmImage: 'macOS-latest'
   steps:
