@@ -7,12 +7,12 @@ jobs:
     vmImage: 'macOS-latest'
   steps:
   - template: build-pipeline.yml
-  parameters:
-    flavour: 'Titan'
+    parameters:
+      flavour: 'Titan'
 - job: 'OurStory'
   pool:
     vmImage: 'macOS-latest'
   steps:
   - template: build-pipeline.yml
-  parameters:
-    flavour: 'OurStory'
+    parameters:
+      flavour: 'OurStory'
