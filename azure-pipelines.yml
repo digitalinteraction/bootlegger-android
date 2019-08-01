@@ -5,10 +5,11 @@ pool:
   vmImage: 'macOS-latest'
 
 jobs:
-- template: build-pipeline.yml
+- job: 'Titan'
+  template: build-pipeline.yml
   parameters:
     flavour: 'Titan'
-
-- template: build-pipeline.yml
+- job: 'OurStory'
+  template: build-pipeline.yml
   parameters:
     flavour: 'OurStory'
