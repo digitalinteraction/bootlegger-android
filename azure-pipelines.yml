@@ -4,9 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
 
 trigger:
-  tags:
-    include:
-    - '*'
+  branch: 'master'
 
 pool:
   vmImage: 'macOS-latest'
@@ -25,7 +23,7 @@ steps:
 - task: DownloadSecureFile@1
   name: T4File
   inputs:
-    secureFile: 'Titan.t4'
+    secureFile: '$(Flavour).t4'
 
 - task: DownloadSecureFile@1
   name: GoogleFile
