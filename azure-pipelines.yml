@@ -1,13 +1,16 @@
 trigger:
   - master
-pool:
-  vmImage: 'macOS-latest'
+
 jobs:
 - job: 'Titan'
+  pool:
+    vmImage: 'macOS-latest'
   template: build-pipeline.yml
   parameters:
     flavour: 'Titan'
 - job: 'OurStory'
+  pool:
+    vmImage: 'macOS-latest'
   template: build-pipeline.yml
   parameters:
     flavour: 'OurStory'
