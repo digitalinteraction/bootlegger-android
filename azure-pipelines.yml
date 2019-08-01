@@ -21,7 +21,7 @@ jobs:
   - template: build-pipeline.yml
     parameters:
       flavour: 'Titan'
-      
+
 - job: OurStory
   dependsOn: SetupEnvironment
   pool:
@@ -31,7 +31,7 @@ jobs:
     parameters:
       flavour: 'OurStory'
 
-- job: 'GitHub Release'
+- job: GitHubRelease
   dependsOn:
     - Titan
     - OurStory
