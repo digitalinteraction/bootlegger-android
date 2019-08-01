@@ -4,10 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin
 
 trigger:
-- master
+  tags:
+    include:
+    - '*'
 
-# pool:
-#   vmImage: 'macOS-10.14'
+pool:
+  vmImage: 'macOS-latest'
 
 variables:
   buildConfiguration: 'Release'
@@ -49,3 +51,12 @@ steps:
     apksignerKeystorePassword: '$(KeystorePassword)'
     apksignerKeystoreAlias: 'ourstory'
     apksignerKeyPassword: '$(KeystorePassword)'
+
+- task: GitHubRelease@0
+  inputs:
+    gitHubConnection: 'OurStory GitHub'
+    repositoryName: 'our-story-media/ourstory-android'
+    action: 'create'
+    title: 'Our Story Application'
+    addChangeLog: false
+    assets: '**/*.apk'
