@@ -56,4 +56,4 @@ do
 done
 
 echo "Copying new Manifest File"
-cp "${BUILD_SOURCESDIRECTORY}/Properties/AndroidManifest_Init.xml" "${BUILD_SOURCESDIRECTORY}/Properties/AndroidManifest.xml"
+cp "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest_Init.xml" "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest.xml"
