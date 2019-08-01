@@ -28,7 +28,6 @@ jobs:
     - OurStory
   steps:
     - download: current
-      artifact: Apks
     - task: AndroidSigning@3
       inputs:
         apkFiles: '**/*.apk'
