@@ -1,9 +1,7 @@
 trigger:
   - master
-
 pool:
   vmImage: 'macOS-latest'
-
 jobs:
 - job: 'Titan'
   template: build-pipeline.yml
