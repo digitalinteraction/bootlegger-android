@@ -54,3 +54,6 @@ do
 		echo WARNING: Input file not a TT: "$filename"
 	fi	
 done
+
+echo "Copying new Manifest File"
+cp "${BUILD_SOURCESDIRECTORY}/Properties/AndroidManifest_Init.xml" "${BUILD_SOURCESDIRECTORY}/Properties/AndroidManifest.xml"
