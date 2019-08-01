@@ -1,9 +1,4 @@
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '**/*.sln'
 
 - task: DownloadSecureFile@1
   name: T4File
@@ -36,12 +31,3 @@ steps:
     apksignerKeystorePassword: '$(KeystorePassword)'
     apksignerKeystoreAlias: 'ourstory'
     apksignerKeyPassword: '$(KeystorePassword)'
-
-- task: GitHubRelease@0
-  inputs:
-    gitHubConnection: 'OurStory GitHub'
-    repositoryName: 'our-story-media/ourstory-android'
-    action: 'create'
-    title: 'Our Story Application'
-    addChangeLog: false
-    assets: '**/*.apk'

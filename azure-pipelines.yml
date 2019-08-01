@@ -6,17 +6,41 @@ variables:
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 jobs:
-- job: 'Titan'
+- job: SetupEnvironment
+  steps:
+    - task: NuGetToolInstaller@1
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: '**/*.sln'
+
+- job: Titan
+  dependsOn: SetupEnvironment
   pool:
     vmImage: 'macOS-latest'
   steps:
   - template: build-pipeline.yml
     parameters:
       flavour: 'Titan'
-- job: 'OurStory'
+      
+- job: OurStory
+  dependsOn: SetupEnvironment
   pool:
     vmImage: 'macOS-latest'
   steps:
   - template: build-pipeline.yml
     parameters:
       flavour: 'OurStory'
+
+- job: 'GitHub Release'
+  dependsOn:
+    - Titan
+    - OurStory
+  steps:
+    - task: GitHubRelease@0
+      inputs:
+        gitHubConnection: 'OurStory GitHub'
+        repositoryName: 'our-story-media/ourstory-android'
+        action: 'create'
+        title: 'Our Story Application'
+        addChangeLog: false
+        assets: '**/*.apk'
