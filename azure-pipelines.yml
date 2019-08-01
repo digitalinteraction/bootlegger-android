@@ -6,13 +6,6 @@ variables:
   outputDirectory: '$(build.binariesDirectory)/$(buildConfiguration)'
 
 jobs:
-- job: SetupEnvironment
-  steps:
-    - task: NuGetToolInstaller@1
-    - task: NuGetCommand@2
-      inputs:
-        restoreSolution: '**/*.sln'
-
 - job: Titan
   dependsOn: SetupEnvironment
   pool:
@@ -31,11 +24,22 @@ jobs:
     parameters:
       flavour: 'OurStory'
 
-- job: GitHubRelease
+- job: Release
   dependsOn:
     - Titan
     - OurStory
   steps:
+    - download: current
+      artifact: Apks
+    - task: AndroidSigning@3
+      inputs:
+        apkFiles: '**/*.apk'
+        zipalign: true
+        jarsign: true
+        apksignerKeystoreFile: 'ourstory.keystore'
+        apksignerKeystorePassword: '$(KeystorePassword)'
+        apksignerKeystoreAlias: 'ourstory'
+        apksignerKeyPassword: '$(KeystorePassword)'
     - task: GitHubRelease@0
       inputs:
         gitHubConnection: 'OurStory GitHub'

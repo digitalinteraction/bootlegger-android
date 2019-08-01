@@ -1,5 +1,11 @@
 steps:
 
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+  restoreSolution: '**/*.sln'
+
 - task: DownloadSecureFile@1
   name: T4File
   inputs:
@@ -22,12 +28,5 @@ steps:
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk'
-    zipalign: true
-    jarsign: true
-    apksignerKeystoreFile: 'ourstory.keystore'
-    apksignerKeystorePassword: '$(KeystorePassword)'
-    apksignerKeystoreAlias: 'ourstory'
-    apksignerKeyPassword: '$(KeystorePassword)'
+- publish: '**/*.apk'
+  artifact: Apks
