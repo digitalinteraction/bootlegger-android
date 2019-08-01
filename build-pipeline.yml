@@ -4,7 +4,7 @@ steps:
 
 - task: NuGetCommand@2
   inputs:
-  restoreSolution: '**/*.sln'
+    restoreSolution: '**/*.sln'
 
 - task: DownloadSecureFile@1
   name: T4File
