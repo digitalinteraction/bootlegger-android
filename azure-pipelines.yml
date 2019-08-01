@@ -28,6 +28,10 @@ jobs:
     - OurStory
   steps:
     - download: current
+    - task: CopyFiles@2
+      inputs:
+        contents: $(Build.ArtifactStagingDirectory)
+        targetFolder: $(Build.SourcesDirectory)
     - task: AndroidSigning@3
       inputs:
         apkFiles: '**/*.apk'
