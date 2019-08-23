@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="dev.ourstory" android:versionCode="81" android:versionName="hanson">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="dev.indaba" android:versionCode="82" android:versionName="hanson">
   <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="27" />
   <application android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="dev.ourstory.BootleggerApp" android:icon="@mipmap/ic_launcher">
     <receiver

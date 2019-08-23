@@ -19,7 +19,7 @@
     
     <!-- CONNECTION INFO STRINGS -->
     <string name="chkTitle">Checking Connection...</string>
-    <string name="chkFooter">Our Story will open when a connection is available.</string>
+    <string name="chkFooter">Indaba will open when a connection is available.</string>
     
     <string name="chkNetwork">WiFi Connected</string>
     <string name="chkIP">IP Address Range Correct</string>
@@ -61,7 +61,7 @@
       <#= GetString(Config.APP_NAME) #> helps you shoot films. Find out more at
     </string>
     <string name="About">
-     This application has been developed as part of an ongoing research programme exploring the value of participatory video creation for expressive self driven narrative.\nPartners in development of Our Story include: Newcastle University UK, Monash University Australia, International Federation of Red Cross and Red Crescent.
+     This application has been developed as part of an ongoing research programme exploring the value of participatory video creation for expressive self driven narrative.\nPartners in development of Indaba include: Newcastle University UK, Monash University Australia, International Federation of Red Cross and Red Crescent.
     </string>
     <string name="ingesttitle">Tagging Videos for %s</string>
     <string name="whatisbootlegger">

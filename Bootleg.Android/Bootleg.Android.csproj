@@ -1112,7 +1112,6 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_action_about.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_action_about.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_about.png" />
-    <AndroidResource Include="Resources\drawable\logo_black.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_new.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_action_new.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_action_new.png" />
