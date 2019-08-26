@@ -16,7 +16,7 @@ jobs:
     parameters:
       flavour: 'Titan'
 
-- job: OurStory
+- job: Online
   pool:
     vmImage: 'macOS-latest'
   steps:
@@ -27,7 +27,7 @@ jobs:
 - job: Release
   dependsOn:
     - Titan
-    - OurStory
+    - Online
   steps:
     - download: current
     - task: CopyFiles@2
@@ -49,6 +49,6 @@ jobs:
         gitHubConnection: 'OurStory GitHub'
         repositoryName: 'our-story-media/ourstory-android'
         action: 'create'
-        title: 'Our Story Application'
+        title: 'Indaba Android App'
         addChangeLog: false
         assets: '**/*.apk'
