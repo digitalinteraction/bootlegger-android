@@ -38,12 +38,21 @@ using Bootleg.Droid.Util;
 using Plugin.Permissions;
 using Android.Support.V7.Widget;
 using Bootleg.API.Model;
+using static Android.Views.View;
+using Android.Runtime;
 
 namespace Bootleg.Droid
 {
     [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, ScreenOrientation = ScreenOrientation.UserLandscape, LaunchMode = LaunchMode.SingleTask,ResizeableActivity = false)]
-    public class Video : FragmentActivity, IFragmentController, Android.Widget.ViewSwitcher.IViewFactory
+    public class Video : FragmentActivity, IFragmentController, Android.Widget.ViewSwitcher.IViewFactory, IOnSystemUiVisibilityChangeListener
     {
+
+        public override void OnWindowFocusChanged(bool hasFocus)
+        {
+            base.OnWindowFocusChanged(hasFocus);
+            if (hasFocus)
+                Window.DecorView.SystemUiVisibility = (StatusBarVisibility)flags;
+        }
 
         public override void OnConfigurationChanged(Configuration newConfig)
         {
@@ -590,6 +599,24 @@ namespace Bootleg.Droid
             }));
         }
 
+        public static int getSoftButtonsBarSizePort(Activity activity)
+        {
+            // getRealMetrics is only available with API 17 and +
+            if (Build.VERSION.SdkInt >= Build.VERSION_CODES.JellyBeanMr1)
+            {
+                DisplayMetrics metrics = new DisplayMetrics();
+                activity.WindowManager.DefaultDisplay.GetMetrics(metrics);
+                int usableHeight = metrics.HeightPixels;
+                activity.WindowManager.DefaultDisplay.GetRealMetrics(metrics);
+                int realHeight = metrics.HeightPixels;
+                if (realHeight > usableHeight)
+                    return realHeight - usableHeight;
+                else
+                    return 0;
+            }
+            return 0;
+        }
+
         //SurfaceView video;
         bool canrecord = false;
 
@@ -735,21 +762,6 @@ namespace Bootleg.Droid
             //hide progress            
             FindViewById<FrameLayout>(Resource.Id.initprogress).Visibility = ViewStates.Invisible;
 
-            if (!ViewConfiguration.Get(this).HasPermanentMenuKey && !KeyCharacterMap.DeviceHasKey(Keycode.Back))
-            {
-                var padding_right = 0;
-                var navbardim = Resources.GetIdentifier("navigation_bar_height", "dimen", "android");
-                if (navbardim > 0)
-                {
-                    padding_right = Resources.GetDimensionPixelSize(navbardim);
-                    //var param = FindViewById(Resource.Id.allbuttons).LayoutParameters.DeepCopy();
-
-                    (FindViewById<LinearLayout>(Resource.Id.allbuttons).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
-                    (FindViewById<FrameLayout>(Resource.Id.recordbtnwrapper).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
-                }
-
-                FindViewById<TextView>(Resource.Id.overlaytext).SetPadding(0, Utils.dp2px(this, 6), Utils.dp2px(this, 80), 0);
-            }
 
             Bootlegger.BootleggerClient.OnModeChange += Comms_OnModeChange;
 
@@ -810,19 +822,25 @@ namespace Bootleg.Droid
 
             SetTheme(Resource.Style.Theme_Normal);
 
-            Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(SystemUiFlags.Fullscreen | SystemUiFlags.LayoutStable);
+            Window.DecorView.SystemUiVisibility = (StatusBarVisibility)flags;
 
-            RequestWindowFeature(WindowFeatures.NoTitle);
+            //Window.DecorView.SystemUiVisibility = (StatusBarVisibility)(SystemUiFlags.Fullscreen | SystemUiFlags.LayoutFullscreen | SystemUiFlags.LayoutStable | SystemUiFlags.HideNavigation | SystemUiFlags.LayoutHideNavigation | SystemUiFlags.ImmersiveSticky);
+
+
+            //RequestWindowFeature(WindowFeatures.NoTitle);
             Window.AddFlags(WindowManagerFlags.Fullscreen);
             Window.AddFlags(WindowManagerFlags.KeepScreenOn);
-            Window.AddFlags(WindowManagerFlags.LayoutNoLimits);
+            //Window.AddFlags(WindowManagerFlags.);
+            //Window.AddFlags(WindowManagerFlags.LayoutNoLimits);
+            //Window.AddFlags(WindowManagerFlags.TranslucentNavigation);
+
+
 
             SetContentView(Resource.Layout.Video_Main);
 
             progress_view = FindViewById<CleanRadialProgressView>(Resource.Id.progress);
 
             progress_view.ProgressColor = Color.Tomato;
-
 
             start();
 
@@ -1749,6 +1767,9 @@ namespace Bootleg.Droid
         protected async override void OnResume()
         {
             base.OnResume();
+
+            NavBarFix();
+
             //Analytics.TrackEvent("VideoScreen");
             Bootleg.API.Bootlegger.BootleggerClient.LogUserAction("Video", 
                 new KeyValuePair<string, string>("eventid", Bootlegger.BootleggerClient.CurrentEvent.id));
@@ -1861,7 +1882,74 @@ namespace Bootleg.Droid
                 FindViewById(Resource.Id.shotselector).Visibility = ViewStates.Visible;
                 FindViewById(Resource.Id.roleselector).Visibility = ViewStates.Gone;
             }
+        }
 
+        void NavBarFix()
+        {
+            // MOVING / HIDING THE BUTTONS DEPENDING ON SOFT KEYS AND LOCATIONS:
+            if (!ViewConfiguration.Get(this).HasPermanentMenuKey && !KeyCharacterMap.DeviceHasKey(Keycode.Back))
+            {
+
+                //TODO: show soft back button:
+
+                FindViewById(Resource.Id.backbtn).Visibility = ViewStates.Visible;
+                FindViewById(Resource.Id.backbtn).Click += Video_Click1;
+
+                //var padding_right = 0;
+
+                //Rect visibleFrame = new Rect();
+                //Window.DecorView.GetWindowVisibleDisplayFrame(visibleFrame);
+
+                //DisplayMetrics dm = Resources.DisplayMetrics;
+                //// check if the DecorView takes the whole screen vertically or horizontally
+                //var isRightOfContent = dm.HeightPixels == visibleFrame.Bottom;
+                //var isBelowContent = dm.WidthPixels == visibleFrame.Right;
+
+                //var nav_horz = Resources.GetIdentifier("navigation_bar_height_landscape", "dimen", "android");
+                //var navbardim = Resources.GetIdentifier("navigation_bar_height", "dimen", "android");
+
+                //var padding_right = Resources.GetDimensionPixelSize(navbardim);
+                //var padding_top = Resources.GetDimensionPixelSize(nav_horz);
+
+                //pad overlay text -- why??
+                //FindViewById<TextView>(Resource.Id.overlaytext).SetPadding(0, Utils.dp2px(this, 6), Utils.dp2px(this, 80), 0);
+                //return;
+                //if (padding_right < padding_top)
+                //{
+
+
+                //if (navbardim > 0)
+                //{
+
+                //var param = FindViewById(Resource.Id.allbuttons).LayoutParameters.DeepCopy();
+
+                //        (FindViewById<LinearLayout>(Resource.Id.allbuttons).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
+                //        (FindViewById<FrameLayout>(Resource.Id.recordbtnwrapper).LayoutParameters as LinearLayout.MarginLayoutParams).RightMargin = padding_right;
+                //    //}
+
+
+                //    //Window.AddFlags(WindowManagerFlags.TranslucentNavigation);
+                //}
+                //else
+                //{
+                //    //var padding_top = Resources.GetDimensionPixelSize(navbardim);
+
+                //    //Window.AddFlags(WindowManagerFlags.TranslucentNavigation);
+                //    //var barsize = getSoftButtonsBarSizePort(this);
+                //    FindViewById<TextView>(Resource.Id.overlaytext).SetPadding(0, Utils.dp2px(this, 6), Utils.dp2px(this, 80 + padding_top), 0);
+
+                //}
+            }
+            else
+            {
+                FindViewById(Resource.Id.backbtn).Visibility = ViewStates.Gone;
+            }
+        }
+
+        private void Video_Click1(object sender, EventArgs e)
+        {
+            //perform back action
+            OnBackPressed();
         }
 
         SelectRoleFrag selectrolefrag;
@@ -2005,6 +2093,21 @@ namespace Bootleg.Droid
                 }
             });
         }
+
+        public void OnSystemUiVisibilityChange([GeneratedEnum] StatusBarVisibility visibility)
+        {
+            if ((visibility & (StatusBarVisibility)SystemUiFlags.Fullscreen) == 0)
+            {
+                Window.DecorView.SystemUiVisibility = (StatusBarVisibility)flags;
+            }
+        }
+
+        SystemUiFlags flags =  SystemUiFlags.LayoutFullscreen
+        | SystemUiFlags.LayoutHideNavigation
+        | SystemUiFlags.LayoutFullscreen
+        | SystemUiFlags.HideNavigation
+        | SystemUiFlags.Fullscreen
+        | SystemUiFlags.ImmersiveSticky;
 
         #endregion
     }

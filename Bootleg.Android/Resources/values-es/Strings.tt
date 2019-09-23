@@ -1,9 +1,5 @@
 ﻿<#@ template hostspecific="true" language="C#" #><#@ output extension=".xml" encoding="utf-8" #><#@ include file="../../Templates/Loader.t4" #><#@ include file="../../Templates/Translator.t4" #><# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #>
   <resources>
-    <!-- NON TRANSLATABLE -->
-    <string name="ApplicationName">
-      <#= GetString(Config.APP_NAME) #>
-    </string>
 
     <!-- CONNECTION INFO STRINGS -->
     <string name="chkTitle">Comprobando la conexión a internet...</string>

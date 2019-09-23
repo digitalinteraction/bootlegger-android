@@ -34,7 +34,7 @@
         android:visibility="invisible">
         <ImageView
             android:id="@+id/overlayimg"
-            android:scaleType="fitCenter"
+            android:scaleType="centerCrop"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         <LinearLayout
@@ -120,47 +120,6 @@
             android:layout_marginTop="5dp"
             android:layout_width="45dp" />
     </LinearLayout>
-    <!--<LinearLayout
-        android:orientation="horizontal"
-        android:layout_gravity="bottom|left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">-->
-       <!-- <ImageView
-            android:layout_gravity="bottom|center"
-            android:id="@+id/connection"
-            android:src="@drawable/conn"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
-            android:visibility="invisible" />-->
-      <!--  <ImageButton
-            android:id="@+id/startevent"
-            android:layout_height="50dp"
-            android:layout_width="55dp"
-            android:layout_gravity="bottom"
-            android:scaleType="fitCenter"
-            android:src="@drawable/started"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_margin="5dp" />-->
-       <!-- <ImageButton
-            android:id="@+id/Hold"
-            android:layout_height="50dp"
-            android:layout_width="60dp"
-            android:layout_gravity="bottom"
-            android:scaleType="fitCenter"
-            android:src="@drawable/hold"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_margin="5dp" />-->
-       <!-- <ImageButton
-            android:id="@+id/Skip"
-            android:visibility="gone"
-            android:layout_height="50dp"
-            android:layout_width="50dp"
-            android:layout_gravity="bottom"
-            android:src="@drawable/hold"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:scaleType="fitCenter"
-            android:padding="0dp" />-->
-<!--    </LinearLayout>-->
     <FrameLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent">
@@ -290,4 +249,14 @@
             android:layout_marginRight="40dp"
             android:indeterminate="false" />
     </FrameLayout>
+<ImageButton
+            android:id="@+id/backbtn"
+            android:visibility="visible"
+        
+            android:background="@drawable/arrow_left"
+            android:layout_height="40dp"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="45dp" />
 </FrameLayout>

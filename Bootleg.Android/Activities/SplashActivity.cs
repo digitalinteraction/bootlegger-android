@@ -53,7 +53,7 @@ namespace Bootleg.Droid
 
 
                     bool checkNetwork = false, checkIP = false, checkApplication = false, checkConnection = false;
-                    while (!(checkNetwork && checkIP && checkApplication && checkConnection))
+                    while (!(checkNetwork && checkIP && checkConnection))
                     {
                         //check network:
                         checkNetwork = CrossConnectivity.Current.ConnectionTypes.Contains(Plugin.Connectivity.Abstractions.ConnectionType.WiFi) || CrossConnectivity.Current.ConnectionTypes.Contains(Plugin.Connectivity.Abstractions.ConnectionType.Desktop);
@@ -85,26 +85,31 @@ namespace Bootleg.Droid
                             });
                         }
 
-                        if (checkNetwork && checkIP)
-                        {
-                            checkApplication = await CrossConnectivity.Current.IsReachable(WhiteLabelConfig.SERVER.Replace("http://",""), 5000);
-                            RunOnUiThread(() =>
-                            {
-                                try
-                                {
-                                    FindViewById<TextView>(Resource.Id.chkApplication).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkApplication) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
-                                }
-                                catch { }
-                            });
-                        }
+                        //if (checkNetwork && checkIP)
+                        //{
+                        //    checkApplication = await CrossConnectivity.Current.IsReachable(WhiteLabelConfig.SERVER.Replace("http://",""), 5000);
+                        //    RunOnUiThread(() =>
+                        //    {
+                        //        try
+                        //        {
+                        //            FindViewById<TextView>(Resource.Id.chkApplication).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkApplication) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
+                        //        }
+                        //        catch { }
+                        //    });
+                        //}
 
-                        if (checkNetwork && checkIP && checkApplication)
+                        if (checkNetwork && checkIP) // && checkApplication)
                         {
                             checkConnection = await Bootlegger.BootleggerClient.CheckApplication();
                             RunOnUiThread(() =>
                             {
-                                try
+                            try
                                 {
+                                    FindViewById<TextView>(Resource.Id.chkApplication).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkApplication) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
+                                }
+                                catch { }
+                                try
+                            {
                                     FindViewById<TextView>(Resource.Id.chkConnection).GetCompoundDrawablesRelative()[0].Mutate().SetColorFilter(Color.Transparent, ((checkConnection) ? PorterDuff.Mode.SrcOver : PorterDuff.Mode.SrcIn));
                                 }
                                 catch { }
@@ -112,7 +117,7 @@ namespace Bootleg.Droid
                         }
 
                         //if still not satistfied, then wait a bit longer:
-                        if (!(checkNetwork && checkIP && checkApplication && checkConnection))
+                        if (!(checkNetwork && checkIP && checkConnection))
                             await Task.Delay(5000);
 
 
