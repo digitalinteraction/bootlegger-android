@@ -350,7 +350,7 @@ namespace Bootleg.Droid
             sharingIntent.SetType("text/plain");
             sharingIntent.PutExtra(Intent.ExtraSubject, obj.name);
             sharingIntent.PutExtra(Intent.ExtraText, Bootlegger.BootleggerClient.server + "/s/" + obj.offlinecode);
-            StartActivity(Intent.CreateChooser(sharingIntent, Resources.GetString(Resource.String.sharevia)));
+            //StartActivity(Intent.CreateChooser(sharingIntent, Resources.GetString(Resource.String.sharevia)));
         }
 
         private void ListAdapter_MakeShoot()

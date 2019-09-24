@@ -124,7 +124,7 @@
                 android:layout_width="match_parent"
                 app:tabMinWidth="200dp"
                 android:elevation="4dp"
-                app:tabIndicatorColor="@color/orange"
+                app:tabIndicatorColor="#fff"
                 app:tabIndicatorHeight="4dp"
                 style="@style/MyCustomTabLayout"
                 android:layout_gravity="bottom"

@@ -124,6 +124,9 @@ namespace Bootleg.Droid
 
             }
 
+            //update allclips with current edit info
+            allclipsfragment.UpdateEdit(CurrentEdit.media);
+
             Bootleg.API.Bootlegger.BootleggerClient.LogUserAction("EditScreenOpen", new KeyValuePair<string, string>("editid", CurrentEdit.id), new KeyValuePair<string, string>("eventid", Bootlegger.BootleggerClient.CurrentEvent.id));
 
             Title = (!string.IsNullOrEmpty(CurrentEdit.title)) ? CurrentEdit.title : Resources.GetString(Resource.String.newedit);
@@ -164,6 +167,9 @@ namespace Bootleg.Droid
         void Preview_OnUpdateClipDuration(int arg1, long arg2)
         {
             CurrentEdit.media[arg1].outpoint = CurrentEdit.media[arg1].inpoint + TimeSpan.FromMilliseconds(arg2);
+            //TODO: update segment view:
+
+            _sliveradapter.UpdateData(CurrentEdit.media);
             UpdateTimings();
         }
 
@@ -255,6 +261,7 @@ namespace Bootleg.Droid
             allclipsfragment.OnPreview += Fragment_OnPreview;
             allclipsfragment.OnChosen += Fragment_OnChosen;
             allclipsfragment.OnOpenIngest += IngestOpen;
+            
 
             //recyclerview
             var listView = FindViewById<RecyclerView>(Resource.Id.editlist);

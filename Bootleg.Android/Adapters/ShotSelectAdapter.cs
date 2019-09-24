@@ -54,6 +54,8 @@ namespace Bootleg.Droid
                 currentitem = item;
                 var counter = new TextView(view.Context);
                 Picasso.With(view.Context).Load("file://" + item.icon).Into(view.FindViewById<ImageView>(Resource.Id.im));
+                //backPic.setColorFilter(ContextCompat.getColor(context, R.color.red),
+                //android.graphics.PorterDuff.Mode.MULTIPLY);
                 //view.FindViewById<ImageView>(Resource.Id.im).SetScaleType(ImageView.ScaleType.);
 
                 switch (item.shot_type)

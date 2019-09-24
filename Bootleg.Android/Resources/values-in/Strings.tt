@@ -80,7 +80,6 @@
     <string name="saveedit">Simpan Suntingan</string>
     <string name="findevent">Ambil Gambar</string>
     <string name="aboutbtn">Tentang</string>
-    <string name="sharevia">Bagikan melalui</string>
     <string name="uploads">Unggahan</string>
     <string name="datacharge">Anda tidak menggunakan WiFi, mengunggah atau memutar kembali akan terkena biaya untuk data</string>
     <string name="datachargewithwarning">Anda tidak menggunakan WiFi, mengunggah atau memutar kembali akan terkena biaya untuk data. Video akan dihapus dari perangkat Anda.</string>

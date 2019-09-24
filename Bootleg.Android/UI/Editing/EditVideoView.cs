@@ -638,14 +638,19 @@ namespace Bootleg.Droid
                 FindViewById<View>(Resource.Id.progress).Visibility = ViewStates.Invisible;
             }
 
+            
+
             if (p1==Player.StateReady && !durationSet)
             {
                 durationSet = true;
 
 
-                //Console.WriteLine("File:" + _player.CurrentPeriodIndex);
-                //Console.WriteLine("File Outpoint: " + OutPoint.TotalMilliseconds);
-                //Console.WriteLine("File Duration:" + _player.Duration);
+                Console.WriteLine("File:" + _player.CurrentPeriodIndex);
+                Console.WriteLine("File Outpoint: " + OutPoint.TotalMilliseconds);
+                Console.WriteLine("File Duration:" + _player.Duration);
+
+
+
 
 
                 if (currentmode == PLAYBACK_MODE.TRIM_CLIP)
@@ -737,9 +742,11 @@ namespace Bootleg.Droid
             //FIX FOR SETTING CORRECT DURATION ON A CLIP EVEN IF IT HAS NOT BEEN PUT INTO TRIM MODE
             if (currentmode == PLAYBACK_MODE.PLAY_EDIT)
             {
-                if (currentsequence!=null && _player.Duration > 0)
+                if (currentsequence != null && _player.Duration > 0)
                     if (currentsequence[_player.CurrentWindowIndex].outpoint.TotalMilliseconds > _player.Duration)
+                    {
                         OnUpdateClipDuration?.Invoke(_player.CurrentWindowIndex, _player.Duration);
+                    }
             }
 
             OnPlayerMoveNext?.Invoke(_player.CurrentWindowIndex);

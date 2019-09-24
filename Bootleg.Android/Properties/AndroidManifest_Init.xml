@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="dev.indaba.offline" android:versionCode="84" android:versionName="hanson">
   <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="28" />
-  <application android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="dev.ourstory.offline" android:icon="@mipmap/ic_launcher">
+  <application android:usesCleartextTraffic="true" android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="dev.ourstory.offline" android:icon="@mipmap/ic_launcher">
     <receiver
     android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
     android:exported="false" />

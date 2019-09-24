@@ -101,7 +101,6 @@
     <string name="saveedit">الحفظ أو النشر</string>
     <string name="findevent">العثور على لقطة</string>
     <string name="aboutbtn">نبذة</string>
-    <string name="sharevia">شارِك عبر</string>
     <string name="uploads">التحميلات</string>
     <string name="uploadswaiting">في انتظار التحميل</string>
     <string name="datacharge">أنت لست متصلًا بشبكة واي فاي، قد يؤدي التحميل أو التشغيل إلى تحميلك رسوم إنترنت كبيرة.</string>

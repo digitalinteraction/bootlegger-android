@@ -292,7 +292,7 @@ namespace Bootleg.Droid
             sharingIntent.SetType("text/plain");
             sharingIntent.PutExtra(Intent.ExtraSubject, obj.title);
             sharingIntent.PutExtra(Intent.ExtraText, Bootlegger.BootleggerClient.server + "/v/" + obj.shortlink);
-            StartActivity(Intent.CreateChooser(sharingIntent, Resources.GetString(Resource.String.sharevia)));
+            //StartActivity(Intent.CreateChooser(sharingIntent, Resources.GetString(Resource.String.sharevia)));
         }
 
         CancellationTokenSource cancel = new CancellationTokenSource();

@@ -447,26 +447,26 @@ namespace Bootleg.Droid
 
             FindViewById<AppBarLayout>(Resource.Id.appbar).SetExpanded(false, false);
 
-            if (!string.IsNullOrEmpty(CurrentEvent.iconbackground) && !WhiteLabelConfig.REDUCE_BANDWIDTH)
-                Picasso.With(this).Load(CurrentEvent.iconbackground).CenterCrop().Fit().MemoryPolicy(MemoryPolicy.NoCache, MemoryPolicy.NoStore).Tag(this).Into(FindViewById<ImageView>(Resource.Id.defaultback), new Action(() =>
-                {
-                    var bitmap = ((BitmapDrawable)FindViewById<ImageView>(Resource.Id.defaultback).Drawable).Bitmap;
-                    Palette palette = Palette.From(bitmap).Generate();
-                    int vibrant = palette.GetLightVibrantColor(0);
-                    if (vibrant == 0)
-                        vibrant = palette.GetMutedColor(0);
-                    int dark = palette.GetVibrantColor(0);
-                    if (dark == 0)
-                        dark = palette.GetLightMutedColor(0);
-                    //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(vibrant);
-                    //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
-                }), null);
-            else
-            {
-                Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
+            //if (!string.IsNullOrEmpty(CurrentEvent.iconbackground) && !WhiteLabelConfig.REDUCE_BANDWIDTH)
+            //    Picasso.With(this).Load(CurrentEvent.iconbackground).CenterCrop().Fit().MemoryPolicy(MemoryPolicy.NoCache, MemoryPolicy.NoStore).Tag(this).Into(FindViewById<ImageView>(Resource.Id.defaultback), new Action(() =>
+            //    {
+            //        var bitmap = ((BitmapDrawable)FindViewById<ImageView>(Resource.Id.defaultback).Drawable).Bitmap;
+            //        Palette palette = Palette.From(bitmap).Generate();
+            //        int vibrant = palette.GetLightVibrantColor(0);
+            //        if (vibrant == 0)
+            //            vibrant = palette.GetMutedColor(0);
+            //        int dark = palette.GetVibrantColor(0);
+            //        if (dark == 0)
+            //            dark = palette.GetLightMutedColor(0);
+            //        //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(vibrant);
+            //        //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
+            //    }), null);
+            //else
+            //{
+            Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
                 //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(Color.Transparent);
                 //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
-            }
+            //}
 
             FindViewById<TextView>(Resource.Id.organisedby).Text = CurrentEvent.organisedby;
             Picasso.With(this).Load(CurrentEvent.organiserprofile.Replace("sz=50", "")).Tag(this).Fit().Transform(new CircleTransform()).Into(FindViewById<ImageView>(Resource.Id.imgGravatar));
