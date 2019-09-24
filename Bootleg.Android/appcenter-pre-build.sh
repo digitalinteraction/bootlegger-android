@@ -37,8 +37,9 @@
 
 mkdir -p ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions
 
-echo "Link Version T4: ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/OurStory.t4"
+echo "Link Version T4: ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/OurStory.t4 (and Titan.t4)"
 ln -s ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/OurStory.t4
+ln -s ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/Titan.t4
 
 echo "Link Google Json: ${AGENT_TEMPDIRECTORY}/google-services.json to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/google-services.json"
 ln -s ${AGENT_TEMPDIRECTORY}/google-services.json ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/google-services.json
