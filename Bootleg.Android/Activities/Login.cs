@@ -258,7 +258,9 @@ namespace Bootleg.Droid
 
             //FindViewById<View>(Resource.Id.defaultback).Visibility = ViewStates.Visible;
 
-            Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Config(Bitmap.Config.Rgb565).Priority(Picasso.Priority.High).Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
+            //Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Config(Bitmap.Config.Rgb565).Priority(Picasso.Priority.High).Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
+
+
 
             //DEBUG
             //i = 5;
@@ -436,6 +438,7 @@ namespace Bootleg.Droid
                     break;
 
                 case LoginState.GO_TO_EVENT:
+
                         StartActivity(typeof(Video));
                         return;
 
@@ -703,7 +706,16 @@ namespace Bootleg.Droid
 
         protected async override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
+            //TODO: this is killing the current event in the camera screen when switching apps...
+
+            //if (resultCode != Review.EDITOR_REQUEST)
+
+            //if (!Bootlegger.BootleggerClient.InBackground)
+            //{
             Bootlegger.BootleggerClient.DisconnectForReview();
+            //}
+
+
 
 
             //from video screen:
@@ -742,6 +754,8 @@ namespace Bootleg.Droid
             }
             else
             {
+                //dont reset if its camera screen
+                //if ((Application as BootleggerApp).ReturnState.ReturnsTo != BootleggerApp.ReturnType.OPEN_SHOOT)
                 (Application as BootleggerApp).ResetReturnState();
                 CurrentState = WhichState();
 

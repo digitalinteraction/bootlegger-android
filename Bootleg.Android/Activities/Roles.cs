@@ -205,7 +205,7 @@ namespace Bootleg.Droid
             //        //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
             //    }),null);
             //else
-            Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
+            //Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
 
             AndHUD.Shared.Dismiss();
 

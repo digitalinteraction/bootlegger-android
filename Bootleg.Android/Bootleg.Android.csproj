@@ -771,7 +771,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_map_white_48dp.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_map_white_48dp.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_map_white_48dp.png" />
-    <AndroidResource Include="Resources\drawable\uploads_background.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_home_white_24dp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_home_white_24dp.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_home_white_24dp.png" />
@@ -858,6 +857,13 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\btn_circle.xml" />
+    <AndroidResource Include="Resources\drawable\user_back.xml">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType></SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\uploads_background.xml">
+      <SubType></SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml">
@@ -1218,7 +1224,6 @@
     <AndroidResource Include="Resources\drawable\upload.png" />
     <AndroidResource Include="Resources\drawable\up_bk.png" />
     <AndroidResource Include="Resources\drawable\rounded.xml" />
-    <AndroidResource Include="Resources\drawable\user_back.png" />
     <AndroidResource Include="Resources\drawable\Red_signin_Long_base_44dp.png" />
     <AndroidResource Include="Resources\drawable\logout.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_action_overflow.png" />
@@ -1246,7 +1251,6 @@
     <AndroidResource Include="Resources\drawable\slide1.png" />
     <AndroidResource Include="Resources\drawable\facebook_oauth.png" />
     <AndroidResource Include="Resources\drawable\raised_btn.xml" />
-    <AndroidResource Include="Resources\drawable-nodpi\login_back.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_event_white_48dp.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_event_white_48dp.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_event_white_48dp.png" />

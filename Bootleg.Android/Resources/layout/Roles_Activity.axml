@@ -24,9 +24,10 @@
                 android:id="@+id/defaultback"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
+                android:src="@drawable/user_back"
                 android:fitsSystemWindows="true"
                 android:layout_gravity="bottom"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />
             <ImageView
                 android:src="@drawable/bottom_shade"

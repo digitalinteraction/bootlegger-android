@@ -21,10 +21,11 @@
             app:layout_scrollFlags="snap">
             <ImageView
                 android:id="@+id/defaultback"
+                android:src="@drawable/user_back"
                 android:layout_width="match_parent"
                 android:layout_height="126dp"
                 android:fitsSystemWindows="true"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

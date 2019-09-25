@@ -463,7 +463,7 @@ namespace Bootleg.Droid
             //    }), null);
             //else
             //{
-            Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
+            //Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
                 //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetContentScrimColor(Color.Transparent);
                 //FindViewById<CollapsingToolbarLayout>(Resource.Id.collapsing_toolbar).SetStatusBarScrimColor(dark);
             //}
@@ -897,6 +897,8 @@ namespace Bootleg.Droid
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
+
+            (Application as BootleggerApp).ResetReturnState();
 
             if (data?.GetBooleanExtra("needsperms",false)??false && requestCode == VIDEOCAP)
             {
