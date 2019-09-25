@@ -46,7 +46,7 @@ namespace Bootleg.Droid
             //ConnectEventId = "";
             //ConnectEditId = "";
 
-            RegisterActivityLifecycleCallbacks(this);
+            //RegisterActivityLifecycleCallbacks(this);
             ResetReturnState();
         }
 
@@ -390,6 +390,11 @@ namespace Bootleg.Droid
 
         public void OnActivityResumed(Activity activity)
         {
+            //ActivityManager result = (ActivityManager)this.getSystemService(Context.ACTIVITY_SERVICE);
+            //List<ActivityManager.RunningTaskInfo> services = result
+            //.getRunningTasks(Integer.MAX_VALUE);
+            //textView.setText("" + services.get(0).topActivity.toString());
+
             //Bootlegger.TESTKILL();
             //CrossCurrentActivity.Current.Activity = activity;
 

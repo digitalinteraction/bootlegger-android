@@ -131,7 +131,15 @@ namespace Bootleg.Droid
                 }
                 else
                 {
-                    StartActivity(typeof(Login));
+                    if ((Application as BootleggerApp).ReturnState.ReturnsTo == BootleggerApp.ReturnType.OPEN_SHOOT)
+                    {
+                        StartActivity(typeof(Video));
+                        (Application as BootleggerApp).ResetReturnState();
+                    }
+                    else
+                    {
+                        StartActivity(typeof(Login));
+                    }
                 }
             }
             else

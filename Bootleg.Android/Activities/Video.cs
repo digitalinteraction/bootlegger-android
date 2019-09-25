@@ -43,7 +43,7 @@ using Android.Runtime;
 
 namespace Bootleg.Droid
 {
-    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, ScreenOrientation = ScreenOrientation.UserLandscape, LaunchMode = LaunchMode.SingleTask,ResizeableActivity = false)]
+    [Activity(ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize, ScreenOrientation = ScreenOrientation.UserLandscape, LaunchMode = LaunchMode.SingleTask, ResizeableActivity = false)]
     public class Video : FragmentActivity, IFragmentController, Android.Widget.ViewSwitcher.IViewFactory, IOnSystemUiVisibilityChangeListener
     {
 
@@ -1729,6 +1729,11 @@ namespace Bootleg.Droid
             //background beacon
             //Beacons.BeaconInstance.InBackground = true;
 
+            (Application as BootleggerApp).ReturnState = new BootleggerApp.ApplicationReturnState()
+            {
+                ReturnsTo = BootleggerApp.ReturnType.OPEN_SHOOT
+            };
+
 
             //tell client that not in shooting mode
             if (!WhiteLabelConfig.REDUCE_BANDWIDTH)
@@ -1770,9 +1775,11 @@ namespace Bootleg.Droid
 
             NavBarFix();
 
-            //Analytics.TrackEvent("VideoScreen");
-            Bootleg.API.Bootlegger.BootleggerClient.LogUserAction("Video", 
-                new KeyValuePair<string, string>("eventid", Bootlegger.BootleggerClient.CurrentEvent.id));
+                //Analytics.TrackEvent("VideoScreen");
+
+            Bootleg.API.Bootlegger.BootleggerClient.LogUserAction("Video",
+                    new KeyValuePair<string, string>("eventid", Bootlegger.BootleggerClient.CurrentEvent.id));
+            
 
             //FindViewById<FrameLayout>(Resource.Id.rolesdemo).Visibility = ViewStates.Gone;
 
