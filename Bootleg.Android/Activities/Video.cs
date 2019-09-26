@@ -355,13 +355,14 @@ namespace Bootleg.Droid
             //display the shot selection screen if needed:
             FindViewById<ToggleButton>(Resource.Id.Play).Checked = false;
             recording = false;
-            progress_view.Value = 0;
+            
             if (LIVEMODE)
                 progress_view.ProgressColor = Color.DodgerBlue;
 
             FindViewById<TextView>(Resource.Id.timestamp).Text = "00:00";
             progress_view.Visibility = ViewStates.Visible;
             stopwatch.Stop();
+            progress_view.Value = 0;
 
             StopLocationTrack();
 
@@ -559,7 +560,7 @@ namespace Bootleg.Droid
                         {
                             //if it has a max length
                             progress_view.Visibility = ViewStates.Visible;
-                            progress_view.Value = (int)(((stopwatch.Elapsed.TotalSeconds) / (double)Bootlegger.BootleggerClient.CurrentClientShotType.max_length) * 100);
+                            progress_view.Value = (float)(((stopwatch.Elapsed.TotalSeconds) / (float)Bootlegger.BootleggerClient.CurrentClientShotType.max_length) * 100f) + 0.1f;
 
                         }
                     }
@@ -572,13 +573,13 @@ namespace Bootleg.Droid
                 {
                     try
                     {
-                        if (Bootlegger.BootleggerClient.CurrentEvent!=null && Bootlegger.BootleggerClient.CurrentEvent.HasStarted && hasrecorded && !Bootlegger.BootleggerClient.CurrentEvent.offline && !LIVEMODE)
-                        {
+                        //if (Bootlegger.BootleggerClient.CurrentEvent!=null && Bootlegger.BootleggerClient.CurrentEvent.HasStarted && hasrecorded && !Bootlegger.BootleggerClient.CurrentEvent.offline && !LIVEMODE)
+                        //{
                             FindViewById<View>(Resource.Id.recordlight).Visibility = ViewStates.Invisible;
-                            progress_view.Visibility = ViewStates.Visible;
-                            progress_view.Value = (int)((((double)waitinglength) / ((double)Bootlegger.BootleggerClient.CurrentUser.CycleLength)) * 100);
-                            waitinglength += 1;
-                        }
+                            //progress_view.Visibility = ViewStates.Visible;
+                            //progress_view.Value = (int)((((double)waitinglength) / ((double)Bootlegger.BootleggerClient.CurrentUser.CycleLength)) * 100);
+                            //waitinglength += 1;
+                        //}
                     }
                     catch
                     {
@@ -636,7 +637,7 @@ namespace Bootleg.Droid
             // setup timer for countdown display
             if (shotlength != null)
                 shotlength.Stop();
-            shotlength = new Timer(1000);
+            shotlength = new Timer(500);
             shotlength.Elapsed += shotlength_Elapsed;
             shotlength.Start();
         }

@@ -135,6 +135,10 @@ namespace Bootleg.Droid
                             view.FindViewById<TextView>(Resource.Id.title).Text = item.MediaItem.Static_Meta["captured_at"].ToString();
                         }
 
+
+                        //view.FindViewById<TextView>(Resource.Id.header).Text = (item.HeaderText == BootleggerClient.CurrentUser.displayName) ? view.Context.GetString(Resource.String.me) : item.HeaderText;
+
+
                         view.FindViewById<TextView>(Resource.Id.date).Text = (item.MediaItem.created_by == Bootlegger.BootleggerClient.CurrentUser.id) ? view.Context.GetString(Resource.String.me) : item.MediaItem.Contributor;
 
                         view.FindViewById<TextView>(Resource.Id.date).Visibility = ViewStates.Gone;

@@ -1137,8 +1137,8 @@ namespace Bootleg.Droid
                         _adapter.UpdateData(CurrentEdit.media);
                         _sliveradapter.UpdateData(CurrentEdit.media);
                         UpdateTimings();
-                //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
-                LoginFuncs.ShowToast(this, ex);
+                        //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
+                        LoginFuncs.ShowToast(this, ex);
                     }
                     AndHUD.Shared.Dismiss();
                     diag.Cancel();

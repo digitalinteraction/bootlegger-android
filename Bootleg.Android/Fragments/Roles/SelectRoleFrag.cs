@@ -249,12 +249,12 @@ namespace Bootleg.Droid.Fragments
                 }
 
                 //ROLE SELECTION WHEN SHOOTING:
-                AndHUD.Shared.Show(Activity, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true, () =>
-                {
-                    cancel.Cancel();
-                    selectingrole = false;
-                });
-                await Task.Delay(100);
+                //AndHUD.Shared.Show(Activity, Resources.GetString(Resource.String.loading), -1, MaskType.Black, null, null, true, () =>
+                //{
+                //    cancel.Cancel();
+                //    selectingrole = false;
+                //});
+                //await Task.Delay(100);
                 try
                 {
                     cancel = new CancellationTokenSource();
@@ -264,7 +264,7 @@ namespace Bootleg.Droid.Fragments
                         OnRoleChanged?.Invoke();
                         rolelist?.Update();
                         map?.Update();
-                        AndHUD.Shared.Dismiss();
+                        //AndHUD.Shared.Dismiss();
                         selectingrole = false;
                     }
                     else if (res.State == API.Model.RoleStatus.RoleState.CONFIRM)
@@ -281,19 +281,19 @@ namespace Bootleg.Droid.Fragments
                                     OnRoleChanged?.Invoke();
                                     rolelist?.Update();
                                     map?.Update();
-                                    AndHUD.Shared.Dismiss();
+                                    //AndHUD.Shared.Dismiss();
                                     selectingrole = false;
                                 }
                                 else
                                 {
                                     //you are live -- so cant do this anyway
-                                    AndHUD.Shared.Dismiss();
+                                    //AndHUD.Shared.Dismiss();
                                     selectingrole = false;
                                 }
                             }))
                             .SetPositiveButton(Android.Resource.String.Yes, new EventHandler<DialogClickEventArgs>((oe, eo) =>
                             {
-                                AndHUD.Shared.Dismiss();
+                                //AndHUD.Shared.Dismiss();
                                 selectingrole = false;
                             }))
                             .SetTitle(Resource.String.roledescision)
@@ -303,7 +303,7 @@ namespace Bootleg.Droid.Fragments
                     else if (res.State == API.Model.RoleStatus.RoleState.NO)
                     {
                         //you are live and cant do it
-                        AndHUD.Shared.Dismiss();
+                        //AndHUD.Shared.Dismiss();
                         selectingrole = false;
                         try
                         {
@@ -315,7 +315,7 @@ namespace Bootleg.Droid.Fragments
                 }
                 catch (Exception e)
                 {
-                    AndHUD.Shared.Dismiss();
+                    //AndHUD.Shared.Dismiss();
                     selectingrole = false;
                     try
                     {

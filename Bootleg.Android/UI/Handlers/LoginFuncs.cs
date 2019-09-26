@@ -285,8 +285,43 @@ namespace Bootleg.Droid.UI
                 case StoriesDisabledException ex:
                     message = activity.GetString(Resource.String.storiesdisabled);
                     break;
-                default:
+                case ApiKeyException ex:
+                    message = activity.GetString(Resource.String.apikeynovalid);
+                    break;
 
+                case NeedsPermissionsException ex:
+                case NotGivenPermissionException exx:
+                    message = activity.GetString(Resource.String.acceptperms);
+                    break;
+
+                case RoleNotSelectedException ex:
+                    message = activity.GetString(Resource.String.norolechosen);
+                    break;
+
+                case NoNetworkException ex:
+                    message = activity.GetString(Resource.String.errornonetwork);
+                    break;
+
+                case UnknownNetworkException ex:
+                    message = activity.GetString(Resource.String.errorunknown);
+                    break;
+
+                case NeedsUpdateException ex:
+                    message = activity.GetString(Resource.String.errornonetwork);
+                    break;
+
+                case SessionLostException ex:
+                    message = activity.GetString(Resource.String.loginagain);
+                    break;
+
+                case ServerErrorException ex:
+                    message = activity.GetString(Resource.String.errorserver);
+                    break;
+
+                case TaskCanceledException ex:
+                    message = activity.GetString(Resource.String.errorcanceled);
+                    break;
+                default:
                     break;
             }
 

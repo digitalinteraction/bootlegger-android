@@ -53,6 +53,13 @@ namespace Bootleg.Droid
             }
         }
 
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+            Bootlegger.BootleggerClient.CanUpload = false;
+
+        }
+
         protected override void OnPause()
         {
             base.OnPause();

@@ -271,9 +271,12 @@ namespace Bootleg.Droid
 
                     try
                     {
-                        view.FindViewById<TextView>(Resource.Id.filesize).Text = (media.MediaItem.created_by == Bootlegger.BootleggerClient.CurrentUser.id) ? view.Context.GetString(Resource.String.me) : media.MediaItem.Contributor;
 
-                        //view.FindViewById<TextView>(Resource.Id.filesize).Text = media.MediaItem.Contributor;
+                        if (media.MediaItem.created_by == Bootlegger.BootleggerClient.CurrentUser.id || media.MediaItem.Contributor == Bootlegger.BootleggerClient.CurrentUser.displayName)
+                            view.FindViewById<TextView>(Resource.Id.filesize).Text = view.Context.GetString(Resource.String.me);
+                        else
+
+                            view.FindViewById<TextView>(Resource.Id.filesize).Text = media.MediaItem.Contributor;
                     }
                     catch
                     {

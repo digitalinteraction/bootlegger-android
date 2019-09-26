@@ -75,7 +75,15 @@ namespace Bootleg.Droid
         {
             //open shot review / edit screen....
             cancel = new CancellationTokenSource();
-            AndHUD.Shared.Show(this, GetText(Resource.String.connecting), -1, MaskType.Black, null, null, true);
+
+            try
+            {
+                AndHUD.Shared.Show(this, GetText(Resource.String.connecting), -1, MaskType.Black, null, null, true);
+            }
+            catch {
+
+            }
+
             try
             {
                 (Application as BootleggerApp).ClearNotifications();
