@@ -76,7 +76,7 @@ namespace Bootleg.Droid.Screens
 
         private void _playerView_ControllerVisibility(object sender, PlayerControlView.VisibilityEventArgs e)
         {
-            if (e.P0 != 0)
+            if (e.Visibility != 0)
             {
                 FindViewById(Resource.Id.videometadata).Visibility = ViewStates.Gone;
             }
@@ -225,7 +225,7 @@ namespace Bootleg.Droid.Screens
                 var client = new OkHttpClient.Builder()
                     //.Cache((Application as  BootleggerApp).FilesCache)
                     .Build();
-                OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview", null);
+                OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview");
                 
                 var extractorsFactory = new DefaultExtractorsFactory();
                 mediaSource = new ExtractorMediaSource(Android.Net.Uri.Parse(url), httpDataSourceFactory, extractorsFactory, null, null);
@@ -328,7 +328,7 @@ namespace Bootleg.Droid.Screens
                             .Cache((Application as BootleggerApp).FilesCache)
                             .Build();
 
-                            OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview", null);
+                            OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview");
 
                             var extractorsFactory = new DefaultExtractorsFactory();
                             mediaSource = new ExtractorMediaSource(Android.Net.Uri.Parse(url), httpDataSourceFactory, extractorsFactory, null, null);

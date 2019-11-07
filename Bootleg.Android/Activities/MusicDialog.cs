@@ -11,13 +11,13 @@ using Android.Support.V7.Widget;
 using Bootleg.Droid.Adapters;
 using System.Collections.Generic;
 using Android.Media;
-using Square.OkHttp3;
 using Com.Google.Android.Exoplayer2.Extractor;
 using Com.Google.Android.Exoplayer2.Ext.Okhttp;
 using Com.Google.Android.Exoplayer2.Source;
 using Com.Google.Android.Exoplayer2;
 using Com.Google.Android.Exoplayer2.Trackselection;
 using Bootleg.API.Model;
+using Square.OkHttp3;
 
 namespace Bootleg.Droid.Screens
 {
@@ -49,7 +49,7 @@ namespace Bootleg.Droid.Screens
             webclient = new OkHttpClient.Builder()
                .Cache((Activity.Application as BootleggerApp).FilesCache)
                .Build();
-            httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor", null);
+            httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor");
             extractorsFactory = new DefaultExtractorsFactory();
             _audioPlayer = ExoPlayerFactory.NewSimpleInstance(Context, new DefaultTrackSelector());
             _audioPlayer.RenderedFirstFrame += _audioPlayer_RenderedFirstFrame;
