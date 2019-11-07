@@ -236,9 +236,15 @@ namespace Bootleg.Droid
                 allclipsfragment.Refresh();
         }
 
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnDestroy()
         {
-            base.OnCreate(bundle);
+            base.OnDestroy();
+            autosaver?.CancelAsync();
+        }
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
 
             // Create your application here
             SetTheme(Resource.Style.Theme_Normal);
@@ -300,6 +306,7 @@ namespace Bootleg.Droid
 
             //autosave function:
             autosaver = new BackgroundWorker();
+            autosaver.WorkerSupportsCancellation = true;
             autosaver.DoWork += Autosaver_DoWork;
             autosaver.RunWorkerAsync();
         }
@@ -308,11 +315,12 @@ namespace Bootleg.Droid
 
         async void Autosaver_DoWork(object sender, DoWorkEventArgs e)
         {
-            while (true)
+            while (!autosaver.CancellationPending)
             {
+                //HACK: For testing autosave
 
-                Thread.Sleep(TimeSpan.FromSeconds(30));
-                if (CurrentEdit != null && ShouldAutoSave)
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+                if (CurrentEdit != null && ShouldAutoSave && !autosaver.CancellationPending)
                 {
                     //set title of video if there is one:
                     if (string.IsNullOrWhiteSpace(CurrentEdit.title))
@@ -342,7 +350,7 @@ namespace Bootleg.Droid
                             await Bootlegger.BootleggerClient.SaveEdit(CurrentEdit);
                             if (CurrentEdit.media.Last().Status != MediaItem.MediaStatus.PLACEHOLDER)
                                 CurrentEdit.media.Add(new MediaItem() { Status = MediaItem.MediaStatus.PLACEHOLDER });
-                            Console.WriteLine($"Autosaved at {DateTime.Now.ToShortTimeString()}");
+                            Console.WriteLine($"Autosaved at {DateTime.Now.ToShortTimeString()} {DateTime.Now.Second} {DateTime.Now.Millisecond}");
                         }
                         catch
                         {
@@ -877,9 +885,9 @@ namespace Bootleg.Droid
                     })
                     .SetNegativeButton(Resource.String.cancelbtn, async (e, o) =>
                      {
-                     //Reset back to old version:
-                     //CurrentEdit = OriginalVersion;
-                     ShouldAutoSave = false;
+                         //Reset back to old version:
+                         //CurrentEdit = OriginalVersion;
+                         ShouldAutoSave = false;
                          await Bootlegger.BootleggerClient.SaveEdit(OriginalVersion);
                          autosaver.Dispose();
                          Finish();
@@ -1125,11 +1133,8 @@ namespace Bootleg.Droid
                     {
                         await Bootlegger.BootleggerClient.SaveEdit(CurrentEdit);
                         Intent i = new Intent(this.ApplicationContext, typeof(Review));
-                //i.PutExtra("processed", true);
-                //i.AddFlags(ActivityFlags.ClearTop);
-                i.PutExtra("processed", true);
+                        i.PutExtra("processed", true);
                         StartActivity(i);
-                        autosaver.Dispose();
                         Finish();
                     }
                     catch (Exception ex)
@@ -1140,9 +1145,11 @@ namespace Bootleg.Droid
                         //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
                         LoginFuncs.ShowToast(this, ex);
                     }
-                    AndHUD.Shared.Dismiss();
-                    diag.Cancel();
-                    ShouldAutoSave = true;
+                    finally
+                    {
+                        AndHUD.Shared.Dismiss();
+                        diag.Cancel();
+                    }
                 }
             };
             dialoglayout.FindViewById<Button>(Resource.Id.sharebtn).Click += async (o, e) =>
@@ -1176,14 +1183,11 @@ namespace Bootleg.Droid
                     try
                     {
                         await Bootlegger.BootleggerClient.StartEdit(CurrentEdit);
-
                         Bundle conData = new Bundle();
                         conData.PutBoolean("processed", true);
-
                         Intent intent = new Intent();
                         intent.PutExtras(conData);
                         SetResult(Result.Ok, intent);
-
                         Intent i = new Intent(this.ApplicationContext, typeof(Review));
                         StartActivity(i);
                     }
@@ -1192,12 +1196,13 @@ namespace Bootleg.Droid
                         _adapter.UpdateData(CurrentEdit.media);
                         _sliveradapter.UpdateData(CurrentEdit.media);
                         UpdateTimings();
-                        //Toast.MakeText(this, Resources.GetString(Resource.String.editerror), ToastLength.Long).Show();
                         LoginFuncs.ShowToast(this, ex);
                     }
-                    AndHUD.Shared.Dismiss();
-                    diag.Cancel();
-                    ShouldAutoSave = true;
+                    finally
+                    {
+                        AndHUD.Shared.Dismiss();
+                        diag.Cancel();
+                    }
                 }
             };
             diag.SetCancelable(true);
