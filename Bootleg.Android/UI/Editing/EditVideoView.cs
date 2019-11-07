@@ -27,6 +27,7 @@ using Bootleg.API.Model;
 using Android.Support.V4.Content.Res;
 using Java.Net;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace Bootleg.Droid
 {
@@ -50,6 +51,7 @@ namespace Bootleg.Droid
 
             _playerView = FindViewById<PlayerView>(Resource.Id.videoview);
 
+            //Android.Graphics.Typeface subtitleTypeface = ResourcesCompat.GetFont(Context, Resource.Font.montserratregular);
             Android.Graphics.Typeface subtitleTypeface = ResourcesCompat.GetFont(Context, Resource.Font.montserratregular);
 
             var captionStyleCompat = new CaptionStyleCompat(Android.Graphics.Color.White, Android.Graphics.Color.Transparent, Android.Graphics.Color.Transparent, CaptionStyleCompat.EdgeTypeNone, Android.Graphics.Color.Transparent, subtitleTypeface);
@@ -68,7 +70,7 @@ namespace Bootleg.Droid
             webclient = new OkHttpClient.Builder()
                 .Cache((Context.ApplicationContext as BootleggerApp).FilesCache)
                 .Build();
-            httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor", null);
+            httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor");
             extractorsFactory = new DefaultExtractorsFactory();
             defaultDataSourceFactory = new DefaultDataSourceFactory(Context, "BootleggerEditor");
             /*************/
@@ -342,13 +344,17 @@ namespace Bootleg.Droid
                 {
                     var titletext = m.titletext.TrimStart('\n');
 
+                    //titletext = titletext.Replace(",", "%2C");
+
                     string text = $"WEBVTT\n\n00:00.000 --> 00:{m.outpoint.Seconds.ToString("D2")}.000\n{titletext}";
 
                     Format textFormat = Format.CreateTextSampleFormat(null, MimeTypes.TextVtt, Format.NoValue, "en");
 
+                    var uri = Android.Net.Uri.Parse("data:text/vtt;base64," + Base64.EncodeToString(Encoding.UTF8.GetBytes(text),Base64Flags.Default));
+
                     var mm = new MergingMediaSource(
                         new ExtractorMediaSource(Android.Net.Uri.Parse("rawresource:///" + Resource.Raw.blackvideo), defaultDataSourceFactory, extractorsFactory, null, null),
-                        new SingleSampleMediaSource(Android.Net.Uri.Parse("data:text/vtt," + text), defaultDataSourceFactory, textFormat, (long)m.outpoint.TotalMilliseconds)
+                        new SingleSampleMediaSource(uri, defaultDataSourceFactory, textFormat, (long)m.outpoint.TotalMilliseconds)
                         );
                     
                     source.AddMediaSource(mm);
