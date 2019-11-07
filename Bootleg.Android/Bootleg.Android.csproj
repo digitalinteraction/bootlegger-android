@@ -857,12 +857,12 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\btn_circle.xml" />
-    <AndroidResource Include="Resources\drawable\user_back.xml">
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-      <SubType></SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable\uploads_background.xml">
       <SubType></SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\user_back.png">
+      <SubType></SubType>
+      <Generator></Generator>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
