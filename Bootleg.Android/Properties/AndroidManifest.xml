@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="dev.indaba.offline" android:versionCode="86" android:versionName="hanson">
-  <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="28" />
-  <application android:usesCleartextTraffic="true" android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="dev.ourstory.offline" android:icon="@mipmap/ic_launcher">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="dev.indaba" android:versionCode="87" android:versionName="hanson">
+  <uses-sdk android:minSdkVersion="22" android:targetSdkVersion="28" />
+  <application android:usesCleartextTraffic="true" android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="dev.ourstory.BootleggerApp" android:icon="@mipmap/ic_launcher">
     <receiver
     android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
     android:exported="false" />
@@ -16,7 +16,7 @@
       </intent-filter>
     </receiver>
     <meta-data android:name="com.google.firebase.messaging.default_notification_icon" android:resource="@drawable/ic_notification" />
-
+    <activity android:name="net.hockeyapp.android.FeedbackActivity" android:theme="@style/CustomHockeyAppTheme"></activity>
   </application>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -39,8 +39,8 @@
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:required="false" />
 
   
-  <activity android:name="net.hockeyapp.android.FeedbackActivity" android:theme="@style/CustomHockeyAppTheme">
-  </activity>
+  
+  
   
   
 </manifest>
