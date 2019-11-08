@@ -58,3 +58,6 @@ done
 
 echo "Copying new Manifest File"
 cp "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest_Init.xml" "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest.xml"
+
+echo "Setting Mono Version"
+/bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"
