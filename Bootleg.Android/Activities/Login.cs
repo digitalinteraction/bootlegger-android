@@ -100,7 +100,7 @@ namespace Bootleg.Droid
             }
             finally
             {
-                AndHUD.Shared.Dismiss();
+                 AndHUD.Shared.Dismiss();
             }
         }
 

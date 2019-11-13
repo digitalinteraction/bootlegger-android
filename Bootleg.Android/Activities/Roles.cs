@@ -143,7 +143,7 @@ namespace Bootleg.Droid
             //create fragment:
 
             string id = Intent.Extras?.GetString("id");
-            if (id != "")
+            if (!string.IsNullOrEmpty(id))
             {
                 //Analytics.TrackEvent("ChooseRole");
                 
@@ -157,9 +157,10 @@ namespace Bootleg.Droid
 
                 try
                 {
-                    CurrentEvent = await Bootlegger.BootleggerClient.GetEventInfo(id, cancel.Token);
+                    if (!string.IsNullOrEmpty(id))
+                        CurrentEvent = await Bootlegger.BootleggerClient.GetEventInfo(id, cancel.Token);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     SetResult(Result.FirstUser);
                     Finish();

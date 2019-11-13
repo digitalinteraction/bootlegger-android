@@ -247,14 +247,14 @@ namespace Bootleg.Droid.UI
                     }
                     catch (Exception e)
                     {
-                        if ((context.Application as BootleggerApp).IsReallyConnected)
-                        {
-                            throw new SessionLostException();
-                        }
-                        else
-                        {   
+                        //if ((context.Application as BootleggerApp).IsReallyConnected)
+                        //{
+                            //throw new SessionLostException();
+                        //}
+                        //else
+                        //{   
                             throw new NoNetworkException();
-                        }
+                        //}
                     }
                 }
                 catch (TaskCanceledException e)
