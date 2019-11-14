@@ -216,13 +216,16 @@ namespace Bootleg.Droid
 
             var cols = Activity.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape ? 3 : 2;
 
+            if (ChooserMode == ClipViewMode.EDITING)
+                cols = 3;
+
             listAdapter = new ClipAdapter(Activity,  new Dictionary<string, List<MediaItem>>(), ChooserMode, Bootlegger.BootleggerClient.CurrentEvent.topics.ToList());
 
             listAdapter.OnPreview += _adatper_OnPreview;
             listAdapter.OnChosen += ListAdapter_OnChosen;
 
-            spanLookup = new MySpanSizeLookup(listAdapter, cols);
             var mLayoutManager = new GridLayoutManager(Activity, cols);
+            spanLookup = new MySpanSizeLookup(listAdapter, cols);
             mLayoutManager.SetSpanSizeLookup(spanLookup);
 
             view.FindViewById<View>(Resource.Id.emptytext).Visibility = ViewStates.Gone;

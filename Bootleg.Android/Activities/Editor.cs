@@ -30,7 +30,7 @@ using System.ComponentModel;
 
 namespace Bootleg.Droid
 {
-    [Activity(ScreenOrientation = ScreenOrientation.Landscape, WindowSoftInputMode = (SoftInput.AdjustNothing))]
+    [Activity(ScreenOrientation = ScreenOrientation.Landscape,ConfigurationChanges = ConfigChanges.KeyboardHidden|ConfigChanges.Keyboard, WindowSoftInputMode = (SoftInput.AdjustNothing))]
     public class Editor : AppCompatActivity
     {
         protected override void OnSaveInstanceState(Bundle outState)

@@ -119,11 +119,12 @@ namespace Bootleg.Droid
         {
             EditAdapter adapter;
             private Activity Activity;
+            int collumns = 1;
 
-            public MySpanSizeLookup(Activity activity, EditAdapter adapter)
+            public MySpanSizeLookup(EditAdapter adapter, int collumns)
             {
                 this.adapter = adapter;
-                this.Activity = activity;
+                this.collumns = collumns;
             }
 
             public override int GetSpanSize(int position)
@@ -131,7 +132,7 @@ namespace Bootleg.Droid
                 if (adapter.GetItemViewType(position) == (int)EditAdapter.EditTileType.VIEW_TYPE_CONTENT)
                     return 1;
                 else
-                    return Activity.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape ? 2 : 1;
+                    return collumns;
             }
         }
 
@@ -155,8 +156,9 @@ namespace Bootleg.Droid
             
 
             var listView = view.FindViewById<RecyclerView>(Resource.Id.alledits);
-            var mLayoutManager = new GridLayoutManager(Activity, Activity.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape ? 2 : 1);
-            mLayoutManager.SetSpanSizeLookup(new MySpanSizeLookup(Activity, _adapter));
+            int cols = Activity.Resources.Configuration.Orientation == Android.Content.Res.Orientation.Landscape ? 2 : 1;
+            var mLayoutManager = new GridLayoutManager(Activity, cols);
+            mLayoutManager.SetSpanSizeLookup(new MySpanSizeLookup(_adapter, cols));
             //var mLayoutManager = new GridLayoutManager(container.Context,2);
             listView.SetLayoutManager(mLayoutManager);
             listView.SetAdapter(_adapter);
