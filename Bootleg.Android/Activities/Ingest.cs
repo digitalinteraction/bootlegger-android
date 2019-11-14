@@ -18,7 +18,7 @@ using static Bootleg.Droid.AllClipsFragment;
 namespace Bootleg.Droid.Screens
 {
 
-    [Activity(Label = "Ingest", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape, LaunchMode = LaunchMode.SingleTask)]
+    [Activity(Label = "Ingest", LaunchMode = LaunchMode.SingleTask)]
 	public class Ingest : AppCompatActivity
 	{
         AllClipsFragment allclipsfragment;
@@ -39,14 +39,24 @@ namespace Bootleg.Droid.Screens
 
             Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
 
-            var fragmentTransaction = SupportFragmentManager.BeginTransaction();
-            allclipsfragment = new AllClipsFragment(AllClipsFragment.ClipViewMode.INGEST);
-            fragmentTransaction.Add(Resource.Id.selector, allclipsfragment);
-            fragmentTransaction.Commit();
-            (allclipsfragment as IImagePausable).Pause();
-            allclipsfragment.OnPreview += Allclipsfragment_OnPreview;
-            allclipsfragment.OnBack += Allclipsfragment_OnBack;
-            allclipsfragment.OnNext += Allclipsfragment_OnNext;
+            if (savedInstanceState == null)
+            {
+                var fragmentTransaction = SupportFragmentManager.BeginTransaction();
+                allclipsfragment = new AllClipsFragment(AllClipsFragment.ClipViewMode.INGEST);
+                fragmentTransaction.Replace(Resource.Id.selector, allclipsfragment,"frag1");
+                fragmentTransaction.Commit();
+                (allclipsfragment as IImagePausable).Pause();
+                allclipsfragment.OnPreview += Allclipsfragment_OnPreview;
+                allclipsfragment.OnBack += Allclipsfragment_OnBack;
+                allclipsfragment.OnNext += Allclipsfragment_OnNext;
+            }
+            else
+            {
+                allclipsfragment = SupportFragmentManager.FindFragmentByTag("frag1") as AllClipsFragment;
+            }
+
+
+            
 
             IngestWizard.ShowWizard(this, false);
 
