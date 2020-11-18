@@ -603,7 +603,7 @@ namespace Bootleg.Droid
         public static int getSoftButtonsBarSizePort(Activity activity)
         {
             // getRealMetrics is only available with API 17 and +
-            if (Build.VERSION.SdkInt >= Build.VERSION_CODES.JellyBeanMr1)
+            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.JellyBeanMr1)
             {
                 DisplayMetrics metrics = new DisplayMetrics();
                 activity.WindowManager.DefaultDisplay.GetMetrics(metrics);

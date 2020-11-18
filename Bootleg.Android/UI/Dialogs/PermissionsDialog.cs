@@ -81,8 +81,8 @@ namespace Bootleg.Droid.UI
                     var dialog = builder.Create();
                     dialog.Show();
 
-                    dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = false;
-                    dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = false;
+                    dialog.GetButton((int)Android.Content.DialogButtonType.Negative).Enabled = false;
+                    dialog.GetButton((int)Android.Content.DialogButtonType.Positive).Enabled = false;
 
 
                     //when scrolled to near bottom (or doesnt need scroll):
@@ -97,8 +97,8 @@ namespace Bootleg.Droid.UI
                         // if diff is zero, then the bottom has been reached
                         if (diff <= 0)
                          {
-                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = true;
-                             dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = true;
+                             dialog.GetButton((int)Android.Content.DialogButtonType.Negative).Enabled = true;
+                             dialog.GetButton((int)Android.Content.DialogButtonType.Positive).Enabled = true;
                          }
                      };
 
@@ -106,8 +106,8 @@ namespace Bootleg.Droid.UI
                     {
                         if (di.FindViewById<ScrollView>(Resource.Id.scroller).GetChildAt(0).Bottom == (di.FindViewById<ScrollView>(Resource.Id.scroller).Height + di.FindViewById<ScrollView>(Resource.Id.scroller).ScrollY))
                         {
-                            dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonNegative).Enabled = true;
-                            dialog.GetButton((int)AlertDialog.InterfaceConsts.ButtonPositive).Enabled = true;
+                            dialog.GetButton((int)Android.Content.DialogButtonType.Negative).Enabled = true;
+                            dialog.GetButton((int)Android.Content.DialogButtonType.Positive).Enabled = true;
                         }
                     });
 
