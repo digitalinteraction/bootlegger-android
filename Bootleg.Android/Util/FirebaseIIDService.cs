@@ -11,9 +11,16 @@ namespace Bootleg.Droid.Util
     {
         public override void OnTokenRefresh()
         {
-            var refreshedToken = FirebaseInstanceId.Instance.Token;
-            Console.WriteLine("token: " + refreshedToken);
-            Bootleg.API.Bootlegger.BootleggerClient.RegisterForPush(refreshedToken, API.Bootlegger.Platform.Android);
+            try
+            {
+                var refreshedToken = FirebaseInstanceId.Instance.Token;
+                Console.WriteLine("token: " + refreshedToken);
+                Bootleg.API.Bootlegger.BootleggerClient.RegisterForPush(refreshedToken, API.Bootlegger.Platform.Android);
+            }
+            catch
+            {
+                Console.WriteLine("Cant set Firebase Token - API not initialised.");
+            }
         }
     }
 }
