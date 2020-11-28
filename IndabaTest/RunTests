@@ -1,0 +1,15 @@
+﻿#!/bin/bash
+appcenter test run uitest --store-password Doobles1986 --key-alias indaba --key-password Doobles1986 --store-path ../indaba.keystore --app "bootleggertv/Our-Story" --devices 3d348b6d --app-path ../Bootleg.Android/bin/Release/dev.indaba.apk --test-series "launch-tests" --locale "en_US" --build-dir ./bin/Debug --uitest-tools-dir /Users/tbar0012/Documents/Research/ourstory-android/packages/Xamarin.UITest.*/tools
+
+# 59557d5f - s7 Edge
+
+# ec9768f5 - Pixel 4 and S7 Edge
+
+# ec2ab80c - pixel 4
+
+# 5d71a6be - pixel 3 (11)
+
+
+976f2ac2
+
+#--store-password Doobles1986 --key-alias indaba --key-password Doobles1986 --store-path ../indaba.keystore 
