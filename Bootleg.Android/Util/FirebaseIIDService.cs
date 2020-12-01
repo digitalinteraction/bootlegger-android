@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Bootleg.API;
 using Firebase.Iid;
 using System;
 
@@ -15,7 +16,7 @@ namespace Bootleg.Droid.Util
             {
                 var refreshedToken = FirebaseInstanceId.Instance.Token;
                 Console.WriteLine("token: " + refreshedToken);
-                Bootleg.API.Bootlegger.BootleggerClient.RegisterForPush(refreshedToken, API.Bootlegger.Platform.Android);
+                Bootlegger.BootleggerClient.RegisterForPush(refreshedToken, API.Bootlegger.Platform.Android);
             }
             catch
             {
