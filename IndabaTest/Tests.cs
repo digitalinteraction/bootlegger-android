@@ -31,13 +31,14 @@ namespace IndabaTest
         }
 
         [Test]
-        public void ASplashScreenChecks()
+        public void A_SplashScreenChecks()
         {
             app.Screenshot("1");
+            //app.Repl();
         }
 
         [Test]
-        public void BLoginAndCapture()
+        public void B_LoginAndCapture()
         {
             //app.Screenshot("First screen.");
             //app.WaitForElement((e) => e.Id("eventsView"));
@@ -54,6 +55,8 @@ namespace IndabaTest
             //app.Repl();
 
             app.WaitForElement((e) => e.Id("seenearbybtn"));
+
+            app.Screenshot("Logged In");
             //app.Tap(e => e.Text("Enter a code…"));
             //app.ScrollDownTo(e => e.All().Text("Enter a code…"));
 
@@ -63,9 +66,19 @@ namespace IndabaTest
 
             app.Screenshot("Code Entered");
 
-            app.WaitForElement((arg) => arg.Id("image"));
+            //app.Repl();
 
-            app.Screenshot("Show Roles");
+            app.WaitForElement((arg) => arg.Id("image"));             
+
+            app.WaitFor(() => app.Query(x => x.Id("image")).First().Rect.Height > 5) ;
+            var rect = app.Query(x => x.Id("image")).First().Rect;
+            //Console.WriteLine(rect);
+
+            //app.Repl();
+
+            app.Screenshot("Roles Displayed");
+
+            //NEED TO WAIT FOR IMAGE TO BE LOADED...
 
             app.Tap((arg) => arg.Id("image"));
 
@@ -73,37 +86,41 @@ namespace IndabaTest
 
             app.Screenshot("Role Selected");
 
-
             app.WaitForElement((e) => e.Id("Play"),timeout:TimeSpan.FromMinutes(1));
+
+            //app.Repl();
+
+            SelectShotAndRecord();
+            
+            app.SetOrientationLandscape();
+
+            SelectShotAndRecord();
+
+        }
+
+        void SelectShotAndRecord()
+        {
+            app.WaitForElement(e => e.Id("im"));
+
+            app.Screenshot("Shots Listed");
 
             app.Tap(e => e.Id("im"));
 
             app.Screenshot("Select Shot");
 
+            app.WaitForNoElement(e => e.Id("shotselector"));
+
+            //app.Repl();
+
             app.Tap((e) => e.Id("Play"));
+
+            app.Screenshot("Record Started");
 
             Thread.Sleep(4000);
 
             app.Tap((e) => e.Id("Play"));
 
             app.Screenshot("Record Stopped");
-
-            //3635
-            //(BACKDOOR LOGIN REQUIRED)
-            //var client = new RestClient("https://app.indaba.dev/auth/mobilelogin/local");
-            //var request = new RestRequest("auth/mobilelogin", DataFormat.Json);
-            //var response = client.Get(request);
-
-            //await  
-
-
-            //touch [AppCompatImageView] id: "image"
-
-            //accept perms
-
-            //[ToggleButton] id: "Play" (to record)
-
-            //[ToggleButton] id: "Play" (to stop recording)
         }
     }
 }

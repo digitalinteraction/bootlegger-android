@@ -24,6 +24,7 @@ using Plugin.Connectivity;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Analytics;
+using Java.Interop;
 
 namespace Bootleg.Droid
 {
@@ -48,6 +49,19 @@ namespace Bootleg.Droid
 
             //RegisterActivityLifecycleCallbacks(this);
             ResetReturnState();
+        }
+
+        [Export("SetSession")]
+        public void SetSession(string session)
+        {
+            //Bootlegger.BootleggerClient.SessionCookie = new System.Net.Cookie("sails.sid", session, "/", Bootlegger.BootleggerClient.LoginUrl.Host);
+            ReturnState.ReturnsTo = BootleggerApp.ReturnType.SIGN_IN_ONLY;
+            ReturnState.Session = session;
+
+            //Intent i = Intent;
+            //Finish();
+            CrossCurrentActivity.Current.Activity.Recreate();
+            //StartActivity(typeof(SplashActivity));
         }
 
 

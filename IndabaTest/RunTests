@@ -12,4 +12,4 @@ appcenter test run uitest --store-password Doobles1986 --key-alias indaba --key-
 
 976f2ac2
 
-#--store-password Doobles1986 --key-alias indaba --key-password Doobles1986 --store-path ../indaba.keystore 
+#--store-password Doobles1986 --key-alias indaba --key-password Doobles1986 --store-path ../indaba.keystore
