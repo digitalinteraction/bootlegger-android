@@ -1,4 +1,4 @@
-/* Copyright (C) 2014 Newcastle University
+﻿/* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -233,7 +233,7 @@ namespace Bootleg.Droid
             }
             finally
             {
-                AndHUD.Shared.Dismiss();
+                Utils.DissmissHud();
             }
         }
 
@@ -369,7 +369,7 @@ namespace Bootleg.Droid
             finally
             {
                 theview.Post(() => { theview.FindViewById<ProgressBar>(Resource.Id.progressBar).Visibility = ViewStates.Gone; });
-                AndHUD.Shared.Dismiss();
+                Utils.DissmissHud();
             }
             //}
             //else

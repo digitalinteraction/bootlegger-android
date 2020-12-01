@@ -11,11 +11,24 @@ using Java.Text;
 using Android.Text.Format;
 using Android.App;
 using Android.Views;
+using AndroidHUD;
 
 namespace Bootleg.Droid
 {
     public static class Utils
     {
+
+        public static void DissmissHud()
+        {
+            try
+            {
+                Utils.DissmissHud();
+            }
+            catch
+            {
+                //cant dismiss hud
+            }
+        }
 
         public static Activity GetActivity(this View view)
         {

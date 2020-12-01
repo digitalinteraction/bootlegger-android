@@ -1,4 +1,4 @@
-/* Copyright (C) 2014 Newcastle University
+﻿/* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -101,7 +101,7 @@ namespace Bootleg.Droid
                 if (id == "")
                 {
                     CurrentEdit = new Edit() { media = new System.Collections.Generic.List<MediaItem>() };
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
                 else
                 {
@@ -113,7 +113,7 @@ namespace Bootleg.Droid
                         CurrentEdit = await Bootlegger.BootleggerClient.GetEdit(id, cancel.Token);
                         //SupportInvalidateOptionsMenu();
                         //CheckButtons();
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                     }
                     catch
                     {
@@ -1147,7 +1147,7 @@ namespace Bootleg.Droid
                     }
                     finally
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                         diag.Cancel();
                     }
                 }
@@ -1200,7 +1200,7 @@ namespace Bootleg.Droid
                     }
                     finally
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                         diag.Cancel();
                     }
                 }

@@ -133,7 +133,7 @@ namespace Bootleg.Droid
         {
             get
             {
-                return Items.Count;
+                return Items?.Count ?? 0;
             }
         }
 

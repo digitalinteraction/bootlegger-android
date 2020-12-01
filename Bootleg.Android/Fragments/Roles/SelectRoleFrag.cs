@@ -1,4 +1,4 @@
-/* Copyright (C) 2014 Newcastle University
+﻿/* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -199,7 +199,7 @@ namespace Bootleg.Droid.Fragments
                     }
                     catch (ServerErrorException)
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
 
                         //show dialog:
                         new Android.Support.V7.App.AlertDialog.Builder(Activity).SetMessage(Resources.GetString(Resource.String.role_repeat))
@@ -224,7 +224,7 @@ namespace Bootleg.Droid.Fragments
                     }
                     catch (NotGivenPermissionException e)
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                         selectingrole = false;
                         try
                         {
@@ -236,7 +236,7 @@ namespace Bootleg.Droid.Fragments
                     }
                     catch (Exception e)
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                         selectingrole = false;
                         try
                         {
@@ -264,7 +264,7 @@ namespace Bootleg.Droid.Fragments
                         OnRoleChanged?.Invoke();
                         rolelist?.Update();
                         map?.Update();
-                        //AndHUD.Shared.Dismiss();
+                        //Utils.DissmissHud();
                         selectingrole = false;
                     }
                     else if (res.State == API.Model.RoleStatus.RoleState.CONFIRM)
@@ -281,19 +281,19 @@ namespace Bootleg.Droid.Fragments
                                     OnRoleChanged?.Invoke();
                                     rolelist?.Update();
                                     map?.Update();
-                                    //AndHUD.Shared.Dismiss();
+                                    //Utils.DissmissHud();
                                     selectingrole = false;
                                 }
                                 else
                                 {
                                     //you are live -- so cant do this anyway
-                                    //AndHUD.Shared.Dismiss();
+                                    //Utils.DissmissHud();
                                     selectingrole = false;
                                 }
                             }))
                             .SetPositiveButton(Android.Resource.String.Yes, new EventHandler<DialogClickEventArgs>((oe, eo) =>
                             {
-                                //AndHUD.Shared.Dismiss();
+                                //Utils.DissmissHud();
                                 selectingrole = false;
                             }))
                             .SetTitle(Resource.String.roledescision)
@@ -303,7 +303,7 @@ namespace Bootleg.Droid.Fragments
                     else if (res.State == API.Model.RoleStatus.RoleState.NO)
                     {
                         //you are live and cant do it
-                        //AndHUD.Shared.Dismiss();
+                        //Utils.DissmissHud();
                         selectingrole = false;
                         try
                         {
@@ -315,7 +315,7 @@ namespace Bootleg.Droid.Fragments
                 }
                 catch (Exception e)
                 {
-                    //AndHUD.Shared.Dismiss();
+                    //Utils.DissmissHud();
                     selectingrole = false;
                     try
                     {

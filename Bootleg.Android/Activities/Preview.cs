@@ -1,4 +1,4 @@
-/* Copyright (C) 2014 Newcastle University
+﻿/* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -71,7 +71,7 @@ namespace Bootleg.Droid.Screens
 
         private void _player_RenderedFirstFrame(object sender, EventArgs e)
         {
-            AndroidHUD.AndHUD.Shared.Dismiss();
+            Utils.DissmissHud();
         }
 
         private void _playerView_ControllerVisibility(object sender, PlayerControlView.VisibilityEventArgs e)
@@ -239,7 +239,7 @@ namespace Bootleg.Droid.Screens
             }
             finally
             {
-                //AndHUD.Shared.Dismiss();
+                //Utils.DissmissHud();
             }
         }
 

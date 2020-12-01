@@ -1,4 +1,4 @@
-/* Copyright (C) 2014 Newcastle University
+﻿/* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -61,10 +61,10 @@ namespace Bootleg.Droid
             //await Task.Delay(5000);
 
             // await mainlist.RefreshData(cancel.Token);
-            AndHUD.Shared.Dismiss();
+            Utils.DissmissHud();
 
             _pager.CurrentItem = 0;
-            AndHUD.Shared.Dismiss();
+            Utils.DissmissHud();
         }
 
         public override void FinishFromChild(Activity child)

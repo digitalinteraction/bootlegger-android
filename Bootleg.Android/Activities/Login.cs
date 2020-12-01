@@ -100,7 +100,7 @@ namespace Bootleg.Droid
             }
             finally
             {
-                 AndHUD.Shared.Dismiss();
+                 Utils.DissmissHud();
             }
         }
 
@@ -139,13 +139,13 @@ namespace Bootleg.Droid
                     }
                     finally
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                     }
                 }
                 else
                 {
                     LoginFuncs.ShowError(this, new NoNetworkException());
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
             }
             else
@@ -192,7 +192,7 @@ namespace Bootleg.Droid
                 }
                 finally
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                         ShowButtons();
                     }
             }
@@ -200,7 +200,8 @@ namespace Bootleg.Droid
 
         void ShowButtons()
         {
-            AndHUD.Shared.Dismiss();
+            Utils.DissmissHud();
+            //Utils.DissmissHud();
             if (Bootlegger.BootleggerClient.CurrentUser != null)
             {
                 FindViewById<ImageButton>(Resource.Id.loginbtn).Visibility = ViewStates.Gone;
@@ -600,11 +601,11 @@ namespace Bootleg.Droid
                                    }
                                    catch (ServerErrorException)
                                    {
-                                       AndHUD.Shared.Dismiss();
+                                       Utils.DissmissHud();
                                    }
                                    catch (Exception ex)
                                    {
-                                       AndHUD.Shared.Dismiss();
+                                       Utils.DissmissHud();
                                        LoginFuncs.ShowError(this, ex);
                                    }
                                })
@@ -623,7 +624,7 @@ namespace Bootleg.Droid
                                     //StartActivity(typeof(Events));
                             }
                         }
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                     }
                     catch (ApiKeyException)
                     {
@@ -987,7 +988,7 @@ namespace Bootleg.Droid
                 else
                 {
                     LoginFuncs.ShowError(this, new NoNetworkException());
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
             }
         }
@@ -1038,7 +1039,7 @@ namespace Bootleg.Droid
             }
             finally
             {
-                AndHUD.Shared.Dismiss();
+                Utils.DissmissHud();
             }
         }
 
@@ -1113,11 +1114,11 @@ namespace Bootleg.Droid
                     }
                     catch (ServerErrorException)
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                     }
                     catch (Exception e)
                     {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                         LoginFuncs.ShowError(this, new NoNetworkException());
                     }
                 }
@@ -1187,7 +1188,7 @@ namespace Bootleg.Droid
                 LoginFuncs.ShowError(this, new NoNetworkException());
 
                 //Toast.MakeText(this, Resource.String.notconnected, ToastLength.Short).Show();
-                AndHUD.Shared.Dismiss();
+                Utils.DissmissHud();
             }
         }
 
@@ -1205,7 +1206,7 @@ namespace Bootleg.Droid
                     });
                     await LoginFuncs.TryLogin(this, cancel.Token);
                     StartActivityForResult(typeof(Events),0);
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
                 catch (TaskCanceledException)
                 {
@@ -1281,7 +1282,7 @@ namespace Bootleg.Droid
 
                 ShowButtons();
                 //Insights.Identify(Insights.Traits.GuestIdentifier, null);
-                AndHUD.Shared.Dismiss();
+                Utils.DissmissHud();
             })
             .SetNegativeButton(Android.Resource.String.Cancel, (o, e) => { })
             .Show();
@@ -1306,7 +1307,7 @@ namespace Bootleg.Droid
 
             //    ShowButtons();
             //    //Insights.Identify(Insights.Traits.GuestIdentifier, null);
-            //    AndHUD.Shared.Dismiss();
+            //    Utils.DissmissHud();
             //}
            
         }

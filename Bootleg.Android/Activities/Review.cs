@@ -103,7 +103,7 @@ namespace Bootleg.Droid
 
             Picasso.With(this).ResumeTag(this);
             (myclips as IImagePausable).Resume();
-            AndHUD.Shared.Dismiss();
+            Utils.DissmissHud();
 
             if (Intent.GetBooleanExtra("processed",false))
             {
@@ -164,12 +164,12 @@ namespace Bootleg.Droid
                         }
                         finally
                         {
-                            AndHUD.Shared.Dismiss();
+                            Utils.DissmissHud();
                         }
                     })
                     .SetCancelable(false)
                     .SetNegativeButton(Android.Resource.String.Cancel, (o, e) => {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                     })
                     .Show();
             }
@@ -195,7 +195,7 @@ namespace Bootleg.Droid
                 }
                 finally
                 {
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
             }
         }
@@ -271,7 +271,7 @@ namespace Bootleg.Droid
             }
             finally
             {
-                AndHUD.Shared.Dismiss();
+                Utils.DissmissHud();
             }
         //}
         }
@@ -579,7 +579,7 @@ namespace Bootleg.Droid
                 }
                 finally
                 {
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
             }
             else
@@ -646,12 +646,12 @@ namespace Bootleg.Droid
                         }
                         finally
                         {
-                            AndHUD.Shared.Dismiss();
+                            Utils.DissmissHud();
                         }
                     })
                     .SetCancelable(false)
                     .SetNegativeButton(Android.Resource.String.Cancel, (o, e) => {
-                        AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                     })
                     .Show();
             }
@@ -678,7 +678,7 @@ namespace Bootleg.Droid
                 }
                 finally
                 {
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
             }
         }
@@ -847,7 +847,7 @@ namespace Bootleg.Droid
 
             await Bootlegger.BootleggerClient.CacheVideos(Bootlegger.BootleggerClient.CurrentEvent, cancel_download.Token);
 
-            AndHUD.Shared.Dismiss();
+            Utils.DissmissHud();
         }
 
         private void BootleggerClient_OnDownloadProgress(int obj, int count, int total)

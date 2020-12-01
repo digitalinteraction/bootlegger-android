@@ -1,4 +1,4 @@
-/* Copyright (C) 2014 Newcastle University
+﻿/* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -168,7 +168,7 @@ namespace Bootleg.Droid
                 }
                 finally
                 {
-                    AndHUD.Shared.Dismiss();
+                    Utils.DissmissHud();
                 }
             }
             else
@@ -208,7 +208,7 @@ namespace Bootleg.Droid
             //else
             //Picasso.With(this).Load(Resource.Drawable.user_back).CenterCrop().Fit().Into(FindViewById<ImageView>(Resource.Id.defaultback));
 
-            AndHUD.Shared.Dismiss();
+            Utils.DissmissHud();
 
 
 

@@ -1,4 +1,4 @@
-/* Copyright (C) 2014 Newcastle University
+﻿/* Copyright (C) 2014 Newcastle University
  *
  * This software may be modified and distributed under the terms
  * of the MIT license. See the LICENSE file for details.
@@ -322,7 +322,7 @@ namespace Bootleg.Droid
 
         private void _adapter_OnDelete(MediaItem obj)
         {
-            new Android.Support.V7.App.AlertDialog.Builder(review).
+            new Android.Support.V7.App.AlertDialog.Builder(Context).
                 SetTitle(Resource.String.areyousure).
                 SetMessage(Resource.String.removewarn).
                 SetPositiveButton(Resource.String.continuebtn, async (o, e) =>
@@ -339,7 +339,7 @@ namespace Bootleg.Droid
                         }
                     finally
                     {
-                        AndroidHUD.AndHUD.Shared.Dismiss();
+                        Utils.DissmissHud();
                         _adapter.UpdateData(Bootlegger.BootleggerClient.UploadQueueEditing, Bootlegger.BootleggerClient.MyMediaEditing);
                         _adapter.FireSyncStatusChanged(MyClipsAdapter.ViewHolder.SyncStatus.OK, 0);
                     }
