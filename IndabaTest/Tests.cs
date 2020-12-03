@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using NUnit.Framework;
+using RestSharp;
 using Xamarin.UITest;
 using Xamarin.UITest.Android;
 using Xamarin.UITest.Queries;
@@ -10,9 +11,38 @@ using Xamarin.UITest.Queries;
 namespace IndabaTest
 {
     [TestFixture]
-    public class Tests
+    public class WorkflowTests
     {
         AndroidApp app;
+        System.Net.CookieContainer cookies = new System.Net.CookieContainer();
+
+        //[OneTimeSetUp]
+        [SetUp]
+        public void GetSession()
+        {
+
+            //code to get a test user session id:
+            var client = new RestClient("https://app.indaba.dev");
+            client.CookieContainer = cookies;
+
+            client.FollowRedirects = false;
+            //go to app.indaba.dev/auth/mobilelogin/local
+
+            var request = new RestRequest("auth/mobilelogin/local");
+
+            var response = client.Get(request);
+
+            //get the redirect url, and post: firstName=
+
+            var send = new RestRequest("auth/locallogin",Method.POST).AddParameter("firstName","TestFixture1");
+
+            var result = client.Post(send);
+
+            //var sessionid = result.ResponseUri;
+
+            //Console.WriteLine(sessionid);
+            //get the sessionid of the return url
+        }
 
         [SetUp]
         public void BeforeEachTest()
@@ -34,29 +64,40 @@ namespace IndabaTest
         public void A_SplashScreenChecks()
         {
             app.Screenshot("1");
-            //app.Repl();
         }
 
         [Test]
-        public void B_LoginAndCapture()
+        public void B_Login()
+        {
+           app.Screenshot("Startup");
+           DoLogin();
+        }
+
+        public void DoLogin()
+        {
+            //app.WaitForElement((e) => e.Id("seenearbybtn"));
+            //app.Invoke("SetSession", "s%3A8WWjJQogaBNLRntT6iYXOupsprkb4pMw.kyELPs0yiHrXp7I3qFVRmLOFoS34i9gkv7O%2FnWMRQLs");
+            var session = cookies.GetCookies(new Uri("https://app.indaba.dev"))[0].Value;
+            app.Invoke("SetSession", session);
+            //app.Repl();
+            //app.Tap("")
+            //text: "Enter a code…"
+
+            app.Screenshot("Login Complete");
+            //app.Repl();
+
+
+            app.Screenshot("Logged In");
+        }
+
+        [Test]
+        public void C_JoinShootAndCapture()
         {
             //app.Screenshot("First screen.");
             //app.WaitForElement((e) => e.Id("eventsView"));
 
             //Thread.Sleep(2000);
-            app.Screenshot("Startup");
-
-            app.Invoke("SetSession", "s%3A8WWjJQogaBNLRntT6iYXOupsprkb4pMw.kyELPs0yiHrXp7I3qFVRmLOFoS34i9gkv7O%2FnWMRQLs");
-            //app.Repl();
-            //app.Tap("")
-            //text: "Enter a code…"
             
-            app.Screenshot("Login Complete");
-            //app.Repl();
-
-            app.WaitForElement((e) => e.Id("seenearbybtn"));
-
-            app.Screenshot("Logged In");
             //app.Tap(e => e.Text("Enter a code…"));
             //app.ScrollDownTo(e => e.All().Text("Enter a code…"));
 
@@ -71,7 +112,7 @@ namespace IndabaTest
             app.WaitForElement((arg) => arg.Id("image"));             
 
             app.WaitFor(() => app.Query(x => x.Id("image")).First().Rect.Height > 5) ;
-            var rect = app.Query(x => x.Id("image")).First().Rect;
+            //var rect = app.Query(x => x.Id("image")).First().Rect;
             //Console.WriteLine(rect);
 
             //app.Repl();
@@ -86,15 +127,38 @@ namespace IndabaTest
 
             app.Screenshot("Role Selected");
 
-            app.WaitForElement((e) => e.Id("Play"),timeout:TimeSpan.FromMinutes(1));
+            app.WaitForElement((e) => e.Id("Play"));
 
             //app.Repl();
 
             SelectShotAndRecord();
-            
-            app.SetOrientationLandscape();
 
-            SelectShotAndRecord();
+            //app.SetOrientationLandscape();
+
+            //app.Tap((arg) => arg.Id("image"));
+
+            ////app.Repl();
+
+            //SelectShotAndRecord();
+            app.Back();
+            app.Back();
+        }
+
+        [Test]
+        public void D_Upload()
+        {
+            app.Repl();
+        }
+
+        [Test]
+        public void E_ReviewAndTag()
+        {
+
+        }
+
+        [Test]
+        public void F_Edit()
+        {
 
         }
 

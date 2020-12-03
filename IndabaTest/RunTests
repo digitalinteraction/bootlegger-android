@@ -1,5 +1,5 @@
 ﻿#!/bin/bash
-appcenter test run uitest --store-password Doobles1986 --key-alias indaba --key-password Doobles1986 --store-path ../indaba.keystore --app "bootleggertv/Our-Story" --devices 3d348b6d --app-path ../Bootleg.Android/bin/Release/dev.indaba.apk --test-series "launch-tests" --locale "en_US" --build-dir ./bin/Debug --uitest-tools-dir /Users/tbar0012/Documents/Research/ourstory-android/packages/Xamarin.UITest.*/tools
+appcenter test run uitest --store-password Doobles1986 --key-alias indaba --key-password Doobles1986 --store-path ../indaba.keystore --app "bootleggertv/Our-Story" --devices 3d348b6d --app-path ../Bootleg.Android/bin/Release/dev.indaba.apk --test-series "launch-tests" --locale "en_US" --build-dir ./bin/Debug --uitest-tools-dir /Users/tbar0012/Documents/Research/ourstory-android/packages/Xamarin.UITest.*/tools --async
 
 # 59557d5f - s7 Edge
 
