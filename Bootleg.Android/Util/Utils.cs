@@ -22,7 +22,7 @@ namespace Bootleg.Droid
         {
             try
             {
-                Utils.DissmissHud();
+                AndHUD.Shared.Dismiss();
             }
             catch
             {
