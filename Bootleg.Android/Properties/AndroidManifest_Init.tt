@@ -1,6 +1,6 @@
 ﻿<#@ template language="C#" #><#@ output extension=".xml" encoding="utf-8" #><#@ include file="../Templates/Loader.t4" #><# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="dev.indaba<# if (Config.NAMESPACE_EXT!="") {Write("."+Config.NAMESPACE_EXT); } #>" android:versionCode="92" android:versionName="hanson-beta">
   <uses-sdk android:minSdkVersion="22" android:targetSdkVersion="29" />
-  <application android:usesCleartextTraffic="true" android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="dev.ourstory.<#= Config.NAMESPACE #>" android:icon="@mipmap/ic_launcher">
+  <application android:requestLegacyExternalStorage="true" android:usesCleartextTraffic="true" android:label="@string/ApplicationName" android:resizeableActivity="false" android:supportsRtl="true" android:theme="@style/Theme.Normal" android:hardwareAccelerated="true" android:name="dev.ourstory.<#= Config.NAMESPACE #>" android:icon="@mipmap/ic_launcher">
     <receiver
     android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
     android:exported="false" />
@@ -36,10 +36,4 @@
   <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
   <uses-permission android:name="android.permission.BLUETOOTH" android:required="false" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:required="false" />
-
-  
-  
-  
-  
-  
 </manifest>
