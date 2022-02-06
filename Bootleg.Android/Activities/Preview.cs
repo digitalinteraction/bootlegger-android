@@ -325,7 +325,7 @@ namespace Bootleg.Droid.Screens
                         else
                         {
                             var client = new OkHttpClient.Builder()
-                            .Cache((Application as BootleggerApp).FilesCache)
+                            //.Cache((Application as BootleggerApp).FilesCache)
                             .Build();
 
                             OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview");
