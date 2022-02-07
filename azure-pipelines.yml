@@ -25,6 +25,8 @@ jobs:
       flavour: 'OurStory'
 
 - job: Release
+  pool:
+    vmImage: 'macOS-latest'
   dependsOn:
     - Titan
     - Online
