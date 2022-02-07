@@ -24,7 +24,7 @@ steps:
 
 - task: XamarinAndroid@1
   inputs:
-    projectFile: '**/*.csproj'
+    projectFile: '**/Bootleg.Android.csproj'
     outputDirectory: '$(outputDirectory)'
     configuration: '$(buildConfiguration)'
 
