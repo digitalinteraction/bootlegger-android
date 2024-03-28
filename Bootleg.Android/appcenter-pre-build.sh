@@ -63,7 +63,7 @@ ln -s ${AGENT_TEMPDIRECTORY}/google-services.json ${BUILD_SOURCESDIRECTORY}/Boot
 # cp "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest_Init.xml" "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest.xml"
 
 echo "Setting vars in Manifest File"
-sed -i '' -E "s/package=\"([a-z|A-Z|\.]*)\"/package=\"$PACKAGE\"/1" ./Properties/AndroidManifest.xml
+sed -i '' -E "s/package=\"([a-z|A-Z|\.]*)\"/package=\"${PACKAGE}\"/1" ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest.xml
 
 # echo "Setting Mono Version"
 # /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"

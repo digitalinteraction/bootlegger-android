@@ -791,7 +791,7 @@
       <Generator></Generator>
     </AndroidResource>
     <None Include="Templates\Titan.prod.cs" />
-    <None Include="Templates\Online.prod.cs" />
+    <None Include="Templates\OurStory.prod.cs" />
     <Compile Include="Templates\WhiteLabelConfig.cs" />
   </ItemGroup>
   <ItemGroup>
