@@ -54,7 +54,7 @@
       <CustomCommands>
         <Command>
           <type>BeforeBuild</type>
-          <command>cp "${ProjectDir}/Properties/AndroidManifest_Init.xml" "${ProjectDir}/Properties/AndroidManifest.xml"</command>
+          <command></command>
         </Command>
       </CustomCommands>
     </CustomCommands>
@@ -423,7 +423,6 @@
     <Compile Include="Activities\SplashActivity.partial.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SplashActivity.partial.tt</DependentUpon>
     </Compile>
     <Compile Include="Activities\SplashActivity.cs" />
     <Compile Include="UI\Behaviours\Android5479Fix.cs" />
@@ -604,20 +603,13 @@
     <AndroidResource Include="Resources\layout\musicitem.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <None Include="BuildVariants\Versions\Titan.t4" />
     <AndroidResource Include="Resources\layout\IngestWizard.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout-land\shootinfo.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <None Include="Resources\values-in\Strings.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Strings.xml</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <AndroidResource Include="Resources\values-in\Strings.xml">
-      <DependentUpon>Strings.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </AndroidResource>
@@ -753,10 +745,6 @@
     <AndroidResource Include="Resources\values\vpi__colors.xml" />
     <AndroidResource Include="Resources\values\vpi__defaults.xml" />
     <AndroidResource Include="Resources\values\vpi__styles.xml" />
-    <None Include="Activities\SplashActivity.partial.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SplashActivity.partial.cs</LastGenOutput>
-    </None>
     <Compile Include="UI\Dialogs\PermissionsChecker.cs" />
     <AndroidResource Include="Resources\layout\divider.axml" />
     <Compile Include="UI\Controls\SeekBarRotator.cs" />
@@ -769,29 +757,10 @@
     <AndroidResource Include="Resources\layout\exo_player_limited.axml" />
     <AndroidResource Include="Resources\drawable\baseline_add_24.xml" />
     <AndroidResource Include="Resources\drawable\baseline_camera_front_24.xml" />
-    <None Include="Resources\values-ar\Strings.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Strings.xml</LastGenOutput>
-    </None>
-    <None Include="BuildVariants\Versions\OurStory.t4" />
     <Compile Include="Bootleg.API\Bootlegger.API\Model\Topic.cs" />
     <AndroidResource Include="Resources\layout\ConnectionChecklist.axml" />
     <AndroidResource Include="Resources\font\montserratregular.ttf" />
-    <None Include="Templates\AssetsGenerator.t4" />
-    <None Include="Templates\Defs.t4" />
-    <None Include="Templates\Loader.t4" />
-    <None Include="Templates\Translator.t4" />
-    <None Include="Templates\WhiteLabelConfig.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>WhiteLabelConfig.cs</LastGenOutput>
-    </None>
-    <Compile Include="Templates\WhiteLabelConfig.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WhiteLabelConfig.tt</DependentUpon>
-    </Compile>
     <AndroidResource Include="Resources\values-ar\Strings.xml">
-      <DependentUpon>Strings.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </AndroidResource>
@@ -803,16 +772,6 @@
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\SessionLostException.cs" />
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\NeedsUpdateException.cs" />
     <AndroidResource Include="Resources\drawable\baseline_videocam_24.xml" />
-    <None Include="Resources\values-fr\Strings.tt">
-      <SubType></SubType>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Strings.xml</LastGenOutput>
-    </None>
-    <AndroidResource Include="Resources\values-fr\Strings.xml">
-      <DependentUpon>Strings.tt</DependentUpon>
-      <SubType></SubType>
-      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable\arrow_left.xml">
       <SubType></SubType>
       <Generator></Generator>
@@ -827,6 +786,13 @@
     </AndroidResource>
     <Compile Include="Bootleg.API\Bootlegger.API\Util\Decompress.cs" />
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\Exceptions.cs" />
+    <AndroidResource Include="Resources\values-fr\Strings.xml">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <None Include="Templates\Titan.prod.cs" />
+    <None Include="Templates\Online.prod.cs" />
+    <Compile Include="Templates\WhiteLabelConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml">
@@ -1004,11 +970,6 @@
     <AndroidResource Include="Resources\layout\emptyshoots.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <None Include="Resources\values\Strings.tt">
-      <SubType>Designer</SubType>
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Strings.xml</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidEnvironment Include="BuildProperties.txt" />
@@ -1453,27 +1414,14 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_add_white_24dp.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_add_white_24dp.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_white_24dp.png" />
-    <None Include="Properties\AndroidManifest_Init.xml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AndroidManifest_Init.tt</DependentUpon>
-      <SubType>Designer</SubType>
-    </None>
     <AndroidResource Include="Resources\values-v21\styles.xml" />
-    <None Include="Resources\values\colors.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>colors.xml</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <AndroidResource Include="Resources\values\colors.xml">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>colors.tt</DependentUpon>
     </AndroidResource>
     <AndroidResource Include="Resources\values\Strings.xml">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.tt</DependentUpon>
     </AndroidResource>
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
@@ -1482,13 +1430,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\AndroidManifest_Init.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AndroidManifest_Init.xml</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml">
@@ -1898,15 +1839,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\values-es\Strings.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Strings.xml</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\values-es\Strings.xml">
-      <DependentUpon>Strings.tt</DependentUpon>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
       <AutoGen>True</AutoGen>
       <SubType>Designer</SubType>

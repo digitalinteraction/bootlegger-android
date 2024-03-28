@@ -15,6 +15,7 @@ jobs:
   - template: build-pipeline.yml
     parameters:
       flavour: 'Titan'
+      package: 'dev.indaba.offline'
 
 - job: Online
   pool:
@@ -23,6 +24,7 @@ jobs:
   - template: build-pipeline.yml
     parameters:
       flavour: 'OurStory'
+      package: 'dev.indaba'
 
 - job: Release
   pool:

@@ -262,14 +262,14 @@ namespace Bootleg.Droid
             //MetricsManager.Register(this,WhiteLabelConfig.HOCKEYAPPID);
             //FeedbackManager.Register(ApplicationContext, WhiteLabelConfig.HOCKEYAPPID);
             //FeedbackManager.CheckForAnswersAndNotify(ApplicationContext);
-            try
-            {
-                AppCenter.Start(WhiteLabelConfig.HOCKEYAPPID, typeof(Analytics), typeof(Crashes));
-            }
-            catch
-            {
+            //try
+            //{
+            //    AppCenter.Start(WhiteLabelConfig.HOCKEYAPPID, typeof(Analytics), typeof(Crashes));
+            //}
+            //catch
+            //{
 
-            }
+            //}
             
 
             RegisterActivityLifecycleCallbacks(this);

@@ -192,3 +192,4 @@ WhiteLabelConfig.cs
 Strings.xml
 BuildVariants
 /Bootleg.Android/Keystore
+*.prod.cs

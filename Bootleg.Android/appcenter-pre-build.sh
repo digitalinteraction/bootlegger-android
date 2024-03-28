@@ -35,33 +35,35 @@
 #     cat $GOOGLE_JSON_FILE
 # fi
 
-mkdir -p ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions
+# mkdir -p ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions
 
-echo "Link Version T4: ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/OurStory.t4 (and Titan.t4)"
+echo "Link Version Config: ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.prod.cs to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Templates/WhiteLabelConfig.cs"
 
 #added to rescue original values
-cat ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4
+# cat ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4
 
-ln -s ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/OurStory.t4
-ln -s ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/Titan.t4
+ln -s ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.prod.cs ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Templates/WhiteLabelConfig.cs
+# ln -s ${AGENT_TEMPDIRECTORY}/${FLAVOUR}.t4 ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/BuildVariants/Versions/Titan.t4
 
 echo "Link Google Json: ${AGENT_TEMPDIRECTORY}/google-services.json to ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/google-services.json"
 ln -s ${AGENT_TEMPDIRECTORY}/google-services.json ${BUILD_SOURCESDIRECTORY}/Bootleg.Android/google-services.json
 
-echo "Running T4 Process"
-for filename in $(find . -type f -name '*.tt')
-do
-    if [[ ${filename: -3} == ".tt" ]]
-	then
-		echo "$filename"
-		mono /Applications/Visual\ Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe "$filename"		
-	else
-		echo WARNING: Input file not a TT: "$filename"
-	fi	
-done
+# echo "Running T4 Process"
+# for filename in $(find . -type f -name '*.tt')
+# do
+#     if [[ ${filename: -3} == ".tt" ]]
+# 	then
+# 		echo "$filename"
+# 		mono /Applications/Visual\ Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.TextTemplating/TextTransform.exe "$filename"		
+# 	else
+# 		echo WARNING: Input file not a TT: "$filename"
+# 	fi	
+# done
 
-echo "Copying new Manifest File"
-cp "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest_Init.xml" "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest.xml"
+# cp "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest_Init.xml" "${BUILD_SOURCESDIRECTORY}/Bootleg.Android/Properties/AndroidManifest.xml"
+
+echo "Setting vars in Manifest File"
+sed -i '' -E "s/package=\"([a-z|A-Z|\.]*)\"/package=\"$PACKAGE\"/1" ./Properties/AndroidManifest.xml
 
 # echo "Setting Mono Version"
 # /bin/bash -c "sudo $AGENT_HOMEDIRECTORY/scripts/select-xamarin-sdk.sh 6_4_0"
