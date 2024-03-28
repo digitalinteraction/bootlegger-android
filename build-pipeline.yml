@@ -9,7 +9,7 @@ steps:
 - task: DownloadSecureFile@1
   name: T4File
   inputs:
-    secureFile: '${{ parameters.flavour }}.t4'
+    secureFile: '${{ parameters.flavour }}.prod.cs'
 
 - task: DownloadSecureFile@1
   name: GoogleFile
