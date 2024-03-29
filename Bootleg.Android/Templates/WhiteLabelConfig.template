@@ -1,0 +1,57 @@
+using System;
+namespace Bootleg
+{
+	public static class WhiteLabelConfig
+	{
+		// NAMESPACE_EXT = "offline";
+
+		// APP_NAME.Add("en", "Indaba Titan");
+
+
+		// GOOGLE_NEARBY_KEY = "AIzaSyByrFkSQUCtZgExlJGoKZxoUcL9TcBne8Q";
+
+		// PRIMARY_COLOR_DARK = "#ab000d";
+		// WARNING_COLOR = "#fb8c00 ";
+		// WARNING_COLOR_DARK = "#c25e00";
+		// PRIMARY_TINT = "#FFFFFF";
+
+		public const string BUILD_VARIANT = "IFRC";
+		public const string CBID = "";
+		public const string APIKEY = "replaceme";
+		public const string SERVER = "http://10.10.10.1";
+		public const int PORT = 8845;
+		public const string PRIMARY_COLOR = "#e53935";
+		public const string PRIMARY_TINT = "#FFFFFF";
+		public const bool GOOGLE_LOGIN = false;
+		public const bool FACEBOOK_LOGIN = false;
+		public const bool LOCAL_LOGIN = true;
+		public static TimeSpan GPS_RECORD_INTERVAL_SECS = TimeSpan.FromSeconds(30);
+		public const bool LARGE_SHOT_FONT = false;
+		public const bool ALLOW_SINGLE_SHOOT = false;
+		public const bool ALLOW_CREATE_OWN = false;
+		public const string DATASCHEME = "offline";
+		public const string NAMESPACE = "uk.ac.ncl.di.bootlegger.offline";
+		public const bool ALLOW_CODE_JOIN = false;
+		public const bool AUTO_SELECT_CAMERA = true;
+		public const bool LOCAL_SERVER = true;
+		public const bool USE_FLASH = false;
+		public const int THUMBNAIL_SIZE = 200;
+		public const bool SHOW_META_EDITING = false;
+		public const bool ONBOARDING = false;
+		public const bool EXTERNAL_LINKS = false;
+		public const bool USE_RELEASE_DIALOG = false;
+		public const bool USE_EDIT_DESCRIPTION = false;
+		public const bool MAP_SELECTION_ONLY = true;
+		public const bool SHOW_SETTINGS = false;
+		public const bool SHOW_ALL_SHOTS = false;
+		public const bool OFFLINE_CACHE = true;
+		public const bool FORCE_LANG = false;
+		public const bool REDUCE_BANDWIDTH = false;
+		public const bool ALLOW_BLE = false;
+		public const bool LOCATION_SHOOTS_ENABLED = false;
+		public const bool PUBLIC_TOPICS = true;
+		public const bool USE_GPS = true;
+		public const string SERVERHOST = "";
+
+    }
+}
