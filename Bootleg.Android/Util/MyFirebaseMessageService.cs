@@ -14,7 +14,7 @@ using Firebase.Messaging;
 
 namespace Bootleg.Droid.Util
 {
-    [Service, IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
+    [Service(Exported =true), IntentFilter(new[] { "com.google.firebase.MESSAGING_EVENT" })]
     public class MyFirebaseMessageService : FirebaseMessagingService
     {
         public override void OnMessageReceived(RemoteMessage message)

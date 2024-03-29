@@ -6,7 +6,6 @@
 using System;
 using Android.Hardware.Camera2;
 using Android.Widget;
-using Microsoft.AppCenter.Crashes;
 
 namespace Bootleg.Droid.Fragments
 {
@@ -31,7 +30,7 @@ namespace Bootleg.Droid.Fragments
             }
             catch (Exception e)
             {
-                Crashes.TrackError(e);
+                //Crashes.TrackError(e);
             }
         }
 
@@ -45,7 +44,7 @@ namespace Bootleg.Droid.Fragments
             }
             catch (Exception e)
             {
-                Crashes.TrackError(e);
+                //Crashes.TrackError(e);
             }
         }
 

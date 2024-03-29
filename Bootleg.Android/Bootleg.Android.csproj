@@ -335,24 +335,6 @@
       <HintPath>..\packages\Xamarin.Google.AutoValue.Annotations.1.6.5\lib\monoandroid80\Xamarin.Google.AutoValue.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="Java.Interop" />
-    <Reference Include="Microsoft.AppCenter.Android.Bindings">
-      <HintPath>..\packages\Microsoft.AppCenter.4.0.0\lib\MonoAndroid50\Microsoft.AppCenter.Android.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter">
-      <HintPath>..\packages\Microsoft.AppCenter.4.0.0\lib\MonoAndroid50\Microsoft.AppCenter.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Crashes.Android.Bindings">
-      <HintPath>..\packages\Microsoft.AppCenter.Crashes.4.0.0\lib\MonoAndroid50\Microsoft.AppCenter.Crashes.Android.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Crashes">
-      <HintPath>..\packages\Microsoft.AppCenter.Crashes.4.0.0\lib\MonoAndroid50\Microsoft.AppCenter.Crashes.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Analytics.Android.Bindings">
-      <HintPath>..\packages\Microsoft.AppCenter.Analytics.4.0.0\lib\MonoAndroid50\Microsoft.AppCenter.Analytics.Android.Bindings.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AppCenter.Analytics">
-      <HintPath>..\packages\Microsoft.AppCenter.Analytics.4.0.0\lib\MonoAndroid50\Microsoft.AppCenter.Analytics.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\MusicDialog.cs" />
@@ -788,11 +770,15 @@
     <Compile Include="Bootleg.API\Bootlegger.API\Exceptions\Exceptions.cs" />
     <AndroidResource Include="Resources\values-fr\Strings.xml">
       <SubType></SubType>
-      <Generator></Generator>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
     <None Include="Templates\Titan.prod.cs" />
     <None Include="Templates\OurStory.prod.cs" />
     <Compile Include="Templates\WhiteLabelConfig.cs" />
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType></SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Login.axml">
@@ -1416,10 +1402,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_white_24dp.png" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
     <AndroidResource Include="Resources\values\colors.xml">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </AndroidResource>
-    <AndroidResource Include="Resources\values\Strings.xml">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </AndroidResource>

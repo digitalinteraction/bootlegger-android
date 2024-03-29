@@ -19,7 +19,6 @@ using Android.Text.Method;
 using Bootleg.Droid.UI;
 using Android.Support.V4.App;
 using System.IO;
-using Microsoft.AppCenter.Analytics;
 
 namespace Bootleg.Droid
 {

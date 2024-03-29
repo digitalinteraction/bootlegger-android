@@ -6,7 +6,7 @@ using System;
 
 namespace Bootleg.Droid.Util
 {
-    [Service]
+    [Service(Exported = true)]
     [IntentFilter(new[] { "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class FirebaseIIDService : FirebaseInstanceIdService
     {

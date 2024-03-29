@@ -21,7 +21,7 @@ using static Android.Net.Wifi.WifiManager;
 
 namespace Bootleg.Droid
 {
-    [Activity(Theme = "@style/Theme.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Theme = "@style/Theme.Splash", MainLauncher = true, NoHistory = true, Exported = true)]
     [IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = WhiteLabelConfig.DATASCHEME)]
     //[IntentFilter(new[] { Intent.ActionView }, Categories = new[] { Intent.CategoryBrowsable, Intent.CategoryDefault }, DataScheme = "https", DataHost = "",DataPathPrefix = "/watch/view/")]
     public partial class SplashActivity : FragmentActivity

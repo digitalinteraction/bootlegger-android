@@ -21,9 +21,6 @@ using Square.OkHttp;
 using Android.Icu.Util;
 using System.Net;
 using Plugin.Connectivity;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Crashes;
-using Microsoft.AppCenter.Analytics;
 using Java.Interop;
 
 namespace Bootleg.Droid
