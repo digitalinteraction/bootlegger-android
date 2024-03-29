@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- INFO STRINGS -->
+    <string name="nomusic">بدون موسيقى</string>
+    <string name="nownearby">الآن وبالجوار</string>
+    <string name="seeall">إظهار الكل</string>
+    <string name="joinashoot">الانضمام الى تبادل لاطلاق النار</string>
+
+    <string name="bywho">بحسب من</string>
+    <string name="bywhen">بحسب متى</string>
+    <string name="bylength">بحسب الطول</string>
+    <string name="byphase">بحسب الوجه</string>
+    <string name="bycamera">بحسب الكاميرا</string>
+    <string name="bywhat">بحسب ماذا</string>
+    <string name="orderup">الترتيب لأعلى</string>
+    <string name="orderdown">الترتيب لأسفل</string>
+
+
+    <string name="deletebtn">حذف</string>
+    <string name="copybtn">نسخ</string>
+    <string name="restartbtn">إعادة محاولة النشر</string>
+    <string name="tagging">وضع العلامات</string>
+    <string name="howitworks">كيفية العمل</string>
+    <string name="includevideo">قم بتضمين مقطع فيديو في قصتك</string>
+    <string name="enableble">قم بتمكين البلوتوث</string>
+    <string name="blemessage">هل يمكننا تشغيل البلوتوث للسماح للأشخاص بمعرفة أنك تقوم بالتصوير؟</string>
+    <string name="startshooting">ابدأ التصوير</string>
+    <string name="logintocontribute">قم بتسجيل الدخول للمساهمة</string>
+    <string name="closed">مغلق</string>
+    <string name="noconnectionshort">غير قادر على الاتصال</string>
+    <string name="TagLine">قصتنا IFRC تساعدك على تصوير الأفلام. اكتشف المزيد على</string>
+    <string name="About">وقد تم تطوير هذا التطبيق كجزء من برنامج بحثي جاري يستكشف قيمة إنشاء الفيديو التشاركي للتعبير عن السرد الذاتي التعبيري.</string>
+    <string name="ingesttitle">وضع علامات على مقاطع الفيديو لـ %s</string>
+    <string name="whatisbootlegger">تقوم قصتنا IFRC بتنسيق الأشخاص الذين يصنعون مقاطع الفيديو</string>
+    <string name="findashoot">اعثر على لقطة، وانضم إلى الفريق وساهم بمقاطع الفيديو الخاصة بك...</string>
+    <string name="andaction">و...العمل!</string>
+    <string name="suggestsshots">تقترح قصتنا IFRC لقطات رائعة وتساعدك في الحصول على أفضل الزوايا...</string>
+    <string name="thatsawrap">هذا يُعَد بمثابة التفاف</string>
+    <string name="everyonesvideo">يتم جمع مقاطع فيديو للجميع ويمكنك تشغيل وتعديل إبداعاتك.</string>
+
+    <!-- DIALOGS -->
+    <string name="alluploadsdone">اكتملت التحميلات</string>
+    <string name="uploadingclips">جاري تحميل مقاطع الفيديو</string>
+    <string name="entertitledialog">أدخِل العنوان</string>
+    <string name="uploadprogress">%1$s من %2$s مكتملة</string>
+    <string name="logintitle">قم بتسجيل الدخول إلى قصتنا IFRC</string>
+    <string name="feedback">أرسِل ملاحظاتك</string>
+    <string name="single_shoot_msg">هل نبدأ تصوير قصتنا IFRC على الفور؟</string>
+    <string name="removewarn">سيؤدي هذا إلى إزالة الفيديو من قصتنا IFRC، مما يمنعك أنت والمجتمع على حد سواء من مشاهدته.</string>
+    <string name="chooseatrack">اختر المسار</string>
+    <string name="unfinishededits">مسودات القصص</string>
+    <string name="inprogressedits">قصص النشر</string>
+    <string name="completededits">قصص منشورة</string>
+    <string name="loading">جاري التحميل…</string>
+    <string name="notnow">ليس الآن على الفور</string>
+    <string name="continueanyway">المتابعة على أي حال</string>
+    <string name="continuetitle">المتابعة؟</string>
+    <string name="sendeverything">أنت تقوم الآن بإرسال مقاطع الفيديو الخاصة بك إلينا. سيتم حذفها من جهازك لتوفير مساحة.</string>
+    <string name="illreview">سأقوم بالمراجعة أولاً</string>
+    <string name="goahead">امضي قُدمًا</string>
+    <string name="acceptperms">يُرجى قبول الأذونات</string>
+    <string name="permschanged">تم تغيير الأذونات</string>
+    <string name="notacceptperms">لقد اخترت عدم قبول الإذن المتغير حتى تضطر إلى التوقف عن المساهمة.</string>
+    <string name="iunderstand">أنا أتفهم ذلك</string>
+    <string name="EventPosition">اختر موضوعًا لمقطع الفيديو التالي.</string>
+    <string name="Finished">لقد انتهيت عند هذه اللقطة</string>
+    <string name="Choose">حدّد قالبًا لاستخدامه</string>
+    <string name="datausagetitle">تحذير استخدام البيانات</string>
+    <string name="locationwarn">يفيد الموقع في تحديد المكان الذي تقوم بالتصوير فيه.</string>
+    <string name="finishshooting">الانتهاء من التصوير</string>
+    <string name="stopreturn">هل تريد حقًا التوقف عن التسجيل؟</string>
+    <string name="stopshooting">إيقاف التصوير</string>
+    <string name="areyousure">هل أنت متأكد؟</string>
+    <string name="deleteedit">هل تريد حذف هذه القصة؟</string>
+    <string name="settingsbtn">الإعدادات</string>
+    <string name="removeedit">إزالة القصة</string>
+    <string name="finishedbtn">لقد انتهيت</string>
+    <string name="loggingout">جاري تسجيل الخروج…</string>
+    <string name="logintocontrib">قم بتسجيل الدخول للمساهمة</string>
+    <string name="continuebtn">المتابعة</string>
+    <string name="help">المساعدة</string>
+    <string name="skip">تخطي</string>
+    <string name="next">التالي</string>
+    <string name="mytags">مقاطع الفيديو ذات العلامات</string>
+    <string name="uploadbtn">تحميل مقاطع الفيديو الخاصة بي</string>
+    <string name="logoutbtn">الخروج</string>
+    <string name="uploadnow">التحميل الآن</string>
+    <string name="hideident">قم بإخفاء هويتي</string>
+    <string name="statename">يُرجى وضع اسمك على الكاميرا عند بدء التسجيل</string>
+    <string name="shownotice">اعرض هذا للشخص الذي تقوم بتصويره</string>
+    <string name="noedits">لا توجد قصص بعد...</string>
+    <string name="description">الوصف</string>
+    <string name="title">العنوان</string>
+    <string name="cancelbtn">تجاهل التغييرات</string>
+    <string name="savebtn">الحفظ والتغيير لاحقًا</string>
+    <string name="processbtn">نشر ومشاركة القصة</string>
+    <string name="savebtnshort">حفظ</string>
+
+    <string name="videos">مقاطع الفيديو</string>
+    <string name="edits">التعديلات</string>
+    <string name="saveedit">الحفظ أو النشر</string>
+    <string name="findevent">العثور على لقطة</string>
+    <string name="aboutbtn">نبذة</string>
+    <string name="uploads">التحميلات</string>
+    <string name="uploadswaiting">في انتظار التحميل</string>
+    <string name="datacharge">أنت لست متصلًا بشبكة واي فاي، قد يؤدي التحميل أو التشغيل إلى تحميلك رسوم إنترنت كبيرة.</string>
+    <string name="datachargewithwarning">أنت لست متصلًا بشبكة واي فاي، قد يؤدي التحميل أو التشغيل إلى تحميلك رسوم إنترنت كبيرة. سيتم حذف مقاطع الفيديو من جهازك.</string>
+    <string name="deleteclipwarning">سيتم تحميل مقاطع الفيديو ثم حذفها من جهازك لتوفير مساحة.</string>
+    <string name="shootcodetitle">دع الناس يعرفون</string>
+    <string name="shootcodemessage">أخبِر الأشخاص أن يقوموا بدخول %s للمساهمة في هذه اللقطة.</string>
+    <string name="opensource">المصدر المفتوح</string>
+
+    <!-- ERRORS -->
+    <string name="mustupdate">عذرًا، يجب عليك تحديث قصتنا IFRC للمتابعة حيث أننا قمنا بإضافة ميزات جديدة</string>
+    <string name="notconnected">أنت غير متصل بأي شبكة</string>
+    <string name="updatedsecurity">عذرًا، يجب عليك تحديث قصتنا IFRC للمتابعة حيث أننا قد قمنا بتحديث بروتوكولات الأمان الخاصة بنا</string>
+    <string name="loginagain">يُرجى محاولة تسجيل الدخول مرة أخرى</string>
+    <string name="invalidcode">هذا الرمز غير صالح</string>
+    <string name="longershoottitle">أدخِل اسمًا أطول للتصوير</string>
+    <string name="problemcreateshoot">لا يمكن بدء تصوير جديد</string>
+    <!--<string name="cantlistedits">Cannot list edits, you may be offline</string>-->
+    <string name="googleplayerror">خدمات Google Play غير مثبتة أو بحاجة للتحديث</string>
+    <string name="tryagain">%1$s. يُرجى المحاولة مرة أخرى.</string>
+    <string name="role_repeat">نعتقد أنك قد قمت بتسجيل الدخول في مكان آخر، المتابعة؟</string>
+    <string name="loggedinelsewhere">لقد قمت بتسجيل الدخول في مكان آخر، لذلك نحن نقوم الآن بقطع اتصالك على هذا الجهاز.</string>
+    <!--<string name="cannotload">Cannot list shoots</string>-->
+    <string name="tryupdate">حاوِل تحديث التطبيق، لأسباب أمنية، قصتنا IFRC تحتاج إلى التحديث.</string>
+    <string name="tryupdatefeatures">حاوِل تحديث التطبيق، تمت إضافة ميزات جديدة تمنع هذا الإصدار من العمل.</string>
+    <string name="Closed">الإنتاج غير ممكن في هذا الحدث في الوقت الحالي.</string>
+    <string name="noperms">أنت لم تمنح أذونات لتشغيل التطبيق، لذا سيتم إغلاقه الآن.</string>
+    <string name="norolechosen">أنت لم تختر موضوعًا قبل المتابعة بدون اتصال بالإنترنت، اتصل بالإنترنت للمتابعة</string>
+    <string name="cannotloadvideo">لا يمكن تحميل الفيديو، وقد تتم معالجته، لذا حاوِل مرة أخرى قريبًا</string>
+    <string name="entertitle">أدخِل عنوانًا أطول</string>
+    <string name="enterdescription">أدخِل وصفًا أطول</string>
+    <string name="nostorage">لا يمكن الوصول إلى التخزين</string>
+    <string name="nostorageavail">لا تتوفر سعة تخزين، يُرجى فصل الجهاز من جهاز الكمبيوتر.</string>
+    <string name="conncancel">تم إلغاء الاتصال...</string>
+    <string name="nospace">لديك مساحة غير كافية لمتابعة التسجيل. يُرجى تحميل بعض مقاطع الفيديو الخاصة بك قبل تسجيل المزيد.</string>
+
+    <!-- PERMISSIONS -->
+    <string name="publicview">يمكن لأي شخص من الجمهور المساهمة</string>
+    <string name="notpublicview">يمكن للمشاركين المدعوين فقط المساهمة</string>
+    <string name="sharename">هل ستشارِك اسمك الحقيقي؟</string>
+    <string name="publicshare">يمكن لأي مساهم مشاهدة أي فيديو يتم إنتاجه أثناء عملية التصوير هذه</string>
+    <string name="nopublicshare">يمكن للمساهمين عرض الفيديو الخاص بهم فقط</string>
+    <string name="editerror">لا يمكن حفظ قصتك، يُرجى المحاولة مرة أخرى</string>
+    <string name="nolocalserverfound">لا يوجد اتصال خادم محلي...</string>
+    <string name="problemconnecting">حدثت مشكلة، يُرجى المحاولة مرة أخرى</string>
+    <string name="permissions_title">الأذونات</string>
+    <string name="permissions_message">بالنسبة لك لكي تساهم، نحن بحاجة إلى بعض الأذونات البسيطة</string>
+    <string name="yes_share">قم بمشاركة اسمي</string>
+    <string name="no_share">قم بإخفاء اسمي</string>
+    <string name="policies">أنت تقر بأن:</string>
+    <string name="ispublic">يمكن لأي شخص من الجمهور المساهمة</string>
+    <string name="canshare">يمكن لأي مساهم مشاهدة الفيديو من أي شخص في هذه اللقطة</string>
+    <string name="wanttoshare">في ضوء هذه المعلومات، هل ترغب في مشاركة اسمك الحقيقي؟</string>
+
+    <!-- NOTIFICATIONS -->
+    <string name="crewreminder_title">تذكير التصوير</string>
+    <string name="crewreminder_content">أنت لم تُسجِّل منذ فترة، لماذا لا تجرب شيئًا الآن</string>
+    <string name="uploadcomplete">اكتمل التحميل</string>
+    <string name="phasechange_title">تم تحديث اللقطة</string>
+    <string name="phasechange">أصبحت اللقطة الآن حوالي %s، وربما تم تعيين أشياء جديدة لتصويرها</string>
+    <string name="shootupdatedlong">تم تحديث اللقطة، وقد يكون هناك خيارات جديدة</string>
+    <string name="phasechangerole">أصبحت اللقطة الآن حول %s لذا يجب عليك تغيير الموضوع الخاص بك</string>
+
+    <!-- INTERFACE ELEMENTS -->
+
+    <string name="lookingfornew">البحث عن مقاطع فيديو مجتمعية جديدة...</string>
+    <string name="syncnow">المزامنة الآن</string>
+    <string name="updatingvideos">جاري تحديث مقاطع الفيديو...</string>
+    <string name="newvideos">يوجد %d مقطع فيديو مجتمعي جديد متاح</string>
+    <string name="failedtoupload">تعذّر التحميل</string>
+    <string name="uploadfailmsg">يبدو أننا غير قادرين على تحميل مقاطع الفيديو الخاصة بك الآن. حاوِل مرة أخري؟</string>
+    <string name="uploadfailshort">لا يمكن تحميل مقاطع الفيديو</string>
+
+    <string name="finishedvideos">قصصي المنشورة</string>
+    <string name="me">أنا</string>
+    <string name="Settings">الإعدادات</string>
+    <string name="PUBLIC">الجمهور</string>
+    <string name="OWNER">المالِك</string>
+    <string name="INVITED">مدعو</string>
+    <string name="entersharecode">أدخِل رمزك</string>
+    <string name="clipswaiting">مقاطع الفيديو في انتظار التحميل...</string>
+    <string name="dontmissout">المس لتحميل مقاطع الفيديو الخاصة بك</string>
+    <string name="guest">زائر</string>
+    <string name="loginbtn">تسجيل الدخول</string>
+    <string name="helpoverlay">إظهار التلميحات</string>
+    <string name="waitingtoupload">%d في انتظار التحميل</string>
+    <string name="pause">إيقاف مؤقت</string>
+    <string name="upload">التحميل</string>
+    <string name="editready">ستكون قصتك جاهزة للمشاهدة قريبًا...</string>
+    <string name="allclear">اكتمل التحميل!</string>
+    <string name="sendingall">أنت تقوم الآن بإرسال كل شيء قمت بتسجيله إلينا.</string>
+    <string name="noshoots">أدخِل رمزًا للانضمام إلى أحد اللقطات...</string>
+    <string name="imagedownload">جاري تنزيل الصور. قد يستغرق هذا حوالي 30 ثانية...</string>
+    <plurals name="shootcount">
+    <item quantity="zero">%d لقطة</item>
+    <item quantity="one">%d لقطة</item>
+    <item quantity="two">%d لقطة</item>
+    <item quantity="few">%d لقطات</item>
+    <item quantity="many">%d لقطة</item>
+    <item quantity="other">%d لقطة</item>
+  </plurals>
+    <string name="nofootage">لا توجد مقاطع فيديو هنا...</string>
+    <string name="agree">أنا موافق</string>
+    <string name="newedit">قصة جديدة</string>
+    <string name="allvideos">جميع مقاطع الفيديو</string>
+    <string name="connecting">جاري التوصيل…</string>
+    <string name="ofcount">%1$s من %2$s</string>
+
+    <!-- HELP -->
+    <string name="getmorehelp">احصل على المزيد من المساعدة</string>
+    <string name="zoom">تكبير</string>
+    <string name="touchfocus">المس لتركيز البؤرة</string>
+    <string name="abouttitle">نبذة</string>
+    <string name="single_shoot_title">البدء</string>
+    <string name="normalcamera">يعمل هذا تمامًا مثل تطبيق الكاميرا العادي.</string>
+    <string name="usefulhints">تظهر تلميحات ورسائل مفيدة أعلاه</string>
+    <string name="swipe">اسحب من اليسار لمزيد من الخيارات</string>
+    <string name="shottiming">معلومات توقيت الفيديو</string>
+    <string name="edit_page1_title">معاينة واختيار مقاطع الفيديو</string>
+    <string name="edit_page1_description">المس أي فيديو للمعاينة أو إضافة المزيد أو تبديل الفيديوهات الموجودة</string>
+    <string name="edit_page2_title">اختر أفضل القطع</string>
+    <string name="edit_page2_description">قص بداية ونهاية كل فيديو</string>
+    <string name="edit_page3_title">فرز وترتيب</string>
+    <string name="edit_page3_description">احذف مقاطع الفيديو، أو اضغط مع الاستمرار للتجول</string>
+
+    <string name="ingest_page1_title">اختر مقاطع الفيديو</string>
+    <string name="ingest_page1_description">قم بمعاينة وتسمية مقاطع الفيديو التي تريد استخدامها في قصتك</string>
+    
+    <string name="newshoothint">اسم اللقطة</string>
+    <string name="newshoottitle">بدء لقطة جديدة</string>
+    <string name="contributedfootage">هناك %d مساهمة من أشخاص آخرين لإنشاء مقطع فيديو باستخدام...</string>
+    <string name="roledescision">قرار الموضوع</string>
+    <string name="logouttitle">هل تريد تسجيل الخروج حقًا؟</string>
+    <string name="logoutmsg">ستفقد إلى الأبد جميع مقاطع الفيديو التي لم يتم تحميلها بالفعل</string>
+    <string name="search">بحث</string>
+    <string name="cache">تنزيل ذاكرة التخزين المؤقت</string>
+  
+    <string name="selectavideotoinsert">اختر  فيديو</string>
+    <string name="savecancelmsg">هل تريد حفظ قصتك؟</string>
+    <string name="topic">بحسب العلامة</string>
+    <string name="copyof">نسخة من %s</string>
+    <string name="connectionissuetitle">مشكلة في الاتصال</string>
+    <string name="connectionissuebody">نحن نواجه مشكلة في استرداد معلوماتك. قم بتسجيل الدخول مرة أخرى للمتابعة.</string>
+
+    <string name="linecounter">%s / 8 خطوط</string>
+    <string name="titlelengthwarning">العنوان طويل جدا!</string>
+
+  </resources>
