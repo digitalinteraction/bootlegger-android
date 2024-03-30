@@ -76,7 +76,7 @@ namespace Bootleg.Droid
             /*************/
 
             _audioPlayer = ExoPlayerFactory.NewSimpleInstance(Context, new DefaultTrackSelector());
-            _audioPlayer.Volume = 0.4f;
+            _audioPlayer.Volume = 0.2f;
             _audioPlayer.RepeatMode = Player.RepeatModeOne;
 
             cursor = FindViewById<View>(Resource.Id.trackposition);
@@ -305,6 +305,7 @@ namespace Bootleg.Droid
                 audioSource = new ExtractorMediaSource(Android.Net.Uri.Parse(v), httpDataSourceFactory, extractorsFactory, null, null);
                 _audioPlayer.Prepare(audioSource);
                 _audioPlayer.PlayWhenReady = false;
+                //_audioPlayer.Volume = 0.2f;
             }
             else
             {
