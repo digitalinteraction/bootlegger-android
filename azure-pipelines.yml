@@ -50,7 +50,7 @@ jobs:
         apksignerKeyPassword: '$(KeystorePassword)'
     - task: GitHubRelease@0
       inputs:
-        gitHubConnection: 'tombartindale'
+        gitHubConnection: 'github.com_tombartindale'
         repositoryName: 'our-story-media/ourstory-android'
         action: 'create'
         title: 'Indaba Android App'
