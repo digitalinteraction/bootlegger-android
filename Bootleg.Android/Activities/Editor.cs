@@ -342,6 +342,14 @@ namespace Bootleg.Droid
                         CurrentEdit.media.First().audio = CurrentMusic.path;
                         CurrentEdit.media.First().credits = CurrentMusic.caption;
                     }
+                    else
+                    {
+                        foreach (var m in CurrentEdit.media)
+                        {
+                            m.audio = null;
+                            m.credits = null;
+                        }
+                    }
 
                     if (CurrentEdit.media.Where(n => n.MediaType != Shot.ShotTypes.TITLE && n.Status != MediaItem.MediaStatus.PLACEHOLDER).Count() > 0)
                     {
