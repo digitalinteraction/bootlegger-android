@@ -73,6 +73,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/firstLine"
             android:text="Title"
+            android:singleLine="true"
             android:textSize="24sp"
             android:textStyle="normal"
             android:ellipsize="marquee"

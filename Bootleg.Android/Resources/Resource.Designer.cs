@@ -5946,127 +5946,130 @@ namespace Bootleg.Droid
 			public const int tracks = 2131362253;
 			
 			// aapt resource value: 0x7F0A01CE
-			public const int transition_current_scene = 2131362254;
+			public const int trainingmode = 2131362254;
 			
 			// aapt resource value: 0x7F0A01CF
-			public const int transition_layout_save = 2131362255;
+			public const int transition_current_scene = 2131362255;
 			
 			// aapt resource value: 0x7F0A01D0
-			public const int transition_position = 2131362256;
+			public const int transition_layout_save = 2131362256;
 			
 			// aapt resource value: 0x7F0A01D1
-			public const int transition_scene_layoutid_cache = 2131362257;
+			public const int transition_position = 2131362257;
 			
 			// aapt resource value: 0x7F0A01D2
-			public const int transition_transform = 2131362258;
+			public const int transition_scene_layoutid_cache = 2131362258;
 			
 			// aapt resource value: 0x7F0A01D3
-			public const int triangle = 2131362259;
+			public const int transition_transform = 2131362259;
 			
 			// aapt resource value: 0x7F0A01D4
-			public const int trimbtn = 2131362260;
+			public const int triangle = 2131362260;
 			
 			// aapt resource value: 0x7F0A01D5
-			public const int tv_title = 2131362261;
+			public const int trimbtn = 2131362261;
 			
 			// aapt resource value: 0x7F0A01D6
-			public const int txt = 2131362262;
+			public const int tv_title = 2131362262;
 			
 			// aapt resource value: 0x7F0A01D7
-			public const int underline = 2131362263;
+			public const int txt = 2131362263;
 			
 			// aapt resource value: 0x7F0A01D8
-			public const int uniform = 2131362264;
+			public const int underline = 2131362264;
 			
 			// aapt resource value: 0x7F0A01D9
-			public const int unlabeled = 2131362265;
+			public const int uniform = 2131362265;
 			
 			// aapt resource value: 0x7F0A01DA
-			public const int up = 2131362266;
+			public const int unlabeled = 2131362266;
 			
 			// aapt resource value: 0x7F0A01DB
-			public const int uploadbtn = 2131362267;
+			public const int up = 2131362267;
 			
 			// aapt resource value: 0x7F0A01DC
-			public const int uploadcount = 2131362268;
+			public const int uploadbtn = 2131362268;
 			
 			// aapt resource value: 0x7F0A01DD
-			public const int uploadcountmain = 2131362269;
+			public const int uploadcount = 2131362269;
 			
 			// aapt resource value: 0x7F0A01DE
-			public const int uploadimg = 2131362270;
+			public const int uploadcountmain = 2131362270;
 			
 			// aapt resource value: 0x7F0A01DF
-			public const int uploadprogress = 2131362271;
+			public const int uploadimg = 2131362271;
 			
 			// aapt resource value: 0x7F0A01E0
-			public const int uploadsubtitle = 2131362272;
+			public const int uploadprogress = 2131362272;
 			
 			// aapt resource value: 0x7F0A01E1
-			public const int uploadtile = 2131362273;
-			
-			// aapt resource value: 0x7F0A01E3
-			public const int usedtick = 2131362275;
+			public const int uploadsubtitle = 2131362273;
 			
 			// aapt resource value: 0x7F0A01E2
-			public const int useLogo = 2131362274;
+			public const int uploadtile = 2131362274;
 			
 			// aapt resource value: 0x7F0A01E4
-			public const int username = 2131362276;
+			public const int usedtick = 2131362276;
+			
+			// aapt resource value: 0x7F0A01E3
+			public const int useLogo = 2131362275;
 			
 			// aapt resource value: 0x7F0A01E5
-			public const int versiontext = 2131362277;
+			public const int username = 2131362277;
 			
 			// aapt resource value: 0x7F0A01E6
-			public const int vertical = 2131362278;
+			public const int versiontext = 2131362278;
 			
 			// aapt resource value: 0x7F0A01E7
-			public const int video = 2131362279;
+			public const int vertical = 2131362279;
 			
-			// aapt resource value: 0x7F0A01E9
-			public const int videometadata = 2131362281;
+			// aapt resource value: 0x7F0A01E8
+			public const int video = 2131362280;
 			
 			// aapt resource value: 0x7F0A01EA
-			public const int videoplayer = 2131362282;
+			public const int videometadata = 2131362282;
+			
+			// aapt resource value: 0x7F0A01EB
+			public const int videoplayer = 2131362283;
 			
 			// aapt resource value: 0x7F0A0009
 			public const int VideoPreview = 2131361801;
 			
-			// aapt resource value: 0x7F0A01EB
-			public const int videoview = 2131362283;
-			
 			// aapt resource value: 0x7F0A01EC
-			public const int videowrapper = 2131362284;
-			
-			// aapt resource value: 0x7F0A01E8
-			public const int videoWrapper = 2131362280;
+			public const int videoview = 2131362284;
 			
 			// aapt resource value: 0x7F0A01ED
-			public const int view1 = 2131362285;
+			public const int videowrapper = 2131362285;
 			
-			// aapt resource value: 0x7F0A01EF
-			public const int viewadminpanel = 2131362287;
+			// aapt resource value: 0x7F0A01E9
+			public const int videoWrapper = 2131362281;
 			
 			// aapt resource value: 0x7F0A01EE
-			public const int view_offset_helper = 2131362286;
+			public const int view1 = 2131362286;
 			
 			// aapt resource value: 0x7F0A01F0
-			public const int visible = 2131362288;
+			public const int viewadminpanel = 2131362288;
+			
+			// aapt resource value: 0x7F0A01EF
+			public const int view_offset_helper = 2131362287;
 			
 			// aapt resource value: 0x7F0A01F1
-			public const int when_playing = 2131362289;
+			public const int visible = 2131362289;
 			
 			// aapt resource value: 0x7F0A01F2
-			public const int wide = 2131362290;
+			public const int when_playing = 2131362290;
 			
 			// aapt resource value: 0x7F0A01F3
-			public const int withText = 2131362291;
+			public const int wide = 2131362291;
 			
 			// aapt resource value: 0x7F0A01F4
-			public const int wrap_content = 2131362292;
+			public const int withText = 2131362292;
 			
 			// aapt resource value: 0x7F0A01F5
-			public const int zoom = 2131362293;
+			public const int wrap_content = 2131362293;
+			
+			// aapt resource value: 0x7F0A01F6
+			public const int zoom = 2131362294;
 			
 			static Id()
 			{

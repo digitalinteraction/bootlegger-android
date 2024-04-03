@@ -163,6 +163,16 @@
             android:layout_margin="0dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/trainingmode"
+            android:background="@color/blue"
+            android:text="Training Use Only"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:padding="12dp"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/newshoot"

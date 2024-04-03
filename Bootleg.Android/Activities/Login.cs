@@ -396,7 +396,12 @@ namespace Bootleg.Droid
             base.OnResume();
             ShowButtons();
 
+            if (WhiteLabelConfig.LOCAL_SERVER == false)
+                FindViewById(Resource.Id.trainingmode).Visibility = ViewStates.Visible;
+            else
+                FindViewById(Resource.Id.trainingmode).Visibility = ViewStates.Gone;
             //Bootlegger.BootleggerClient.DisconnectForReview();
+
 
             var currentversion = PackageManager.GetPackageInfo(PackageName, 0).VersionCode;
             var allprefs = GetSharedPreferences(WhiteLabelConfig.BUILD_VARIANT.ToLower(), FileCreationMode.Private);
