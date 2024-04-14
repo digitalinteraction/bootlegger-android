@@ -90,7 +90,6 @@
         android:orientation="vertical">
         <FrameLayout
             android:clickable="true"
-            android:layout_gravity="bottom"
             android:background="@color/orange"
             android:layout_width="match_parent"
             android:id="@+id/uploadtile"
@@ -156,6 +155,7 @@
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>
+           
         <android.support.v4.view.ViewPager
             android:id="@+id/tabpager"
             android:layout_weight="1"
@@ -163,16 +163,17 @@
             android:layout_margin="0dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_height="match_parent" />
-        <TextView
+         <TextView
             android:id="@+id/trainingmode"
             android:background="@color/blue"
             android:text="Training Use Only"
             android:textColor="#ffffff"
             android:gravity="center"
             android:padding="12dp"
-            android:textSize="20dp"
+            android:textSize="18dp"
+            android:layout_gravity="bottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="48dp"/>
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/newshoot"
