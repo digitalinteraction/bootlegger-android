@@ -345,7 +345,7 @@ namespace Bootleg.Droid
                     stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(Uploads)));
                     stackBuilder.AddNextIntent(resultIntent);
 
-                    PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+                    PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent | (int)PendingIntentFlags.Immutable);
 
                     uploadbuilder = new NotificationCompat.Builder(this)
                         .SetContentTitle(Resources.GetString(Resource.String.uploadingclips))
