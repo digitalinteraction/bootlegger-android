@@ -40,6 +40,8 @@ using Android.Support.V7.Widget;
 using Bootleg.API.Model;
 using static Android.Views.View;
 using Android.Runtime;
+using Android;
+using NUnit.Framework.Internal;
 
 namespace Bootleg.Droid
 {
@@ -93,6 +95,17 @@ namespace Bootleg.Droid
                 return Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMovies).Path;
         }
 
+        string GetExternalPathImage()
+        {
+            var dirs = ContextCompat.GetExternalFilesDirs(this, null);
+            if (dirs.Count() == 1)
+                return Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures).Path;
+            else if (dirs.Last() != null)
+                return dirs.Last().AbsolutePath;
+            else
+                return Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryPictures).Path;
+        }
+
         bool CheckSpace(string dir)
         {
             //var dir = Android.OS.Environment.(Android.OS.Environment.sec).Path;
@@ -136,6 +149,7 @@ namespace Bootleg.Droid
         {
             
             var testfile = new Java.IO.File(GetExternalPath());
+
             if(CheckSpace(testfile.AbsolutePath))
             {
                 progress_view.ProgressColor = Color.Tomato;
@@ -435,7 +449,12 @@ namespace Bootleg.Droid
 
             mygeo.Add("captured_at", startedrecordingtime.ToString("dd/MM/yyyy H:mm:ss.ff tt zz"));
 
-            string filename = path.AbsolutePath + ".jpg";
+            string dir = GetExternalPathImage();
+            var file = new Java.IO.File(dir, DateTime.Now.Ticks + ".jpg");
+
+            string filename = file.AbsolutePath;
+
+            //string filename = path.AbsolutePath + ".jpg";
 
             if (shotype == Shot.ShotTypes.PHOTO)
             {
@@ -443,6 +462,8 @@ namespace Bootleg.Droid
             }
 
             FileStream outt;
+
+            //string thumbfile = D
 
             if (bitmap != null)
             {
@@ -454,9 +475,9 @@ namespace Bootleg.Droid
                     outt.Close();
                     dothumb = true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-
+                    Console.WriteLine(e);
                 }
                 if (!dothumb)
                     filename = null;
@@ -621,6 +642,8 @@ namespace Bootleg.Droid
         //SurfaceView video;
         bool canrecord = false;
 
+        Timer audioLevelTimer;
+
         void start()
         {
             var play = FindViewById<ToggleButton>(Resource.Id.Play);           
@@ -640,6 +663,54 @@ namespace Bootleg.Droid
             shotlength = new Timer(500);
             shotlength.Elapsed += shotlength_Elapsed;
             shotlength.Start();
+
+
+            if (audioLevelTimer != null)
+                audioLevelTimer.Stop();
+            audioLevelTimer = new Timer(100);
+            audioLevelTimer.Elapsed += AudioLevelTimer_Elapsed;
+            audioLevelTimer.Start();
+        }
+
+        const int audioLevelHeight = 90;
+
+        private void AudioLevelTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            //Log.Error("BL", cameraDriver.GetAudioLevel().ToString());
+            if (recording)
+            {
+                if (cameraDriver != null)
+                {
+
+                    double ratio = cameraDriver.GetAudioLevel() / 32767;
+
+                    Console.WriteLine(ratio);
+
+                    double db = 20 * Math.Log10(ratio);
+
+                    Console.WriteLine(db);
+
+                    double scale = Math.Min(db * audioLevelHeight, audioLevelHeight);
+
+                    Console.WriteLine(scale);
+
+                    //int dps = Resources.GetDimensionPixelSize(scale);
+                    int dps = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, (int)scale, Resources.DisplayMetrics);
+
+                    
+
+                    Console.WriteLine(dps);
+                    RunOnUiThread(() =>
+                    {
+                        var old = FindViewById<TextView>(Resource.Id.audioLevel).LayoutParameters;
+
+                        old.Height = dps;
+
+                        FindViewById<TextView>(Resource.Id.audioLevel).LayoutParameters = old;
+                    });
+                }
+            }
+            //Log.WriteLine( LogPriority.Info,"LEVEL:",cameraDriver.GetAudioLevel().ToString());
         }
 
         //DrawerLayout tabHost;
