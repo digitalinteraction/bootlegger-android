@@ -352,6 +352,13 @@ namespace Bootleg.Droid.Fragments
             }
         }
 
+        public int GetAudioLevel()
+        {
+            if (recorder!=null)
+                return recorder.MaxAmplitude;
+            else
+                return 0;
+        }
     }
 
     public class CameraPreview : SurfaceView, ISurfaceHolderCallback

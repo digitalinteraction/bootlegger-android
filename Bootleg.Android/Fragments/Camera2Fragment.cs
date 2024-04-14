@@ -565,6 +565,7 @@ namespace Bootleg.Droid.Fragments
                 mediaRecorder.SetOrientationHint(0);
             else
                 mediaRecorder.SetOrientationHint(finalOrientation);
+
             mediaRecorder.Prepare();
         }
 
@@ -939,6 +940,14 @@ namespace Bootleg.Droid.Fragments
                 previewBuilder.Set(CaptureRequest.ControlAfTrigger, (int)ControlAFTrigger.Cancel);
                 previewSession.Capture(previewBuilder.Build(), null, backgroundHandler);
             }
+        }
+
+        public int GetAudioLevel()
+        {
+            if (mediaRecorder != null)
+                return mediaRecorder.MaxAmplitude;
+            else
+                return 0;
         }
 
         // Compare two Sizes based on their areas

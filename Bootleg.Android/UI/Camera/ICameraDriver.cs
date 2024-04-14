@@ -14,6 +14,7 @@ namespace Bootleg.Droid.UI
 {
     interface ICameraDriver
     {
+        int GetAudioLevel();
         void TakePhoto(string filename);
         void StartRecord(string filename);
         void StopRecord();
