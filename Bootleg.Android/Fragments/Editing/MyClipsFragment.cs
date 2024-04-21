@@ -68,7 +68,14 @@ namespace Bootleg.Droid
 
         internal void RefreshUploads()
         {
-            _adapter.UpdateData(Bootlegger.BootleggerClient.UploadQueueEditing, Bootlegger.BootleggerClient.MyMediaEditing);
+            try
+            {
+                _adapter.UpdateData(Bootlegger.BootleggerClient.UploadQueueEditing, Bootlegger.BootleggerClient.MyMediaEditing);
+            }
+            catch
+            {
+
+            }
         }
 
         internal async void Refresh()
