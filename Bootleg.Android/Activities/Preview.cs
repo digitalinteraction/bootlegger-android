@@ -27,6 +27,7 @@ using Square.OkHttp3;
 using System.Collections.Generic;
 using Bootleg.API.Model;
 using Bootleg.Droid.UI;
+using System.Runtime.Remoting.Contexts;
 
 namespace Bootleg.Droid.Screens
 {
@@ -324,14 +325,16 @@ namespace Bootleg.Droid.Screens
                         }
                         else
                         {
-                            var client = new OkHttpClient.Builder()
-                            //.Cache((Application as BootleggerApp).FilesCache)
-                            .Build();
+                            //var client = new OkHttpClient.Builder()
+                            //.Build();
+                            ////.Cache((Application as BootleggerApp).FilesCache)
 
-                            OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview");
+                            //OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview");
+
+                            DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("BootleggerPreview");
 
                             var extractorsFactory = new DefaultExtractorsFactory();
-                            mediaSource = new ExtractorMediaSource(Android.Net.Uri.Parse(url), httpDataSourceFactory, extractorsFactory, null, null);
+                            mediaSource = new ExtractorMediaSource(Android.Net.Uri.Parse(url), dataSourceFactory, extractorsFactory, null, null);
                         }
                         
                         _player.Prepare(mediaSource);

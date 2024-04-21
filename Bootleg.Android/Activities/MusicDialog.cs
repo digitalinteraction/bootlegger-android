@@ -18,6 +18,7 @@ using Com.Google.Android.Exoplayer2;
 using Com.Google.Android.Exoplayer2.Trackselection;
 using Bootleg.API.Model;
 using Square.OkHttp3;
+using Com.Google.Android.Exoplayer2.Upstream;
 
 namespace Bootleg.Droid.Screens
 {
@@ -26,7 +27,7 @@ namespace Bootleg.Droid.Screens
     {
         OkHttpClient webclient;
         DefaultExtractorsFactory extractorsFactory;
-        OkHttpDataSourceFactory httpDataSourceFactory;
+        DefaultHttpDataSourceFactory httpDataSourceFactory;
         IMediaSource mediaSource;
         SimpleExoPlayer _audioPlayer;
         Music CurrentMusic;
@@ -46,10 +47,11 @@ namespace Bootleg.Droid.Screens
         {
             base.OnCreate(savedInstanceState);
             SetStyle((int)DialogFragmentStyle.Normal, Resource.Style.ShootDialog);
-            webclient = new OkHttpClient.Builder()
-               .Cache((Activity.Application as BootleggerApp).FilesCache)
-               .Build();
-            httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor");
+            //webclient = new OkHttpClient.Builder()
+            //   .Cache((Activity.Application as BootleggerApp).FilesCache)
+            //   .Build();
+            //httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor");
+            httpDataSourceFactory = new DefaultHttpDataSourceFactory("BootleggerPreview");
             extractorsFactory = new DefaultExtractorsFactory();
             _audioPlayer = ExoPlayerFactory.NewSimpleInstance(Context, new DefaultTrackSelector());
             _audioPlayer.RenderedFirstFrame += _audioPlayer_RenderedFirstFrame;

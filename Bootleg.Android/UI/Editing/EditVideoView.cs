@@ -67,16 +67,17 @@ namespace Bootleg.Droid
             _playerView.Player = _player;
             _playerView.UseController = true;
 
-            webclient = new OkHttpClient.Builder()
-                .Cache((Context.ApplicationContext as BootleggerApp).FilesCache)
-                .Build();
-            httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor");
+            //webclient = new OkHttpClient.Builder()
+            //    .Cache((Context.ApplicationContext as BootleggerApp).FilesCache)
+            //    .Build();
+            //httpDataSourceFactory = new OkHttpDataSourceFactory(webclient, "BootleggerEditor");
             extractorsFactory = new DefaultExtractorsFactory();
+            httpDataSourceFactory = new DefaultHttpDataSourceFactory("BootleggerPreview");
             defaultDataSourceFactory = new DefaultDataSourceFactory(Context, "BootleggerEditor");
             /*************/
 
             _audioPlayer = ExoPlayerFactory.NewSimpleInstance(Context, new DefaultTrackSelector());
-            _audioPlayer.Volume = 0.2f;
+            _audioPlayer.Volume = 0.04f;
             _audioPlayer.RepeatMode = Player.RepeatModeOne;
 
             cursor = FindViewById<View>(Resource.Id.trackposition);
@@ -133,7 +134,7 @@ namespace Bootleg.Droid
         TextView title;
         OkHttpClient webclient;
         DefaultExtractorsFactory extractorsFactory;
-        OkHttpDataSourceFactory httpDataSourceFactory;
+        DefaultHttpDataSourceFactory httpDataSourceFactory;
         //TitleDataSourceFactory titleDataSourceFactory;
         DefaultDataSourceFactory defaultDataSourceFactory;
         IMediaSource mediaSource;

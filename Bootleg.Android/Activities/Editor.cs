@@ -1087,6 +1087,18 @@ namespace Bootleg.Droid
             }
 
             //adjust for audio:
+            //if (CurrentMusic != null)
+            //{
+            //    foreach (var m in CurrentEdit.media)
+            //    {
+            //        m.audio = null;
+            //        m.credits = null;
+            //    }
+
+            //    CurrentEdit.media.First().audio = CurrentMusic.path;
+            //    CurrentEdit.media.First().credits = CurrentMusic.caption;
+            //}
+
             if (CurrentMusic != null)
             {
                 foreach (var m in CurrentEdit.media)
@@ -1097,6 +1109,14 @@ namespace Bootleg.Droid
 
                 CurrentEdit.media.First().audio = CurrentMusic.path;
                 CurrentEdit.media.First().credits = CurrentMusic.caption;
+            }
+            else
+            {
+                foreach (var m in CurrentEdit.media)
+                {
+                    m.audio = null;
+                    m.credits = null;
+                }
             }
 
             dialoglayout.FindViewById<TextView>(Resource.Id.title).Text = CurrentEdit.title;
