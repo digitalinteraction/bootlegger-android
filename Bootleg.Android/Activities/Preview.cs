@@ -223,13 +223,14 @@ namespace Bootleg.Droid.Screens
                 //int cacheSize = 300 * 1024 * 1024; // 300 MiB
                 //Square.OkHttp3.Cache cache = new Square.OkHttp3.Cache(FilesDir, cacheSize);
 
-                var client = new OkHttpClient.Builder()
-                    //.Cache((Application as  BootleggerApp).FilesCache)
-                    .Build();
-                OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview");
-                
+                //var client = new OkHttpClient.Builder()
+                //.Cache((Application as  BootleggerApp).FilesCache)
+                //.Build();
+                //OkHttpDataSourceFactory httpDataSourceFactory = new OkHttpDataSourceFactory(client, "BootleggerPreview");
+                DefaultHttpDataSourceFactory dataSourceFactory = new DefaultHttpDataSourceFactory("BootleggerPreview");
+
                 var extractorsFactory = new DefaultExtractorsFactory();
-                mediaSource = new ExtractorMediaSource(Android.Net.Uri.Parse(url), httpDataSourceFactory, extractorsFactory, null, null);
+                mediaSource = new ExtractorMediaSource(Android.Net.Uri.Parse(url), dataSourceFactory, extractorsFactory, null, null);
                 _player.Prepare(mediaSource);
 
             }
