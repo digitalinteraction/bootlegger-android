@@ -667,7 +667,7 @@ namespace Bootleg.Droid
 
             if (audioLevelTimer != null)
                 audioLevelTimer.Stop();
-            audioLevelTimer = new Timer(100);
+            audioLevelTimer = new Timer(50);
             audioLevelTimer.Elapsed += AudioLevelTimer_Elapsed;
             audioLevelTimer.Start();
         }
@@ -682,24 +682,26 @@ namespace Bootleg.Droid
                 if (cameraDriver != null)
                 {
 
-                    double ratio = cameraDriver.GetAudioLevel() / 32767;
+                    int level = cameraDriver.GetAudioLevel();
 
-                    Console.WriteLine(ratio);
+                    double ratio = level / 32767.0;
+
+                    //Console.WriteLine(ratio);
 
                     double db = 20 * Math.Log10(ratio);
 
-                    Console.WriteLine(db);
+                    //Console.WriteLine(db);
 
-                    double scale = Math.Min(db * audioLevelHeight, audioLevelHeight);
+                    double scale = Math.Min(ratio * audioLevelHeight, audioLevelHeight);
 
-                    Console.WriteLine(scale);
+                    //Console.WriteLine(scale);
 
                     //int dps = Resources.GetDimensionPixelSize(scale);
                     int dps = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, (int)scale, Resources.DisplayMetrics);
 
                     
 
-                    Console.WriteLine(dps);
+                    //Console.WriteLine(dps);
                     RunOnUiThread(() =>
                     {
                         var old = FindViewById<TextView>(Resource.Id.audioLevel).LayoutParameters;
