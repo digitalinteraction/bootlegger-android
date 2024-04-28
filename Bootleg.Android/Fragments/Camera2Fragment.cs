@@ -534,7 +534,8 @@ namespace Bootleg.Droid.Fragments
         {
             if (null == Activity)
                 return;
-            mediaRecorder.SetAudioSource(AudioSource.Mic);
+            
+            mediaRecorder.SetAudioSource(AudioSource.Default);
             mediaRecorder.SetVideoSource(VideoSource.Surface);
             mediaRecorder.SetOutputFormat(OutputFormat.Mpeg4);
             mediaRecorder.SetOutputFile(thumbnailfilename);
