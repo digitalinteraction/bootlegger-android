@@ -21,7 +21,8 @@ namespace Bootleg.Droid.UI
         {
             //if (WhiteLabelConfig.USE_RELEASE_DIALOG)
             //SHOW DIALOG IF THE EVENT IS SET TO PUBLIC!
-            if (!WhiteLabelConfig.LOCAL_SERVER && eventid.ispublic)
+            //HACK to turn off since live server wont do it.
+            if (false) //!WhiteLabelConfig.LOCAL_SERVER && eventid.ispublic)
             {
                 if (retry || !Bootlegger.BootleggerClient.CurrentUser.permissions.ContainsKey(eventid.id))
                 {
