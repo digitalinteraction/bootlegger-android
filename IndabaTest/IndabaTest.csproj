@@ -46,6 +46,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="RunTests" />
+    <None Include="..\.editorconfig" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bootleg.Android\Bootleg.Android.csproj">
