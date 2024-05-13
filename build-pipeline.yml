@@ -19,6 +19,8 @@ steps:
 - task: Bash@3
   env:
     FLAVOUR: ${{ parameters.flavour }}
+    PACKAGE: ${{ parameters.package }}
+    APP_NAME: ${{ parameters.app_name }}
   inputs:
     filePath: 'Bootleg.Android/appcenter-pre-build.sh'
 
@@ -32,6 +34,13 @@ steps:
   inputs:
     contents: '**/*.apk'
     targetFolder: $(Build.ArtifactStagingDirectory)
+
+# - task: Bash@3
+#   env:
+#     FLAVOUR: ${{ parameters.flavour }}
+#   inputs:
+#     targetType: 'inline'
+#     script: cp $(Build.ArtifactStagingDirectory)/Bootleg.Android.apk $(Build.ArtifactStagingDirectory)/${FLAVOUR}.apk 
 
 - publish: $(Build.ArtifactStagingDirectory)
   artifact: ${{ parameters.flavour }}

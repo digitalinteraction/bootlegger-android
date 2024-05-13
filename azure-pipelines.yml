@@ -16,7 +16,7 @@ jobs:
     parameters:
       flavour: 'Titan'
       package: 'dev.indaba.offline'
-      APP_NAME: "Indaba"
+      app_name: "Indaba"
 
 - job: Online
   pool:
@@ -26,7 +26,7 @@ jobs:
     parameters:
       flavour: 'OurStory'
       package: 'dev.indaba'
-      APP_NAME: "Training Indaba"
+      app_name: "Training Indaba"
 
 - job: Release
   pool:

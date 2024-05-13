@@ -83,7 +83,7 @@
       <CustomCommands>
         <Command>
           <type>BeforeBuild</type>
-          <command>cp "${ProjectDir}/Properties/AndroidManifest_Init.xml" "${ProjectDir}/Properties/AndroidManifest.xml"</command>
+          <command></command>
         </Command>
       </CustomCommands>
     </CustomCommands>
